@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!--
+/*
+//
+// BEGIN SONGBIRD GPL
+//
+// This file is part of the Songbird web player.
+//
+// Copyright(c) 2005-2008 POTI, Inc.
+// http://songbirdnest.com
+//
+// This file may be licensed under the terms of of the
+// GNU General Public License Version 2 (the "GPL").
+//
+// Software distributed under the License is distributed
+// on an "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either
+// express or implied. See the GPL for the specific language
+// governing rights and limitations.
+//
+// You should have received a copy of the GPL along with this
+// program. If not, go to http://www.gnu.org/licenses/gpl.html
+// or write to the Free Software Foundation, Inc.,
+// 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+//
+// END SONGBIRD GPL
+//
+ */
+-->
+
+
+<?xml-stylesheet href="chrome://sharing/skin/css/overlay.css"
+                 type="text/css" ?>
+
+<!DOCTYPE window [
+<!ENTITY % sharingDTD SYSTEM "chrome://sharing/locale/sharingDMS.dtd">
+%sharingDTD;
+]>
+
+<overlay id="sharing_overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+       <stringbundleset id="stringbundleset">
+       <stringbundle id="sharing-strings"
+                src="chrome://sharing/locale/sharingDMS.properties"/>
+       </stringbundleset>
+
+
+      <statusbar id="status-bar">
+        <hbox insertafter="page-report-button" id="sharing-statusbar-container">
+          <statusbarpanel id="sharing_statusIcon"
+                    class="statusbarpanel-iconic-text"
+                    label="&sharing.statusbar.label;"
+                    dir="reverse"
+                    src="chrome://sharing/skin/images/DLNA_off_16x16.png"
+                    tooltiptext=""
+                    popup="sharing-control-panel"/>
+          <toolbarseparator class="sharing-statusbar-separator" />
+        </hbox>
+      </statusbar>
+
+  <popupset id="mainPopupSet">
+      <panel id="sharing-test-panel">
+        <vbox pack="center" align="center">
+          <label class="sharing-error-popup-label" id="sharing-test-panel-label" />
+        </vbox>
+      </panel>
+
+
+      <panel id="sharing-control-panel" position="before_end">
+        <groupbox flex="1">
+          <caption label="&sharing.iconpopup.header;" />
+          <vbox pack="center" align="center" flex="1">
+            <label class="sharing-control-panel-status-label" value="&sharing.iconpopup.status.label;" />
+            <hbox pack="center" align="center">
+              <button id="sharing-control-off" type="checkbox" label="&sharing.iconpopup.status.off;"
+                          oncommand="sharingDMS.iconPopup.controller.onCommandOff()"/>
+              <button id="sharing-control-on" type="checkbox" label="&sharing.iconpopup.status.on;"
+                          oncommand="sharingDMS.iconPopup.controller.onCommandOn()"/>
+            </hbox>
+          </vbox>
+          <vbox pack="end" align="right">
+            <label id="sharing-control-header-label" class="text-link" value="&sharing.iconpopup.settings.link;"
+                   onclick="sharingDMS.options.openPreferences()"/>
+          </vbox>
+        </groupbox>
+      </panel>
+    </popupset>
+
+
+
+      <script type="application/x-javascript"
+            src="chrome://sharing/content/overlay.js"/>
+      <script type="application/x-javascript"
+            src="chrome://sharing/content/iconStatusObserver.js"/>
+      <script type="application/x-javascript"
+            src="chrome://sharing/content/iconPopup.js"/>
+      <script type="application/x-javascript"
+            src="chrome://sharing/content/options.js"/>
+
+</overlay>

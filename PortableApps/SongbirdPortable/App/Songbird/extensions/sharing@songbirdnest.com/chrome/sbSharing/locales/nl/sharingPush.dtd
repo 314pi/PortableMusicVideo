@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "Vernieuwen">
+<!ENTITY push.playqueue.instructions "Sleep nummers hiernaartoe om direct een afspeellijst voor dit apparaat te maken">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "Offline">
+<!ENTITY sharing.push.deviceState.stopped "Gestopt">
+<!ENTITY sharing.push.deviceState.playing "Wordt afgespeeld">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "Onderbroken">
+<!ENTITY sharing.push.deviceState.recording "Opnemen">
+<!ENTITY sharing.push.deviceState.nomedia "Geen media aanwezig">

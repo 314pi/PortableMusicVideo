@@ -1,0 +1,1 @@
+The improved CDex icon is based on an icon from the Oxygen team and released under the GPL.  The modified version contains changes by PortableApps.com and also released under the GPL.

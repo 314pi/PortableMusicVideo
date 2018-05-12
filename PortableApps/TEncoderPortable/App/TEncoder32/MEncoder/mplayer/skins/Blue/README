@@ -1,0 +1,43 @@
+_______________________________________________________________________________
+OSX-Brushed skin V2.3 for MPlayer
+Created by Diego Biurrun 03/02/04
+
+- Volume and position slider ranges fixed.
+- skin file prettyprinted.
+_______________________________________________________________________________
+OSX-Brushed skin V2.2 for MPlayer
+Created by Ryan Northam 14/5/03
+
+- Replaced the Apple and Quicktime trademarks.
+- New and improved background for the sub window.
+_______________________________________________________________________________
+OSX-Brushed skin V2.1 for MPlayer
+Created by Ryan Northam 12/5/03
+
+Only a few small changes:
+
+- Mute button added. Click the speaker to mute the sound.
+- Added a " - " to the volume indicator to indicate muted sound.
+- Cleaned up the "about" button's appearance a bit.
+- Repositioned the "about" and "open file" buttons slightly.
+- Changed the INSTALL file.
+
+Suggestions for other improvements are welcomed.
+Contact me here: ryan@adeptit.com.au
+_______________________________________________________________________________
+
+OSX-Brushed skin V2.0 for MPlayer
+Created by Ryan Northam 6/5/03
+
+Totally recreated using better quality screenshots of Quicktime player and iTunes :)
+It is close to pixel perfect now.
+
+I've two versions of the skin, one with the window controls on the left (default os x look), and another with them on the right. Rename one of the 'skin-buttons-left' or 'skin-buttons-right' files to 'skin' to change where your buttons are placed.
+_______________________________________________________________________________
+
+OSX-Brushed skin V1.0 for MPlayer
+Created by Ryan Northam 2/5/03
+
+Created from scratch using screenshots of Quicktime player and iTunes.
+
+_______________________________________________________________________________

@@ -1,0 +1,11 @@
+The aimp_inputFFmpeg plugin is designed to play the ATRAC3, Matroska Audio and WebM file formats based on FFmpeg library.
+
+The FFmpeg v3.2.4 have been used in the aimp_inputFFmpeg plugin that can be found here:
+https://ffmpeg.org/releases/ffmpeg-3.2.4.tar.xz
+http://aimp.ru/files/windows/sources/FFmpeg-3.2.4-aimp.zip
+
+The Zeranoe's MingGW-w64 Build Script 3.6.7 have been used to setup required environment in Ubuntu 16.10:
+https://ffmpeg.zeranoe.com/forum/viewtopic.php?f=41&t=2559
+
+FFmpeg configuration command line is:
+$ PKG_CONFIG_PATH="/home/tester/software/lib/pkgconfig" LDFLAGS="-L/home/tester/software/lib" CFLAGS="-I/home/tester/software/include" /home/tester/source/ffmpeg/configure --pkg-config=pkg-config --prefix="/home/tester/software" --arch=x86 --target-os=mingw32 --cross-prefix=i686-w64-mingw32- --enable-shared --disable-w32threads --disable-programs --disable-doc --disable-everything --disable-avdevice --enable-swresample --enable-swscale  --build_suffix=-aimp --enable-demuxer=aac --enable-demuxer=ogg --enable-demuxer=webm_dash_manifest --enable-decoder=aac --enable-decoder=vorbis --enable-decoder=opus --enable-demuxer=mov --enable-decoder=mp3 --enable-decoder=flac --enable-decoder=atrac3 --enable-decoder=atrac3al --enable-decoder=atrac3p --enable-decoder=atrac3pal --enable-demuxer=oma

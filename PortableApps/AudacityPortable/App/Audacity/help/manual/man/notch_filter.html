@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Notch Filter - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Notch_Filter rootpage-Notch_Filter skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Notch Filter</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Notch_Filter#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+
+
+<div class="intro"><i><b>Notch Filter</b></i> sharply attenuates frequency-specific noise like mains hum or electrical whistle with minimal damage to the remaining audio, by cutting a "notch" out of the frequency <i><b><a href="glossary.html#spectrum" title="Glossary">spectrum</a></b></i> at that point.</div> 
+<dl><dd><b>Accessed by:</b> <span class="menu">Effect &gt; Notch Filter...</span></dd>
+<dd><span title="Notch Filter effect dialog"><a href="http://alphamanual.audacityteam.org/man/File:Notch_Filter.png" class="image"><img alt="Notch Filter.png" src="../m/images/6/6f/notch_filter.png" width="474" height="178" /></a></span></dd></dl>
+<div id="frequency"></div>
+<h2><span class="mw-headline" id="Frequency">Frequency</span></h2>
+<p>Enter any frequency up to half the <a href="glossary.html#sample_rate" title="Glossary">sample rate</a> into the frequency text box (default is 60 Hz). Frequency greater than half the sample rate of the track are not valid because a track can only contain frequencies up to half its sample rate.
+</p>
+<h2><span class="mw-headline" id="Q_factor">Q factor</span></h2>
+<p>This determines the width of the notch cut from your audio (default value is 1). Values above 1 create a narrower notch, and values below 1 create a wider notch. The Q Factor must be at least 0.1). 
+</p>
+<div id="buttons"></div>
+<h2><span class="mw-headline" id="Buttons">Buttons</span></h2>
+<p>Clicking on the command buttons give the following results:
+</p>
+<ul><li><span class="button">Manage</span> gives a dropdown menu enabling you to manage presets for the tool and to see some detail about the tool. For details see <a href="manage_presets.html" title="Manage presets">Manage presets</a>.</li>
+<li><span class="button">Preview</span> plays a short preview of what the audio would sound like if the effect is applied with the current settings, without making actual changes to the audio.  The length of preview is determined by your setting in <span class="menu">Edit &gt; Preferences &gt; <a href="playback_preferences.html" title="Playback Preferences">Playback</a></span>, the default setting is 6 seconds.</li>
+<li><span class="button">OK</span> applies the effect to the selected audio with the current effect settings.</li>
+<li><span class="button">Cancel</span> aborts the effect and leaves the audio unchanged.</li>
+<li><a href="help_button.html" title="Help Button"><img alt="Help Button" src="../m/images/d/d6/help_button.png" width="27" height="27" /></a> brings you to the appropriate page in the Manual, this page.</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<div class="example"><h3><span class="mw-headline" id="Example_1:_Mains_Hum_Removal">Example 1: Mains Hum Removal</span></h3>
+Choose 60 Hz as "Frequency" for North America, or 50 Hz for the United Kingdom and most other countries. A table of mains frequencies by country is <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/List_of_countries_with_mains_power_plugs,_voltages_and_frequencies#Table_of_mains_voltages_and_frequencies">here</a>. <p>Recorded hum often contains noisy harmonic frequencies above the fundamental frequency of the hum. A good approach is thus to apply Notch Filter to the fundamental hum frequency (for example, 50 Hz or 60 Hz), then use <span class="menu">Analyze &gt; <a href="plot_spectrum.html" title="Plot Spectrum">Plot Spectrum...</a></span> to identify other broad noise spikes (for example, at 180 Hz and 300 Hz). You may want to increase the spectrum <i>Size</i> and use the "Log" <i>Axis</i> to see more clearly. Run Notch Filter again at each of the other noise frequencies, then use <span class="menu">Effect &gt; <a href="noise_reduction.html" title="Noise Reduction">Noise Reduction</a></span> at mild settings to remove any residual harmonics. </p>
+<ul><li> It is recommended to increase the Q factor when removing higher harmonics so as to lessen possible audio artifacts. Generally, a Q of between 2 and 10 works well for mains hum removal. Choosing appropriate Frequency and Q factor settings from the noise spikes in Plot Spectrum is an approximation, due to inevitable <i><b><a href="glossary.html#interpolate" title="Glossary">interpolation</a></b></i> errors from whichever "windowing" function is chosen. However a good method for calculating Frequency and Q factor from Plot Spectrum can be found in this <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/viewtopic.php?f=39&amp;t=40592&amp;start=20#p123749">Audacity Forum topic</a>.</li></ul>
+<p>The below image shows a spectrum plot of some music from which a notch of 60 Hz hum has been cut. Before applying the effect, the hum displayed a prominent spike at this frequency, extending to the top of the graph.
+</p>
+<dl><dd><span title="Image of spectrum with 60 Hz notch removed"><img alt="Spectrum 60Hz notched W10.png" src="../m/images/6/67/spectrum_60hz_notched_w10.png" width="590" height="513" /></span></dd></dl>
+Depending on the audio, you might find in this case that the spectrum had been notched too deeply, thus affecting the content, and that a higher Q factor would have been preferred. You might want to notch the visible spikes at about 100 and 350 Hz as well. As always with Audacity, you can <span class="menu">Edit &gt; <a href="edit_menu.html#undo" title="Edit Menu">Undo</a></span> and experiment with different notch filter settings.</div>
+<div class="example"><h3><span class="mw-headline" id="Example_2:_High_pitched_whistle">Example 2: High pitched whistle</span></h3>
+<dl><dd><span title="Frequency Analysis spectrum with a 18996 Hz whistle"><img alt="Spectrum with whistle W10.png" src="../m/images/3/34/spectrum_with_whistle_w10.png" width="590" height="513" /></span></dd></dl>
+In this case the frequency analysis at <span class="menu">Analyze &gt; <a href="plot_spectrum.html" title="Plot Spectrum">Plot Spectrum...</a></span> is fairly smooth except for a tall peak on the right. Place the mouse's cross-hair pointer over that peak. Audacity shows the peak more accurately to be at 18996 Hz which will be the frequency to enter in Notch Filter.</div>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<p><a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers"><b>|&lt;</b> Index of Effects, Generators and Analyzers</a> <br />
+</p><p><a href="effect_menu.html" title="Effect Menu"><b>|&lt;</b> Effect Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020325
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.111 seconds
+Real time usage: 0.118 seconds
+Preprocessor visited node count: 367/1000000
+Preprocessor generated node count: 1621/1000000
+Post‐expand include size: 14646/2097152 bytes
+Template argument size: 4764/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   52.315      1 - -total
+ 47.94%   25.081      1 - Template:I18n
+ 44.48%   23.272      1 - Template:I18n_box
+ 39.50%   20.667      1 - Template:I18n_list
+ 22.01%   11.514      1 - Template:Effectbuttons
+ 16.45%    8.608      1 - Template:Buttonlist
+ 16.38%    8.568      3 - Template:I18n_link
+ 15.22%    7.963      1 - Template:No-rename
+ 11.92%    6.238      8 - Template:Button
+ 11.43%    5.982      1 - Template:Ednote
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:3575-0!*!0!!*!5!* and timestamp 20180215020325 and revision id 58160
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Notch_Filter">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

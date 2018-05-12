@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "Διακομιστής πολυμέσων:">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "Κατάσταση διακομιστή:">
+<!ENTITY sharing.iconpopup.status.on "ΕΝΕΡΓΟΠ.">
+<!ENTITY sharing.iconpopup.status.off "ΑΠΕΝΕΡΓΟΠ.">
+<!ENTITY sharing.iconpopup.settings.link "Ρυθμίσεις">
+<!ENTITY sharing.prefpane.label "Διακομιστής πολυμέσων">
+<!ENTITY sharing.prefpane.network.name.header.label "Όνομα δικτύου διακομιστή πολυμέσων">
+<!ENTITY sharing.prefpane.network.name.content.label "Όνομα όπως εμφανίζεται στο δίκτυο (για τις αλλαγές απαιτείται επανεκκίνηση):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "Φάκελος εικόνων">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "Μετάδοση εικόνων από:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "Επιλογή φακέλου">

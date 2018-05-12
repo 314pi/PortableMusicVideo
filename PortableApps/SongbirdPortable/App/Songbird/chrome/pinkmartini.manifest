@@ -1,0 +1,11 @@
+locale  pinkmartini  en-US  jar:pinkmartini.jar!/feathers/pinkmartini/songbird/chrome/locale/en-US/
+skin  songbird pinkmartini jar:pinkmartini.jar!/feathers/pinkmartini/songbird/chrome/skin/
+override chrome://songbird/skin/icons/displaypane-contentpane-bottom.png chrome://songbird/skin/icons/mac/displaypane-contentpane-bottom.png os=darwin
+override chrome://songbird/skin/icons/displaypane-servicepane-bottom.png chrome://songbird/skin/icons/mac/displaypane-servicepane-bottom.png os=darwin
+override chrome://songbird-branding/skin/first-run-welcome.png chrome://songbird/skin/branding/first-run-welcome.png
+override chrome://songbird/skin/icons/displaypane-right-sidebar.png chrome://songbird/skin/icons/mac/displaypane-right-sidebar.png os=darwin
+skin  songbird-os-specific  pinkmartini  jar:pinkmartini.jar!/feathers/pinkmartini/songbird/chrome/skin/os-specific/
+skin  global pinkmartini  chrome://songbird-global/skin/
+skin  mozapps  pinkmartini  chrome://songbird-mozapps/skin/
+skin  pinkmartini pinkmartini jar:pinkmartini.jar!/feathers/pinkmartini/songbird/chrome/skin/
+content pinkmartini  jar:pinkmartini.jar!/feathers/pinkmartini/songbird/chrome/content/

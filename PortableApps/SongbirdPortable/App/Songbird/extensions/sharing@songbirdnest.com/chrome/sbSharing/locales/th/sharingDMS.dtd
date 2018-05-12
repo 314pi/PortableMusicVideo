@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "Media Server:">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "สถานะเซิร์ฟเวอร์:">
+<!ENTITY sharing.iconpopup.status.on "เปิด">
+<!ENTITY sharing.iconpopup.status.off "ปิด">
+<!ENTITY sharing.iconpopup.settings.link "การตั้งค่า">
+<!ENTITY sharing.prefpane.label "Media Server">
+<!ENTITY sharing.prefpane.network.name.header.label "ชื่อเครือข่าย Media Server">
+<!ENTITY sharing.prefpane.network.name.content.label "ชื่อที่ปรากฏบนเครือข่าย (หากเปลี่ยนแปลงต้องรีสตาร์ท):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "โฟลเดอร์ภาพ">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "สตรีมภาพจาก:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "เลือกโฟลเดอร์">

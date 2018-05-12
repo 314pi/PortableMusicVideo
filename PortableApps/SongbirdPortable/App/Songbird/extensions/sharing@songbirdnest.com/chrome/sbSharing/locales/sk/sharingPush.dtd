@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "Obnoviť">
+<!ENTITY push.playqueue.instructions "Myšou uchopte a presuňte skladby alebo zoznamy na prehrávanie sem, čím vytvoríte pre toto zariadenie bleskový zoznam na počúvanie">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "Offline">
+<!ENTITY sharing.push.deviceState.stopped "Zastavené">
+<!ENTITY sharing.push.deviceState.playing "Prehráva sa">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "Pozastavené">
+<!ENTITY sharing.push.deviceState.recording "Nahráva sa">
+<!ENTITY sharing.push.deviceState.nomedia "Nie sú dostupné žiadne médiá">

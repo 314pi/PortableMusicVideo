@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Copy and Paste a section of audio - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Copy_and_Paste_a_section_of_audio rootpage-Copy_and_Paste_a_section_of_audio skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Copy and Paste a section of audio</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Copy_and_Paste_a_section_of_audio#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+</li></ul>
+<p><br />
+</p>
+<div class="intro">Copying and pasting a section of audio from one track to another is a useful way to paste the good sections of one take over the bad sections of another take.  In this example the track with the "good" section is the "Source" track and the track with the "bad" section is the "Target" track.</div>
+<h2><span class="mw-headline" id="Select_the_required_audio">Select the required audio</span></h2>
+<p>Use the Selection Tool <img alt="The Selection tool" src="../m/images/2/25/tool_select.png" title="The Selection tool" width="27" height="27" /> to select a section of audio from the source track (the source and target tracks are labeled Source and Target in the examples.)    
+</p>
+<dl><dd><span title="selecting a section of audio"><img alt="SelectSectionSource.gif" src="../m/images/d/da/selectsectionsource.gif" width="228" height="164" /></span></dd></dl>
+<p>To make sure your selection includes exactly the section of audio you want, you can use the zoom tools under the View menu to zoom in to the beginning and end of your selection and select the exact samples you want.  To prevent "popping" sounds in your final audio track, try to select a section of audio that starts and ends at the 0.0 line.
+</p>
+
+<dl><dd><span title="start of selection adjusted"><img alt="AdjustStartOfSelection.gif" src="../m/images/8/86/adjuststartofselection.gif" width="302" height="177" /></span></dd></dl>
+<p>You'll want to select a section of audio that <b>ends</b> at the 0.0 line as well.  
+</p>
+<dl><dd><span title="end of selection adjusted"><img alt="AdjustEndOfSelection.gif" src="../m/images/5/5d/adjustendofselection.gif" width="301" height="174" /></span></dd></dl>
+<p><br />
+Now that you have a well-formed selection, you can copy and paste it to the target track.
+</p><p>Zoom out so you can see your entire selection.  
+</p>
+<dl><dd><span title="zoomed out to see the entire selection"><img alt="ZoomOutSelectionForCopy.gif" src="../m/images/6/67/zoomoutselectionforcopy.gif" width="343" height="297" /></span></dd></dl>
+
+<h2><span class="mw-headline" id="Make_the_copy">Make the copy</span></h2>
+<p>Copy the selected audio to the Audacity clipboard by clicking on <span class="menu">Edit &gt; Copy</span> or press the shortcut <span class="kbrd" style="background-color: #e0e0f0">Ctrl + C</span>.
+</p>
+<h2><span class="mw-headline" id="Apply_the_paste">Apply the paste</span></h2>
+<p>Hold the <span class="kbrd" style="background-color: #e0e0f0">Ctrl</span> key and click in the Track Control Panel of the target track with the channel, rate and format information.  This selects the target track without changing any of its controls and extends the selection into the target track. Then <span class="kbrd" style="background-color: #e0e0f0">Ctrl</span>-click in the Track Control Panel of the source track to deselect it. 
+</p>
+<dl><dd><span title="target track selected for Paste"><img alt="SelectTargetTrackForPaste.gif" src="../m/images/f/fb/selecttargettrackforpaste.gif" width="336" height="302" /></span></dd></dl>
+<p>Select  <span class="menu">Edit &gt; Paste</span> from the Edit Menu or press the shortcut <span class="kbrd" style="background-color: #e0e0f0">Ctrl + V</span>. 
+</p><p><br />
+</p>
+<div class="note">You can also get "popping" if the target track hops from 0.0 before and after the audio you paste, so you may want to write down your Selection Start, End and Audio Position so you can adjust gaps before and after your pasted audio,  with either the Draw Tool <img alt="Draw-button.png" src="../m/images/9/92/draw_button.png" width="27" height="27" /> or Fade Out from the Effect Menu.
+<dl><dd><span title="gap adjusted with the Draw Tool"><img alt="AdjustGapWithDrawTool.gif" src="../m/images/9/9f/adjustgapwithdrawtool.gif" width="322" height="300" /></span></div></dd></dl>
+<h2><span class="mw-headline" id="Pasting_into_a_new_track">Pasting into a new track</span></h2>
+<p>If you want to create a new track and paste into that, the paste will automatically create a new mono or stereo track as appropriate, with the audio starting at time zero, if you:
+</p>
+<ul><li> Paste into an empty project window </li>
+<li> Click in the gray background underneath the last track in the project to deselect all the tracks, then paste.</li>
+<li> You can paste from a mono track into a stero track - the mono audio will be replicated in both stereo channels.</li>
+<li> You cannot paste from a stereo track into a mono track.   <i>(You will get an error message if you try to do this.)</i></li></ul>
+<p>If you want the paste to start at other than time zero you must first use Tracks &gt; Add New &gt; Mono Track (or Add New &gt; Stereo Track), place the cursor where you want to paste, then make the paste.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020226
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.097 seconds
+Real time usage: 0.106 seconds
+Preprocessor visited node count: 208/1000000
+Preprocessor generated node count: 1178/1000000
+Post‐expand include size: 4937/2097152 bytes
+Template argument size: 3425/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   35.193      1 - -total
+ 61.02%   21.474      1 - Template:I18n
+ 55.75%   19.620      1 - Template:I18n_box
+ 46.36%   16.314      1 - Template:I18n_list
+ 13.41%    4.721      1 - Template:I18n_link
+ 10.19%    3.586      4 - Template:Key
+  7.25%    2.551      1 - Template:Autoglossonym
+  6.26%    2.202      3 - Template:Ednote
+  5.44%    1.914      2 - Template:Menu
+  5.32%    1.873      1 - Template:Intro
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:3040-0!*!0!!*!5!* and timestamp 20180215020226 and revision id 58610
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Copy_and_Paste_a_section_of_audio">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

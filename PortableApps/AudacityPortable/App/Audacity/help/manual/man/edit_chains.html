@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Edit Chains - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Edit_Chains rootpage-Edit_Chains skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Edit Chains</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Edit_Chains#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+
+<p><br />
+</p>
+<div class="intro"><i><b>Edit Chains</b></i> allows you to edit, remove or rename existing Chains or add a new Chain. Any <a href="effect_menu.html#built-in" title="Effect Menu">built-in</a>, <a href="effect_menu.html#LADSPA_effects" title="Effect Menu">LADSPA</a>, <a href="effect_menu.html#LV2_effects" title="Effect Menu">LV2</a>, <a href="effect_menu.html#nyquist_effects" title="Effect Menu">Nyquist</a>, <a href="effect_menu.html#vst" title="Effect Menu">VST</a> or <a href="effect_menu.html#Audio_Unit_effects" title="Effect Menu">Audio Unit</a> (Mac) effect shown in the <a href="effect_menu.html" title="Effect Menu">Effect Menu</a> can be added to a Chain. You can also add plug-ins in any format that are shown in the <a href="generate_menu.html" title="Generate Menu">Generate</a> or <a href="analyze_menu.html" title="Analyze Menu">Analyze</a> Menus (including <a href="analyze_menu.html#vamp" title="Analyze Menu">Vamp</a> analysis effects), the built-in <a href="find_clipping.html" title="Find Clipping">Find Clipping</a> analyzer and a number of export commands.<p>Chains may be applied to either the entirety of the current project or to a selection of files using the <span class="menu">File &gt; Chains &gt; <a href="apply_chain.html" title="Apply Chain">Apply Chain</a></span> command.</p><p>It is possible to use <a href="noise_reduction.html" title="Noise Reduction">Noise Reduction</a> in Chains but see <a href="noise_reduction.html#chains" title="Noise Reduction">Noise Reduction Tips</a> for how the Noise Profile is captured.</p> </div>
+<dl><dd><b>Accessed by:</b> <span class="menu">File &gt; Chains &gt; Edit Chains...</span></dd></dl>
+<dl><dd><span title="Edit Chain dialog showing Chain list (left) and command list for selected Chain (right)"><img alt="Edit Chains dialog.png" src="../m/images/2/23/edit_chains_dialog.png" width="859" height="327" /></span></dd></dl>
+<p><br />
+</p>
+<div class="note">For help with what the Chain effects do and how to set their parameters, see <a href="effect_menu.html" title="Effect Menu">Effect Menu</a> </div>
+<div id="chains"></div>
+<h2><span class="mw-headline" id="Chains">Chains</span></h2>
+<p><i><b>Chains</b></i> contains a list of already defined Chains.  You can define the name of a new Chain and select which Chain is active. 
+</p>
+<ul><li><b>Add:</b> Add a new Chain to the list.</li>
+<li><b>Remove:</b> Remove the selected Chain from the list.</li>
+<li><b>Rename:</b> Rename the selected Chain.</li></ul>
+<div id="chain"></div>
+<h2><span class="mw-headline" id="Chain">Chain</span></h2>
+<p><i><b>Chain</b></i> lists the sequence of commands in order of first to last (End) for the Chain selected in the "Chains" box to left. Here you can <b>add or remove commands</b> for the selected Chain, <b>change the order</b> in which the commands execute in the Chain, or <b>edit the parameters</b> for some effects in the Chain.  
+</p>
+<ul><li><b>Delete:</b> Delete the currently selected command from the list.</li>
+<li><b>Move Up:</b> Move the currently selected command up in the list.</li>
+<li><b>Move Down:</b> Move the currently selected command down in the list.</li>
+<li><b>Defaults:</b> This button is only active when the "MP3 Conversion" Chain is selected in the "Chain" list on the left, and will reset this Chain to its default values.&lt;/ul&gt;</li></ul>
+<h3><span class="mw-headline" id="Editing_an_existing_command">Editing an existing command</span></h3>
+<p>To edit an existing command double-click it, or use the <span class="kbrd" style="background-color: #e0e0f0">Up</span> or <span class="kbrd" style="background-color: #e0e0f0">Down</span> keyboard arrow to select it then press <span class="kbrd" style="background-color: #e0e0f0">Space</span>. The "Select Command" dialog appears as below, but with the command name and any current parameters displayed and editable (using the <span class="button">Edit Parameters</span> button - or you can specify any previously created <a href="manage_presets.html" title="Manage presets">user preset</a> with the <span class="button">Use Preset</span> for use with the effect). If you want to replace the current command in its current order in the sequence with another command, double-click the new command (or select it then use <span class="kbrd" style="background-color: #e0e0f0">Space</span>) then choose <span class="button">OK</span>.
+</p>
+<h3><span class="mw-headline" id="Inserting_a_new_command">Inserting a new command</span></h3>
+<p>To insert a new command in a Chain<b>, left-click or use the <span class="kbrd" style="background-color: #e0e0f0">Up</span> or <span class="kbrd" style="background-color: #e0e0f0">Down</span> keyboard arrow to select an existing command; the new command to be inserted will be placed above this selected command. Then press <span class="button">Insert</span>. </b>
+</p>
+<ul><li>The "Select Command" dialog appears, listing all the available commands. Double-click a command from the list to insert it in the "Command" box, as shown in the image below after inserting "Normalize". Alternatively, use the <span class="kbrd" style="background-color: #e0e0f0">Up</span> or <span class="kbrd" style="background-color: #e0e0f0">Down</span> keyboard arrow to select the command, then press <span class="kbrd" style="background-color: #e0e0f0">Space</span>. 
+
+<div class="note">Note that the <a href="sliding_time_scale_pitch_shift.html" title="Sliding Time Scale - Pitch Shift">Sliding Time Scale/Pitch Shift</a> effect is listed as <b>TimeScale</b>.</div>
+<dl><dd><span title="Edit Chain&#39;s &#39;Select Command&#39; dialog showing default commands, with &#39;Normalize&#39; selected and inserted"><img alt="Select command.png" src="../m/images/1/10/select_command.png" width="841" height="436" /></span></dd></dl>
+<ul><li>If the command has editable parameters, the <span class="button">Edit Parameters</span> button will be active. Clicking this button will bring up the dialog box for the effect where you can set the parameters as if you were applying the standalone effect.</li>
+<li>If you have previously created <a href="manage_presets.html" title="Manage presets">user presets</a> for an effect you can use the <span class="button">Use Preset</span> to select one for use with that effect in the chain.</li>
+<li>Choose <span class="button">OK</span> in the effect dialog to accept the parameters you entered, or <span class="button">Cancel</span> to revert to the default parameters.</li>
+<li>Choose <span class="button">OK</span> in the "Select Command" dialog to add the command to the Chain.</li></ul>
+<h3><span class="mw-headline" id="Export_commands">Export commands</span></h3>
+<ul><li> There are four basic export commands available: <b>ExportWAV</b>, <b>ExportMP3</b>, <b>ExportFLAC</b> and <b>ExportOgg</b>.
+<ul><li> The file name created by any of the four export commands consists of the date and time.</li></ul></li>
+<li> The <b>ExportMP3_56k_before</b> and <b>ExportMP3_56k_after</b> commands can be used respectively to export "before" and "after" <i><b><a href="glossary.html#mp3" title="Glossary">MP3</a></b></i> files at 56&#160;kbps <i><b><a href="glossary.html#bit_rate" title="Glossary">bit rate</a></b></i>  at any point in the chain of processing. This allows you to compare the result of one or more effects, or provide files for different purposes with and without a particular effect. 
+<ul><li> The name of the MP3 exported by the "ExportMP3_56k_before" command is prefixed by "MasterBefore_" followed by the date and time. The name of the MP3 exported by the "ExportMP3_56k_after" command is prefixed by "MasterAfter_" followed by the date and time.      </li></ul></li></ul>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top"><b>Parameters for export formats cannot be set in "Edit Chains".</b> To configure export parameters for the Chain, click <span class="menuadvice">File &gt; Export &gt; <a href="file_menu_export.html#exportaudio" title="File Menu: Export">Export Audio...</a></span> to access the <a href="file_export_dialog.html" title="File Export Dialog">Export Audio Dialog</a>, click <span class="button">Options</span>, set the parameters, press <span class="button">OK</span> then <span class="button">Cancel</span> the export. An <a href="audio_tracks.html" title="Audio Tracks">audio track</a> must be on screen in order to open the Export Audio Dialog.
+</td></tr></table>
+</div>
+<div id="share"></div>
+<h3><span class="mw-headline" id="Sharing_a_Chain">Sharing a Chain</span></h3>
+<p>Each Chain is automatically saved as a separate text file with TXT <i><b><a href="glossary.html#extension" title="Glossary">extension</a></b></i> in the "Chains" folder in Audacity's <a href="preferences.html#stored" title="Preferences">folder for application data</a>. This allows you in principle to copy a Chain and send it to another user, or to copy another user's Chain into this folder so as to add to your own list of Chains. An updated list of Chains will be available next time you open "Edit Chains" in Audacity. 
+</p>
+<div id="error"></div>
+<h3><span class="mw-headline" id="Batch_command_not_recognized_error">Batch command not recognized error</span></h3>
+<p>This error may sometimes occur for one or more commands in a Chain when updating from a previous Audacity version. The error may also occur if users sharing Chains have different Audacity versions or different versions of the plug-ins used in the Chain. The error will occur if:
+</p>
+<ul>
+<li> any command in the Chain uses a different text format than that recognised by the version of Audacity in use 
+<li> any plug-ins listed in the Chain are missing, in an incorrect location or are incompatible with the version of Audacity in use. </ul>
+<p>To resolve these errors, ensure you have compatible versions of all required plug-ins and that the plug-ins are <a href="faq_installation_and_plug_ins.html#plug-ins" title="FAQ:Installation and Plug-Ins">installed correctly</a>. If necessary, use the "Edit Chains" dialog to delete the command that fails then insert a replacement command for the same effect from the "Select Command" dialog.</p></li>
+</ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20180215020337
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.121 seconds
+Real time usage: 0.130 seconds
+Preprocessor visited node count: 437/1000000
+Preprocessor generated node count: 1596/1000000
+Post‐expand include size: 5832/2097152 bytes
+Template argument size: 2573/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   54.663      1 - -total
+ 45.47%   24.853      1 - Template:I18n
+ 41.46%   22.666      1 - Template:I18n_box
+ 34.19%   18.689      1 - Template:I18n_list
+ 12.89%    7.048     12 - Template:Button
+ 12.34%    6.747      2 - Template:I18n_link
+ 11.32%    6.188      9 - Template:Key
+  8.15%    4.457      1 - Template:Advice
+  7.19%    3.932      2 - Template:Autoglossonym
+  7.09%    3.878      1 - Template:Intro
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:2557-0!*!0!!*!5!* and timestamp 20180215020337 and revision id 58848
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Edit_Chains">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

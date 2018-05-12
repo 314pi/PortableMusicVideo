@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Exporting to an External Program - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Exporting_to_an_External_Program rootpage-Exporting_to_an_External_Program skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Exporting to an External Program</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Exporting_to_an_External_Program#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<p><br />
+</p>
+<div class="intro"><i><b>Exporting to an External Program</b></i> sends audio via a command-line to an external application, either for processing or for encoding as a file. <p>This is a way to export to the installed <i><b><a href="glossary.html#lame" title="Glossary">LAME</a></b></i> <i><b><a href="glossary.html#mp3" title="Glossary">MP3</a></b></i> encoder or <a href="faq_installation_and_plug_ins.html#ffdown" title="FAQ:Installation and Plug-Ins">FFmpeg</a> encoder with additional parameters not supported in the <a href="file_export_dialog.html#options" title="File Export Dialog">options dialogs</a> in the <a href="file_export_dialog.html" title="File Export Dialog">Export Audio Dialog</a>. Command-line export could also be used to export to the very latest versions of LAME or FFmpeg, to an alternative MP3 encoder or to a specialised encoder in a format not otherwise supported by Audacity.</p> </div>
+<dl><dd>Accessed by: <span class="menu">File &gt; Export &gt; <a href="file_menu_export.html#exportaudio" title="File Menu: Export">Export Audio...</a></span>, then choose <b>(external program)</b> from the <b>Save as type</b> dropdown menu.</dd>
+<dd><span title="Export Audio dialog with command-line options"><img alt="Export to external program dialog.png" src="../m/images/1/17/export_to_external_program_dialog.png" width="571" height="576" /></span></dd>
+<dd>Also accessed by: <span class="menu">File &gt; Export &gt; <a href="file_menu_export.html#exportmultiple" title="File Menu: Export">Export Multiple...</a></span> then choosing <b>(external program)</b>  from the <b>Save as type</b> dropdown menu.</dd></dl>
+<div id="encoder"></div>
+<h2><span class="mw-headline" id="Specify_Export_location">Specify Export location</span></h2>
+<p>From the <a href="file_export_dialog.html" title="File Export Dialog">Export Audio</a> dialog, choose the file name and suitable <b><i><a href="glossary.html#extension" title="Glossary">extension</a>.</i></b>
+</p>
+<div id="setup"></div>
+<h2><span class="mw-headline" id="Format_Options">Format Options</span></h2>
+<p>In the <b>Command:</b> box type:
+</p>
+<ol><li> The path to the program</li>
+<li> If the program syntax requires it, <b>space</b> then the <i>infile</i> command </li>
+<li> <b>Space</b>, <b>hyphen</b></li>
+<li> If required, <b>space</b> then valid output options for the file</li>
+<li> If the program syntax requires it, <b>space</b> then the <i>outfile</i> command </li>
+<li> Finally (assuming file output), <b>space</b> then <b>"%f"</b>. </li></ol>
+<p>The "%f" command passes the file name and extension entered in the <a href="file_export_dialog.html" title="File Export Dialog">Export Audio</a> dialog as the output file of the external program. Two default commands are provided:
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>lame - "%f"
+</td></tr></table>
+<p>and 
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>ffmpeg -i - "%f"
+</td></tr></table>
+<p>The "Command" box holds up to the last 12 items entered. When a thirteenth command is entered, the first one (at the bottom of the list) is removed.
+</p>
+<div class="note"><b>Note:</b> <a href="metadata_editor.html" title="Metadata Editor">Metadata Editor</a> does not appear before command-line exports, nor are any tags it already contains passed to the external program. Use the appropriate command for your program to write metadata to the output file as described below. </div>
+<div id="path"></div>
+<h2><span class="mw-headline" id="Setting_the_path_to_the_encoder">Setting the path to the encoder</span></h2>
+<p>Accessing the LAME or FFmpeg command-line program with just the "lame" or "ffmpeg" command only works on Windows and Linux, assuming LAME or FFmpeg are installed on the system in the standard location. On Windows, this requires that you used the <a href="faq_installation_and_plug_ins.html#lame" title="FAQ:Installation and Plug-Ins">LAME</a> or <a href="faq_installation_and_plug_ins.html#ffdown" title="FAQ:Installation and Plug-Ins">FFmpeg</a> EXE installer and did not change the installation directory.
+</p><p>For using a zip version of LAME or FFmpeg and on Mac, the full path to the command-line program must be given. The path must be enclosed inside quotes if there are any spaces in the path. You can use the <a href="#browse">Browse</a> button <span class="button">Browse...</span> to find and open the executable application which will add the correct path to the command.     
+</p>
+<div id="lame"></div>
+<h2><span class="mw-headline" id="LAME_examples">LAME examples</span></h2>
+<p>If you are exporting to MP3 with <b>LAME</b>, there is a complete list of commands including metadata tags on the <a rel="nofollow" class="external text" href="http://lame.cvs.sourceforge.net/*checkout*/lame/lame/USAGE">usage page</a>. 
+</p><p>For example, the default LAME command creates a 64 kbps (mono) or 128 kbps (stereo) <i><b><a href="glossary.html#cbr" title="Glossary">constant bit rate</a></b></i> MP3 at quality level "3". 
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>lame  -  "%f"
+</td></tr></table>
+<p>To produce a <i><b><a href="glossary.html#vbr" title="Glossary">variable bit rate</a></b></i> MP3 of minimum 112 kbps <i><b><a href="glossary.html#bit_rate" title="Glossary">bit rate</a></b></i>, with a copyright marker and CRC error checking enabled:
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>lame - -v -b 112 -c -p "%f"
+</td></tr></table>
+<p>By default, both ID3v1 and ID3v2 tags are exported. The following command writes a title tag  "my song title" and year tag "2001" in ID3v1 (at the bottom of the file) and ID3v2 (at the top of the file):
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>lame - --tt "my song title" --ty 2001 "%f"
+</td></tr></table>
+<p>To export only ID3v1 or ID3v2 tags use <i>--id3v1-only</i> or <i>--id3v2-only</i>, for example:
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>lame - --id3v1-only --tt "my song title" --ty 2001 "%f"
+</td></tr></table>
+<div id="ffmpeg"></div>
+<h2><span class="mw-headline" id="FFmpeg_examples">FFmpeg examples</span></h2>
+<p>If exporting using <b>FFmpeg</b>, you can view the FFmpeg command-line usage in the <a rel="nofollow" class="external text" href="https://ffmpeg.org/ffmpeg.html#SEC1">FFmpeg documentation</a>. Guidance on valid metadata tags for various formats supported by FFmpeg can be found at <a rel="nofollow" class="external free" href="http://wiki.multimedia.cx/index.php?title=FFmpeg_Metadata">http://wiki.multimedia.cx/index.php?title=FFmpeg_Metadata</a>. For example this command exports to 256 kbps MP2 using FFmpeg:
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>ffmpeg -i - -acodec mp2 -ab 256000 "%f"
+</td></tr></table>
+<p><br />
+</p>
+<div id="multi-channel"></div>
+<p>Next, here are two example commands that use "-strict experimental" to specify the native FFmpeg AAC encoder. The native encoder is required to export more than stereo, up to a maximum of 6 channels. To export up to 8 channels you must point the same command to latest FFmpeg-git. Change the value before "k" in the following command to set a different bit rate in kbps. <b>Note:</b> "-strict experimental" is not required in this command if using latest FFmpeg-git:  
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>ffmpeg -i - -strict experimental -c:a aac -b:a 240k "%f"
+</td></tr></table>
+<p><br />
+The following command specifies a VBR quality range instead of bit rate:
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>ffmpeg -i -  -strict experimental -c:a aac -q:a 10 "%f"
+</td></tr></table>
+<p><br />
+Here is an example of a command to FFmpeg in an arbitrary location on Windows, forcing the exported codec to Apple lossless. When specifying the file name above the command, add the extension ".m4a" (without quotes), not .alac: 
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>"E:\FFmpeg for Audacity\ffmpeg.exe" -i - -acodec alac "%f"
+</td></tr></table>
+<p><br />
+Finally, here is an example command to FFmpeg in an arbitrary location on Mac, setting metadata for genre and artist/composer in an exported M4A file with the standard <i><b><a href="glossary.html#aac" title="Glossary">AAC</a></b></i> (<i><b><a href="glossary.html#lossy" title="Glossary">lossy</a></b></i>) codec:      
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>/Applications/FFmpeg_for_Audacity_on_OSX/ffmpeg -i - -metadata genre="pop" -metadata author="Jo S" "%f"
+</td></tr></table>
+<div id="flac"></div>
+<h2><span class="mw-headline" id="FLAC_examples">FLAC examples</span></h2>
+<p>See <a rel="nofollow" class="external free" href="https://xiph.org/flac/documentation_tools_flac.html">https://xiph.org/flac/documentation_tools_flac.html</a> for FLAC command-line syntax and options.
+</p><p>This command exports a FLAC file without any options: 
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>"C:\Program Files (x86)\FLAC\flac.exe" - -o "%f"
+</td></tr></table>
+<p><br />
+This command exports a FLAC file, specifying TITLE and ARTIST tags: 
+</p>
+<table style="margin-left:10px;line-height:1.1em;letter-spacing:-0.04em;background-color:#FDEEF4;font-family:monospace;font-size:1.1em;border:1px dashed black" cellpadding="5px">
+<tr>
+<td>"C:\Program Files (x86)\FLAC\flac.exe" - -T "TITLE=Bohemian Rhapsody" -T "ARTIST=Queen" -o "%f"
+</td></tr></table>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Other_controls">Other controls</span></h2>
+<div id="browse"></div>
+<ul><li><span class="button">Browse...</span> Opens a "Find path to command" window where you can select the command-line program you want to use. Clicking "Open" will then enter the path to that program in the "Command:" box, ready for you to add the commands and "%f" after the path. </li></ul>
+<ul><li><span class="button"><img alt="unchecked checkbox" src="../m/images/a/a8/checkboxnotchecked.png" width="13" height="13" style="vertical-align: text-top" />&#160;Show output</span> If checked, a Command Output window in Audacity will display a success or failure message from the external program. If unchecked, the window will only appear in the case of an error message.<br /></li></ul>
+<h2><span class="mw-headline" id="Limitation">Limitation</span></h2>
+<p>Audacity will not be able to export more than 16-bit depth for <i><b><a href="glossary.html#uncompressed_format" title="Glossary">uncompressed</a></b></i> formats because the <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Standard_streams#Standard_input_.28stdin.29">STDIN</a> it sends to the executable application is limited to 16-bit integer.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020353
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.105 seconds
+Real time usage: 0.112 seconds
+Preprocessor visited node count: 331/1000000
+Preprocessor generated node count: 1361/1000000
+Post‐expand include size: 6986/2097152 bytes
+Template argument size: 2665/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   37.834      1 - -total
+ 61.47%   23.255      1 - Template:I18n
+ 56.69%   21.447      1 - Template:I18n_box
+ 47.20%   17.857      1 - Template:I18n_list
+ 20.75%    7.852      3 - Template:I18n_link
+ 11.93%    4.515      3 - Template:Autoglossonym
+  9.43%    3.567     13 - Template:Code
+  5.04%    1.906      2 - Template:Button
+  3.48%    1.317      2 - Template:Menu
+  3.43%    1.296      1 - Template:Intro
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:2537-0!*!0!!*!5!* and timestamp 20180215020352 and revision id 57067
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Exporting_to_an_External_Program">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

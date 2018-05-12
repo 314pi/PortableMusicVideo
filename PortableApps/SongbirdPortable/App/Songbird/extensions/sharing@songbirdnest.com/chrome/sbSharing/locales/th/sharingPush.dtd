@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "รีเฟรช">
+<!ENTITY push.playqueue.instructions "ลากแล้ววางแทร็คหรือรายการเพลงที่นี่เพื่อสร้างลำดับการฟังอย่างต่อเนื่องของอุปกรณ์นี้">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "ออฟไลน์">
+<!ENTITY sharing.push.deviceState.stopped "หยุดแล้ว">
+<!ENTITY sharing.push.deviceState.playing "กำลังเล่น">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "หยุดชั่วคราว">
+<!ENTITY sharing.push.deviceState.recording "กำลังบันทึก">
+<!ENTITY sharing.push.deviceState.nomedia "ไม่พบสื่อ">

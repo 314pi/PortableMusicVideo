@@ -1,0 +1,2 @@
+skin    albumart  classic/1.0 jar:chrome/albumart.jar!/skin/
+content albumart  jar:chrome/albumart.jar!/content/

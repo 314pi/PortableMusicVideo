@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "Медиасервер:">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "Состояние сервера:">
+<!ENTITY sharing.iconpopup.status.on "ВКЛ.">
+<!ENTITY sharing.iconpopup.status.off "ВЫКЛ.">
+<!ENTITY sharing.iconpopup.settings.link "Настройки">
+<!ENTITY sharing.prefpane.label "Медиасервер">
+<!ENTITY sharing.prefpane.network.name.header.label "Сетевое имя медиасервера">
+<!ENTITY sharing.prefpane.network.name.content.label "Имя в сети (при изменении необходим перезапуск):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "Папка с изображениями">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "Потоковая передача изображений с:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "Выберите папку">

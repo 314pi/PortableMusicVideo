@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Time Shift Tool - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Time_Shift_Tool rootpage-Time_Shift_Tool skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Time Shift Tool</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Time_Shift_Tool#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="intro">
+<p>To Time Shift using the mouse, select Time Shift Tool on <a href="tools_toolbar.html" title="Tools Toolbar">Tools Toolbar</a> or press the <span class="kbrd" style="background-color: #e0e0f0">F5</span> shortcut.
+</p>
+</div>
+<dl><dd></dd>
+<dd><div class="noresize"><map name="ImageMap_1_113115503"><area href="selection_tool.html" shape="rect" coords="11,0,38,27" alt="Selection tool for selecting audio before modifying it." title="Selection tool for selecting audio before modifying it."/><area href="envelope_tool.html" shape="rect" coords="39,0,66,27" alt="Envelope tool for modifying loudness of audio." title="Envelope tool for modifying loudness of audio."/><area href="draw_tool.html" shape="rect" coords="67,0,94,27" alt="Draw tool for changing the values of individual samples." title="Draw tool for changing the values of individual samples."/><area href="zoom_tool.html" shape="rect" coords="11,28,38,55" alt="Zoom tool to zoom in or out." title="Zoom tool to zoom in or out."/><area href="#" shape="rect" coords="39,28,66,55" alt="Time Shift tool to move audio clips into new positions." title="Time Shift tool to move audio clips into new positions."/><area href="multi_tool.html" shape="rect" coords="67,28,94,55" alt="Multi-Tool combines the actions of all five tools." title="Multi-Tool combines the actions of all five tools."/></map><img alt="ToolsToolbarTime-Shift.png" src="../m/images/d/da/toolstoolbartime_shift.png" width="94" height="55" usemap="#ImageMap_1_113115503"/></div></dd></dl>
+<div class="note">
+<p>The image above shows the <a href="tools_toolbar.html" title="Tools Toolbar">Tools Toolbar</a> with the <b>Time-Shift Tool</b> selected.
+</p>
+<ul><li> Click on this link to learn more about the <a href="tools_toolbar.html" title="Tools Toolbar">Tools Toolbar</a>.</li>
+<li> Click on other tools in the image to learn more about those tools.  </li></ul>
+</div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Contents">Contents</span></h2>
+<ul><li><a href="#time_shift">Time Shifting selected tracks to left or right</a></li>
+<li><a href="#clips">Time Shifting clips to left or right</a> </li>
+<li><a href="#vertical">Shifting clips vertically</a></li>
+<li><a href="#behind">Shifting behind time zero</a></li></ul>
+<div id="time_shift"></div> 
+<h2><span class="mw-headline" id="Time_Shifting_selected_tracks_to_left_or_right">Time Shifting selected tracks to left or right</span></h2>
+<p>To shift multiple tracks to left or right, there must be a <a href="audacity_selection.html" title="Audacity Selection">selection region</a> in all the tracks you want to time shift, and you must drag from inside the selection region in one of those tracks. 
+</p><p>To select multiple audio tracks for time shift, either 
+</p>
+<ul><li> click in the <a href="audio_tracks.html#Track_Control_Panel" title="Audio Tracks">Track Control Panel</a> of the first track you want to shift, then hold down <span class="kbrd" style="background-color: #e0e0f0">Ctrl</span> and click in the Track Control Panels of the other tracks you want to time shift</li>
+<li> use <span class="kbrd" style="background-color: #e0e0f0">Up</span> or <span class="kbrd" style="background-color: #e0e0f0">Down</span> arrow on the keyboard then <span class="kbrd" style="background-color: #e0e0f0">Enter</span> to select the other tracks you want to time shift. If the other tracks you want to time shift are adjacent to each other, you can simply hold <span class="kbrd" style="background-color: #e0e0f0">Shift</span> while using <span class="kbrd" style="background-color: #e0e0f0">Up</span> or <span class="kbrd" style="background-color: #e0e0f0">Down</span> arrow.      </li></ul>
+<p>Having selected multiple tracks for left/right shift, you may still want to drag only one of the selected tracks to fine tune its position. You can do this in several ways. The simplest is to hold <span class="kbrd" style="background-color: #e0e0f0">Shift</span> while dragging the track you want to time shift. You can also temporarily deselect the tracks you do not want to move by <span class="kbrd" style="background-color: #e0e0f0">Ctrl</span>-clicking their Track Control Panels or by arrowing to them then using <span class="kbrd" style="background-color: #e0e0f0">Enter</span>. Alternatively if some of the track lies outside the selection region, drag from outside that region, which moves the track but not the selection region.  
+</p><p>If you always want to retain synchronization between tracks when time shifting, you can alternatively enable <a href="sync_locked_track_groups.html" title="Sync-Locked Track Groups">Sync-Lock Tracks</a>. When this is enabled, dragging any of the linked audio or note tracks will shift all the tracks in that group (and any labels as well), whether tracks are selected or not.    
+</p>
+<div id="clips"></div> 
+<h2><span class="mw-headline" id="Time_Shifting_clips_to_left_or_right">Time Shifting clips to left or right</span></h2>
+<p>An individual <a href="audacity_tracks_and_clips.html" title="Audacity Tracks and Clips">clip</a> always shifts when dragged, though if the clip is partially selected, dragging to left or right from outside the selection region moves the clip without moving the region itself.
+</p>
+<ul><li> To shift a <i>group</i> of adjacent clips in one or more tracks to left or right, leaving other clips alone, use Selection Tool to drag a selection region over the clips you want to shift, then switch to Time Shift Tool and drag from any clip inside that region. Dragging from white space between clips will do nothing. </li>
+<li> To shift <i>all</i> clips in one track to left or right, hold <span class="kbrd" style="background-color: #e0e0f0">Shift</span> then drag. If you perform the SHIFT-drag from inside a selection region, all the clips will shift and the region will move with the clips. </li></ul>
+<div id="vertical"></div> 
+<h2><span class="mw-headline" id="Shifting_clips_vertically">Shifting clips vertically</span></h2>
+<p>When there are multiple audio tracks, a selected audio clip may be dragged up or down to another audio track of the same type. Mono audio clips may only be dragged to mono tracks and stereo clips may only be dragged to stereo tracks. To prevent unwanted left or right movement while dragging, press and hold the <span class="kbrd" style="background-color: #e0e0f0">Ctrl</span> key while dragging (on Mac, hold down the <span class="kbrd" style="background-color: #e0e0f0">&#8984;</span> key).
+</p>
+<div id="behind"></div> 
+<h2><span class="mw-headline" id="Shifting_behind_time_zero">Shifting behind time zero</span></h2>
+<p>If an audio track is dragged to the left (earlier on the Timeline) audio data may be <i>hidden</i> before the start of the track. This is indicated by the presence of two arrows at the left edge of the track. 
+</p>
+<dl><dd><span title="Arrows indicate there is audio before time=0.0"><img alt="Audio before zero.png" src="../m/images/3/35/audio_before_zero.png" width="490" height="185" /></span></dd></dl>
+<p>Audio before time zero is not <a href="file_export_dialog.html" title="File Export Dialog">exported</a> unless that audio is explicitly <a href="audacity_selection.html" title="Audacity Selection">selected</a> and <span class="menu">File &gt; Export &gt; <a href="file_menu_export.html#exportselectedaudio" title="File Menu: Export">Export Selected Audio...</a></span> used, or unless <a href="export_multiple.html" title="Export Multiple">Export Multiple</a> is used with "Split files based on Tracks". In this Export Multiple by tracks case, the entire audio of each track is exported, including that behind zero, regardless of any selection.  
+</p>
+<div class="note"> When dragging to align tracks or clips together (for example, to synchronize the tracks in a <a href="mixing.html" title="Mixing">mix</a>), it's generally best to <a href="zooming.html" title="Zooming">zoom in</a> so you can align the tracks with sufficient accuracy. However, Audacity has yellow vertical <a href="boundary_snap_guides.html" title="Boundary Snap Guides">Boundary Snap Guides</a> that appear when a drag snaps to a natural boundary such as the start or end of clips or <a href="label_tracks.html" title="Label Tracks">labels</a>. There are also various "<b>Align"</b> commands available in the <a href="tracks_menu.html" title="Tracks Menu">Tracks Menu</a> to automatically align audio.</div>   
+</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20180215020150
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.074 seconds
+Real time usage: 0.076 seconds
+Preprocessor visited node count: 217/1000000
+Preprocessor generated node count: 552/1000000
+Post‐expand include size: 2751/2097152 bytes
+Template argument size: 1410/2097152 bytes
+Highest expansion depth: 7/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   46.222      1 - -total
+ 69.17%   31.971      1 - Template:ToolsVariant
+ 16.49%    7.622     14 - Template:Key
+  8.34%    3.857      1 - Template:Intro
+  6.09%    2.813      1 - Template:Hint
+  3.51%    1.624      1 - Template:Note
+  2.26%    1.044      1 - Template:Ednote
+  2.25%    1.042      1 - Template:Menu
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4884-0!*!0!!*!5!* and timestamp 20180215020150 and revision id 58614
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Time_Shift_Tool">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

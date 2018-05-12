@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "メディアサーバー：">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "サーバーのステータス：">
+<!ENTITY sharing.iconpopup.status.on "オン">
+<!ENTITY sharing.iconpopup.status.off "オフ">
+<!ENTITY sharing.iconpopup.settings.link "設定">
+<!ENTITY sharing.prefpane.label "メディアサーバー">
+<!ENTITY sharing.prefpane.network.name.header.label "メディアサーバーネットワーク名">
+<!ENTITY sharing.prefpane.network.name.content.label "ネットワーク上の表示名（変更した場合は再起動が必要）：">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "画像フォルダ">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "画像を次からストリーミング：">
+<!ENTITY sharing.prefpane.images.choosefolder.label "フォルダを選択">

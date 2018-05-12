@@ -1,0 +1,7 @@
+SoX-v14.4.1-MSVC10-UTF8.V2.diff
+
+This patch was written by LoRd_MuldeR <mulder2@gmx.de> in order to add full Unicode support to SoX on the Windows platform.
+Note that this patch grabs the CLI arguments as UTF-16 and converts them to UTF-8 internally, which is the solution that required minimal code change.
+Drawback of this method, if any, is that we need to convert from UTF-8 to UTF-16 for all Win32 and CStdLib calls...
+
+(Acknowledgment: This method was originally inspired by the Win32 port of LAME)

@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "خادم الوسائط:">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "حالة الخادم:">
+<!ENTITY sharing.iconpopup.status.on "تشغيل">
+<!ENTITY sharing.iconpopup.status.off "إيقاف التشغيل">
+<!ENTITY sharing.iconpopup.settings.link "الإعدادات">
+<!ENTITY sharing.prefpane.label "خادم الوسائط">
+<!ENTITY sharing.prefpane.network.name.header.label "اسم شبكة خادم الوسائط">
+<!ENTITY sharing.prefpane.network.name.content.label "الاسم كما يظهر على الشبكة (تتطلّب التغييرات إعادة التشغيل):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "مجلّد الصور">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "نقل الصور من:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "اختيار مجلّد">

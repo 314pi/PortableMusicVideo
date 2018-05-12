@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "Ανανέωση">
+<!ENTITY push.playqueue.instructions "Μεταφέρετε και αποθέστε κομμάτια και λίστες εδώ, για να δημιουργήσετε μια ουρά ακρόασης.">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "Εκτός σύνδεσης">
+<!ENTITY sharing.push.deviceState.stopped "Διακόπηκε">
+<!ENTITY sharing.push.deviceState.playing "Αναπαραγωγή">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "Παύση">
+<!ENTITY sharing.push.deviceState.recording "Εγγραφή">
+<!ENTITY sharing.push.deviceState.nomedia "Δεν υπάρχουν πολυμέσα">

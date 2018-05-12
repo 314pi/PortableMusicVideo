@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Select Menu: Clip Boundaries - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Select_Menu_Clip_Boundaries rootpage-Select_Menu_Clip_Boundaries skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Select Menu: Clip Boundaries</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Select_Menu:_Clip_Boundaries#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="intro">A set of commands to enable you to make selections based on any <a href="audacity_tracks_and_clips.html" title="Audacity Tracks and Clips">Clips</a> that you may have in the project. </div>
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_1682988542"><area href="edit_menu.html" shape="rect" coords="2,3,26,19" alt="Edit Menu" title="Edit Menu"/><area href="select_menu.html" shape="rect" coords="33,3,70,19" alt="Select Menu" title="Select Menu"/><area href="view_menu.html" shape="rect" coords="77,3,106,19" alt="View Menu" title="View Menu"/><area href="transport_menu.html" shape="rect" coords="113,3,169,19" alt="Transport Menu" title="Transport Menu"/><area href="tracks_menu.html" shape="rect" coords="176,3,216,19" alt="Tracks Menu" title="Tracks Menu"/><area href="generate_menu.html" shape="rect" coords="223,3,277,19" alt="Generate Menu" title="Generate Menu"/><area href="effect_menu.html" shape="rect" coords="284,3,317,19" alt="Effect Menu" title="Effect Menu"/><area href="analyze_menu.html" shape="rect" coords="324,3,368,19" alt="Analyze Menu" title="Analyze Menu"/><area href="help_menu.html" shape="rect" coords="375,3,404,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="411,3,441,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="select_menu.html#all" shape="rect" coords="39,23,298,45" alt="Selects all of the audio in all of the tracks" title="Selects all of the audio in all of the tracks"/><area href="select_menu.html#none" shape="rect" coords="39,45,298,67" alt="Deselects all of the audio in all of the tracks" title="Deselects all of the audio in all of the tracks"/><area href="select_menu_tracks.html" shape="rect" coords="39,67,298,89" alt="For extending a selection to more tracks" title="For extending a selection to more tracks"/><area href="select_menu_region.html" shape="rect" coords="39,89,298,111" alt="For modifying, saving and restoring a selection" title="For modifying, saving and restoring a selection"/><area href="select_menu_spectral.html" shape="rect" coords="39,111,298,133" alt="For making a selection of a frequency range" title="For making a selection of a frequency range"/><area href="#" shape="rect" coords="39,133,298,155" alt="For modifying a selection, taking account of clips" title="For modifying a selection, taking account of clips"/><area href="select_menu.html#cursor_to_stored_cursor_position" shape="rect" coords="39,162,298,184" alt="Selects from the position of the cursor to the previously stored cursor position" title="Selects from the position of the cursor to the previously stored cursor position"/><area href="select_menu.html#store_cursor_position" shape="rect" coords="39,184,298,206" alt="Stores the current cursor position for use in a later selection" title="Stores the current cursor position for use in a later selection"/><area href="select_menu_at_zero_crossings.html" shape="rect" coords="39,213,298,235" alt="Moves the edges of a selection region (or the cursor position) slightly so they are at a rising zero crossing point" title="Moves the edges of a selection region (or the cursor position) slightly so they are at a rising zero crossing point"/><area href="#previous_clip_boundary_to_cursor" shape="rect" coords="310,136,571,158" alt="Selects from the current cursor position back to the right-hand edge of the previous clip" title="Selects from the current cursor position back to the right-hand edge of the previous clip"/><area href="#cursor_to_next_clip_boundary" shape="rect" coords="310,158,571,180" alt="Selects from the current cursor position forward to the left-hand edge of the next clip" title="Selects from the current cursor position forward to the left-hand edge of the next clip"/><area href="#previous_clip" shape="rect" coords="310,180,571,202" alt="Moves the selection to the previous clip" title="Moves the selection to the previous clip"/><area href="#next_clip" shape="rect" coords="310,202,571,224" alt="Moves the selection to the next clip" title="Moves the selection to the next clip"/></map><img alt="Select-Clip BoundariesMenu.png" src="../m/images/5/52/select_clip_boundariesmenu.png" width="584" height="243" usemap="#ImageMap_1_1682988542"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p>
+</li></ul>
+<div id="previous_clip_boundary_to_cursor"></div>
+<h2><span class="mw-headline" id="Previous_Clip_Boundary_to_Cursor_.C2.A0">Previous Clip Boundary to Cursor &#160;<font size="-1"></font></span></h2>
+<div class="note"><b>Previous Clip Boundary to Cursor</b> and the three related commands below <b>Cursor to Next Clip Boundary</b>, <b>Previous Clip</b> and <b>Next Clip</b> use the clips in the <a href="audacity_selection.html" title="Audacity Selection">selected</a> track or tracks. If no tracks are selected, the clips in all tracks are used.</div>
+<p>Selects from the current position of the editing cursor or selection backwards to the previous <a href="audacity_tracks_and_clips.html" title="Audacity Tracks and Clips">clip</a> boundary, so extending the selection with each use to include further clips (or blank space) until the start of the track is reached. 
+</p>
+<div class="example"><b>Example:</b>
+<dl><dd>Starting with this selection ... </dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries InitialSelection.png" src="../m/images/8/89/selectmenuclipboundaries_initialselection.png" width="587" height="117" /></span></dd>
+<dd>after the first command the selection is extended from the editing cursor position to the start of the clip:</dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries PrevToCursor 1.png" src="../m/images/b/b7/selectmenuclipboundaries_prevtocursor_1.png" width="587" height="117" /></span></dd>
+<dd>after the second command the selection is extended to the end of the previous clip:</dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries PrevToCursor 2.png" src="../m/images/0/0e/selectmenuclipboundaries_prevtocursor_2.png" width="587" height="117" /></span></dd>
+<dd>and after the third command the selection is extended to the start of the previous clip:</dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries PrevToCursor 3.png" src="../m/images/c/cf/selectmenuclipboundaries_prevtocursor_3.png" width="587" height="117" /></span></div></dd></dl>
+<div id="cursor_to_next_clip_boundary"></div>
+<h2><span class="mw-headline" id="Cursor_to_Next_Clip_Boundary_.C2.A0">Cursor to Next Clip Boundary &#160;<font size="-1"></font></span></h2>
+<p>Selects from the current position of the editing cursor or selection forwards to the next next clip boundary, so extending the selection with each use to include further clips (or blank space) until the final clip is reached.  
+</p>
+<div class="example"><b>Example:</b>
+<dl><dd>Starting with this selection ... </dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries InitialSelection.png" src="../m/images/8/89/selectmenuclipboundaries_initialselection.png" width="587" height="117" /></span></dd>
+<dd>after the first command the selection is extended from the editing cursor position to the end of the clip:</dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries CursorToNext 1.png" src="../m/images/3/38/selectmenuclipboundaries_cursortonext_1.png" width="587" height="117" /></span></dd>
+<dd>after the second command the selection is extended to the start of the next clip:</dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries CursorToNext 2.png" src="../m/images/c/c7/selectmenuclipboundaries_cursortonext_2.png" width="587" height="118" /></span></dd>
+<dd>and after the third command the selection is extended to the end of the next clip:</dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries CursorToNext 3.png" src="../m/images/c/c9/selectmenuclipboundaries_cursortonext_3.png" width="587" height="117" /></span></div></dd></dl>
+<div id="previous_clip"></div>
+<h2><span class="mw-headline" id="Previous_Clip_.C2.A0Alt_.2B_P">Previous Clip &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Alt + P</span></font></span></h2>
+
+<p>Moves or creates a selection so as to fully select in the current clip where the editing cursor or selection is. However if that cursor is already exactly at the start of the current clip or if the current clip is already fully selected, this command will fully select in the previous clip. Further use of Previous Clip then fully selects in the previous clip until the first clip is reached.  
+</p>
+<div class="example"><b>Example:</b>
+<dl><dd>Starting with this selection ... </dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries InitialSelection.png" src="../m/images/8/89/selectmenuclipboundaries_initialselection.png" width="587" height="117" /></span></dd>
+<dd>after the first command the clip containing the cursor is selected:</dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries Previous 1.png" src="../m/images/0/02/selectmenuclipboundaries_previous_1.png" width="587" height="117" /></span></dd>
+<dd>after the second command the previous clip is selected:</dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries Previous 2.png" src="../m/images/f/f4/selectmenuclipboundaries_previous_2.png" width="587" height="118" /></span></dd>
+<dd>Subsequent commands will do nothing since the first clip in the track is selected.</div></dd></dl>
+<div id="next_clip"></div>
+<h2><span class="mw-headline" id="Next_Clip_.C2.A0Alt_.2B_N">Next Clip &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Alt + N</span></font></span></h2>
+<p>Moves or creates a selection so as to fully select in the next clip. If the editing cursor is exactly at the start of a clip, this command selects all of that current clip.
+</p>
+<div class="example"><b>Example:</b>
+<dl><dd>Starting with this selection ... </dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries InitialSelection.png" src="../m/images/8/89/selectmenuclipboundaries_initialselection.png" width="587" height="117" /></span></dd>
+<dd>after the first command the next clip is selected:</dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries Next 1.png" src="../m/images/5/5b/selectmenuclipboundaries_next_1.png" width="587" height="117" /></span></dd>
+<dd>after the second command the next clip is selected:</dd>
+<dd><span title="Initial Selection"><img alt="SelectMenuClipBoundaries Next 2.png" src="../m/images/4/4d/selectmenuclipboundaries_next_2.png" width="587" height="117" /></span></dd>
+<dd>Subsequent commands will do nothing since the last clip in the track is selected.</div></dd></dl>
+<p><br />
+</p>
+<div class="note">To move the editing cursor to the start of the next or previous clip without selecting its audio, see the <span class="menu">Transport &gt; <a href="transport_menu_cursor_to.html#previous_clip_boundary" title="Transport Menu: Cursor to">Cursor to</a></span> commands for Previous Clip Boundary and Next Clip Boundary.</div>
+<p><a href="select_menu.html" title="Select Menu"><b>&lt;</b>&#160; Back to: Select Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020243
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.113 seconds
+Real time usage: 0.118 seconds
+Preprocessor visited node count: 209/1000000
+Preprocessor generated node count: 6572/1000000
+Post‐expand include size: 6154/2097152 bytes
+Template argument size: 4454/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   61.172      1 - -total
+ 79.28%   48.495      1 - Template:Menus
+ 73.11%   44.723      1 - Template:All-menus
+  4.60%    2.815      4 - Template:Shortcut
+  4.20%    2.567      2 - Template:Note
+  3.15%    1.926      1 - Template:Intro
+  2.83%    1.732      4 - Template:Example
+  2.60%    1.591      1 - Template:ClickTip
+  1.92%    1.174      2 - Template:Ednote
+  1.69%    1.031      1 - Template:Menu
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:5622-0!*!0!!*!5!* and timestamp 20180215020243 and revision id 54758
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Select_Menu:_Clip_Boundaries">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

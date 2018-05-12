@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Simplifying Audacity - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Simplifying_Audacity rootpage-Simplifying_Audacity skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Simplifying Audacity</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Simplifying_Audacity#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">.
+
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top"><b>Simplified menus no longer work in Audacity 2.1.2.</b> You can use the feature in Audacity 2.1.1 from <a rel="nofollow" class="external free" href="http://www.oldfoss.com/Audacity.html">http://www.oldfoss.com/Audacity.html</a>.
+</td></tr></table>
+</div>  
+<div class="note">This page is primarily intended for <b>teachers</b> (and anyone working with others) who want to create an easier version of Audacity with fewer menu items.</div>
+<div class="advice"><p>These are advanced instructions that let you use freely available language tools to make a customized language file for Audacity that shows fewer menu items. </p> <p>The customized language file can be in English or any other <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Changing_the_current_language#list">supported language</a>.</p></div> 
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Instructions">Instructions</span></h2>
+<div class="note">Eventually we hope to provide a customized language file with reduced menus ourself. Meantime, you can follow the below instructions to create your own file. If you need help following these instructions, please ask on the <a rel="nofollow" class="external text" href="https://forum.audacityteam.org">Audacity Forum</a>. </div>
+<ol><li> Obtain <a rel="nofollow" class="external text" href="https://sourceforge.net/projects/poedit/">Poedit</a>. </li>
+<li> Obtain the current version of Audacity  from <a rel="nofollow" class="external free" href="http://audacityteam.org/download/">http://audacityteam.org/download/</a>.</li>
+<li> Obtain the translations file for your language from <a rel="nofollow" class="external free" href="https://github.com/audacity/audacity/tree/master/locale">https://github.com/audacity/audacity/tree/master/locale</a>.
+<ul><li> For English language, right-click over "audacity.pot" and save the link or target to your computer.</li>
+<li> For languages other than English, right-click over the ".po" file for your language and save the link or target to your computer. You can check the two digit code that corresponds to your language <a href="languages.html#list" title="Languages">here</a>.</li></ul></li>
+<li> Load the .po or .pot file into Poedit.</li>
+<li> Add a "<b>!</b>" (exclamation mark) to left of the translation of each menu item you want to hide. The .pot file will not have translations, so just add a "<b>!</b>" in the empty translation box. <div class="advice"><b>View &gt; Simplified View:</b> <ul><li>You can provide a <i>View &gt; Simplified View</i> checkbox menu item to turn your simplified language on or off. To do this, ADD "Simplified View" (without the "!") in the empty translation box in the .pot file, or REMOVE the "<b>!</b>" from the translation of "!Simplified View" in the .po file.<li>If you provide View &gt; Simplified View and use the .pot file you should translate the items you want to remove and place "!" in front of them. Otherwise when you uncheck Simplified View there will be empty menu items.</ul></div>  </li>
+<li> Click <span class="menu">File &gt; Save as...</span>, type "Audacity" (without quotes) in the file name box and save. Poedit may warn you that some strings are not translated, or that some settings have not been specified, but that is not a problem.  Poedit will save "Audacity.po" and "Audacity.mo" (or "audacity.po" and "audacity.mo" with lower case "a" on Mac and Linux). All you need is the "Audacity.mo" or "audacity.mo" file.  </li>
+<li> Open the location to install your new "Audacity.mo" file.
+<ul><li> On <b>Windows</b>, open the "Languages" directory inside the Audacity installation directory.</li>
+<li> On <b>Mac</b>, right-click or control-click over Audacity.app &gt; Show Package Contents then open the "Contents" directory then the "Resources" directory. </li>
+<li> On <b>GNU/Linux</b>, open the "locale" directory in usr/share/ (for Audacity packaged builds) or in usr/local/share (if you built Audacity yourself).</li></ul></li>
+<li> In the directory opened in Step 7 above
+<ul><li> For <b>English language</b>, on Windows and Mac, create a folder called "<b>en-simple</b>" (without quotes) and paste your saved "Audacity.mo" or "audacity.mo" file inside that. On Linux, create a folder "<b>en-simple</b>", create a folder "<b>LC_MESSAGES</b>" inside that, then paste your "audacity.mo" file inside the "LC_MESSAGES" folder.   </li>
+<li> For <b>languages other than English</b>, open the directory for your language (for example, "fr" for French) and paste in the "Audacity.mo" file you saved so that it replaces the previous "Audacity.mo". </li></ul></li>
+<li> Restart Audacity and select your modified non-English language in <a href="interface_preferences.html" title="Interface Preferences">Interface Preferences</a> (if it is not already displaying). To display the simplified English language, choose "Simplified".</li></ol>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">Not all menu and other items can be hidden yet. For example, the Mute/Solo buttons, shipped Nyquist and LADSPA plug-ins and Preferences items cannot be hidden.
+</td></tr></table>
+</div>
+
+<!-- 
+NewPP limit report
+Cached time: 20180215020235
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.070 seconds
+Real time usage: 0.074 seconds
+Preprocessor visited node count: 218/1000000
+Preprocessor generated node count: 981/1000000
+Post‐expand include size: 4200/2097152 bytes
+Template argument size: 1436/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   26.600      1 - -total
+ 84.19%   22.395      1 - Template:I18n
+ 78.54%   20.892      1 - Template:I18n_box
+ 66.56%   17.706      1 - Template:I18n_list
+ 32.57%    8.665      4 - Template:I18n_link
+ 18.56%    4.937      4 - Template:Autoglossonym
+  4.71%    1.254      2 - Template:Advice
+  4.44%    1.182      1 - Template:Ednote
+  3.77%    1.002      1 - Template:Menu
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:2496-0!*!0!*!*!5!* and timestamp 20180215020235 and revision id 58211
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Simplifying_Audacity">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

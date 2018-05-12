@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "更新">
+<!ENTITY push.playqueue.instructions "このデバイスのオンザフライリスニングキューを作成するには、トラックまたは再生リストをここにドラッグアンドドロップします。">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "オフライン">
+<!ENTITY sharing.push.deviceState.stopped "停止中">
+<!ENTITY sharing.push.deviceState.playing "再生中">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "一時停止中">
+<!ENTITY sharing.push.deviceState.recording "録画時間">
+<!ENTITY sharing.push.deviceState.nomedia "メディアなし">

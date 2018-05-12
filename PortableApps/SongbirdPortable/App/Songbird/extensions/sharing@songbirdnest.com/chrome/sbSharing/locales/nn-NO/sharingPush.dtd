@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "Oppdater">
+<!ENTITY push.playqueue.instructions "Dra og slipp spor eller spillelister her for å lage en lytterekkefølge for denne enheten">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "Ikke tilkoblet">
+<!ENTITY sharing.push.deviceState.stopped "Stoppet">
+<!ENTITY sharing.push.deviceState.playing "Spiller av">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "Satt på pause">
+<!ENTITY sharing.push.deviceState.recording "Tar opp">
+<!ENTITY sharing.push.deviceState.nomedia "Media mangler">

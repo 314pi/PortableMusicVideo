@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Help Menu: Tools - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Help_Menu_Tools rootpage-Help_Menu_Tools skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Help Menu: Tools</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Help_Menu:_Tools#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="intro">A toolkit for image capture and benchmarking for diagnostic purposes. </div>
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_616512192"><area href="analyze_menu.html" shape="rect" coords="0,3,26,19" alt="Analyze Menu" title="Analyze Menu"/><area href="help_menu.html" shape="rect" coords="33,3,62,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="69,3,99,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="help_menu.html#quick_help" shape="rect" coords="39,23,199,45" alt="A brief version of help with some of the most essential information" title="A brief version of help with some of the most essential information"/><area href="help_menu.html#manual" shape="rect" coords="39,45,199,67" alt="Opens the manual in the default browser" title="Opens the manual in the default browser"/><area href="#" shape="rect" coords="39,74,199,96" alt="Takes you to Screenshot tools and Benchmarking" title="Takes you to Screenshot tools and Benchmarking"/><area href="help_menu_diagnostics.html" shape="rect" coords="39,103,199,125" alt="A set of diagnostic tools" title="A set of diagnostic tools"/><area href="help_menu.html#check_for_updates" shape="rect" coords="39,132,199,154" alt="Checks online to see if this is the latest version of Audacity" title="Checks online to see if this is the latest version of Audacity"/><area href="help_menu.html#about_audacity" shape="rect" coords="39,154,199,176" alt="Brings a dialog with information about Audacity, such as who wrote it, what features are enabled and the GNU GPL v2 license" title="Brings a dialog with information about Audacity, such as who wrote it, what features are enabled and the GNU GPL v2 license"/><area href="#screenshot_tools" shape="rect" coords="211,77,364,99" alt="A tool, mainly used in documentation, to capture screenshots of Audacity" title="A tool, mainly used in documentation, to capture screenshots of Audacity"/><area href="#run_benchmark" shape="rect" coords="211,99,364,121" alt="A tool for measuring the performance of one part of Audacity" title="A tool for measuring the performance of one part of Audacity"/></map><img alt="Help-ToolsMenu.png" src="../m/images/d/d2/help_toolsmenu.png" width="377" height="184" usemap="#ImageMap_1_616512192"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p>
+<div id="screenshot_tools"></div>
+<h2><span class="mw-headline" id="Screenshot_Tools..._.C2.A0">Screenshot Tools... &#160;<font size="-1"></font></span></h2>
+<p>Displays the "<b>Screen Capture Frame</b>" dialog. This tool lets you capture all or part of your project window to an image file in <b>PNG</b> format.  Click the <span class="button">Choose...</span> button to pick the location where you want to save the screenshot. Then click the button corresponding to the part of the project window you want to capture. Most of these buttons are self-explanatory. 
+</p>
+<div class="note"><b>Screenshot Tools can be handy for capturing</b>:
+<ul><li> <a href="tracks.html" title="Tracks">Tracks</a> with their <a href="audacity_waveform.html" title="Audacity Waveform">waveform</a> or <a href="audio_track_dropdown_menu.html#spgram" title="Audio Track Dropdown Menu">spectrogram</a> (use any of the three <span class="button"> ... Tracks</span> buttons) </li>
+<li>  Plots of amplitude against frequency for a selected region (use any of the <span class="button">Capture Window</span> buttons to capture the <a href="analyze_menu.html#Plot_Spectrum..." title="Analyze Menu">Frequency Analysis</a> window on its own). </div></li></ul>
+<h3><span class="mw-headline" id="Capture_entire_window_or_screen">Capture entire window or screen</span></h3>
+<p>The buttons in this section enable you to take screenshots of particular parts of the screen.
+</p><p>Pressing any of these buttons will take the screenshot of that entity and place it in the location specified in <b>Save images to</b>.
+</p>
+<ul><li> <span class="button">Capture Window Only</span> captures the window without its title bar.</li>
+<li> <span class="button">Capture Full Window</span> captures the window including its title bar.</li>
+<li> <span class="button">Capture Window Plus</span> captures the window including its title bar, plus a small border region outside the window for context.</li>
+<li> <span class="button">Capture Full Screen</span> captures the entire computer screen as you see it.</li></ul>
+<h3><span class="mw-headline" id="Capture_part_of_a_project_window">Capture part of a project window</span></h3>
+<p>The buttons in this section enable you to take screenshots of particular parts of the Audacity window such as toolbars and selected tracks.
+</p><p>Pressing any of these buttons will take the screenshot of that entity and place it in the location specified in <b>Save images to</b>.
+</p>
+<h3><span class="mw-headline" id="Scale">Scale</span></h3>
+<p>The buttons in this section can be used to change the scale of the image prior to using one of the screenshot capture buttons above:
+</p>
+<ul><li> The <span class="button">Sec</span>, <span class="button">Min</span> and <span class="button">One Hour</span> buttons zoom the project window horizontally so that a little more than the length indicated on the button is shown on the <a href="timeline.html" title="Timeline">Timeline</a>.   </li>
+<li> The three <span class="button"> ... Tracks</span> buttons zoom all the tracks in the project to a preset height. For example, <span class="button">Short Tracks</span> displays the tracks at minimal height so they only show the <a href="audio_track_dropdown_menu.html" title="Audio Track Dropdown Menu">Audio Track Dropdown Menu</a> and Collapse/Expand button <img alt="TrackCollapse.png" src="../m/images/5/5d/trackcollapse.png" width="62" height="20" />. </li></ul>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top"><b>Limitations:</b>
+<ul><li> Screenshot Tools resets all the <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a> to default positions and settings. </li>
+<li> Some individual parts of the interface cannot be captured, such as menus, and dialogs that do not allow you to click anywhere else while the dialog is open. </li></ul>
+<ul style="list-style-image: none; list-style-type: none">As alternatives, you can use <span class="menu">File &gt; <a href="file_menu.html#Print..." title="File Menu">Print...</a></span>&#160; to print an image of the current tracks with the <a href="timeline.html" title="Timeline">Timeline</a> above, excluding the <a href="audio_tracks.html#Track_Control_Panel" title="Audio Tracks">Track Control Panel</a> and vertical scale. Or you can use the operating system commands to capture the entire screen or the active window, then open your favorite image editor and paste then save the image.</ul>
+</td></tr></table>
+</div>
+<div id="run_benchmark"></div>
+<h2><span class="mw-headline" id="Run_Benchmark..._.C2.A0">Run Benchmark... &#160;<font size="-1"></font></span></h2>
+<p>Performs a mock editing routine to test how fast Audacity runs on your machine, expressed in terms of the estimated number of simultaneous tracks that could be played at once in a 44100 <i><b><a href="glossary.html#hz" title="Glossary">Hz</a></b></i>, 16 <i><b><a href="glossary.html#bit" title="Glossary">bits</a></b></i> per <i><b><a href="glossary.html#sample" title="Glossary">sample</a></b></i> project.
+</p><p>If the <i><b><a href="glossary.html#sample_rate" title="Glossary">sample rate</a></b></i> of the tracks differs from the <a href="selection_toolbar.html" title="Selection Toolbar">Project Rate</a>, causing <a href="quality_preferences.html#conversion" title="Quality Preferences">real-time sample rate conversion</a>, the number of tracks you can play may be lower than the Benchmark result. Using stereo or mono tracks, or using the default 32-bit  <i><b><a href="glossary.html#sample_format" title="Glossary">sample format</a></b></i> instead of 16-bit should not significantly change the number of tracks you can play. 
+</p><p><br />
+<a href="help_menu.html" title="Help Menu"><b>&lt;</b>&#160; Back to: Help Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020314
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.091 seconds
+Real time usage: 0.094 seconds
+Preprocessor visited node count: 274/1000000
+Preprocessor generated node count: 6634/1000000
+Post‐expand include size: 3918/2097152 bytes
+Template argument size: 1646/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   59.977      1 - -total
+ 71.50%   42.885      1 - Template:Menus
+ 66.30%   39.765      1 - Template:All-menus
+ 10.64%    6.379     12 - Template:Button
+  4.66%    2.796      1 - Template:Advice
+  3.86%    2.312      1 - Template:Note
+  2.85%    1.708      2 - Template:Shortcut
+  2.68%    1.606      1 - Template:ClickTip
+  2.31%    1.386      1 - Template:Intro
+  1.99%    1.192      1 - Template:Menu
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:5662-0!*!0!!*!5!* and timestamp 20180215020314 and revision id 55724
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Help_Menu:_Tools">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

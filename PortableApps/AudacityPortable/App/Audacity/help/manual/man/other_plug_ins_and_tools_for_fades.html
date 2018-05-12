@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Other plug-ins and tools for fades - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Other_plug-ins_and_tools_for_fades rootpage-Other_plug-ins_and_tools_for_fades skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Other plug-ins and tools for fades</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Other_plug-ins_and_tools_for_fades#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="intro">
+<p>This page lists some downloadable or more advanced tools for making <a href="fade_and_crossfade.html" title="Fade and Crossfade">fades</a>.
+</p>
+</div>
+<h2><span class="mw-headline" id="Contents">Contents</span></h2>
+<ol><li><a href="#fade">Fade In and Out</a></li>
+<li><a href="#envelope">Text Envelope</a></li>
+<li><a href="#make_fade">Creating Fades from the Nyquist Prompt</a></li></ol>
+<div id="fade"></div>
+<h2><span class="mw-headline" id="Fade_In_and_Out"><a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Nyquist_Effect_Plug-ins#Fade_In_and_Out">Fade In and Out</a></span></h2>
+<p>This is a Nyquist plug-in that can apply a linear fade in and fade out to the selected audio.
+</p>
+<div class="note">Nyquist plug-ins extend the capabilities of Audacity and are supported on Windows, Mac and GNU/Linux. Instructions for installing Nyquist plug-ins can be found on our Wiki page  <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Download_Nyquist_Plug-ins#">Download Nyquist Plug-ins</a>.</div>
+<p>This tool was written by <a rel="nofollow" class="external text" href="http://www.garyallendj.com/davidsky/index.html">David R Sky</a> to provide a simple, accessible way for visually impaired and other non-mouse users to apply fade in and out effects. The current Audacity 2.x has a Selection Toolbar providing a screen-reader friendly display of selection start time and duration (* except on Linux) which can be used for similar purpose, but this effect may be found to be quicker and easier to use.
+</p>
+<div id="envelope"></div>
+<h2><span class="mw-headline" id="Text_Envelope"><a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Nyquist_Effect_Plug-ins#Text_Envelope">Text Envelope</a></span></h2>
+<p>This is a Nyquist plug-in that can apply multiple changes to the amplitude of the selected audio, fading from one level to another as required.
+</p><p>This tool was written by Steve Daulton to provide an accessible alternative to the "Envelope Tool" for visually impaired and other users that do not use pointing devices.
+</p>
+<div id="make_fade"></div>
+<h2><span class="mw-headline" id="Creating_Fades_from_the_Nyquist_Prompt">Creating Fades from the Nyquist Prompt</span></h2>
+<p>Nyquist is a programming language that is included in Audacity. It can be used to write <a href="effect_menu.html#Nyquist_Effects" title="Effect Menu">plug-ins</a> for Audacity that may provide new effects, generators and analysis plug-ins. Nyquist commands may also be run directly in Audacity by entering code into the <a href="effect_menu.html#Nyquist" title="Effect Menu">Nyquist Prompt</a> Effect. Below are a few short code samples that may be run in the Nyquist Prompt to produce fades to selected audio. More information about Nyquist programming may be found in the <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Nyquist">Nyquist</a> section of the Wiki.
+</p><p><br />
+</p>
+<div class="note">The code examples below require that the "Legacy (version 3) syntax" option is selected</div>
+<pre>; Linear Fade Out:
+(mult s (pwlv 1 1 0))
+</pre>
+<pre>; Linear Fade In.
+; To avoid a click at the end, the pwlv envelope
+; extends beyond the end of the selection.
+(mult s (pwlv 0 1 1 1.1 1))
+</pre>
+<pre>; Multi-step fade out.
+(mult s (pwlv 1 0.4 0.775 0.8 0.447 0.9 0.316 0.95 0.224 1.0 0.0))
+</pre>
+<pre>; sine curve fade in:
+(mult s 0.5
+  (sum 1
+    (osc (hz-to-step (/ (get-duration 2)))
+      1 *table* -90)))
+</pre>
+<pre>; wiggly fade:
+(setf wiggle (mult 0.2 (hzosc (/ 6.0 (get-duration 1)))))
+(mult s (sum 1.0 wiggle))
+</pre>
+<p><br />
+</p>
+<div class="note">The above examples may be run without the "Legacy (version 3) syntax" option selected if the <b>S</b> parameter is replaced with <b>*track*</b>. One example using version 4 syntax is given below.</div>
+<pre>; wiggly fade out (version 4 syntax):
+(setf wiggle (mult 0.2 (hzosc (/ 6.0 (get-duration 1)))))
+(mult *track* (pwlv 1 1 0) (sum 1.0 wiggle))
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20180215020722
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.025 seconds
+Real time usage: 0.027 seconds
+Preprocessor visited node count: 54/1000000
+Preprocessor generated node count: 141/1000000
+Post‐expand include size: 1371/2097152 bytes
+Template argument size: 1195/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    7.215      1 - -total
+ 62.59%    4.516      3 - Template:Hint
+ 31.34%    2.261      3 - Template:Note
+ 25.11%    1.812      1 - Template:Intro
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4964-0!*!0!!*!*!* and timestamp 20180215020722 and revision id 55108
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Other_plug-ins_and_tools_for_fades">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

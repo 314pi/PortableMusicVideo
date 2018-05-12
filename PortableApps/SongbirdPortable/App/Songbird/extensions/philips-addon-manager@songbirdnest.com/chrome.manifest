@@ -1,0 +1,30 @@
+locale  philips-addon-manager he jar:chrome/philips-addon-manager.jar!/locale/he/
+locale  philips-addon-manager sv-SE jar:chrome/philips-addon-manager.jar!/locale/sv-SE/
+locale  philips-addon-manager hu jar:chrome/philips-addon-manager.jar!/locale/hu/
+locale  philips-addon-manager zh-CN jar:chrome/philips-addon-manager.jar!/locale/zh-CN/
+locale  philips-addon-manager it jar:chrome/philips-addon-manager.jar!/locale/it/
+locale  philips-addon-manager th jar:chrome/philips-addon-manager.jar!/locale/th/
+locale  philips-addon-manager fi jar:chrome/philips-addon-manager.jar!/locale/fi/
+content  philips-addon-manager  jar:chrome/philips-addon-manager.jar!/content/
+locale  philips-addon-manager de jar:chrome/philips-addon-manager.jar!/locale/de/
+locale  philips-addon-manager nb-NO jar:chrome/philips-addon-manager.jar!/locale/nb-NO/
+skin philips-addon-manager classic/1.0 jar:chrome/philips-addon-manager.jar!/skin/
+locale  philips-addon-manager pt-BR jar:chrome/philips-addon-manager.jar!/locale/pt-BR/
+locale  philips-addon-manager ko jar:chrome/philips-addon-manager.jar!/locale/ko/
+locale  philips-addon-manager ar jar:chrome/philips-addon-manager.jar!/locale/ar/
+locale  philips-addon-manager cs jar:chrome/philips-addon-manager.jar!/locale/cs/
+locale  philips-addon-manager el jar:chrome/philips-addon-manager.jar!/locale/el/
+locale  philips-addon-manager sk jar:chrome/philips-addon-manager.jar!/locale/sk/
+locale  philips-addon-manager tr jar:chrome/philips-addon-manager.jar!/locale/tr/
+locale  philips-addon-manager nl jar:chrome/philips-addon-manager.jar!/locale/nl/
+overlay chrome://songbird/content/xul/layoutBaseOverlay.xul chrome://philips-addon-manager/content/main.xul
+locale  philips-addon-manager pt-PT jar:chrome/philips-addon-manager.jar!/locale/pt-PT/
+locale  philips-addon-manager da jar:chrome/philips-addon-manager.jar!/locale/da/
+locale  philips-addon-manager fr jar:chrome/philips-addon-manager.jar!/locale/fr/
+locale  philips-addon-manager es-ES jar:chrome/philips-addon-manager.jar!/locale/es-ES/
+locale  philips-addon-manager en-US jar:chrome/philips-addon-manager.jar!/locale/en-US/
+style chrome://mozapps/content/extensions/extensions.xul chrome://philips-addon-manager/skin/addons.css
+locale  philips-addon-manager zh-TW jar:chrome/philips-addon-manager.jar!/locale/zh-TW/
+locale  philips-addon-manager ja jar:chrome/philips-addon-manager.jar!/locale/ja/
+locale  philips-addon-manager pl jar:chrome/philips-addon-manager.jar!/locale/pl/
+locale  philips-addon-manager ru jar:chrome/philips-addon-manager.jar!/locale/ru/

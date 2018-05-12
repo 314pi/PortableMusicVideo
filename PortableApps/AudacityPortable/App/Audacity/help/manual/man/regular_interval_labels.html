@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Regular Interval Labels - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Regular_Interval_Labels rootpage-Regular_Interval_Labels skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Regular Interval Labels</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Regular_Interval_Labels#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+
+<p><br />
+</p>
+
+<div class="intro"><i><b>Regular Interval Labels</b></i> places point <a href="label_tracks.html" title="Label Tracks">labels</a> in a label track so as to divide the associated audio into smaller, equally-sized segments. This can be useful for distributing a large file on the internet or ensuring that all exported files are the same size. <p>You can either choose the number of labels to be created or the interval between them. Each label produced can contain specified label text and the labels can be given sequential numbers before or after the text.</p></div>
+<dl><dd><b>Accessed by:</b> <span class="menu">Analyze &gt; Regular Interval Labels...</span></dd>
+<dd><span title="Regular Interval Labels effect dialog"><a href="http://alphamanual.audacityteam.org/man/File:Regular_Interval_Labels.png" class="image"><img alt="Regular Interval Labels.png" src="../m/images/8/80/regular_interval_labels.png" width="482" height="323" /></a></span></dd></dl>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Bulbicon.png" class="image" title="Bulb icon"><img alt="Bulb icon" src="../m/images/d/d7/bulbicon.png" width="32" height="32" /></a>
+</td>
+<td align="left" valign="top">After running "Regular Interval Labels", you can choose <span class="menu">File &gt; Save Other &gt; <a href="export_multiple.html" title="Export Multiple">Export Multiple...</a></span> to export all the files in one process based on the label points.
+</td></tr></table>
+</div>
+<div id="method"></div> 
+<h2><span class="mw-headline" id="Use_.22Number_of_labels.22_OR_.22Label_interval.22">Use "Number of labels" OR "Label interval"</span></h2>
+<p>This enables you to choose the label placement method:
+</p><p>To create a chosen number of labels within the selection, select <span class="button">Number of Labels &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span> from the dropdown (this is the default setting).
+</p><p>To place labels within the selection a chosen distance apart, select <span class="button">Label Interval &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span> from the dropdown then enter that distance in <b>Label interval (seconds)</b>.
+</p>
+<h3><span class="mw-headline" id="Number_of_labels">Number of labels</span></h3>
+<p>If you selected <span class="button">Number of Labels &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span> (the default) then your specified number of labels (default is 10) will be created. The number can be changed by typing in the input box, the allowed range is between 2 and 1000 labels.
+</p>
+<h3><span class="mw-headline" id="Label_interval">Label interval</span></h3>
+<p>If you selected <span class="button">Label Interval &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span> then the labels will be placed at your specified interval within the selected audio.  The default interval is 60.0 seconds. The allowed range is between 0.001 and 3600 seconds.
+</p>
+<div id="fit"></div>
+<h2><span class="mw-headline" id="Adjust_label_interval_to_fit_length">Adjust label interval to fit length</span></h2>
+<p>This only operates if you have chosen the <i>Label interval</i> placement method. <span class="button">Number of Labels &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span>
+</p><p>If you select <span class="button">Yes &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span> from the dropdown for this control, it adjusts your chosen label interval if necessary to make <i>all</i> the audio segments of equal length, including the final segment between the last label and the end of the selection. 
+</p><p>When set to <span class="button">No &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span>, the interval between labels will be exactly the length specified in the <b>Label interval</b> control, but the final segment from the last label to the end of the selection may be different (depending on whether the selection length is exactly divisible by the specified interval duration.
+</p><p><br />
+When <span class="button">Number of Labels &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span> is selected, the label interval will always be the length of the selection divided by the number of labels, irrespective of this setting.
+</p><p>The default setting for this control is <span class="button">No &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span>.
+</p>
+<h2><span class="mw-headline" id="Label_text">Label text</span></h2>
+<p>The text that will be included in each label. The default setting is <b>Label</b> but this can be replaced by any text (or no text) by using the input box.
+</p><p>The label text may include spaces and/or punctuation characters, but note that if you intend to use the labels with <a href="export_multiple.html" title="Export Multiple">Export Multiple</a>, some characters <a href="faq_opening_and_saving_files.html#Characters_forbidden_by_the_operating_system" title="FAQ:Opening and Saving Files">may not be valid for file names</a>.
+</p>
+<h2><span class="mw-headline" id="Minimum_number_of_digits_in_label">Minimum number of digits in label</span></h2>
+<p>Choose the minimum number of number of digits in the label numbers and whether the number is placed before or after the label text. The default setting is <span class="button">2(before label) &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span>. With that setting, if you had 10 labels with "Label" as the label text, the first label would be "01Label", the next "02Label" and the last would be "10Label".
+</p><p>If you select <span class="button">None - text only &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span> then no numbering will be applied to the labels.  If you choose this and set no label text then you will produce a set of empty labels.
+</p>
+<h2><span class="mw-headline" id="Begin_numbering_from">Begin numbering from</span></h2>
+<p>If a minimum number of digits has been chosen in the control above, enter the number from which the sequential numbering will start. The default value of 1 can be changed by typing in the input box. You can enter any whole number equal or greater than 0.
+</p>
+<div class="note">The number of digits actually produced in the label is determined by your choice in <i>Minimum number of digits in label</i> above. For example, if you type "10" in <i>Begin numbering from</i> and your minimum number of digits is 3, then the first label will be numbered from "010".</div>  
+<div id="buttons"></div>
+<h2><span class="mw-headline" id="Buttons">Buttons</span></h2>
+<p>Clicking on the command buttons give the following results:
+</p>
+<ul><li><span class="button">Manage</span> gives a dropdown menu enabling you to manage presets for the tool and to see some detail about the tool. For details see <a href="manage_presets.html" title="Manage presets">Manage presets</a>.</li>
+<li><span class="button">OK</span> applies the effect to the selected audio with the current effect settings.</li>
+<li><span class="button">Cancel</span> aborts the effect and leaves the audio unchanged.</li>
+<li><a href="help_button.html" title="Help Button"><img alt="Help Button" src="../m/images/d/d6/help_button.png" width="27" height="27" /></a> brings you to the appropriate page in the Manual, this page.</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<p><a href="index_of_effects_generators_and_analyzers.html#analyzers" title="Index of Effects, Generators and Analyzers"><b>|&lt;</b> Index of Effects, Generators and Analyzers</a>
+</p><p><a href="analyze_menu.html" title="Analyze Menu"><b>|&lt;</b> Analyze Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020540
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.119 seconds
+Real time usage: 0.124 seconds
+Preprocessor visited node count: 417/1000000
+Preprocessor generated node count: 1827/1000000
+Post‐expand include size: 10998/2097152 bytes
+Template argument size: 3087/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   44.660      1 - -total
+ 39.77%   17.763      1 - Template:I18n
+ 36.49%   16.298      1 - Template:I18n_box
+ 31.63%   14.124      1 - Template:I18n_list
+ 18.82%    8.405      1 - Template:Effectbuttons
+ 14.16%    6.326      1 - Template:Buttonlist
+ 14.04%    6.269      1 - Template:No-rename
+ 12.28%    5.484      2 - Template:I18n_link
+ 10.92%    4.879      8 - Template:Button
+ 10.89%    4.862      1 - Template:Ednote
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4196-0!*!0!!*!5!* and timestamp 20180215020540 and revision id 57626
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Regular_Interval_Labels">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

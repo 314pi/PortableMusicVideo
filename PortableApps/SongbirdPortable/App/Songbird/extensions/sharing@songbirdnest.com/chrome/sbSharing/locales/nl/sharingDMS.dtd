@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "Mediaserver:">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "Serverstatus:">
+<!ENTITY sharing.iconpopup.status.on "AAN">
+<!ENTITY sharing.iconpopup.status.off "UIT">
+<!ENTITY sharing.iconpopup.settings.link "Instellingen">
+<!ENTITY sharing.prefpane.label "Mediaserver">
+<!ENTITY sharing.prefpane.network.name.header.label "Netwerknaam mediaserver">
+<!ENTITY sharing.prefpane.network.name.content.label "Naam die wordt getoond op het netwerk (bij wijziging is opnieuw opstarten vereist):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "Afbeeldingenmap">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "Afbeeldingen streamen van:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "Map kiezen">

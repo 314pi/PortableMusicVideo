@@ -1,0 +1,17 @@
+[Main]
+Ext=3gp
+Container=2
+Encoder=1
+VCodec=3
+VBitrate=150
+Width=176
+Height=144
+VideoSize=176x144
+FPS=15
+VAR=0
+ACodec=2
+ABitrate=64
+ASR=7
+AChan=1
+CustomVideo=
+CustomAudio=

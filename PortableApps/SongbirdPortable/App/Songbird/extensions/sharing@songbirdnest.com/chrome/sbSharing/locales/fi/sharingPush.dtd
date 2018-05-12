@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "Päivitä">
+<!ENTITY push.playqueue.instructions "Voit luoda laitteelle väliaikaisen kuuntelujonon vetämällä ja pudottamalla raitoja tai soittoluetteloja">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "Offline">
+<!ENTITY sharing.push.deviceState.stopped "Pysäytetty">
+<!ENTITY sharing.push.deviceState.playing "Toisto">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "Keskeytetty">
+<!ENTITY sharing.push.deviceState.recording "Tallennus">
+<!ENTITY sharing.push.deviceState.nomedia "Ei mediaa">

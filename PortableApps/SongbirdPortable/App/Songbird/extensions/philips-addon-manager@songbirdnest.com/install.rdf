@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#" xmlns:songbird="http://www.songbirdnest.com/2007/addon-metadata-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>philips-addon-manager@songbirdnest.com</em:id>
+    <em:type>2</em:type>
+    <em:name>Philips addon manager</em:name>
+    <em:version>2.0.1pre.2453</em:version>
+    <em:creator>Philips</em:creator>
+    <em:targetPlatform>WINNT_x86-msvc</em:targetPlatform>
+
+    <em:description>Manage Philips addons for you</em:description>
+    
+    <em:targetApplication>
+      <Description>
+        <em:id>songbird@songbirdnest.com</em:id>
+        <em:minVersion>2.2.0</em:minVersion>
+        <em:maxVersion>2.2.0</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+  </Description>
+</RDF>

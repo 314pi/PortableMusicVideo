@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Sample Data Export - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Sample_Data_Export rootpage-Sample_Data_Export skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Sample Data Export</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Sample_Data_Export#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+
+<p><br />
+</p>
+
+<div class="intro"><i><b>Sample Data Export</b></i> reads the values of successive samples from the selected audio and prints this data to a plain text, CSV or HTML file. Further information may be added as a "header" at the top of the file.<p>See also the companion tool <a href="sample_data_import.html" title="Sample Data Import">Sample Data Import</a>.</p></div>
+<dl><dd><b>Accessed by:</b> <span class="menu">Analyze &gt; Sample Data Export...</span></dd>
+<dd><span title="Sample Data Export effect dialog"><a href="http://alphamanual.audacityteam.org/man/File:Sample_Data_Export.png" class="image"><img alt="Sample Data Export.png" src="../m/images/e/ee/sample_data_export.png" width="482" height="422" /></a></span></dd></dl>
+<h2><span class="mw-headline" id="Limit_output_to_first_.3Cn.3E_samples">Limit output to first &lt;n&gt; samples</span></h2>
+<ul><li>The number of samples processed will be the number of samples in the selection, up to a maximum of the number entered here. The default number of samples is 100. 
+<ul><li> Sample Data Export is limited internally to an absolute maximum of 1 million samples.</li>
+<li> Processing a large number of samples can create extremely large output files that may be difficult to open. Very large TXT files can usually be opened succesfully in a word processing application such as WordPad. For HTML output it may be advisable to limit the number of samples to a maximum of a few hundred.</li>
+<li> The track sample rate as indicated on the <a href="audio_tracks.html#panel" title="Audio Tracks">Track Control Panel</a> indicates the number of samples per second. If the track and project rates are the same, the number of samples in a selection may be viewed in <a href="selection_toolbar.html" title="Selection Toolbar">Selection Toolbar</a> if you choose one of the <a href="audacity_selection.html#selection_formats" title="Audacity Selection">selection formats</a> that includes samples. </li></ul></li></ul>
+<h2><span class="mw-headline" id="Measurement_scale">Measurement scale</span></h2>
+<ul><li> <b>dB:</b> Sample values are displayed on a dB scale relative to full scale (as in the <a href="audacity_waveform.html#db" title="Audacity Waveform">Waveform (dB) view</a>)</li>
+<li> <b>Linear:</b> Values are displayed on a linear scale +/- 1 (as in the Audacity audio track <a href="audacity_waveform.html#default" title="Audacity Waveform">Waveform view</a>). </li></ul>
+<h2><span class="mw-headline" id="File_data_format">File data format</span></h2>
+<p>Data in your chosen format as listed below appears after any <a href="#include_header_information:">header information</a> which you included. Text files where the output produces columns may not have perfectly lined-up columns due to formatting limitations of text files.  
+</p>
+<ul><li> <b>Sample List (txt)</b>: produces a plain text file with a list of sample values.</li>
+<li> <b>Indexed List (txt)</b>: produces a plain text file with an indexed list of sample values: sample number followed by sample value.</li>
+<li> <b>Time Indexed (txt)</b>: produces a plain text file with the time (relative to the start of the selection) followed by sample value</li>
+<li> <b>Data (csv)</b>: produces a <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> formatted file. This may be suitable for importing into spreadsheet applications for further analysis.</li>
+<li> <b>Web Page (html)</b>: produces an HTML 5 document that contains all of the header information and a table of sample data with sample number, time, linear and dB values. Web browsers that are not HTML 5 compliant may not display the page correctly.</li></ul>
+<div id="include_header_information"></div>
+<h2><span class="mw-headline" id="Include_header_information">Include header information</span></h2>
+<ul><li> <b>None:</b> Prints only the sample data, preceded by any text you entered in the <a href="#optional_header_text:">optional header text</a> box (leave blank for none).</li>
+<li> <b>Minimal:</b> Prints a minimal header that contains:
+<ul><li> Sample rate</li>
+<li> Units (linear or dB)</li>
+<li> Optional header text (leave blank for none)</li></ul></li>
+<li> <b>Standard:</b> In addition to the Minimal header information, the following is also included:
+<ul><li> File name</li>
+<li> Number of samples</li>
+<li> Duration (seconds)</li>
+<li> Mono or stereo</li></ul></li>
+<li> <b>All:</b> In addition to the Standard header information, the following is also included:
+<ul><li> Peak amplitude (linear and dB)</li>
+<li> Unweighted RMS level (dB)</li>
+<li> DC offset</li></ul></li></ul>
+<div class="note">Irrespective of the header information chosen for the file, by default the Standard information above plus the file name and folder is displayed in a <a href="http://alphamanual.audacityteam.org/m/index.php?title=Show_messages:&amp;action=edit&amp;redlink=1" class="new" title="Show messages: (page does not exist)">confirmation message</a> on successful completion of the export.</div>
+<div id="optional_header_text"></div>
+<h2><span class="mw-headline" id="Optional_header_text">Optional header text</span></h2>
+<p>This is provided for adding notes to the output file. In text files, use <b>~~%</b> to start a new line, or in HTML files use <b>&lt;br&gt;</b>.
+</p>
+<h2><span class="mw-headline" id="Channel_layout_for_stereo">Channel layout for stereo</span></h2>
+<div class="note">The following examples are shown in "Indexed List" format <i>(with index numbers preceding the sample values)</i>, not the default "Sample List" format.</div>
+<p>For TXT and CSV files, provides a layout choice for stereo tracks.
+</p>
+<ul><li><b>L-R on Same Line:</b>  Prints  a list of alternate left channel sample followed by right channel sample. For .CSV files this will produce a column of sample values for each channel:<div class="codenew">
+<p>1	0.59528	1	0.59528<br />
+2	0.56063	2	0.56063<br />
+3	0.52377	3	0.52377<br />
+</p>
+...</div>
+<p><br />
+</p>
+<li><b>Alternate Lines:</b>  Prints a sample value from the left channel followed by a sample value from the right channel on the same line:<div class="codenew">
+<p>1	0.59528<br />
+1	0.59528<br />
+2	0.56063<br />
+2	0.56063<br />
+3	0.52377<br />
+3	0.52377<br />
+</p>
+...</div>
+<p><br />
+</p>
+<li> <b>L Channel First:</b> All the left channel samples are listed, followed by all of the right channel samples. For .CSV files this will produce a row of values for each channel:<div class="codenew">
+<p>Left Channel.
+</p><p>1	0.59528<br />
+2	0.56063<br />
+3	0.52377<br />
+...
+</p><p>Right Channel.
+</p><p>1	0.59528<br />
+2	0.56063<br />
+3	0.52377<br />
+</p>
+...</div></ul><br />
+<div id="show_messages"></div>
+<h2><span class="mw-headline" id="Show_messages">Show messages</span></h2>
+<ul><li> <b>Yes</b>: (default) Confirmation, error and warning messages will be shown after processing.</li>
+<li> <b>Errors Only</b>: Only error messages will be shown after processing.</li>
+<li> <b>None</b>: No messages will be shown after processing. </li></ul>
+<div class="note">If you press the <i>Debug</i> button, you can view Standard information in a separate text window even if confirmation messages are disabled.</div> 
+<p>It may be useful to disable confirmation messages if Sample Data Export is to be used in a <a href="chains_for_batch_processing_and_effects_automation.html" title="Chains - for batch processing and effects automation">Chain for batch processing</a>.
+</p>
+<h2><span class="mw-headline" id="File_name">File name</span></h2>
+<p>The desired name of the output file. A file name <i><b><a href="glossary.html#extension" title="Glossary">extension</a></b></i> is not required as it will be added automatically.
+</p>
+<h2><span class="mw-headline" id="Output_folder">Output folder</span></h2>
+<p>The default output folder is the <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Home_directory">Home directory</a>.
+</p><p>This is normally:
+</p>
+<ul><li> <b>Windows</b>: &lt;root&gt;\Users\&lt;username&gt;</li>
+<li> <b>Mac</b>: /Users/&lt;username&gt;</li>
+<li> <b>Linux</b>: /home/&lt;username&gt;</li></ul>
+<p>To select a different output folder, enter the full path name, for example <span class="path">D:\Samples Text Files</span>. The output folder must exist.
+</p><p>On Linux, the abbreviation <b>~/</b> may be used for the home directory.
+</p>
+<h2><span class="mw-headline" id="Allow_files_to_be_overwritten">Allow files to be overwritten</span></h2>
+<ul><li> <b>No:</b> This is the default choice. If the selected file already exists the chosen file name will be appended with a number. For example, if <b>output.txt</b> is the chosen name and that file already exists, the chosen name will be changed to <b>output1.txt</b>. If that file also exists the name will be changed to <b>output2.txt</b>, and so on until a unique name is found.</li></ul>
+<ul><li> <b>Yes:</b> If the file name already exists, it will be overwritten without prompting. </li></ul>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">If you select multiple tracks and <b>Allow files to be overwritten</b> is set to <b>No</b>, they will be saved to separate files with a number appended to the name. If you set <b>Allow files to be overwritten</b> to <b>Yes</b>, only the <b>last file</b> for multiple tracks will be retained.
+</td></tr></table>
+</div>
+<div id="buttons"></div>
+<h2><span class="mw-headline" id="Buttons">Buttons</span></h2>
+<p>Clicking on the command buttons give the following results:
+</p>
+<ul><li><span class="button">Manage</span> gives a dropdown menu enabling you to manage presets for the tool and to see some detail about the tool. For details see <a href="manage_presets.html" title="Manage presets">Manage presets</a>.</li>
+<li><span class="button">OK</span> applies the effect to the selected audio with the current effect settings.</li>
+<li><span class="button">Cancel</span> aborts the effect and leaves the audio unchanged.</li>
+<li><a href="help_button.html" title="Help Button"><img alt="Help Button" src="../m/images/d/d6/help_button.png" width="27" height="27" /></a> brings you to the appropriate page in the Manual, this page.</li></ul>
+<p><br />
+</p><p><br />
+</p>
+<div class="note"><b>Batch processing with Sample Data Export</b>
+<p>Nyquist effect plug-ins are supported in Chains, but <i>Analyze</i> (and <i>Generate</i>) plug-ins are not supported. So to use Sample Data Export in a Chain it is necessary to convert it into an <i>Effect</i> plug-in. To do this, the file <b>sample-data-export.ny</b> must be edited. 
+</p><p>The file <b>sample-data-export.ny</b> can be found in the "Plug-Ins" folder inside the Audacity installation folder. On Windows computers, this is usually under "Program Files". On Mac, it is usually under "Applications". On Linux, you can use <a href="faq_installation_and_plug_ins.html#linux_plug-ins" title="FAQ:Installation and Plug-Ins">various plug-in locations</a>. To convert Sample Data Export into an <i>Effect</i> type plug-in, open the file in a plain text editor (such as Notepad on Windows) and change the third line:
+</p>
+<div class="codenew">
+&#59;type analyze</div>
+<p>to:
+</p>
+<div class="codenew">
+&#59;type process</div>
+Save the file in the same location and restart Audacity. Sample Data Export... will now appear underneath the divider in the "Effect" menu rather than the "Analyze" menu, and will be available for use in a Chain.</div>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<p><a href="index_of_effects_generators_and_analyzers.html#analyzers" title="Index of Effects, Generators and Analyzers"><b>|&lt;</b> Index of Effects, Generators and Analyzers</a>
+</p><p><a href="analyze_menu.html" title="Analyze Menu"><b>|&lt;</b> Analyze Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020446
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.120 seconds
+Real time usage: 0.127 seconds
+Preprocessor visited node count: 389/1000000
+Preprocessor generated node count: 1709/1000000
+Post‐expand include size: 11011/2097152 bytes
+Template argument size: 4012/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   52.606      1 - -total
+ 39.62%   20.841      1 - Template:I18n
+ 36.16%   19.024      1 - Template:I18n_box
+ 31.10%   16.362      1 - Template:I18n_list
+ 19.72%   10.372      1 - Template:Effectbuttons
+ 17.66%    9.290      1 - Template:No-rename
+ 14.75%    7.761      1 - Template:Buttonlist
+ 13.30%    6.999      1 - Template:Ednote
+ 12.52%    6.586      2 - Template:I18n_link
+ 12.24%    6.438      8 - Template:Button
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4043-0!*!0!!*!5!* and timestamp 20180215020446 and revision id 57618
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Sample_Data_Export">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

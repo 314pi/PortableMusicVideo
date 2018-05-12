@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Tutorial - Recording Computer Playback on Mac - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Tutorial_-_Recording_Computer_Playback_on_Mac rootpage-Tutorial_-_Recording_Computer_Playback_on_Mac skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Tutorial - Recording Computer Playback on Mac</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Tutorial_-_Recording_Computer_Playback_on_Mac#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"></li></ul>
+
+<p><br />
+</p>
+<div class="intro">Mac computers have no built-in ability to record streaming audio playing on a sound device. You can use additional software to record computer playback directly into Audacity or can do so by using a connecting a <a href="#loopback">loopback cable</a> from audio out to the separate audio input available on some Macs. <p>Alternatively there are <a href="#commercial">commercial</a> applications which can record computer playback to a file that is importable into Audacity, or that like Soundflower can provide an additional audio device from which Audacity can record computer playback.</p></div>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top"><i><b>Copyright or website restrictions may prevent you recording or distributing material. Check first.</b></i>
+</td></tr></table>
+</div>
+<h2><span class="mw-headline" id="Contents">Contents</span></h2>
+<ol><li><a href="#loopback">Loopback cable</a> - A simple and effective method of recording what is playing on the computer</li>
+<li><a href="#Software">Software</a> - Free and ommercial recording applications that include ability to record computer playback </li></ol>
+<div id="loopback"></div>
+<h2><span class="mw-headline" id="Use_a_loopback_cable">Use a loopback cable</span></h2>
+<p>This is a simple and effective method of recording what is playing on the computer. It has the disadvantage that the audio signal is converted from digital to analog, then from analog to digital, instead of staying in the digital domain. This may result in some slight increase in noise and distortion.
+</p>
+<ol><li> Using a cable with a stereo mini-plug (1/8") at each end, connect the headphone output port to the line input port.
+<ul><li> At this point you will no longer be able to hear what is playing on the computer. As a workaround, you could attach a single to double stereo connector to the output port provide an extra jack for speakers or headphones.</li></ul>
+<li> Choose <span class="menu">Apple Menu &gt; System Preferences</span> and select the Sound preferences panel.
+<li> In the Sound preferences panel:
+<ol><li> Click on the Output tab, then select "Line Out" from the "Choose a device for sound output" list.
+<li> Click on the Input tab, then select "Line Input" from the "Choose a device for sound input" list.
+<li> Leaving the Sound preferences panel open, start sound audio playing on the computer (this could be from iTunes, or streaming audio, or some other source).
+<li> Adjust the Input volume slider so that the top 3 bars of the Input level meter do not light up on the loudest passages, but the rest of the bars do light up.
+<li> Close the System Preferences window.</ol>
+<li> In Audacity's Device Toolbar select <span class="button">Built-in Input &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span> or similar as Recording Device. Note you need to choose a line-in for this, not a four-position port meant only for connecting a headset.<br />
+<dl><dd><span title="Audacity Device Toolbar with Built-in Input as chosen Recording Device"><img alt="DeviceToolbarMac01.png" src="../m/images/7/78/devicetoolbarmac01.png" width="789" height="29" /></span></dd></dl>
+<li> Click on the Transport menu and make sure that "Software Playthrough" is <b>not</b> checked.
+</ol>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">
+<p>All system alert sounds such as email and application alerts will be recorded using this method. If you have iCal alerts or have turned on event sounds in Mail, you may want to turn them off. You should also quit any application that may make an alert sound while you are recording.
+</p>
+</td></tr></table>
+</div>
+<div id="Software"></div>
+<h2><span class="mw-headline" id="Use_additional_software">Use additional software</span></h2>
+<p>Alternatively there are software applications which can record computer playback to a file that is importable into Audacity, or that can provide an additional audio device from which Audacity can record computer playback.
+</p><p>See <b><a rel="nofollow" class="external text" href="http://wiki.audacityteam.org/wiki/Recording_Computer_Playback_on_Mac">this page</a></b> in the Audacity Wiki for details.
+</p>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<p><a href="tutorial_recording_audio_playing_on_the_computer.html#setup" title="Tutorial - Recording audio playing on the computer"><b>|&lt;</b> Tutorial - Recording audio playing on the computer</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020537
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.082 seconds
+Real time usage: 0.087 seconds
+Preprocessor visited node count: 187/1000000
+Preprocessor generated node count: 1035/1000000
+Post‐expand include size: 4513/2097152 bytes
+Template argument size: 2343/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   31.094      1 - -total
+ 73.67%   22.908      1 - Template:I18n
+ 67.48%   20.983      1 - Template:I18n_box
+ 54.63%   16.985      1 - Template:I18n_list
+ 21.44%    6.666      2 - Template:I18n_link
+ 12.49%    3.882      2 - Template:Autoglossonym
+  4.83%    1.503      2 - Template:Advice
+  4.53%    1.410      1 - Template:Ednote
+  4.48%    1.393      1 - Template:Intro
+  3.97%    1.236      1 - Template:Menu
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:3505-0!*!0!!*!5!* and timestamp 20180215020537 and revision id 57808
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Tutorial_-_Recording_Computer_Playback_on_Mac">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

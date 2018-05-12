@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "Ortam Sunucusu:">
+<!ENTITY sharing.iconpopup.header "Songbird Ortam Sunucusu">
+<!ENTITY sharing.iconpopup.status.label "Sunucu Durumu:">
+<!ENTITY sharing.iconpopup.status.on "AÇIK">
+<!ENTITY sharing.iconpopup.status.off "KAPALI">
+<!ENTITY sharing.iconpopup.settings.link "Ayarlar">
+<!ENTITY sharing.prefpane.label "Ortam Sunucusu">
+<!ENTITY sharing.prefpane.network.name.header.label "Ortam Sunucusu Ağ Adı">
+<!ENTITY sharing.prefpane.network.name.content.label "Ağda göründüğü şekilde adlandırın (değişiklik halinde yeniden başlatma gerekir):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "Fotoğraflar Klasörü">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "Fotoğrafları şuradan al:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "Klasör Seç">

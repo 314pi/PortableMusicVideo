@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+
+    <!-- Songbird --> 
+    <em:targetApplication>
+      <Description>
+        <em:id>songbird@songbirdnest.com</em:id>
+        <em:minVersion>2.2.0</em:minVersion>
+        <em:maxVersion>2.2.0</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+    <!-- the unique identifier for the extension - filled in by the 
+         build system -->
+    <em:id>sharing@songbirdnest.com</em:id>
+    <!-- the name of the extension - appears in Addons Manager -->
+    <em:name>Media Sharing</em:name>
+    <!-- a description of the extension - appears in Addons Manager -->
+    <em:description>Share your Songbird library with media players on your home network</em:description>
+    <!-- the creator of the extension - appears in the extension's About box -->
+    <em:creator>POTI, Inc.</em:creator>
+    <!-- the home page of the extension - accessible from the Addons Manager -->
+    <em:homepageURL>http://www.songbirdnest.com/</em:homepageURL>
+    <!-- the version of the extension - used in extension updates -->
+    <em:version>1.0.3pre.2453</em:version>
+
+    <!-- extensions are type 2 --> 
+    <em:type>2</em:type>
+    <!-- the architecture (operating system and CPU type) of the extension.
+         it will be filled in by the build system -->
+    <em:targetPlatform>WINNT_x86-msvc</em:targetPlatform>
+
+    <!-- icon to display in the add-ons list -->
+    <em:optionsURL>chrome://sharing/content/optionsWindow.xul</em:optionsURL>
+
+  </Description>
+
+</RDF>

@@ -1,0 +1,86 @@
+Notes:
+------
+
+This is cdrtfe 1.5.8.
+
+The changes may have introduced new bugs, so please test and report
+if you find a bug.
+
+Some of the translations haven't been updated for quite a while. Any
+help regarding the update of existing or the creation of new
+translations is much appreciated.
+
+cdrtfe-1.5.8.exe         The setup variant installs cdrtfe on the
+                         computer. In addition, it includes the 
+                         source code and an uninstall program. 
+
+cdrtfe-1.5.8.msi         The Windows Installer Package is mostly 
+                         identical to the setup variant. Only some
+                         less important setup options are missing. 
+                         It does not include the source code. 
+
+cdrtfe-1.5.8.zip         The zip archive includes the same variant
+                         like the setup program, but without source
+                         code. After unpacking cdrtfe can be used 
+                         without further installation. 
+
+cdrtfe-1.5.8-legacy.exe  This setup is only suitable for installing
+                         cdrtfe on older versions of Windows
+                         (Win98/ME/2k). All other setup variants 
+                         (including the portable version and the
+                         zip archive) cannot be used on Win98/ME/2k. 
+
+
+Changes:
+--------
+              
+* cdrtools updated to version 3.02a09
+
+* GUI, dialog for selecting multiple writers: CTRL-A selects
+  all available writers.
+
+
+Hinweise:
+---------
+
+Dies ist cdrtfe 1.5.8.
+
+Durch die Änderungen könnten neue Fehler entstanden sein. Bitte testen
+und Fehler melden.
+
+Einige der Übersetzungen wurden schon eine Weile nicht mehr aktualisiert.
+Jedwede Hilfe in bezug auf die Aktualisierung bestehender oder die
+Schaffung neuer Übersetzungen ist sehr willkommen.
+
+cdrtfe-1.5.8.exe         Die Setup-Variante installiert cdrtfe auf dem
+                         Rechner. Zusätzlich werden auch der Quelltext 
+                         und ein Deinstallationsprogram mitgeliefert. 
+
+cdrtfe-1.5.8.msi         Das Windows Installer-Paket ist größtenteils
+                         identisch mit der Setup-Variante. Es fehlen 
+                         lediglich einige weniger wichtige Einstellungen
+                         für die Installation. Die Quelltexte sind nicht 
+                         enthalten. 
+
+cdrtfe-1.5.8.zip         Das zip-Archiv enthält die gleiche Variante
+                         wie das Setup-Programm, es fehlen lediglich
+                         die Quelltexte. Nach dem Entpacken kann cdrtfe
+                         ohne weitere Installation genutzt werden.
+
+cdrtfe-1.5.8-legacy.exe  Dieses Setup ist ausschließlich für die 
+                         Installation von cdrtfe auf älteren
+                         Versionen von Windows (Win98/ME/2k) 
+                         geeignet. Alle anderen Setup-Varianten 
+                         (auch die portable Version und das zip-Archiv)
+                         können nicht unter Win98/ME/2k verwendet
+                         werden. 
+
+
+Änderungen:
+-----------
+
+* cdrtools aktualisiert auf Version 3.02a09
+
+* GUI, Auswahldialog für mehrere Brenner: STRG-A wählt alle vorhandenen
+  Brenner aus.
+

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Sync-Locked Track Groups - Time Stretching - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Sync-Locked_Track_Groups_-_Time_Stretching rootpage-Sync-Locked_Track_Groups_-_Time_Stretching skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Sync-Locked Track Groups - Time Stretching</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Sync-Locked_Track_Groups_-_Time_Stretching#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<h2><span class="mw-headline" id="Time_stretching_operations_on_Sync-Locked_Track_Groups">Time stretching operations on Sync-Locked Track Groups</span></h2>
+<p>The following effects, when applied to a region in a selected track (or tracks) in a Sync-Locked group, will cause the length of non-selected tracks in the group to be adjusted to match the change in length of the selected track, either by truncating the non-selected tracks from the right or by adding silence. Audio before and after the selection will remain synchronized. Audio within the selection may or may not remain synchronized, as the time stretching effect is not applied to the Sync-Locked tracks.
+</p><p>Any Label track that forms part of the Sync-Locked Track Group will be stretched positively or negatively, the same as the selected track(s) - or in the case of Repeat will have that section of the Label track repeated.
+</p>
+<ul><li><span style="font-weight: bold; font-size:118%"><a href="change_speed.html" title="Change Speed">Change Speed</a>:</span> Sync-Locked tracks will be adjusted by having the selected region(s) shortened from the right (if the change in speed is positive), or have silence inserted after the selected region (if the change in speed is negative).</li>
+<li><span style="font-weight: bold; font-size:118%"><a href="change_tempo.html" title="Change Tempo">Change Tempo</a>:</span> Sync-Locked tracks will be adjusted by having the selected region(s) shortened from the right (if the change in tempo is positive - faster), or have silence inserted after the selected region (if the change in tempo is negative - slower).</li>
+<li><span style="font-weight: bold; font-size:118%"><a href="repeat.html" title="Repeat">Repeat</a>:</span> If applied to a selection that does not end on the end of a track, silence is inserted in the Sync-Locked tracks where the repeats are placed in the selected track(s)</li>
+<li><span style="font-weight: bold; font-size:118%"><a href="sliding_time_scale_pitch_shift.html" title="Sliding Time Scale - Pitch Shift">Sliding Time Scale/Pitch Shift</a>:</span> If the time-scale changes shorten the selection then the Sync-Locked tracks will be shortened from the right to maintain time synchronization among the tracks; if the time-scale changes lengthen the selection then the Sync-Locked tracks will have silence inserted to maintain time synchronization among the tracks.</li>
+<li><span style="font-weight: bold; font-size:118%"><a href="truncate_silence.html" title="Truncate Silence">Truncate Silence</a>:</span> Removes audio from Sync-Locked tracks to maintain time synchronization with remaining sections of the selected track.</li>
+<li><span style="font-weight: bold; font-size:118%"><a href="delay.html" title="Delay">Delay</a>:</span> If applied to a selection that does not end on the end of a track, silence is inserted in the Sync-Locked tracks where the delays are placed in the selected track(s) to maintain time synchronization among the tracks.</li></ul>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top"><b><a href="paulstretch.html" title="Paulstretch">Paulstretch</a></b> also changes the selection length of any selected tracks in the Sync-Locked Track Group, but currently does <i><b>not</b></i> observe the sync-locking and does not cause changes to any un-selected Sync-Locked tracks. Label tracks are not affected by Paulstretch whether selected or not.
+</td></tr></table>
+</div>
+<h2><span class="mw-headline" id="Example-1:_Change_Speed">Example-1: <a href="change_speed.html" title="Change Speed">Change Speed</a></span></h2>
+<div class="example"><b>Before <span class="menu">&gt;Effect &gt; <a href="change_speed.html" title="Change Speed">Change Speed</a></span></b>
+<dl><dd><span title="before Change Speed"><img alt="SLTG Stretching 1.png" src="../m/images/e/e6/sltg_stretching_1.png" width="749" height="237" /></span></dd></dl>
+<dl><dd><b>After Effect &gt; Change Speed</b></dd>
+<dd>with a setting of 50%, which makes the selection faster and shorter</dd>
+<dd><span title="after a speed change of fifty percent"><img alt="SLTG Stretching 2.png" src="../m/images/7/75/sltg_stretching_2.png" width="749" height="238" /></span></dd></dl>
+<dl><dd><b>Result:</b> Audio has been removed from the lower audio track. Note that in this case audio within the selection does not remain in synchronization since the Change Speed effect is not applied to the Sync-Locked track. Audio before and after the selection remains synchronized.</dd></dl>
+<dl><dd>But note too that the Label track has been stretched, shrunk, appropriately (and not truncated) to maintain synchronicity the the select track, the top track.</div></dd></dl>
+<h2><span class="mw-headline" id="Example-2:_Repeat">Example-2: <a href="repeat.html" title="Repeat">Repeat</a></span></h2>
+<div class="example"><b>Before <span class="menu">Effect &gt; <a href="effect_menu.html#repeat" title="Effect Menu">Repeat</a></span></b>
+<dl><dd><span title="before repeat"><img alt="SLTG Stretching 3.png" src="../m/images/d/d1/sltg_stretching_3.png" width="749" height="239" /></span></dd></dl>
+<dl><dd><b>After Effect &gt; Repeat</b></dd>
+<dd>with 3 repeats</dd>
+<dd><span title="after three repeats"><img alt="SLTG Stretching 4.png" src="../m/images/7/7a/sltg_stretching_4.png" width="749" height="239" /></span></dd></dl>
+<dl><dd><b>Result:</b> Silence has been inserted into the lower audio track and the Label track has had its synced "selection" repeated three times.</div></dd></dl>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<p><a href="sync_locked_track_groups_time_shifting.html" title="Sync-Locked Track Groups - Time Shifting"><b>&lt;</b>&#160; Back to: Sync-Locked Track Groups - Time Shifting</a> <br />
+</p><p><a href="sync_locked_track_groups.html" title="Sync-Locked Track Groups"><b>|&lt;</b>&#160; Sync-Locked Track Groups</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020625
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.089 seconds
+Real time usage: 0.094 seconds
+Preprocessor visited node count: 221/1000000
+Preprocessor generated node count: 1139/1000000
+Post‐expand include size: 4764/2097152 bytes
+Template argument size: 2652/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   30.268      1 - -total
+ 71.42%   21.618      1 - Template:I18n
+ 65.01%   19.677      1 - Template:I18n_box
+ 53.03%   16.052      1 - Template:I18n_list
+ 20.41%    6.177      2 - Template:I18n_link
+ 11.86%    3.589      2 - Template:Autoglossonym
+ 10.49%    3.174      2 - Template:Example
+  7.66%    2.317      6 - Template:Bh
+  4.43%    1.342      2 - Template:Menu
+  4.16%    1.258      1 - Template:Advice
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4372-0!*!0!!*!5!* and timestamp 20180215020625 and revision id 57704
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Sync-Locked_Track_Groups_-_Time_Stretching">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

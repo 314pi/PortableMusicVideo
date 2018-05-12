@@ -1,0 +1,62 @@
+{
+	"features" : {
+		"swap_if_A_greater_than_B" : true,
+		"saveprefsonexit" : true,
+		"ignoresavedmarkers" : false,
+		"use_odml" : false,
+		"use_systray" : false,
+		"reuse_2pass_log" : false,
+		"audiobar_uses_master" : false,
+		"threading_lavc" : 0,
+		"cpu_caps" : 2147483647,
+		"mpeg_no_limit" : false,
+		"alternate_mp3_tag" : true,
+		"vdpau" : false,
+		"xvba" : false,
+		"libva" : false,
+		"enable_opengl" : false,
+		"cap_refresh_enabled" : false,
+		"cap_refresh_value" : 100,
+		"sdlDriver" : ""
+	},
+	"lastfiles" : {
+		"lastdir_read" : "",
+		"lastdir_write" : "",
+		"file1" : "",
+		"file2" : "",
+		"file3" : "",
+		"file4" : ""
+	},
+	"lastprojects" : {
+		"lastdir_read" : "",
+		"lastdir_write" : "",
+		"file1" : "",
+		"file2" : "",
+		"file3" : "",
+		"file4" : ""
+	},
+	"message_level" : 2,
+	"audio_device" : {
+		"audiodevice" : "Win32",
+		"alsa_device" : "dmix"
+	},
+	"videodevice" : 5,
+	"priority" : {
+		"encoding" : 3,
+		"indexing" : 3,
+		"playback" : 0
+	},
+	"Default" : {
+		"postproc_type" : 3,
+		"postproc_value" : 3,
+		"downmixing" : 2,
+		"language" : "",
+		"warn_for_fonts" : true
+	},
+	"mpegsplit_autosplit" : 790,
+	"avisynth" : {
+		"avisynth_always_ask" : false,
+		"avisynth_defaultport" : 9999,
+		"avisynth_localport" : 0
+	}
+}

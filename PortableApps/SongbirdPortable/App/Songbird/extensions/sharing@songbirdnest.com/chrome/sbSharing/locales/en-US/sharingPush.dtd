@@ -1,0 +1,33 @@
+<!--
+/*
+ *
+ *=BEGIN SONGBIRD LICENSE
+ *
+ * Copyright(c) 2005-2010 POTI, Inc.
+ * http://www.songbirdnest.com
+ *
+ * For information about the licensing and copyright of this Add-On please
+ * contact POTI, Inc. at customer@songbirdnest.com.
+ *
+ *=END SONGBIRD LICENSE
+ *
+ */
+-->
+
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "Refresh device list">
+<!ENTITY push.playqueue.instructions "Drag and drop tracks or playlists here to create an on-the-fly listening queue for this device">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY push.playqueue.toggleAlbumArt "Show or hide album art">
+<!ENTITY push.playqueue.artistProfile "Artist Profile">
+
+
+<!-- DON'T USE DOUBLE QUOTES IN THESE STRINGS: -->
+<!ENTITY sharing.push.deviceState.offline "Offline">
+<!ENTITY sharing.push.deviceState.stopped "Stopped">
+<!ENTITY sharing.push.deviceState.playing "Playing">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "Paused">
+<!ENTITY sharing.push.deviceState.recording "Recording">
+<!ENTITY sharing.push.deviceState.nomedia "No media present">

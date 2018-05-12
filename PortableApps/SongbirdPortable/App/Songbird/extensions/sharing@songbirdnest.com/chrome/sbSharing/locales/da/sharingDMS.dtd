@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "Medieserver:">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "Serverstatus:">
+<!ENTITY sharing.iconpopup.status.on "TIL">
+<!ENTITY sharing.iconpopup.status.off "FRA">
+<!ENTITY sharing.iconpopup.settings.link "Indstillinger">
+<!ENTITY sharing.prefpane.label "Medieserver">
+<!ENTITY sharing.prefpane.network.name.header.label "Netværksnavn for medieserver">
+<!ENTITY sharing.prefpane.network.name.content.label "Navn, som det vises for netværket (ændringer kræver genstart):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "Billedmappe">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "Stream billeder fra:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "Vælg mappe">

@@ -1,0 +1,17 @@
+[Main]
+Ext=avi
+Container=0
+Encoder=1
+VCodec=3
+VBitrate=600
+Width=480
+Height=272
+VideoSize=480x272
+FPS=25
+VAR=0
+ACodec=1
+ABitrate=128
+ASR=7
+AChan=1
+CustomVideo=
+CustomAudio=

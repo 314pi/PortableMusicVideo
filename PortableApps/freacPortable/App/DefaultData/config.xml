@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConfigFile>
+ <configuration name="default">
+  <section name="Settings">
+   <value name="EncoderOutDir">{INITIALMUSICDIR}</value>
+   <value name="PlaylistOutDir">{INITIALMUSICDIR}</value>
+   <value name="Language"></value>
+   <value name="CheckUpdatesAtStartup">0</value>
+  </section>
+ </configuration>
+</ConfigFile>

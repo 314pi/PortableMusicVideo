@@ -1,0 +1,50 @@
+﻿[Lastfm]
+1=您的登录身份:
+2=登出后部分功能将不可用，想要继续吗？
+3=发生错误！
+4=游客
+5=您必须登入！
+6=音乐记录队列状态: %d / %d
+
+[Lastfm.Auth]
+btnAllowAccess=允许接入
+btnOk=确定
+Caption=授权
+lbDetails=您必须在您的 last.fm 专页上通过权限请求以使插件正常工作:\n\n1. 在您的因特网浏览器中点击 "允许接入" 按钮来打开您的 last.fm 专页。\n\n2. 在因特网浏览器打开的页面中点击 "是，允许接入" 按钮。\n\n3. 在专页中成功通过后的窗口中点击 "确定" 按钮。
+
+[Lastfm.Settings]
+btnAuthorize=登入
+btnLog=显示日志
+btnLogOff=登出
+C1=Last.fm
+cbAlbumArtSearch=从 Last.fm 服务下载专辑封面
+cbAutoLove=* 为曲目标上5星时自动喜爱曲目
+cbAutoUnlove=* 为曲目标上3星以下时自动取消喜爱曲目
+cbScrobbling=* 允许音乐记录
+cbTrackInfo=开始回放可播放曲目时显示曲目信息
+cbTrayIcon=显示托盘图标
+cbTrayNotifyOnError=出错提醒
+G1=杂项
+G2=授权
+L1=可播放文件
+L2=文件记入音乐记录须被播放:
+lbAuthorizationWarning=* 需要授权
+lbProfileLink=我的 Last.fm 专页
+
+[Lastfm.TrackInfo]
+Caption=可播放文件的信息
+L1=您好，%s！
+L3=播放: %d
+L4=听众: %d
+pnlScrobblingProgress.h=音乐记录进度
+Status=搜索信息中...|未找到曲目信息|无播放内容
+
+[Lastfm.TrayIcon]
+acErrorInfo=错误细节
+acLoveTrack=标为喜爱
+acProfile=我的专页
+acRecommendations=我的推荐
+acScrobbling=启用音乐记录
+acSettings=选项
+acShowTrackInfo=曲目信息
+acUnloveTrack=取消喜爱

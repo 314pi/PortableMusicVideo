@@ -1,0 +1,137 @@
+/*
+ *=BEGIN SONGBIRD GPL
+ *
+ * This file is part of the Songbird web player.
+ *
+ * Copyright(c) 2005-2010 POTI, Inc.
+ * http://www.songbirdnest.com
+ *
+ * This file may be licensed under the terms of of the
+ * GNU General Public License Version 2 (the ``GPL'').
+ *
+ * Software distributed under the License is distributed
+ * on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
+ * express or implied. See the GPL for the specific language
+ * governing rights and limitations.
+ *
+ * You should have received a copy of the GPL along with this
+ * program. If not, go to http://www.gnu.org/licenses/gpl.html
+ * or write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ *
+ *=END SONGBIRD GPL
+ */
+
+sb-push-device-info {
+  background-color: white;
+}
+
+.playqueue-instructions {
+  margin: 20px;
+}
+
+.playcontrols-inner {
+  padding: 5px 0;
+}
+
+.sb-push-button-shuffle {
+  padding-right: 4px;
+}
+
+.sb-push-button-repeat {
+  padding-left: 4px;
+}
+
+.playing {
+  font-style: italic;
+}
+
+.device-playcontrols-spinner {
+  background-color: rgba(220,220,220,0.5);
+  height: 100%;
+}
+
+.device-image-box {
+  margin: 10px;
+}
+
+.device-image-div {
+}
+
+.album-art-box {
+  -moz-box-align: center;
+  -moz-box-pack: start;
+}
+
+.artist-profile-button {
+	width: 150px;
+}
+progressmeter.sb-player-volume-slider {
+  max-width: 140px;
+  min-width: 140px;
+  margin: 0px;
+}
+
+progressmeter.sb-player-volume-slider > .progress-bar,
+progressmeter.sb-player-volume-slider > .progress-remainder {
+  background-image: url(chrome://sharing/skin/images/bg-volume-bar.png);
+  -moz-appearance: none !important;
+}
+
+progressmeter,
+sb-status-progressmeter {
+  min-width: none;
+}
+
+.sb-playlist-tree > treechildren::-moz-tree-cell-text( cantplay ) {
+  color: #888;
+}
+
+.opaque {
+  opacity:1.0 !important;
+}
+
+.device-state-overlay-image {
+  list-style-image:url(chrome://sharing/skin/images/device-states.png);
+  min-width:35px;
+  max-width:35px;
+  min-height:35px;
+  max-height:35px;
+  -moz-image-region: rect(0px 35px 35px 0px);
+}
+
+.dsoi-offline {
+  -moz-image-region: rect(0px 35px 35px 0px) !important;
+}
+
+.dsoi-stopped {
+  -moz-image-region: rect(35px 35px 70px 0px) !important;
+}
+
+.dsoi-playing {
+  -moz-image-region: rect(70px 35px 105px 0px) !important;
+}
+
+.dsoi-transition {
+  -moz-image-region: rect(105px 35px 140px 0px) !important;
+}
+
+.dsoi-paused {
+  -moz-image-region: rect(140px 35px 175px 0px) !important;
+}
+
+.dsoi-recording {
+  -moz-image-region: rect(175px 35px 210px 0px) !important;
+}
+
+.dsoi-nomedia {
+  -moz-image-region: rect(210px 35px 245px 0px) !important;
+}
+
+/* http://bugzilla.songbirdnest.com/show_bug.cgi?id=25912
+ * @hack @todo find out why the lighter white-ish yellow is being rendered
+ * instead of the same darker tone (which we simulate here)
+ */
+notification[value='sharing push notification'] {
+    background-color: rgb(235,215,93);
+}

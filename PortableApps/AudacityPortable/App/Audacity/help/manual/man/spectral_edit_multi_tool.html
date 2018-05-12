@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Spectral edit multi tool - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Spectral_edit_multi_tool rootpage-Spectral_edit_multi_tool skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Spectral edit multi tool</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Spectral_edit_multi_tool#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="intro">The <b>Spectral edit multi tool</b> is used with a <a href="spectral_selection.html" title="Spectral Selection">Spectral Selection</a> to apply either a <i><b><a href="glossary.html#notch" title="Glossary">notch filter</a></b></i>, <i><b><a href="glossary.html#hp" title="Glossary">high-pass filter</a></b></i> or <i><b><a href="glossary.html#lp" title="Glossary">low-pass filter</a></b></i> to the selection, depending on the type of selection made.
+</div>
+<dl><dd><b>Accessed by:</b> <span class="menu">Effect &gt; Spectral edit multi tool...</span></dd></dl>
+</li></ul></li></ul></li></ul>
+<p>Depending on how the track is displayed and what spectral selection has been made, this effect will do one of the following:
+</p>
+<ul><li> When the track is not in a <a href="spectrogram_view.html" title="Spectrogram View">Spectrogram View</a> with <a href="spectral_selection.html" title="Spectral Selection">Spectral Selection</a> enabled, an error message will be displayed</li>
+<li> When the spectral selection has a center, upper and lower frequency this effect performs as a <i><b><a href="glossary.html#notch" title="Glossary">notch filter</a></b></i> with the center frequency defined by the center frequency of the spectral selection and the width defined by the upper and lower frequencies of the spectral selection</li>
+<li> When the spectral selection begins at 0 Hz this effect performs a <i><b><a href="glossary.html#hp" title="Glossary">high pass filter</a></b></i> with a rolloff of 12 dB/octave and with the cutoff frequency defined by the upper frequency of the spectral selection</li>
+<li> When the spectral selection ends at the Nyquist frequency of the track this effect performs a <i><b><a href="glossary.html#lp" title="Glossary">low pass filter</a></b></i> with a rolloff of 12 dB/octave and with the cutoff frequency defined by the lower frequency of the spectral selection</li>
+<li> When both the upper and lower frequency bound of the spectral selection are undefined, an error message will be displayed. You should go back and define one or both frequency bounds.  </li></ul>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Bulbicon.png" class="image" title="Bulb icon"><img alt="Bulb icon" src="../m/images/d/d7/bulbicon.png" width="32" height="32" /></a>
+</td>
+<td align="left" valign="top">If the attenuation is not sufficient, you can use <span class="kbrd" style="background-color: #d0d0f8">Ctrl + R</span> to repeat the effect.
+</td></tr></table>
+</div> 
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<h3><span class="mw-headline" id="Notch_Filter">Notch Filter</span></h3>
+<p>If you make a spectral selection that has both an upper and lower boundary, selecting <span class="menu">Effect &gt; Spectral edit multi tool</span> will apply a notch filter.
+</p><p>In the following example the spectral selection had a center frequency of 2000 Hz and a bandwidth of 0.5 octave. 
+</p>
+<dl><dd><span title="Spectrum plot of Spectral edit multi tool notch effect, 2000 Hz, 0.5 octave"><img alt="SpectralEditNotch.png" src="../m/images/d/dd/spectraleditnotch.png" width="574" height="367" /></span></dd></dl>
+<p>In the following example the spectral selection had a center frequency of 2000 Hz and a bandwidth of 2 octaves. 
+</p>
+<dl><dd><span title="Spectrum plot of Spectral edit multi tool notch effect, 2000 Hz, 2 octaves"><img alt="SpectralEditNotch02.png" src="../m/images/e/e3/spectraleditnotch02.png" width="574" height="367" /></span></dd></dl>
+<h3><span class="mw-headline" id="High-pass_filter">High-pass filter</span></h3>
+<p>If you make a spectral selection that has the lower boundary at 0 Hz, selecting <span class="menu">Effect &gt; Spectral edit multi tool</span> will apply a high-pass filter.</p>
+<p>In the following example the spectral selection had a lower boundary of 0 Hz and an upper boundary of 500 Hz.</p> 
+<dl><dd><span title="Spectrum plot of Spectral edit multi tool high-pass effect"><img alt="SpectralEditMultiHP500.png" src="../m/images/8/83/spectraleditmultihp500.png" width="574" height="367" /></span></dd></dl>
+<h3><span class="mw-headline" id="Low-pass_filter">Low-pass filter</span></h3>
+<p>If you make a spectral selection that has the upper boundary at the Nyquist frequency of the track, selecting <span class="menu">Effect &gt; Spectral edit multi tool</span> will apply a low-pass filter.</p>
+<p>In the following example the spectral selection had a lower boundary of 0 Hz and an upper boundary of 2000 Hz.</p> 
+<dl><dd><span title="Spectrum plot of Spectral edit multi tool low-pass effect"><img alt="SpectralEditMultiLP2000.png" src="../m/images/f/f8/spectraleditmultilp2000.png" width="574" height="367" /></span></dd></dl>
+
+<!-- 
+NewPP limit report
+Cached time: 20180215020356
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.069 seconds
+Real time usage: 0.073 seconds
+Preprocessor visited node count: 78/1000000
+Preprocessor generated node count: 285/1000000
+Post‐expand include size: 1990/2097152 bytes
+Template argument size: 1366/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   11.935      1 - -total
+ 39.41%    4.703      1 - Template:Tip
+ 25.82%    3.082      1 - Template:Shortcut
+ 17.66%    2.108      4 - Template:Menu
+ 17.50%    2.089      1 - Template:Intro
+ 12.84%    1.533      1 - Template:Ednote
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:5120-0!*!0!!*!5!* and timestamp 20180215020356 and revision id 54834
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Spectral_edit_multi_tool">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

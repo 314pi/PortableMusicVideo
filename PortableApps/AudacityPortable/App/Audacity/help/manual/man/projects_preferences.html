@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Projects Preferences - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Projects_Preferences rootpage-Projects_Preferences skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Projects Preferences</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Projects_Preferences#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+
+
+<p><br />
+</p>
+<dl><dd><b>Accessed by:</b> <span class="menu">Edit &gt; Preferences &gt; Projects </span> &#160;&#160;&#160;<i>(on a Mac <span class="menu">Audacity &gt; Preferences &gt; Projects </span>)</i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_2141724708"><area href="devices_preferences.html" shape="rect" coords="24,34,136,50" alt="Devices Preferences" title="Devices Preferences"/><area href="playback_preferences.html" shape="rect" coords="24,52,136,68" alt="Playback Preferences" title="Playback Preferences"/><area href="recording_preferences.html" shape="rect" coords="24,70,136,86" alt="Recording Preferences" title="Recording Preferences"/><area href="midi_devices_preferences.html" shape="rect" coords="24,88,136,104" alt="MIDI Devices Preferences" title="MIDI Devices Preferences"/><area href="quality_preferences.html" shape="rect" coords="24,106,136,122" alt="Quality Preferences" title="Quality Preferences"/><area href="interface_preferences.html" shape="rect" coords="24,124,136,140" alt="Interface Preferences" title="Interface Preferences"/><area href="tracks_preferences.html" shape="rect" coords="24,142,136,158" alt="Tracks Preferences" title="Tracks Preferences"/><area href="tracks_behaviors_preferences.html" shape="rect" coords="44,160,136,176" alt="Tracks Behaviors Preferences" title="Tracks Behaviors Preferences"/><area href="spectrograms_preferences.html" shape="rect" coords="44,178,136,194" alt="Spectrograms Preferences" title="Spectrograms Preferences"/><area href="import_export_preferences.html" shape="rect" coords="24,196,136,212" alt="Import/Export Preferences" title="Import/Export Preferences"/><area href="extended_import_preferences.html" shape="rect" coords="44,214,136,230" alt="Extended Import Preferences" title="Extended Import Preferences"/><area href="#" shape="rect" coords="24,232,136,248" alt="Projects Preferences" title="Projects Preferences"/><area href="libraries_preferences.html" shape="rect" coords="24,250,136,266" alt="Libraries Preferences" title="Libraries Preferences"/><area href="directories_preferences.html" shape="rect" coords="24,268,136,284" alt="Directories Preferences" title="Directories Preferences"/><area href="warnings_preferences.html" shape="rect" coords="24,286,136,302" alt="Warnings Preferences" title="Warnings Preferences"/><area href="effects_preferences.html" shape="rect" coords="24,304,136,320" alt="Effects Preferences" title="Effects Preferences"/><area href="keyboard_preferences.html" shape="rect" coords="24,322,136,338" alt="Keyboard Preferences" title="Keyboard Preferences"/><area href="mouse_preferences.html" shape="rect" coords="24,340,136,356" alt="Mouse Preferences" title="Mouse Preferences"/><area href="modules_preferences.html" shape="rect" coords="24,358,136,374" alt="Modules Preferences" title="Modules Preferences"/><area href="help_button.html" shape="rect" coords="575,457,611,493" alt="Click on this in Audacity to get help" title="Click on this in Audacity to get help"/></map><img alt="Preferences Projects.png" src="../m/images/2/24/preferences_projects.png" width="646" height="481" usemap="#ImageMap_1_2141724708"/></div></dd></dl>
+<div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:550px;top:-25px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click in the left column for other preferences</b></div>
+</div>
+<dl><dd><b>Projects Preferences.</b><br /></dd></dl>
+<p><br />
+</p>
+<div id="dependencies"></div>
+<h2><span class="mw-headline" id="When_saving_a_project_that_depends_on_other_audio_files">When saving a project that depends on other audio files</span></h2>
+<p>If you import <i><b><a href="glossary.html#uncompressed_format" title="Glossary">uncompressed</a></b></i> files into your project with <a href="import_export_preferences.html#import" title="Import - Export Preferences">Import / Export Preferences</a> set to "Read uncompressed audio files directly from the original (faster)", you create a <i>dependency</i> on those files remaining accessible. This option decides what happens the first time you attempt to <a href="file_menu.html#Save_Project" title="File Menu">save</a> that dependent project. 
+</p>
+<ul><li> <span style="font-weight: bold; font-size:118%">Copy all audio into project (safest):</span> All imported files that your project depends on will be copied automatically into the saved project. You can then safely move, rename or delete those imported files if you wish.</li></ul>
+<ul><li> <span style="font-weight: bold; font-size:118%">Do not copy any audio:</span> Every project will be saved automatically, but will always depend on the continued presence of the imported files. <b>You must not move, rename or delete those files, or the folder they are in.</b></li></ul>
+<ul><li> <span style="font-weight: bold; font-size:118%">Ask:</span> The <a href="dependencies_dialog.html" title="Dependencies Dialog">Dependencies Dialog</a> will always appear when you first save a project that depends on imported files. This dialog lets you choose which if any of the dependent files should be copied into the project before saving it.  </li></ul>
+<div class="note">You can check at any time if your project depends on imported files, and copy them in if desired. To do this, click <span class="menu">Help &gt; Diagnostics &gt; <a href="dependencies_dialog.html" title="Dependencies Dialog">Check Dependencies...</a></span> to open <a href="dependencies_dialog.html" title="Dependencies Dialog">Dependencies Dialog</a>.</div>
+
+<!-- 
+NewPP limit report
+Cached time: 20180215020409
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.106 seconds
+Real time usage: 0.113 seconds
+Preprocessor visited node count: 246/1000000
+Preprocessor generated node count: 1287/1000000
+Post‐expand include size: 5857/2097152 bytes
+Template argument size: 2033/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   86.001      1 - -total
+ 54.52%   46.888      1 - Template:Prefs-imagemap
+ 28.94%   24.890      1 - Template:I18n
+ 26.70%   22.963      1 - Template:I18n_box
+ 23.35%   20.083      1 - Template:I18n_list
+ 10.21%    8.780      3 - Template:I18n_link
+  9.73%    8.367      1 - Template:No-rename
+  7.47%    6.424      1 - Template:Ednote
+  5.96%    5.124      3 - Template:Autoglossonym
+  4.02%    3.460      1 - Template:ClickTip
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:3074-0!*!0!*!*!5!* and timestamp 20180215020409 and revision id 58179
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Projects_Preferences">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

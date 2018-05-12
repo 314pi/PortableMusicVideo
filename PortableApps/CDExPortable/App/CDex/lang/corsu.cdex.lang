@@ -1,0 +1,997 @@
+﻿//
+// CDex - Open Source Digital Audio CD Extractor
+//
+// Copyright (C) 2006 - 2016 Georgy Berdyshev
+// Copyright (C) 2008 - 2016 Ariane Paola Gomes
+// Copyright (C) 2002 Sean M Burke
+// Copyright (C) 2002 Albert L. Faber
+//
+// http://cdex.mu/
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+//////////////////////////////////////////////////////////////////////////////
+// CDex - International Support File                                        //
+//////////////////////////////////////////////////////////////////////////////
+//
+//
+// Welcome to CDex language definition file
+// 
+// This file will be read by CDex if it is put inside \Lang folder
+// of CDex root directory. It also must have the cdex..lang extension
+// yielding something like my_language.cdex.lang
+//
+// 
+// To define a string follow this format:
+//
+// number "my_string"
+//
+// number is the identification of the following string. Each number is related
+// with a string that will appear inside CDex. Padding spaces are not important.
+//  Inside menu definitions use & to give access to the keyboard menu shortcut.
+// You can use returns inside string. They will be preserved in the program.
+//
+// CDex loads the strings on startup. It won't perceive any changes in this file
+//  if you don't reload the program.
+//
+// PLEASE, CHECK THAT STRINGS WON'T BE CLIPPED IN THE PROGRAM. The reserved space 
+// for every string is limited and must be suitable for all languages. If some 
+// of your strings are clipped try shortening the phrase while keeping its 
+// significance
+//  
+//////////////////////////////////////////////////////////////////////////////
+
+// language file revision level
+REVISION=/*$Id: corsu.cdex.lang v2 2016-04-17 Patriccollu $*/
+
+// set language characteristics
+LANGUAGE=12
+SUBLANG=2
+
+// use CODEPAGE 65001 if this file is UTF-8 encoded text file
+// otherwhise fill out the proper ANSI codepage
+CODEPAGE=65001
+
+// 99 (063 hex) => LANGUAGE ID, use english description
+// since this value is used to set the LOCALE settings
+#0063# "Corsican"
+
+#0001# "Vai"
+#0002# "Abbandunà"
+#0003# "Interrompe"
+#0004# "Torna"
+#0005# "Ignurà"
+#0006# "Iè"
+#0007# "Innò"
+
+// Ripper Main menu entries
+#M0BD4# "#&Schedariu#&Mudificà#&Cunvertisce#A&ttrezzi#&Banca di Dati#&Ozzioni#&Aiutu#"
+
+// Ripper File Menu
+#M800D# "Infurmazione &Sistema"
+#M802D# "&Paragunà Dui Schedarii"
+#ME141# "&Esce"
+
+// Ripper Edit menu
+#M8026# "Selezziunà &Tuttu\tCtrl+A"
+#M8023# "&Cupià l'infurmazione di l'albumu ver di u preme'papei"
+#M8024# "&Rinumà a Traccia\tF2"
+#M0BD40000# "&Mudificà u Nome di Traccia"
+#M8042# "&Primu Caratteru Di Ogni Parolla In Maiuscula"
+#M8043# "&U primu caratteru in maiuscula"
+#M8044# "Tutti i caratteri in m&inuscula"
+#M8045# "TUTTI I CARATTERI IN M&AIUSCULA"
+#M804D# "&Scambià Artista<->Traccia"
+#M802A# "&Attualizà a Lista di e Traccie\tF5"
+#M8047# "Aghjunghje / Mudificà a lista di &Generi"
+
+// Ripper Convert menu
+#M8004# "Estrae traccie CD ver di schedarii WAV\tF8"
+#M8005# "Estrae traccie CD ver di schedarii Audio Cumpressi\tF9"
+#M8007# "Estrae una sezzione di u CD\tF10"
+#M803E# "Cudificà torna un(i) schedariu(i) Audio Cumpressu(i)"
+#M8006# "Cunvertisce un(i) schedariu(i) WAV ver di un(i) Audio Cumpressu(i)\tF11"
+#M8029# "Cunvertisce un(i) schedariu(i) Audio Cumpressu(i) ver di un(i) WAV\tF12"
+#M8022# "Aghjunghje un(l')intestatura(e) RIFF-WAV à un(i) schedariu(i) MP2 o MP3"
+#M8030# "Cavà l'intestatura(e) RIFF-WAV da un(i) schedariu(i) MP2 o MP3"
+
+// Ripper Tools menu
+#M802E# "&Sunadore di schedariu media"
+#M8031# "&Arregistrà da l'Intrata Analogica"
+#M8066# "Creà a scheda &CUE"
+#M8067# "Identificà i &Pre-gaps"
+#M8068# "Leghje u codice UPC/ISRC"
+#M8065# "Leghje da &MusicBrainz"
+
+// Ripper freedb Menu
+#M8018# "Leghje da a freeDB &Lucale"
+#M801B# "Leghje da a freeDB &Alluntanata"
+#M801A# "Leghje da CD &Player.ini"
+#M8033# "Leghje CD-&Testu"
+#M80E8# "Leghje da &WinampDB"
+#M8027# "Arregistrà ver di CDPlayer.ini"
+#M8028# "Arregistrà ver di a freeDB Lucale"
+#M8032# "&Sottumette à a freeDB Alluntanata"
+#M803B# "&Richiesta Batch freeDB"
+
+// Ripper Options Menu
+#M8003# "&Preferenze\tF4"
+#M8046# "Cunfigurà l'Estensioni &Winamp"
+#M801C# "Affissà a Barra d'Attrezzi per &Sunà"
+#M801D# "Affissà a Barra d'Attrezzi per &Arregistrà"
+#M80E9# "Affissà a Barra d'Attrezzi di &Prufilu"
+#M802C# "Affissà i &Detaglii di Statu d'Estrazzione\tF3"
+#M802F# "&Viutà u Statu d'Estrazzione"
+#M0BD40001# "Selezziunà a &Lingua"
+
+// Ripper Help Menu
+#ME143# "&Aiutu per impiegà CDex\tF1"
+#ME140# "A&pprupositu di CDex..."
+
+// Player Menu
+#M0C80# "#&Schedariu#&Ozzioni#&Lista di Lettura#&Aiutu#"
+
+// NOTE: File, help menu and Configure &Winamp Plugins entries
+// are already defined in the main menu
+
+// Ripper Options Menu
+#M804B# "Sunà à l'&Azardu"
+#M0C800000# "&Lingua"
+
+// Ripper Playlist Menu
+#M8049# "&Arregistrà"
+#M804A# "&Squassà"
+
+// About Dialog
+#D00640000# "Apprupositu di u prugramma CDex d'estrazzione di CD audio"
+#D00640412# "CDex Versione "
+#D006404BC# "Chjode"
+// Translator URL
+#D006404BB# ""
+// Translator information
+#D006404BA# "Traduttu da Patriccollu di Santa-Maria è Sichè"
+
+// CD Auto Detection dialog box
+#D0BE20000# "Risultati di Detezione Autumatica"
+#D0BE203FB# "Interrompe"
+#D0BE204BE# "Sottu ghjè una lista cù i modi di prova ; selezziunà unu di i modi chì hà un statu 'Pass', è preme u buttone OK"
+#D0BE204BD# "Statu MMC"
+
+// freedb Accessing dialog box
+#D00870000# "Accessu à freeDB"
+#D008704BF# "Azzione Currente"
+#D008704C0# "Messaghjiu"
+#D008704C1# "Meritu : http://www.freedb.org/en/about_freedborg.2.html"
+
+
+// freedb Settings dialog box
+#0C8D# "Banca di Dati CD::freeDB Alluntanata"
+#D06030000# "freeDB Alluntanata"
+#D06030484# "freeDBeedb (portu predefinitu 888 o 8880)\nHTTP (portu predefinitu 80)"
+#D0603043D# "Cunnessione autumatica à a freeDB alluntanata"
+#D06030426# "Aghjunghje un Situ"
+#D06030425# "Siti di Richiesta"
+#D06030483# "Rimette Tutti à Zeru"
+#D06030475# "Ozzioni Sottumissione"
+#D0603041E# "Impiegà un Proxy"
+#D06030421# "Autenticazione"
+#D060304C7# "Servu Alluntanatu"
+#D060304CB# "U vostru indirizzu elettronicu eMail"
+#D060304CF# "Portu di Proxy"
+#D060304D0# "Parolla d'intrata"
+#D060304CE# "Cumportu d'attesa (seconde)"
+#D060304C9# "Indirizzu"
+#D060304CC# "Passeghju"
+#D060304CA# "Protocollu"
+#D060304C8# "Lucalizazione"
+#D060304CD# "Portu"
+
+// freedb Found inexact match dialog box
+#D00880000# "Currispundenza Inesatta Trova"
+
+#D0BFF04C0# "Messaghjiu"
+#D0BFF0559# "Cartugrafia di a pagina di codice"
+#D0BFF04A5# "Seguente"
+#D0BFF055C# "Sottumette torna (ricumandatu s'è a pagina di codice ùn hè definita UTF-8)"
+#D0BFF0000# "Accessu à freeDB"
+
+// Generate CUE sheet dialog
+#D00B70008# "Chjode"
+#D00B704A4# "Arregistrà"
+#D00B7055C# "Include PreGaps"
+#D00B7055D# "Include codici ISRC"
+#D00B704A5# "Cupià in u preme'papei"
+#0CA5# "Schede Cue (*.cue)|*.cue|Tutti i Schedarii (*.*)|*.*||"
+
+
+// CD-ROM Settings dialog box
+#0C89# "Estrazzione::Preferenze di u Lettore CD"
+#D0BDB0000# "Lettore CD"
+#D0BDB0430# "Genericu\nToshiba\nToshiba (novu)\nIBM\nNEC\nDEC\nIMS\nKodak\nRicoh\nHP\nPhilips\nPlasmon\nGrundig CD-R,\nMitsumi CD-R\nPlextor\nSony\nYamaha\nNRC\nIMS CDD-5\nPersunalizatu"
+#D0BDB0444# "Detezione Autumatica"
+#D0BDB0436# "Scambià Canali Manca è Diritta"
+#D0BDB047E# "Espulsione di u CD quandu l'estrazzione hè compia"
+#D0BDB043D# "Permette a Currezzione Jitter"
+#D0BDB047F# "Selezziunà Tutte e Traccie di u CD (predefinitu)"
+#D0BDB043E# "Impiegà a Biblioteca SCSI Nativa di NT"
+#D0BDB04D1# "Lettore CD"
+#D0BDB04D2# "Settori di Lettura"
+#D0BDB04D3# "Accavalcatura di Lettura"
+#D0BDB04D9# "Paragone di Bloccu"
+#D0BDB04D6# "Tipu di Lettore CD-ROM"
+#D0BDB04DA# "Celerità di u CD"
+#D0BDB04D4# "Spiazzamentu principiu (settori)"
+#D0BDB04D5# "Spiazzamentu fine (settori)"
+#D0BDB04DB# "Tempu di spin-up (sec)"
+#D0BDB04D8# "Numeru di Prove"
+#D0BDB04D7# "Metoda d'Estrazzione"
+#D0BDB0480# "Immubulizà u CD durante l'estrazzione"
+#D0BDB0481# "Impiegà u CD-Testu (s'ellu hè dispunibule)"
+#D0BDB0431# "Standard\nParanoia, Overlap Only\nParanoia, No Verify\nParanoia, No scratch repair\nParanoia, Full"
+
+// freedb Submit Options dialog box
+#D00A00000# "Ozzioni di Sottumissione freeDB"
+#D00A004E2# "Sottumissione impieghendu :"
+#D00A00414# "eMail"
+#D00A00401# "Via HTTP"
+#D00A004E4# "Indirizzu di servu SMTP"
+#D00A004E5# "Indirizzu HTTP di sottumissione (senza passeghju)"
+#D00A004E3# "Indirizzu eMail di sottumissione"
+
+// Config Winamp Plugin Dialog box
+#D00AA0000# "Cunfigurà l'Estensioni d'Intrata Winamp"
+#D00AA0499# "Apprupositu"
+#D00AA049A# "Cunfigurà"
+
+// CD Ripping dialog box
+#D0BDC0000# "Arregistrà e Traccie"
+#D0BDC042C# "numinale"
+#D0BDC042E# "massima"
+#D0BDC042D# "minima"
+
+// Drop Files dialog box
+#D00900000# "Selezziunà l'ozzioni per i schedarii deposti"
+#D00900452# "Creà un schedariu RIFF WAV"
+#D0090044C# "Squassà u schedariu WAV dopu à a cudificazione"
+#D0090042F# "Nurmalizà"
+#D00900430# "Cudificà"
+#D00900431# "Nurmalizà è Cudificà"
+
+// Edit Genres dialog box
+#D00AC0000# "Aghjunghje / Mudificà i Generi"
+#D00AC049C# "Framette Novu"
+
+// Enter profile Name dialog box
+#D00AF0000# "Scrivite un nome di prufilu"
+
+// Encoder dialog box
+#0C8A# "Cudificazione::Cudificatori"
+#D06020000# "Cudificatore"
+#D06020537# "Cudificatore"
+#D06020452# "Cunvertisce ver di schedarii Riff WAV"
+#D06020423# "A più bassa\nSottu Nurmale\nNurmale\nSopra Nurmale\nA più alta"
+#D06020536# "Priurità di u Flussu"
+#D06020535# "Ozzioni di Cudificatore"
+#D06020453# "Ùn squassà micca u schedariu WAV estrattu dopu à a cunversione"
+
+
+// Encoder DOS APE dialog box
+#D0BFD0400# "Mono"
+#D0BFD0401# "Stereo"
+#D0BFD04DE# "Livellu di cumpressione"
+#D0BFD04DD# "Canali"
+#D0BFD04DF# "Forma d'Etichetta"
+#D0BFD04B4# "Etichetta APE (predefinita)\nEtichetta ID3V1"
+#D0BFD0459# "Veloce\nNurmale\nAltu\nAltu Altu"
+
+// Encoder Blade Dialog box
+#D0BE80409# "Cudificazione MP3 di Volu"
+#D0BE804E0# "Bitrate"
+#D0BE804E1# "Canali"
+#D0BE80400# "Stereo"
+#D0BE80401# "J-stereo"
+#D0BE80402# "Doppiu"
+#D0BE80403# "Mono"
+#D0BE80427# "Privatu"
+#D0BE80428# "Somma Cuntrollu"
+#D0BE80429# "Uriginale"
+#D0BE8042A# "Diritti di copia"
+
+// Encoder Lame dialog box
+#D008B0548# "Bitrate Minima"
+#D008B054A# "Modu"
+#D008B054B# "Qualità"
+#D008B054E# "Qualità VBR"
+#D008B0549# "Massima"
+#D008B054D# "ABR (kpbs)"
+#D008B054C# "Metoda VBR"
+#D008B0547# "Versione"
+#D008B054F# "Frequenza di Campiunariu"
+#D008B0463# "MPEG I\nMPEG II\nMPEG II.5"
+#D008B0400# "Stereo"
+#D008B0401# "J-stereo"
+#D008B0402# "Stereo Sfurzatu"
+#D008B0403# "Mono"
+#D008B0427# "Privatu"
+#D008B0428# "Somma Cuntrollu"
+#D008B0429# "Uriginale"
+#D008B042A# "Diritti di copia"
+#D008B0409# "Cudificazione MP3 di Volu"
+#D008B0459# "Disattivatu\nVBR Predefinitu\nVBR-Vechju\nVBR-Novu\nVBR-MTRH\nVBR-ABR"
+#D008B0458# "VBR 0\nVBR 1\nVBR 2\nVBR 3\nVBR 4\nVBR 5\nVBR 6\nVBR 7\nVBR 8\nVBR 9"
+#D008B0414# "Nurmale ( q=5 )\nBassu ( q=9 )\nAltu ( q=2 )\nVoce (arregistramenti di a voce)\nR3Mix Preset (disusatu)\nQualità Alta Alta ( q=0 )\npreset standard\npreset fast standard\npreset extreme\npreset fast extreme\npreset insane\nreset ABR\npreset CBR\npreset medium\npreset fast medium"
+
+// Encoder External settings box
+#D008D0000# ""
+#D008D052D# "Catena di parametri"
+#D008D052C# "Passeghju di cudificatore"
+#D008D052E# "Bitrate"
+#D008D0463# "Cudificazione di volu"
+#D008D0464# "Piattà a finestra DOS"
+#D008D052F# "Estensione di Schedariu"
+#D008D0465# "Mandà l'intestatura WAV ver di stdin"
+
+// Encoder Wincodec settings box
+#D008A0000# ""
+#D008A0409# "Cudificazione MP3 di Volu"
+#D008A053A# "Codec MP3 Windows"
+#D008A053B# "Selezzione Bitrate di Codec"
+#D008A043E# "Alta Qualità"
+
+// Encoder MP2 encoder settings box
+#D0BF9040F# "MPEG-1"
+#D0BF90410# "MPEG-2"
+#D0BF90546# "Bitrate"
+#D0BF90409# "Cudificazione MP2 di Volu"
+#D0BF90545# "Canali"
+#D0BF90400# "Stereo"
+#D0BF90401# "J-stereo"
+#D0BF90402# "Doppiu"
+#D0BF90403# "Mono"
+#D0BF90427# "Privatu"
+#D0BF90428# "Somma Cuntrollu"
+#D0BF90429# "Uriginale"
+#D0BF9042A# "Diritti di copia"
+#D0BF9047F# "Scrive i dati suburdunati (Antex)"
+#D0BF90480# "Permette senza imbuttitura"
+#D0BF90544# "VBR (esperimentale)"
+#D0BF90458# "Alcunu\nVBR 0\nVBR 1\nVBR 2\nVBR 3\nVBR 4\nVBR 5\nVBR 6\nVBR 7\nVBR 8\nVBR 9"
+
+// Encoder external VQF settings box
+#D0BEA0000# ""
+#D0BEA041B# "44KHz-48Kbps\n44KHz-40Kbps\n22KHz-32Kbps\n22KHz-24Kbps\n22KHz-20Kbps\n16KHz-16Kbps\n11KHz-10Kbps\n11KHz-8Kbps\n8KHz-8Kbp"
+#D0BEA0549# "Passeghju ver di u cudificatore VQF"
+#D0BEA0547# "Modu VQF"
+
+// Encoder WMA8 settings box
+#D0BEC03F5# "22 Kbit/s\n32 Kbit/s\n36 Kbit/s\n40 Kbit/s\n48 Kbit/s\n64 Kbit/s\n80 Kbit/s\n96 Kbit/s\n128 Kbit/s\n160 Kbit/s"
+#D0BEC0409# "Cudificazione MP3 di Volu"
+#D0BEC0441# "Permette a gestione di i diritti digitale (DRM)"
+#D0BEC0414# "Mono"
+#D0BEC04B6# "Stereo"
+#D0BEC0538# "Bitrate"
+#D0BEC0539# "Canali"
+
+// Encoder external Xing settings box
+#D0BF00000# ""
+#D0BF00414# "CBR"
+#D0BF00401# "VBR"
+#D0BF00429# "Uriginale"
+#D0BF0042A# "Diritti di copia"
+#D0BF0045C# "Filtrà e Frequenze Alte"
+#D0BF0045D# "Furzà Stereo Simplice"
+#D0BF0045E# "Cambià ver di Mono"
+#D0BF0045F# "Lascià u cudificatore sceglie a frequenza di campiunariu"
+#D0BF00532# "Passeghju di cudificatore"
+#D0BF00533# "Bitrate"
+#D0BF00534# "Scala VBR"
+
+
+// Encoder FLAC
+#D0BFE0400# "Stereo"
+#D0BFE0401# "Mono"
+#D0BFE0409# "Cudificazione da Volu"
+#D0BFE0540# "Canali"
+#D0BFE055A# "Preferenze di livellu di cumpressione"
+#D0BFE0559# "livellu di cumpressione 0"
+
+// Encoder WAV settings box
+#D0BF10000# ""
+#D0BF1053E# "Frequenza di campiunariu"
+#D0BF1053F# "Canali"
+#D0BF10414# "Stereo"
+#D0BF10401# "Mono"
+#D0BF1053D# "Cumpressione"
+#D0BF1053C# "Forma"
+#D0BF10439# "WAV\nApple/SGI AIFF\nSun/Next au (big endian)\nDec au (little endian))\nRaw PCM (big endian)\nRaw PCM (little endian)"
+#D0BF10409# "Cudificazione da Volu"
+
+// Encoder FAAC settings box
+#D0BF20000# ""
+#D0BF20463# "MPEG-2"
+#D0BF20415# "MPEG-4"
+#D0BF20466# "Principale\nCumplessità bassa\nSSR\nLTD"
+#D0BF204AF# "16000\n18000\n19500"
+#D0BF204B1# "Impiegà LFE"
+#D0BF20468# "Impiegà MS Stereo"
+#D0BF20526# "Bitrate / canale"
+#D0BF20528# "Larghezza di fascia (Hz)"
+#D0BF20527# "Prufilu"
+#D0BF204B0# "Permette Temporal Noise Shaping (TNS)"
+
+// Encoder Vorbis settings box
+#D0BF60000# ""
+#D0BF60400# "Stereo"
+#D0BF60401# "Mono"
+#D0BF60409# "Cudificazione da Volu"
+#D0BF604B3# "Impiegà e preferenze Qualità (ricumandatu)"
+#D0BF60540# "Canali"
+#D0BF60541# "Impiegà u ghjestiunariu di Bitrate"
+#D0BF60550# "Bitrate Minimu"
+#D0BF60551# "Bitrate Numinale"
+#D0BF60552# "Bitrate Massimu"
+
+// Encoder Gogo settings box
+#D0BF80000# ""
+#D0BF8040F# "MPEG-1"
+#D0BF80410# "MPEG-2"
+#D0BF80409# "Cudificazione MP3 di Volu"
+#D0BF80458# "Alcunu\nVBR 0\nVBR 1\nVBR 2\nVBR 3\nVBR 4\nVBR 5\nVBR 6\nVBR 7\nVBR 8\nVBR 9"
+#D0BF80400# "Mono"
+#D0BF80401# "Stereo"
+#D0BF80402# "J-Stereo"
+#D0BF80403# "MS-Stereo"
+#D0BF8047B# "Impiegà MMX/3DNow"
+#D0BF8047C# "Impiegà Psycho-acoustics"
+#D0BF8047D# "Affettà u filtru Low-Pass per i bitrates bassi"
+#D0BF80529# "Bitrate Variabile"
+#D0BF8052A# "Bitrate"
+#D0BF8052B# "Modu"
+
+// Encoder External Musepack settings box
+#D00A90000# ""
+#D00A90531# "Catena di parametri"
+#D00A90530# "Passeghju per u cudificatore Musepack"
+#D00A90464# "Piattà a finestra MSDOS window"
+#D00A90463# "Cudificazione da volu"
+
+// Encoder NTTVQF settings box
+#D0BFB0000# ""
+#D0BFB0409# "Cudificazione VQF da Volu"
+#D0BFB0462# "32 Kbit/s\n40 Kbit/s\n48 Kbit/s\n56 Kbit/s\n64 Kbit/s\n80 Kbit/s\n96 Kbit/s\n112 Kbit/s\n128 Kbit/s\n160 Kbit/s\n192 Kbit/s\n224 Kbit/s\n256 Kbit/s\n320 Kbit/s"
+#D0BFB0400# "Mono"
+#D0BFB0401# "Stereo"
+#D0BFB0542# "Bitrate da canale"
+#D0BFB0543# "Canali"
+
+// File compare two files dialog box
+#D00970000# "Paragunà dui schedarii WAV"
+#D00970446# "Paragunà"
+#D00970522# "Nome di u primu schedariu"
+#D00970523# "Nome di u secondu schedariu"
+#D00970524# "Prugressione"
+
+// File name string info dialog box
+#D00930000# "Ozzioni d'infurmazione di nome di schedariu"
+#D00930516# "Esempii :\n%1\%2\%4 crea u schedariu cù u nome : Artista\Albumu\NomeTraccia.mp3 (o .wav)\n%1 - %2 - %3 crea u schedariu cù u nome : Artista - Albumu - NumeruTraccia.mp3 (o .wav)\n%l1 - %u2 crea u schedariu cù u nome : artista - ALBUMU.mp3 (o .wav)"
+#D00930517# "A catena chì forma u nome di schedariu pò cuntene l'elementi chì seguitanu :"
+#D00930518# "U caratteru backslash (\) pò esse impiegatu dinù per indicà un staccu di cartulare.\nEppuru, ùn ci vole micca impiegallu cum'è primu caratteru !"
+
+// File name property page
+#0C8E# "Generale::Cartulari è schedarii"
+#D0BF40000# "Nomi di schedariu"
+#D0BF40479# "Sustituz. di Car."
+#D0BF4047D# "Sparte nomeditraccia in Artista, Traccia cù caratteru per sparte :"
+#D0BF40443# "Lista M3U"
+#D0BF40444# "Lista PLS"
+#D0BF4051B# "Nome di schedariu"
+#D0BF40519# "Forma di nome di schedariu è cartulari d'esciuta"
+#D0BF4051C# "WAV -> MP3"
+#D0BF4051D# "Traccie Arregistrate"
+#D0BF4051A# "Forma di u nome"
+#D0BF40520# "Nome di schedariu"
+#D0BF4051E# "Forma di u nome"
+#D0BF40521# "Tipu di schedariu"
+#D0BF4051F# "Lista di lettura"
+
+// File overwrite dialog box
+#D00AE0000# "Avertimentu di Rimpiazzamentu di Schedariu"
+#D00AE0512# "Iè"
+#D00AE04A1# "&Iè per Tutti"
+#D00AE0511# "Innò"
+#D00AE04A2# "In&nò per Tutti"
+#D00AE0513# "U schedariu"
+#D00AE0514# "esiste dighjà. Rimpiazzallu ?"
+
+// Generic Property Page
+#0C8B# "Generale::Genericu"
+#D06040000# "Generale"
+#D06040414# "Alcunu\nID3-V1\nID3-V2\nID3-V1 &  ID3-V2"
+#D06040411# "Nurmalizà"
+#D060404AB# "Chjode u sistema dopu l'estrazzione o cudificazione"
+#D0604050F# "S'è u signale hè <"
+#D0604050C# "Nurmalizà Vulume"
+#D0604050D# "Ver di"
+#D06040510# "S'è u signale hè >"
+#D06040507# "Ozzioni d'Etichetta di Schedariu"
+#D0604050A# "Campu 'Cummentu'"
+#D0604050E# "Ver di"
+#D06040508# "Versione d'Etichetta ID3"
+#D0604050B# "Campu 'Cudificatu da'"
+#D06040506# "Cartulare Timpurariu"
+#D06040509# "Forma di Numeru di Traccia"
+#D060404AC# "Ripruduzzione Digitale di CD"
+
+
+// Tag Property Page
+#0CA2# "Cudificazione::Etichette"
+#D0C01050A# "Campu 'Cummentu'"
+#D0C010508# "Versione d'Etichetta ID3"
+#D0C01050B# "Campu 'Cudificatu da'"
+#D0C010509# "Forma di Numeru di Traccia"
+#D0C01048F# "ID3_V1"
+#D0C010560# "ID3_V2.3"
+#D0C01055E# "ID3_V2.4"
+#D0C010000# "Ozzioni d'Etichetta"
+#D0C0104AD# "N"
+#D0C01050C# "Testu di Fiura"
+#D0C01050D# "Fiura"
+#D0C010565# "Ozzioni di a fiura"
+#D0C010566# "Aghjunghje una fiura"
+
+// General Info Dialog Box
+#D0BDF0000# "Infurmazione Generale"
+#D0BDF0502# "ID Vulume CD"
+#D0BDF0500# "ID Dischettu freeDB"
+#D0BDF0501# "Ghjestiunariu ASPI"
+#D0BDF0503# "Versione d'OS"
+#D0BDF0504# "Infurmazione SCSI"
+#D0BDF0505# "Tipu(i) di Lettore"
+#D0BDF0442# "Cupià ver di u Preme'Papei"
+
+// Local freedb Settings TAB
+#0C8C# "Banca di Dati CD::freeDB Lucale"
+#D0BFA0000# "freeDB Lucale"
+#D0BFA044B# "Schedarii freeDB in a forma Windows"
+#D0BFA044C# "Schedarii freeDB in a forma Unix"
+#D0BFA0459# "Arregistrà in u Schedariu CDPlayer.ini"
+#D0BFA045A# "Arregistrà in a freeDB lucale"
+#D0BFA045B# "Impiegà Nomi Longhi per i Cartulari"
+#D0BFA04B5# "Scrive cum'è schedarii di testu MS-DOS "
+#D0BFA04FE# "Passeghju freeDB"
+#D0BFA04FF# "Passeghju Winamp in_cdda.cdb (forma Winamp 2.78)"
+#D0BFA04FD# "Preferenze freeDB Lucale"
+
+// Main Window (Title View)
+#D0BD80000# " "
+#D0BD804C2# "Artista"
+#D0BD804C3# "Albumu"
+#D0BD804C4# "Generu"
+#D0BD804C5# "Annu"
+#D0BD804C6# "Offset di Traccia"
+
+// Mpeg to RIFF-WAV conversion dialog box
+#D00860000# "Cunvertisce MP2/MP3 ver di RIFF-WAV"
+#D008604FC# "Trattamentu"
+
+// Mpeg to WAV conversion dialog box
+#D0BEB0000# "Cunvertisce un schedariu cumpressu ver di un WAV"
+#D0BEB04FB# "Trattamentu"
+
+// Open file dialog box
+#D02630000# "Apre u Dialogu di Schedariu"
+#D026303EE# "Fighjà in i sottucartulari"
+#D026303F1# "Squassà l'Uriginale"
+#D0263042F# "Nurmalizà"
+#D02630430# "RIFF-WAV"
+#D026303EF# "Selezziunà Tuttu"
+#D026303F0# "Apre"
+#D02630495# "Preferenze"
+#D026304AC# "Cunservà a Struttura di u Cartulare"
+#D026304FA# "Schedarii Dispunibule :"
+#D026304F9# "Cartulare"
+
+// Partial track copy dialog box
+#D06010000# "Arregistramentu parziale di traccia(e)"
+#D0601041D# "WAV"
+#D06010412# "Audio Cumpressu (Cudificatu)"
+#D060104F5# "Traccia"
+#D060104F6# "Min"
+#D060104F7# "Sec"
+#D060104F8# "Quadru"
+#D060104F0# "Pruprietà di schedariu"
+#D060104F2# "Stesa (unu schedariu solu da a pusizione di principiu à quella di fine)"
+#D060104F3# "Pusizione di principiu"
+#D060104F4# "Pusizione di fine"
+#D060104F1# "Tipu di schedariu"
+
+// Player view window
+#D0C800489# "Detaglii"
+
+// Record from Analog In dialog box
+#D0BF50000# "Arregistrà da l'Intrata Analogica"
+#D0BF50640# "Longhezza Libera"
+#D0BF50641# "Arregistrà solu per :"
+#D0BF5046E# "Sfuglià"
+#D0BF504B7# "Aghjunghje un numeru sequenziale à u nome di schedariu, principiendu cù : "
+#D0BF504EE# "Statu d'Arregistramentu"
+#D0BF5046B# "Arregistrà"
+#D0BF50445# "Pausa"
+#D0BF50450# "Piantà"
+#D0BF50642# "Mono"
+#D0BF50643# "Stereo"
+#D0BF503F5# "Canali"
+#D0BF504EB# "Apparechju d'Intrata"
+#D0BF504EC# "Nome di Schedariu d'Esciuta"
+#D0BF504ED# "Tipu di Schedariu d'Esciuta"
+#D0BF504EA# "Frequenza di Campiunariu"
+#D0BF504EF# "seconde"
+#D0BF504F0# "Cartulare d'Esciuta"
+
+// RIFF-WAV to MPEG dialog box
+#D02630064# "Interrompe"
+#D0BF30000# "Cavà l'intestatura RIFF-WAV d'un(i) schedariu(i) MPEG"
+#D0BF304E9# "Trattamentu"
+
+// Substitute Characters dialog box
+#D0BF70000# "Sustituzione di Caratteru"
+#D0BF704E6# "Caratteri Inaccettevule di Nome di Schedariu"
+#D0BF704E7# "Altru (sustituzione ùn hè micca necessaria)"
+#D0BF704E8# "spaziu :="
+
+// Ripper Status dialog box
+#D00960000# "Infurmazione Detagliata di Statu di l'Estrazzione"
+
+// String Table
+#0065# "&Apprupositu di CDex..."
+#0066# "Arregistrà cù u nome..."
+#0067# "Apre"
+#0BBA# "Indicadore di Cuntrollu"
+#0BBB# "Diversi"
+#0BBC# "Sunà a Traccia"
+#0BBE# "Piantà a Lettura"
+#0BBF# "Fà sorte u CD"
+#0BC0# "Ùn pò micca apre una Sessione Internet. Ci vole à verificà a vostra cunfigurazione internet."
+#0BC1# "CDex"
+#0BC2# "Fiascu à l'iniziu di e sockets Windows"
+#0BC3# "Avanzà in Furia\nAvanzà in Furia"
+#0BC4# "Rinculà in Furia\nRinculà in Furia"
+#0BC5# "Pausa\nPausa"
+#0BC6# "Saltà à a Traccia Seguente\nSaltà à a Traccia Seguente"
+#0BC7# "Saltà à a Traccia Precedente\nSaltà à a Traccia Precedente"
+#0BC8# "Ottene l'infurmazione di l'albumu da a freeDB alluntanata"
+#0BD4# "CDex Ripper\n\nCDex Ripper\n\n\nCDex.Ducumentu\nCDex Ducumentu"
+#0BDE# "CDex Versione "
+#0BDF# "senza artista"
+#0BE0# "senza titulu"
+#0BE1# "Generu"
+#0BE2# "Albumu"
+#0BE3# "ID freeDB"
+#0BE4# "Artista"
+#0BE5# "Numeru di Traccia"
+#0BE6# "Vulume ID"
+#0BE7# "Nome di Traccia"
+#0BE8# "Numero di Traccia cù 0 di Fronte"
+#0BE9# "Numeru di traccie"
+#0BEA# "Nome"
+#0BEB# "Traccia"
+#0BEC# "Tempu di Principiu"
+#0BED# "Durata"
+#0BEE# "Dimensione"
+#0BEF# "Statu"
+#0BF0# "CDex Versione "
+#0BF1# "U campu Artista cuntene caratteri inaccettevule\n Rimpiazzà caratteri inaccettevule cù spazii"
+#0BF2# "U campu Albumu cuntene caratteri inaccettevule\n Rimpiazzà caratteri inaccettevule cù spazii"
+#0BF3# "U nome di traccia [%d] cuntene caratteri inaccettevule\n Rimpiazzà caratteri inaccettevule cù spazii"
+#0BF4# "Ùn ci hè mancuna traccia selezziunata. Selezziunate una traccia audio o più da a lista."
+#0BF5# "Impussibule di cupià dati in u Preme'papei"
+#0BF6# "Ricerca di a traccia %d (%02d:%02d:%02d)\n"
+#0BF7# "Estrazzione di a traccia in a forma di Cumpressione Audio (%s) ver di u schedariu %s"
+#0BF8# "Estrazzione/cudificazione hè stata fiasca à %s"
+#0BF9# "Estrazzione di a traccia in a forma di Cumpressione Audio hè stata compia bè, durata cumpleta : %s"
+#0BFA# "Estrazzione di a traccia in a forma WAV (%s) ver di u schedariu %s"
+#0BFB# "L'estrazzione hè stata fiasca à %s"
+#0BFC# "Estrazzione di a traccia in a forma WAV hè stata compia bè, durata cumpleta : %s"
+#0BFD# "Ùn pò micca creà u cartulare d'esciuta : "
+#0BFE# "Tempu passatu : %s || Tempu rimanente : %s || Tempu estimatu : %s"
+#0BFF# "Estrazzione di a traccia %d (%d%% compiu, schedariu %d/%d)"
+#0C00# "Valore di Piccu %4.2f dB = %3d %%"
+#0C01# "Jitter (sbaglii : %d)"
+#0C02# "Cunversione di a traccia %d (%d %% ccompiu, schedariu %d/%d)"
+#0C03# "Nurmalizazione di a traccia %d (%d %% compiu, schedariu %d/%d)"
+#0C04# "Determinazione di u Valore di Piccu di a traccia %d (%d %% compiu, schedariu %d/%d)"
+#0C05# "Valore di Piccu %4.2f dB = %3d %%"
+#0C06# "Ver di u schedariu : %s"
+#0C07# "Estrae traccia %d (schedariu %d/%d)"
+#0C08# "Cunvertisce un schedariu ver di a forma di destinazione (schedariu %d/%d)"
+#0C09# "Nurmalizazione di a traccia cù fattore di %5.2f (schedariu %d/%d)"
+#0C0A# "Ottene u valore di piccu (schedariu %d/%d)"
+#0C0B# "In corsu (schedariu %d/%d)"
+#0C0C# "Estrazzione in corsu di e Traccie di u CD"
+#0C0D# "Cunversione di Schedariu"
+#0C0E# "%5d sbaglii à a traccia %s\n\n"
+#0C0F# "Sbaglii Jitter sò affacati. Ci vole à leghje u schedariu d'aiutu per currege i prublemi jitter.\n\n"
+#0C10# "Annu"
+#0C11# "TracciaDati"
+#0C12# "TracciaAudio"
+#0C13# "Ci vole à vérificà chì tutte l'infurmazioni di Traccia è d'Artista\n sianu ben scritte è chì u campu Generu sia ben sceltu \nnanzu di fà una dumanda à a banca di dati di CD alluntanata."
+#0C14# "L'infurmazione d'albumu richiesta ùn si trova micca in a freeDB lucale"
+#0C15# "L'infurmazione d'albumu richiesta ùn si trova micca in u schedariu CDPlayer.ini"
+#0C16# "L'etichetta MP3 hè stata cambiata. \nArregistrà i cambiamenti ?"
+#0C17# "Un sbagliu s'hè affaccatu durante l'arregistrementu di l'etichetta ID3V2.\nAssicuratevvi chì u schedariu ùn hè micca solu in lettura !"
+// is, or isn't?
+#0C18# "Un sbagliu s'hè affaccatu durante a lettura di l'etichetta ID3v2."
+#0C19# "Un sbagliu s'hè affaccatu durante l'apertura di u schedariu d'intrata."
+#0C1A# "Fiascu per definisce u privilegiu di piantà u sistema"
+#0C1B# "U fattore di nurmalizazione hè %7.4f x"
+#0C1C# "Indirizzu elettronicu inaccettevule. Ci vole à scrive u vostru \n\nindirizzu elettronicu in l'ozzioni di a freeDB Alluntanata."
+#0C1D# "U servu alluntanatu ùn risposta micca prestu. \nAumentate u valore di u Cumportu d'attesa in u screnu \ndi l'ozzioni di freeDB, osinnò pruvate torna."
+#0C1E# "lettura/scrittura permessa\n"
+#0C1F# "Iè, lettura sola\n"
+#0C20# "Alcuna occurrenza trova\n"
+#0C21# "Iè, Risposta\n"
+#0C22# "Parechje currispundenze esatte sò state trove. A lista seguita.\n"
+#0C23# "Parechje currispundenze inesatte sò state trove. A lista seguita.\n"
+#0C24# "Entrata freeDB specificata micca trova\n"
+#0C25# "Ci simu dighjà salutati\n"
+#0C26# "L'entrata di a banca di dati hè alterata.\n"
+#0C27# "Alcuna salutazione\n"
+#0C28# "Salutazione fiasca, chjusura di a cunnessione\n"
+#0C29# "Alcuna cunnessione cunsentita : permessu ricusatu\n"
+#0C2A# "Cunnessione impussibule, carga troppu alta\n"
+#0C2B# "Sbagliu di Servu, selezziunate un altru servu\n"
+#0C2C# "Livellu di protocollu hè dighjà cur_level\n"
+#0C2D# "Livellu di Protocollu Inaccettevule\n"
+#0C2E# "Cunnessione Fiasca per a ragione"
+#0C2F# "Cunvertisce"
+#0C30# "Nome di Mudullu"
+#0C31# "Infurmazione di Mudullu"
+#0C32# "A tavula di Generu (genres.txt) ùn hè stata trova in u cartulare CDex\n(lucalizazione : %s)\nVerificate a vostra installazione CDex !"
+#0C33# "Generu"
+#0C34# "Generu freeDB"
+#0C35# "N° ID3 V1"
+#0C36# "Novu Generu"
+#0C37# "Scunnisciutu"
+#0C38# "Risposta Inaccettevule di u Servu"
+#0C39# "%1 = Artista\t\t%5 = N° Vulume CD\n%2 = Albumu\t\t%6 = N° freeDB\n%3 = N° di Traccia\t%7 = N° di Traccia cù 0 di Fronte\n%4 = Nome di Traccia\t%8 = Numeru Tutale di Traccie\n%Y = Annu\t\t%G = Generu\n%A = Nome di l'Artista (micca affettatu da l'ozzione di separazione)\n\nImpiegate l o u (dopu à %) per forzà l'impiegu di e minuscule/maiuscule."
+#0C3A# "Sunatore CDex Versione "
+#0C3B# "Un sbagliu freeDB s'hè affaccatu. Fighjate u messaghju per sapene di più\n"
+#0C3C# "SBAGLIU : Ùn pò micca dimarrà u cudificatore esternu"
+#0C3D# "SBAGLIU : Ùn pò micca mandà di dati ver di u cudificatore esternu"
+#0C3E# "Ùn pò micca creà u schedariu di script VQF"
+#0C3F# "Ùn pò micca caricà u cudificatore %s\nAssicuratevvi di dimarrà CDex.exe induve e DLLs sò dinù\nS'è voi impiegate un accurtatoghju, assicuratevvi chì u cartulare di travagliu sia definitu bè"
+#0C40# "Flussu d'Intrata micca accettevule"
+#0C41# "Ùn pò micca apre/creà u schedariu : %s"
+#0C42# "SBAGLIU : Ùn pò micca creà a cannella ver di u cudificatore esternu"
+#0C43# "A DLL di GoGo a bisognu di un Floating Point Unit"
+#0C44# "%2d traccie (%5.2f Mo) Spaziu discu liberu %5d Mo"
+#0C45# "Sunà di a traccia %d (%02d:%02d:%02d)\n"
+#0C46# " (stesa)"
+#0C47# "Ùn pò micca apre u Preme'Papei"
+#0C48# "Ùn pò micca viutà u Preme'Papei"
+#0C49# "Apertura di cunnessione in corsu"
+#0C4A# "Inviu di a frasa di Salutu"
+#0C4B# "Inviu di a cumanda Statistics"
+#0C4C# "Inviu di u Livellu di Protocollu"
+#0C4D# "Inviu di a Richiesta"
+#0C4E# "Iniziu di a Richiesta Alluntanata"
+#0C4F# "Ricezzione di a risposta alluntanata"
+#0C50# "Indirizzu di servu SMTP scunnisciutu, riimpite l'\nindirizzu di u servu SMTP in l'ozzioni d'inviu di freeDB."
+#0C51# "Fiascu di l'inviu à u servu alluntanatu"
+#0C52# "Cunnessione in corsu à u Servu"
+#0C53# "Servu micca prontu"
+#0C54# "Inviu in corsu"
+#0C55# "Inviu di i dati"
+#0C56# "Inviu di u corpu di u testu"
+#0C57# "Alcuna risposta dui u servu"
+#0C58# " (Cudificatore dispunibule, alcuna infurmazione dispunibule di versione)"
+#0C59# " Alpha %d"
+#0C5A# " Beta %d"
+#0C5B# "U bitrate specificatu ùn currisponde micca à a frequenza d'esciuta selezziunata"
+#0C5C# " (micca dispunibule)"
+#0C5D# "versione"
+#0C5E# "mutore"
+#0C5F# "Ùn pò micca apre u schedariu %s"
+#0C60# "A dimensione di schedariu hè troppu chjuca per un paragone"
+#0C61# "U secondu schedariu hà un spiazzamentu di %d ottetti"
+#0C62# "U primu schedariu hà un spiazzamentu di %d ottetti"
+#0C63# "I schedarii sò sfarenti, ùn si trova micca di bloccu chì currisponde"
+#0C64# "I schedarii sò sfarenti, principiu lucalizatu à %d"
+#0C65# "Alcuna sfarenza ùn hè stata trova\nUn tutale di %d ottetti hè statu paragunatu"
+#0C66# "Cunfigurazione di CDex"
+#0C67# "Ci vole à selezziunà un cartulare"
+#0C68# "Ci vole à selezziunà unu di l'elementi di a lista, o Abbandunà per scappà"
+#0C6A# "Etichetta di datu micca trova"
+#0C6B# "U schedariu %s ùn hè micca un schedariu MPEG RIFF-WAV"
+#0C6C# "Ùn si trova micca d'etichetta di forma in u schedariu %s"
+#0C6D# "Impiegate a Detezione Autumatica solu s'è a preferenza Genericu ùn funzioneghja micca !\nPer a detezione autumatica, u lettore CD-ROM deve cuntene un CD Audio.\nVulete cuntinuà ?"
+#0C6E# "Durata tutale d'arregistramentu (MM:SS:FF) %02d:%02d:%02d equivale à %d settori"
+#0C6F# "Nome di schedariu"
+#0C70# "Data"
+#0C71# "Passeghju"
+#0C72# "Dimensione (Mo)"
+#0C73# "Arregistrà"
+#0C74# "Dimensioni di primu/secondu schedarii sò %d/%d ottetti"
+#0C75# "Riesciutu"
+#0C76# "Primu nome di schedariu ùn hè micca accettevule"
+#0C77# "Secondu nome di schedariu ùn hè micca accettevule"
+#0C78# "Fiascu à l'iniziu di u flussu di cudificazione Ogg. Podasse chì u bitrate specificatu ùn currisponde micca à a frequenza d'esciuta selezziunata. Pruvate d'impiegà e preferenze di Qualità piuttostu chì e preferenze di Bitrate."
+#0C79# "A cudificazione hè stata fiasca à %s"
+#0C7A# "A cudificazione di a traccia in a forma di Cumpressione Audio hè stata compia bè, durata cumpleta : %s"
+#0C7B# "Tipu"
+#0C80# "CDex Player\n\nCDex Player\n\n\nCDex.Ducumentu\nCDex Ducumentu"
+#0C81# "Alcunu schedariu ùn hè selezziunatu"
+#0C82# "Autumaticu"
+#0C83# "Predefinitu"
+#0C84# "Sbagliu di cunversione : U nome di u schedariu à cunvertisce hè uguale à quellu di destinazione.\nSelezziunate un cartulare di destinazione sfarente !\nSchedariu à cunvertì : %s\nSchedariu di destinazione : %s"
+#0C85# "L'impiegu di a Biblioteca SCSI Nativa di NT ùn hè micca accettatu da stu sistema d'operazione.\nCi vole à installà i piloti ASPI per pudè impiegà CDex. Fighjate u schedariu d'Aiutu di CDex per sapene di più.\n"
+#0C86# "Sbagliu : Fiascu per caricà i piloti ASPI di Windows.\nCi vole à installà sti piloti per pudè impiegà CDex. Fighjate u schedariu d'Aiutu di CDex per sapene di più.\n"
+#0C87# "Sbagliu : Fiascu per ottene u statu di u pilotu ASPI.\nCi vole à verificà l'installazione di stu pilotu. Fighjate u schedariu d'Aiutu di CDex per sapene di più.\n"
+#0C88# "Corsu"
+#0C8F# "..."
+#0C90# "Selezziunà un Cartulare"
+#0C91# "Cudificatori (*.exe;*.bat)|*.exe;*.bat|Tutti i schedarii (*.*)|*.*||"
+#0C92# "Selezziunà u cudificatore"
+#0C93# "Maiò"
+#0C94# "Chjucu"
+#0C95# "alcunu"
+#0C96# "classicu"
+#0C97# "Lettura"
+#0C98# "Atapi"
+#0C99# "Attivu"
+#0C9A# "Densità"
+#0C9B# "Endian"
+#0C9C# "Risultatu"
+#0C9D# "Passatu"
+#0C9E# "Fiascu"
+#0C9F# "Fiascu per caricà u pilotu wnaspi32.dll !\nVulete piuttostu impiegà l'ozzione "Biblioteca SCSI Nativa di NT" di u pilotu ?"
+#0CA0# "Cuntrollu di i schedarii (aghjunti o cambiati) di Lingua"
+#0CA3# "Selezziunate un elementu figliolu di '%s'."
+#0CA4# "Fiure (*.jpg;*.png)|*.jpg;*.png|Tutti i schedarii (*.*)|*.*||"
+#0D48# "CRC"
+#0DAC# "Gap"
+#0D49# "ISRC"
+#138C# "Seguente"
+#1389# "Fiascu di cunnessione, verificate e preferenze di reta è di proxy"
+#138A# "Currispundenza inesatta trova, ci vole à sceglie una currispondenza and pressà u buttone Seguente\r\nO pressà u buttone Abbondunà per interrompe"
+#1390# "Avvistu"
+#1391# "Identificà i Gap"
+#139C# "Identificà u Gap per a traccia %d"
+#1392# "Leghje u codice UPC/ISRC"
+#1393# "Leghje u codice UPC/ISRC\r\nAspittate per piacè !"
+
+#8003# "Selezziunà per cunfigurà CDex\nCunfigurà"
+#8004# "Estrae qualchì traccia di CD ver di schedarii WAV\nEstrae qualchì traccia di CD ver di schedarii WAV"
+#8005# "Estrae qualchì traccia di CD ver di schedarii Audio Cumpressi\nEstrae qualchì traccia di CD ver di schedarii Audio Cumpressi"
+#8006# "Cunvertì qualchì schedariu WAV ver di a forma Audio Cumpressa\nCunvertì qualchì schedariu WAV ver di a forma Audio Cumpressa"
+#8007# "Estrae una sezzione di u CD ver di schedarii WAV o Audio Cumpressi\nEstrae una sezzione di u CD ver di schedarii WAV o Audio Cumpressi"
+#800D# "Selezziunà per ottene l'infurmazioni nant'à u sistema\nSelezziunà per ottene l'infurmazioni nant'à u sistema"
+#800E# "Cunfigurà e preferenze di u CD\nCunfigurà e preferenze di u CD"
+#800F# "Espulsione di u CD\nEspulsione di u CD (Maiusc-F1)"
+#8010# "Avanzà in Furia\nAvanzà in Furia"
+#8011# "Rinculà in Furia\nRinculà in Furia"
+#8012# "Saltà à a traccia seguente\nSaltà à a traccia seguente (Maiusc-F3)"
+#8013# "Saltà à a traccia precedente\nSaltà à a traccia precedente"
+#8015# "Sunà qualchì traccia audio\nSunà qualchì traccia audio (Maiusc-F4)"
+#8016# "Piantà a Lettura\nPiantà a Lettura"
+#8017# "Piantata/ripresa di a lettura\nPiantata/ripresa di a lettura"
+#8018# "Ottene l'infurmazioni di l'albumu da a freeDB lucale\nOttene l'infurmazioni di l'albumu da a freeDB lucale"
+#801A# "Ottene l'infurmazioni di l'albumu da u schedariu CDPlayer.ini\nOttene l'infurmazioni di l'albumu da u schedariu CDPlayer.inii l"
+#801B# "Ottene l'infurmazioni di l'albumu da a freeDB alluntanata\nOttene l'infurmazioni di l'albumu da a freeDB alluntanata"
+#801C# "Affissà o piattà a barra d'attrezzi di lettura"
+#801D# "Affissà o piattà a barra d'attrezzi d'arregistramentu"
+#801E# "Saltà à a traccia precedente\nSaltà à a traccia precedente (Maiusc-F2)"
+#801F# "Rinculà in Furia\nRinculà in Furia"
+#8022# "Cunvertì qualchì schedariu MP3 ver di Riff WAV"
+#8023# "Cupià l'infurmazioni di l'albumu ver di u preme'papei"
+#8024# "Rinumà a traccia selezziunata"
+#8026# "Selezziunà Tutte e Traccie"
+#8027# "Arregistrà l'infurmazioni di l'albumu in u schedariu CDPlayer.ini"
+#8028# "Arregistrà l'infurmazioni di l'albumu in a freeDB lucale"
+#8029# "Cunvertì qualchì schedariu Audio Cumpressu ver di a forma WAV\nCunvertì qualchì schedariu Audio Cumpressu ver di a forma WAV"
+#802A# "Ricaricà l'infurmazioni di l'albumu da u discu"
+#802B# "Affissà u statu"
+#802C# "Affissà l'Infurmazione di Statu d'Estrazzione di e traccie selezziunate\nAffissà l'Infurmazione di Statu d'Estrazzione di e traccie selezziunate"
+#802D# "Paragunà u cuntenutu di dui schedarii WAV\nParagunà u cuntenutu di dui schedarii WAV"
+#802E# "Sunà Qualchì Schedariu Media\nSunà Qualchì Schedariu Media"
+#802F# "Viutà u statu d'estrazzione di stu CD"
+#8030# "Cavà l'intestatura(e) RIFF-WAV d'un(i) schedariu(i) MP2 o MP3\nCavà l'intestatura(e) RIFF-WAV d'un(i) schedariu(i) MP2 o MP3"
+#8031# "Arregistrà un WAV o MP3 da l'intrata analogica di u vostru urdinatore\nArregistrà da l'intrata analogica"
+#8032# "Sottumette l'infurmazioni di l'albumu à a freeDB alluntanata"
+#8033# "Ottene l'infurmazioni CD-Text di l'albumu (s'ellu hè accettatu/dispunibule)"
+#8035# "Selezziunà i Schedarii\nSelezziunà i Schedarii"
+#8036# "Selezziunà i Schedarii\nSelezziunà i Schedarii"
+#8037# "Saltà à u Schedariu Precedente\nSaltà à u Schedariu Precedente"
+#8038# "Saltà à u Schedariu Seguente\nSaltà à u Schedariu Seguente"
+#8039# "Sunà Qualchì Schedariu\nSunà Qualchì Schedariu"
+#803A# "Piantà a Lettura di u(i) Schedariu(i)\nPiantà a Lettura"
+#803B# "Richiesta Batch freeDB\nRichiesta Batch freeDB"
+#803E# "Cudificà torna (trascudificà) qualchì schedariu di a forma Audio Cumpressa\nCudificà torna (trascudificà) qualchì schedariu di a forma Audio Cumpressa"
+
+#8046# "Cunfigurà l'Estensioni Winamp\nCunfigurà l'Estensioni Winamp"
+#8047# "Mudificà a lista di i generi cunnisciuti\nMudificà Lista di Generi"
+#8048# "Piantata di a lettura\nPiantata di a lettura (Maiusc-F6)"
+#804B# "Sunà e traccie à l'azardu\nSunà e traccie à l'azardu"
+#804D# "Scambia i campi Artista/Traccia (per un CD cù parechji artisti)\nScambia i campi Artista/Traccia (per un CD cù parechji artisti)"
+#804E# "Selezziunà u Lettore CD attivu\nSelezziunà u Lettore CD attivu"
+#804F# "Selezziunà u prufilu\nSelezziunà u prufilu"
+#8050# "Arregistrà e preferenze currente ver di u prufilu\nArregistrà e preferenze currente ver di u prufilu"
+#8052# "Squassà u prufilu\nSquassà u prufilu selezziunatu"
+#80E8# "Leghje l'infurmazioni di l'albumu da a banca di dati di Winamp\nLeghje l'infurmazioni di l'albumu da a banca di dati di Winamp"
+#E000# "CDex"
+#E001# "Pressà F1 per ottene un aiutu nant'à u prugramma CDex d'estrazzione di CD audio"
+#E100# "Creà un novu ducumentu\nNovu"
+#E101# "Apre un ducumentu chì esiste\nApre"
+#E102# "Chjode u ducumentu attivu\nChjode"
+#E103# "Arregistrà u ducumentu attivu\nArregistrà"
+#E104# "Arregistrà u ducumentu attivu cù un'altru nome\nArregistrà cù u Nome"
+#E105# "Cambià l'ozzioni di stampa\nParametri di Pagina"
+#E106# "Cambià a stampetta è l'ozzioni di stampa\nParametri di Stampa"
+#E107# "Stampà u ducumentu attivu\nStampà"
+#E109# "Affissà pagine sane\nAvvistu di Stampa"
+#E110# "Apre stu ducumentu"
+#E111# "Apre stu ducumentu"
+#E112# "Apre stu ducumentu"
+#E113# "Apre stu ducumentu"
+#E114# "Apre stu ducumentu"
+#E115# "Apre stu ducumentu"
+#E116# "Apre stu ducumentu"
+#E117# "Apre stu ducumentu"
+#E118# "Apre stu ducumentu"
+#E119# "Apre stu ducumentu"
+#E11A# "Apre stu ducumentu"
+#E11B# "Apre stu ducumentu"
+#E11C# "Apre stu ducumentu"
+#E11D# "Apre stu ducumentu"
+#E11E# "Apre stu ducumentu"
+#E11F# "Apre stu ducumentu"
+#E120# "Squassà a selezzione\nSquassà"
+#E121# "Squassà tuttu\nSquassà Tuttu"
+#E123# "Taglià a selezzione è mettela in u Preme'papei\nTaglià"
+#E124# "Circà u testu specificatu\nCircà"
+#E125# "Incullà u cuntenutu di u Preme'papei\nIncullà"
+#E128# "Ripete l'ultima azzione\nRipete"
+#E129# "Rimpiazzà u testu specificatu da un testu sfarente\nRimpiazzà"
+#E12A# "Selezziunà u ducumentu sanu\nSelezziunà Tuttu"
+#E12B# "Disfà l'ultima azzione\nDisfà"
+#E12C# "Rifà l'ultima azzione disfatta\nRifà"
+#E135# "Sparte a finestra attiva in pannelli\nSparte"
+#E140# "Affissà l'infurmazione apprupositu di CDex : versione, 'copyright' è traduttore\nApprupositu"
+#E141# "Chità l'appiegazione\nEsce"
+#E142# "Rubriche d'Aiutu di CDex\nAiutu di CDex"
+#E143# "Lista di e rubriche d'aiutu di CDex\nRubriche d'Aiutu"
+#E144# "Affissà l'instruzzione apprupositu di l'impiegu di l'aiutu\nAiutu"
+#E145# "Affissà l'aiutu per i buttoni, menus è finestre\nAiutu"
+#E146# "Affissà l'aiutu per a tacca o a cumanda currente\nAiutu"
+#E150# "Permutà ver di u pannellu seguente\nPannellu Seguente"
+#E151# "Permutà ver di u pannellu precedente\nPannellu Precedente"
+#E700# "EXT"
+#E701# "CAP"
+#E702# "NUM"
+#E703# "SCRL"
+#E704# "OVR"
+#E705# "REC"
+#E800# "Affissà o piattà a barra d'attrezzi\nToggle Barra d'Attrezzi"
+#E801# "Affissà o piattà a barra di statu\nToggle Barra di Statu"
+#EF00# "Cambià a dimensione di a finestra"
+#EF01# "Dispiazzà a finestra"
+#EF02# "Inchjuculì a finestra cum'è un icona"
+#EF03# "Ingrandà a finestra à a dimensione sana"
+#EF04# "Permutà ver di a finestra di u ducumentu seguente"
+#EF05# "Permutà ver di a finestra di u ducumentu precedente"
+#EF06# "Chità l'appiecazione"
+#EF12# "Rimette a finestra à a dimensione nurmale"
+#EF13# "Attivà a Lista di Tacca"
+#F003# "Senza titulu"
+#F005# "Chjode u modu d'avvistu di stampà\nAbbandunà Avvistu"

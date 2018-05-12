@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Edit Menu: Copy, Paste and Duplicate - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Edit_Menu_Copy_Paste_and_Duplicate rootpage-Edit_Menu_Copy_Paste_and_Duplicate skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Edit Menu: Copy, Paste and Duplicate</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Edit_Menu:_Copy,_Paste_and_Duplicate#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+
+   </li></ul></li></ul>
+<p><br />
+</p>
+<div class="intro">Tools to copy, duplicate and paste audio and labels.<p>Only one item can be on the clipboard at a time.</p></div>
+<div id="copy"></div>
+<h2><span class="mw-headline" id="Copy_.C2.A0Ctrl_.2B_C">Copy &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + C</span></font></span></h2>
+<p>Copies the selected audio data to the Audacity clipboard without removing it from the project.
+</p>
+<div id="cut"></div>
+<h2><span class="mw-headline" id="Cut_.C2.A0Ctrl_.2B_X">Cut &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + X</span></font></span></h2>
+<p>Similar to Copy, but removes the selected audio data and and places these on the Audacity clipboard. Any audio data to the right of the selection are shifted to the left.
+</p>
+<div id="paste"></div>
+<h2><span class="mw-headline" id="Paste_.C2.A0Ctrl_.2B_V">Paste &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + V</span></font></span></h2>
+<p>Pastes audio which has been <a href="#cut">cut</a> or <a href="#copy">copied</a> to the Audacity clipboard, either inserting it into the <a href="audacity_selection.html" title="Audacity Selection">selected</a> track(s) at the cursor point, or replacing the current selection region(s).
+</p><p><br />
+</p>
+<div class="note">The behavior of the paste command changes depending on the setting of "Editing <a href="audacity_tracks_and_clips.html" title="Audacity Tracks and Clips">clips</a> can move other clips" in <a href="tracks_preferences.html" title="Tracks Preferences">Tracks Preferences</a>. If the option is <i>checked</i> pasting is always possible and following audio is shifted to make room. If this option is <i>not checked</i> there must be room for the pasted audio.</div>
+<dl><dd><b>Pasting inside a clip, with "Editing clips can move other clips" checked:</b></dd>
+<dd><span title="Before"><img alt="PasteIntoClip Before.png" src="../m/images/2/2b/pasteintoclip_before.png" width="566" height="184" /></span></dd>
+<dd><span title="After"><img alt="PasteIntoClip After.png" src="../m/images/b/bb/pasteintoclip_after.png" width="566" height="184" /></span></dd></dl>
+<p>When you select Paste and the cursor is outside a clip, and there is enough room for the audio that is on the clipboard, the audio on the clipboard can be inserted without any other clips being shifted over if "Editing clips can move other clips" is not checked. If "Editing clips can move other clips" is checked, the following audio will always be moved.
+</p>
+<dl><dd><b>Pasting outside a clip, with "Editing clips can move other clips" checked:</b></dd>
+<dd><span title="Before"><img alt="PasteInWhiteSpace Before.png" src="../m/images/d/d0/pasteinwhitespace_before.png" width="566" height="184" /></span></dd>
+<dd><span title="After"><img alt="PasteInWhiteSpace CanMove After.png" src="../m/images/4/48/pasteinwhitespace_canmove_after.png" width="566" height="184" /></span></dd></dl>
+<dl><dd><b>Pasting outside a clip, with "Editing clips can move other clips" not checked:</b></dd>
+<dd><span title="Before"><img alt="PasteInWhiteSpace Before.png" src="../m/images/d/d0/pasteinwhitespace_before.png" width="566" height="184" /></span></dd>
+<dd><span title="After"><img alt="PasteInWhiteSpace CannotMove After.png" src="../m/images/4/41/pasteinwhitespace_cannotmove_after.png" width="566" height="184" /></span></dd></dl>
+<div id="paste_new"></div>
+<h3><span class="mw-headline" id="Pasting_into_a_new_track">Pasting into a new track</span></h3>
+<p>If you want to create a new track and paste into that, the paste will automatically create a new mono or stereo track as appropriate, with the audio starting at time zero, if you:
+</p>
+<ul><li> Paste into an empty project window </li>
+<li> Click in the gray background underneath the last track in the project to deselect all the tracks, then paste.</li>
+<li> You can paste from a mono track into a stero track - the mono audio will be replicated in both stereo channels.</li>
+<li> You cannot paste from a stereo track into a mono track. <i>(You will get an error message if you try to do this.)</i></li></ul>
+<p>If you want the paste to start at other than time zero you must first use Tracks &gt; Add New &gt; Mono Track (or Add New &gt; Stereo Track), place the cursor where you want to paste, then make the paste.
+</p><p><br />
+</p>
+<div id="duplicate"></div>
+<h2><span class="mw-headline" id="Duplicate_.C2.A0Ctrl_.2B_D">Duplicate &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + D</span></font></span></h2>
+<p>Creates a new track containing only the current selection as a new clip. The new clip is at the same position on the Timeline as the original audio. This is essentially a shortcut method of performing copy, add new track and paste, except that the duplicated audio is not copied to the Audacity clipboard, so cannot be pasted anywhere else.  
+</p>
+<dl><dd><span title="Before"><img alt="Duplicate Before.png" src="../m/images/1/1f/duplicate_before.png" width="566" height="184" /></span></dd>
+<dd><span title="After"><img alt="Duplicate After.png" src="../m/images/2/2d/duplicate_after.png" width="566" height="309" /></span></dd></dl>
+<p><br />
+</p>
+<div class="note">One benefit of Duplicate is the ability to experiment with <a href="effect_menu.html" title="Effect Menu">effects</a>. You can do that with the original track too, but you cannot change the volume of your effect and the original audio separately, only lower the volume of the processed audio later on. If you duplicate the audio then use a <a href="effect_menu.html#reverb" title="Effect Menu">reverb</a> on that (with 100% reverb and 0% original signal), you can freely change the volume for both the original and reverb signal using the <a href="audio_tracks.html#gain" title="Audio Tracks">gain slider</a> on each track. 
+<ul><li> You can do interesting things to your duplicates to create special effects. With two versions of the track to work with, you can silence a section, reverb another section, phase a third, filter another (in one track or the other) and see how that sounds.</div></li></ul>
+<p><br />
+</p><p><a href="edit_menu.html" title="Edit Menu"><b>&lt;</b>&#160; Back to: Edit Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020316
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.089 seconds
+Real time usage: 0.094 seconds
+Preprocessor visited node count: 242/1000000
+Preprocessor generated node count: 1169/1000000
+Post‐expand include size: 6055/2097152 bytes
+Template argument size: 4054/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   29.044      1 - -total
+ 66.76%   19.389      1 - Template:I18n
+ 61.17%   17.766      1 - Template:I18n_box
+ 50.07%   14.543      1 - Template:I18n_list
+ 19.04%    5.530      2 - Template:I18n_link
+ 11.29%    3.279      4 - Template:Shortcut
+ 11.15%    3.239      2 - Template:Autoglossonym
+  4.99%    1.449      2 - Template:Note
+  4.65%    1.351      1 - Template:Hint
+  3.82%    1.108      1 - Template:Ednote
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4321-0!*!0!!*!5!* and timestamp 20180215020316 and revision id 57018
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Edit_Menu:_Copy,_Paste_and_Duplicate">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "רענן">
+<!ENTITY push.playqueue.instructions "גרור ושחרר רצועות או רשימות השמעה כדי ליצור תור האזנה מתחלף בקביעות במכשיר זה">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "לא מקוון">
+<!ENTITY sharing.push.deviceState.stopped "נעצר">
+<!ENTITY sharing.push.deviceState.playing "משמיע">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "מושהה">
+<!ENTITY sharing.push.deviceState.recording "מקליט">
+<!ENTITY sharing.push.deviceState.nomedia "לא קיימת מדיה">

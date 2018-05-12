@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Extra Menu: Focus - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Extra_Menu_Focus rootpage-Extra_Menu_Focus skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Extra Menu: Focus</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Extra_Menu:_Focus#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="intro">The <i><b>Extra &gt; Focus Menu</b></i> provides provides access to extra commands for <a href="audio_tracks.html#focus" title="Audio Tracks">track focus</a> that are not available in the default Audacity menus.</div>
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_1087818998"><area href="help_menu.html" shape="rect" coords="0,3,26,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="33,3,63,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="extra_menu_transport.html" shape="rect" coords="39,23,212,45" alt="Extra commands related to play and record" title="Extra commands related to play and record"/><area href="extra_menu_tools.html" shape="rect" coords="39,45,212,67" alt="Extra commands to select the tool, e" title="Extra commands to select the tool, e"/><area href="extra_menu_mixer.html" shape="rect" coords="39,67,212,89" alt="Extra commands related to volume" title="Extra commands related to volume"/><area href="extra_menu_edit.html" shape="rect" coords="39,89,212,111" alt="Extra commands related to editing" title="Extra commands related to editing"/><area href="extra_menu_transcription.html" shape="rect" coords="39,111,212,133" alt="Extra commands related to play at speed" title="Extra commands related to play at speed"/><area href="extra_menu_seek.html" shape="rect" coords="39,133,212,155" alt="Extra commands related to seeking" title="Extra commands related to seeking"/><area href="extra_menu_device.html" shape="rect" coords="39,155,212,177" alt="Extra commands related to selecting a device" title="Extra commands related to selecting a device"/><area href="extra_menu_selection.html" shape="rect" coords="39,177,212,199" alt="Extra commands related to selecting" title="Extra commands related to selecting"/><area href="#" shape="rect" coords="39,206,212,228" alt="Extra commands to set focus, usually focus on one track" title="Extra commands to set focus, usually focus on one track"/><area href="extra_menu_cursor.html" shape="rect" coords="39,228,212,250" alt="Extra commands to move the cursor" title="Extra commands to move the cursor"/><area href="extra_menu_track.html" shape="rect" coords="39,250,212,272" alt="Extra commands to operate on a track that has focus" title="Extra commands to operate on a track that has focus"/><area href="extra_menu.html#full_screen_onoff" shape="rect" coords="39,272,212,294" alt="Toggle full screen mode with no title bar" title="Toggle full screen mode with no title bar"/><area href="#move_backward_from_toolbars_to_tracks" shape="rect" coords="224,74,579,96" alt="Move backward through currently focused toolbar in Upper Toolbar dock area, Track View and currently focused toolbar in Lower Toolbar dock area" title="Move backward through currently focused toolbar in Upper Toolbar dock area, Track View and currently focused toolbar in Lower Toolbar dock area"/><area href="#move_forward_from_toolbars_to_tracks" shape="rect" coords="224,96,579,118" alt="Move forward through currently focused toolbar in Upper Toolbar dock area, Track View and currently focused toolbar in Lower Toolbar dock area" title="Move forward through currently focused toolbar in Upper Toolbar dock area, Track View and currently focused toolbar in Lower Toolbar dock area"/><area href="#move_focus_to_previous_track" shape="rect" coords="224,118,579,140" alt="Focus one track up" title="Focus one track up"/><area href="#move_focus_to_next_track" shape="rect" coords="224,140,579,162" alt="Focus one track down" title="Focus one track down"/><area href="#move_focus_to_first_track" shape="rect" coords="224,162,579,184" alt="Focus on first track" title="Focus on first track"/><area href="#move_focus_to_last_track" shape="rect" coords="224,184,579,206" alt="Focus on last track" title="Focus on last track"/><area href="#move_focus_to_previous_and_select" shape="rect" coords="224,206,579,228" alt="Focus one track up and select it" title="Focus one track up and select it"/><area href="#move_focus_to_next_and_select" shape="rect" coords="224,228,579,250" alt="Focus one track down and select it" title="Focus one track down and select it"/><area href="#toggle_focused_track" shape="rect" coords="224,250,579,272" alt="Toggle focus on current track" title="Toggle focus on current track"/><area href="#toggle_focused_track" shape="rect" coords="224,272,579,294" alt="Toggle focus on current track" title="Toggle focus on current track"/></map><img alt="Extra-FocusMenu.png" src="../m/images/b/bd/extra_focusmenu.png" width="592" height="302" usemap="#ImageMap_1_1087818998"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p>
+<div id="move_backward_from_toolbars_to_tracks"></div>
+<h2><span class="mw-headline" id="Move_backward_from_toolbars_to_tracks_.C2.A0Ctrl.2BShift.2BF6">Move backward from toolbars to tracks &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl+Shift+F6</span></font></span></h2>
+<p>Move backward through currently focused toolbar in <a href="toolbars_overview.html#upper_tooldock" title="Toolbars Overview">Upper Toolbar dock area</a>, Track View and currently focused toolbar in <a href="toolbars_overview.html#lower_tooldock" title="Toolbars Overview">Lower Toolbar dock area</a>.  Each use moves the keyboard focus as indicated. 
+</p>
+<div id="move_forward_from_toolbars_to_tracks"></div>
+<h2><span class="mw-headline" id="Move_forward_from_toolbars_to_tracks_.C2.A0Ctrl.2BF6">Move forward from toolbars to tracks &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl+F6</span></font></span></h2>
+<p>Move forward through currently focused toolbar in <a href="toolbars_overview.html#upper_tooldock" title="Toolbars Overview">Upper Toolbar dock area</a>, Track View and currently focused toolbar in <a href="toolbars_overview.html#lower_tooldock" title="Toolbars Overview">Lower Toolbar dock area</a>.  Each use moves the keyboard focus as indicated. 
+</p>
+<div id="move_focus_to_previous_track"></div>
+<h2><span class="mw-headline" id="Move_Focus_to_Previous_Track_.C2.A0Up">Move Focus to Previous Track &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Up</span></font></span></h2>
+<p>Focus one track up
+</p>
+<div id="move_focus_to_next_track"></div>
+<h2><span class="mw-headline" id="Move_Focus_to_Next_Track_.C2.A0Down">Move Focus to Next Track &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Down</span></font></span></h2>
+<p>Focus one track down
+</p>
+<div id="move_focus_to_first_track"></div>
+<h2><span class="mw-headline" id="Move_Focus_to_First_Track_.C2.A0Ctrl.2BHome_.C2.A0_Extra">Move Focus to First Track &#160;<font size="-1"><span class="kbrd" style="background-color: #eaeafa">Ctrl+Home </span> &#160; <i><sup><a href="only_in_full_set.html" title="Only in full set">Extra</a></sup></i></font></span></h2>
+<p>Focus on first track
+</p>
+<div id="move_focus_to_last_track"></div>
+<h2><span class="mw-headline" id="Move_Focus_to_Last_Track_.C2.A0Ctrl.2BEnd_.C2.A0_Extra">Move Focus to Last Track &#160;<font size="-1"><span class="kbrd" style="background-color: #eaeafa">Ctrl+End </span> &#160; <i><sup><a href="only_in_full_set.html" title="Only in full set">Extra</a></sup></i></font></span></h2>
+<p>Focus on last track
+</p>
+<div id="move_focus_to_previous_and_select"></div>
+<h2><span class="mw-headline" id="Move_Focus_to_Previous_and_Select_.C2.A0Shift.2BUp">Move Focus to Previous and Select &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Shift+Up</span></font></span></h2>
+<p>Focus one track up and select it
+</p>
+<div id="move_focus_to_next_and_select"></div>
+<h2><span class="mw-headline" id="Move_Focus_to_Next_and_Select_.C2.A0Shift.2BDown">Move Focus to Next and Select &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Shift+Down</span></font></span></h2>
+<p>Focus one track down and select it
+</p>
+<div id="toggle_focused_track"></div>
+<h2><span class="mw-headline" id="Toggle_Focused_Track_.C2.A0Return">Toggle Focused Track &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Return</span></font></span></h2>
+<p>Toggle focus on current track
+</p>
+<div id="toggle_focused_track"></div>
+<h2><span class="mw-headline" id="Toggle_Focused_Track_.C2.A0NUMPAD_ENTER">Toggle Focused Track &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">NUMPAD_ENTER</span></font></span></h2>
+<p>Toggle focus on current track
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020606
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.087 seconds
+Real time usage: 0.090 seconds
+Preprocessor visited node count: 303/1000000
+Preprocessor generated node count: 6539/1000000
+Post‐expand include size: 3049/2097152 bytes
+Template argument size: 361/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   61.516      1 - -total
+ 78.04%   48.008      1 - Template:Menus
+ 72.93%   44.864      1 - Template:All-menus
+ 10.78%    6.634      8 - Template:Shortcut
+  4.43%    2.728      2 - Template:Fullshortcut
+  2.40%    1.476      1 - Template:ClickTip
+  2.35%    1.447      1 - Template:Intro
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:5702-0!*!0!!*!5!* and timestamp 20180215020606 and revision id 56700
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Extra_Menu:_Focus">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

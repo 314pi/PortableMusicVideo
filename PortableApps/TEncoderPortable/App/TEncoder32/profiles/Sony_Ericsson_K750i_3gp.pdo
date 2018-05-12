@@ -1,0 +1,17 @@
+[Main]
+Ext=3gp
+Container=2
+Encoder=1
+VCodec=3
+VBitrate=1024
+Width=720
+Height=576
+VideoSize=720x576
+FPS=25
+VAR=0
+ACodec=2
+ABitrate=64
+ASR=7
+AChan=1
+CustomVideo=
+CustomAudio=

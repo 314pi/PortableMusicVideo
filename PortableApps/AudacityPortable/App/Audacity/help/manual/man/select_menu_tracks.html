@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Select Menu: Tracks - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Select_Menu_Tracks rootpage-Select_Menu_Tracks skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Select Menu: Tracks</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Select_Menu:_Tracks#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="intro">These commands extend the current selection up and/or down into all tracks, or Sync-Locked tracks in the project.</div>
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_1555086610"><area href="edit_menu.html" shape="rect" coords="2,3,26,19" alt="Edit Menu" title="Edit Menu"/><area href="select_menu.html" shape="rect" coords="33,3,70,19" alt="Select Menu" title="Select Menu"/><area href="view_menu.html" shape="rect" coords="77,3,106,19" alt="View Menu" title="View Menu"/><area href="transport_menu.html" shape="rect" coords="113,3,169,19" alt="Transport Menu" title="Transport Menu"/><area href="tracks_menu.html" shape="rect" coords="176,3,216,19" alt="Tracks Menu" title="Tracks Menu"/><area href="generate_menu.html" shape="rect" coords="223,3,277,19" alt="Generate Menu" title="Generate Menu"/><area href="effect_menu.html" shape="rect" coords="284,3,317,19" alt="Effect Menu" title="Effect Menu"/><area href="analyze_menu.html" shape="rect" coords="324,3,368,19" alt="Analyze Menu" title="Analyze Menu"/><area href="help_menu.html" shape="rect" coords="375,3,404,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="411,3,441,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="select_menu.html#all" shape="rect" coords="39,23,298,45" alt="Selects all of the audio in all of the tracks" title="Selects all of the audio in all of the tracks"/><area href="select_menu.html#none" shape="rect" coords="39,45,298,67" alt="Deselects all of the audio in all of the tracks" title="Deselects all of the audio in all of the tracks"/><area href="#" shape="rect" coords="39,67,298,89" alt="For extending a selection to more tracks" title="For extending a selection to more tracks"/><area href="select_menu_region.html" shape="rect" coords="39,89,298,111" alt="For modifying, saving and restoring a selection" title="For modifying, saving and restoring a selection"/><area href="select_menu_spectral.html" shape="rect" coords="39,111,298,133" alt="For making a selection of a frequency range" title="For making a selection of a frequency range"/><area href="select_menu_clip_boundaries.html" shape="rect" coords="39,133,298,155" alt="For modifying a selection, taking account of clips" title="For modifying a selection, taking account of clips"/><area href="select_menu.html#cursor_to_stored_cursor_position" shape="rect" coords="39,162,298,184" alt="Selects from the position of the cursor to the previously stored cursor position" title="Selects from the position of the cursor to the previously stored cursor position"/><area href="select_menu.html#store_cursor_position" shape="rect" coords="39,184,298,206" alt="Stores the current cursor position for use in a later selection" title="Stores the current cursor position for use in a later selection"/><area href="select_menu_at_zero_crossings.html" shape="rect" coords="39,213,298,235" alt="Moves the edges of a selection region (or the cursor position) slightly so they are at a rising zero crossing point" title="Moves the edges of a selection region (or the cursor position) slightly so they are at a rising zero crossing point"/><area href="#in_all_tracks" shape="rect" coords="310,70,565,92" alt="Extends the current selection up and/or down into all tracks in the project" title="Extends the current selection up and/or down into all tracks in the project"/><area href="#in_all_synclocked_tracks" shape="rect" coords="310,92,565,114" alt="Extends the current selection up and/or down into all sync-locked tracks in the currently selected track group" title="Extends the current selection up and/or down into all sync-locked tracks in the currently selected track group"/></map><img alt="Select-TracksMenu.png" src="../m/images/8/86/select_tracksmenu.png" width="578" height="243" usemap="#ImageMap_1_1555086610"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p>
+<div id="in_all_tracks"></div>
+<h2><span class="mw-headline" id="In_All_Tracks_.C2.A0Ctrl_.2B_Shift_.2B_K">In All Tracks &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + Shift + K</span></font></span></h2>
+<p>Extends the current selection up and/or down into all tracks in the project.
+</p>
+<dl><dd><span title="Before"><img alt="EditSelectBefore.png" src="../m/images/d/dc/editselectbefore.png" width="411" height="323" /></span></dd>
+<dd><span title="After"><img alt="EditSelectAllTracksAfter.png" src="../m/images/4/45/editselectalltracksafter.png" width="410" height="323" /></span></dd></dl>
+<div id="in_all_synclocked_tracks"></div>
+<h2><span class="mw-headline" id="In_All_Sync-Locked_Tracks_.C2.A0Ctrl_.2B_Shift_.2B_Y">In All Sync-Locked Tracks &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + Shift + Y</span></font></span></h2>
+<p>Extends the current selection up and/or down into all Sync-Locked tracks in the currently selected track group.
+</p>
+<dl><dd><span title="Before"><img alt="EditSelectBefore.png" src="../m/images/d/dc/editselectbefore.png" width="411" height="323" /></span></dd>
+<dd><span title="After"><img alt="EditSelectSyncLockAfter.png" src="../m/images/1/13/editselectsynclockafter.png" width="405" height="314" /></span></dd></dl>
+<p><br />
+</p><p><br />
+<a href="select_menu.html" title="Select Menu"><b>&lt;</b>&#160; Back to: Select Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020241
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.077 seconds
+Real time usage: 0.081 seconds
+Preprocessor visited node count: 109/1000000
+Preprocessor generated node count: 6264/1000000
+Post‐expand include size: 1690/2097152 bytes
+Template argument size: 206/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   49.336      1 - -total
+ 92.12%   45.447      1 - Template:Menus
+ 86.29%   42.572      1 - Template:All-menus
+  4.23%    2.086      2 - Template:Shortcut
+  2.94%    1.452      1 - Template:ClickTip
+  2.47%    1.218      1 - Template:Intro
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:5624-0!*!0!!*!5!* and timestamp 20180215020241 and revision id 51375
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Select_Menu:_Tracks">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

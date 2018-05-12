@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+     xmlns:songbird="http://www.songbirdnest.com/2007/addon-metadata-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+
+    <!-- Songbird target application. -->
+    <em:targetApplication>
+      <Description>
+        <em:id>songbird@songbirdnest.com</em:id>
+        <em:minVersion>2.2.0</em:minVersion>
+        <em:maxVersion>2.2.0</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+    <em:id>soundboard@songbirdnest.com</em:id>
+    <em:name>Songbird.me</em:name>
+    <em:description>Effortlessly discover new music you'll want in your collection. See what music and artists your friends are into; follow what you like.</em:description>
+    <em:creator>POTI, Inc.</em:creator>
+    <em:version>2.2.0.2453</em:version>
+    <em:type>2</em:type>
+    <em:iconURL>chrome://soundboard/skin/extension-icon.png</em:iconURL>
+  </Description>
+</RDF>

@@ -1,0 +1,1 @@
+Place the lame_enc.dll file in this directory and Audacity Portable will automatically use the LAME encoder to save MP3 files.

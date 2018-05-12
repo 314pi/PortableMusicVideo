@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!--
+/*
+ *=BEGIN SONGBIRD GPL
+ *
+ * This file is part of the Songbird web player.
+ *
+ * Copyright(c) 2005-2010 POTI, Inc.
+ * http://www.songbirdnest.com
+ *
+ * This file may be licensed under the terms of of the
+ * GNU General Public License Version 2 (the ``GPL'').
+ *
+ * Software distributed under the License is distributed
+ * on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
+ * express or implied. See the GPL for the specific language
+ * governing rights and limitations.
+ *
+ * You should have received a copy of the GPL along with this
+ * program. If not, go to http://www.gnu.org/licenses/gpl.html
+ * or write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ *
+ *=END SONGBIRD GPL
+ */
+-->
+<?xml-stylesheet href="chrome://sharing/content/push/bindings/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://sharing/skin/css/push.css" type="text/css"?>
+
+<!DOCTYPE overlay [
+  <!ENTITY % sbDTD SYSTEM "chrome://songbird/locale/songbird.dtd">
+  <!ENTITY % sharingPushDTD SYSTEM "chrome://sharing/locale/sharingPush.dtd">
+  %sbDTD;
+  %sharingPushDTD;
+]>
+
+<overlay id="sharing-push-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <window id="playqueue-pane">
+
+    <stringbundleset id="stringbundleset-push">
+      <stringbundle id="sharing-strings"
+          src="chrome://sharing/locale/sharingDMS.properties"/>
+    </stringbundleset>
+
+    <!-- Device selection -->
+    <hbox id="sharing-push-header-box"
+          align="center"
+          position="1"
+          hidden="true">
+      <menulist id="sharing-push-device-menu"
+                flex="1">
+        <menupopup>
+          <menuitem id="sharing-push-device-menu-item-computer"
+                    label="&sharing.push.computer;"
+                    value="00000000-0000-0000-0000-000000000000"/>
+          <menuseparator/>
+        </menupopup>
+      </menulist>
+      <!-- refresh button -->
+      <button id="sharing-push-refresh-button"
+              image="chrome://sharing/skin/images/icon-busy0.png"
+              tooltiptext="&sharing.push.refreshdevicelist;"
+              oncommand="sharingPushControllerOverlay_refreshDeviceList()"/>
+    </hbox>
+
+    <!-- all devices -->
+    <stack flex="1" id="sharing-push-device-stack" style="visibility:collapse" />
+
+    <!-- scripts -->
+    <script type="application/x-javascript"
+            src="chrome://sharing/content/push/scripts/pushController.js" />
+  </window>
+</overlay>

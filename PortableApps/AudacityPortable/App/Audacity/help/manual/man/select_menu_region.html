@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Select Menu: Region - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Select_Menu_Region rootpage-Select_Menu_Region skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Select Menu: Region</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Select_Menu:_Region#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="intro">This set of commands let you define <a href="audacity_selection.html" title="Audacity Selection">selection regions</a> and store and retrieve the position of the editing cursor or selection region. </div>
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_1277292063"><area href="edit_menu.html" shape="rect" coords="2,3,26,19" alt="Edit Menu" title="Edit Menu"/><area href="select_menu.html" shape="rect" coords="33,3,70,19" alt="Select Menu" title="Select Menu"/><area href="view_menu.html" shape="rect" coords="77,3,106,19" alt="View Menu" title="View Menu"/><area href="transport_menu.html" shape="rect" coords="113,3,169,19" alt="Transport Menu" title="Transport Menu"/><area href="tracks_menu.html" shape="rect" coords="176,3,216,19" alt="Tracks Menu" title="Tracks Menu"/><area href="generate_menu.html" shape="rect" coords="223,3,277,19" alt="Generate Menu" title="Generate Menu"/><area href="effect_menu.html" shape="rect" coords="284,3,317,19" alt="Effect Menu" title="Effect Menu"/><area href="analyze_menu.html" shape="rect" coords="324,3,368,19" alt="Analyze Menu" title="Analyze Menu"/><area href="help_menu.html" shape="rect" coords="375,3,404,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="411,3,441,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="select_menu.html#all" shape="rect" coords="39,23,298,45" alt="Selects all of the audio in all of the tracks" title="Selects all of the audio in all of the tracks"/><area href="select_menu.html#none" shape="rect" coords="39,45,298,67" alt="Deselects all of the audio in all of the tracks" title="Deselects all of the audio in all of the tracks"/><area href="select_menu_tracks.html" shape="rect" coords="39,67,298,89" alt="For extending a selection to more tracks" title="For extending a selection to more tracks"/><area href="#" shape="rect" coords="39,89,298,111" alt="For modifying, saving and restoring a selection" title="For modifying, saving and restoring a selection"/><area href="select_menu_spectral.html" shape="rect" coords="39,111,298,133" alt="For making a selection of a frequency range" title="For making a selection of a frequency range"/><area href="select_menu_clip_boundaries.html" shape="rect" coords="39,133,298,155" alt="For modifying a selection, taking account of clips" title="For modifying a selection, taking account of clips"/><area href="select_menu.html#cursor_to_stored_cursor_position" shape="rect" coords="39,162,298,184" alt="Selects from the position of the cursor to the previously stored cursor position" title="Selects from the position of the cursor to the previously stored cursor position"/><area href="select_menu.html#store_cursor_position" shape="rect" coords="39,184,298,206" alt="Stores the current cursor position for use in a later selection" title="Stores the current cursor position for use in a later selection"/><area href="select_menu_at_zero_crossings.html" shape="rect" coords="39,213,298,235" alt="Moves the edges of a selection region (or the cursor position) slightly so they are at a rising zero crossing point" title="Moves the edges of a selection region (or the cursor position) slightly so they are at a rising zero crossing point"/><area href="#left_at_playback_position" shape="rect" coords="310,92,540,114" alt="When Audacity is playing, recording or paused, sets the left boundary of a potential selection by moving the cursor to the current position of the green playback cursor (or red recording cursor)" title="When Audacity is playing, recording or paused, sets the left boundary of a potential selection by moving the cursor to the current position of the green playback cursor (or red recording cursor)"/><area href="#right_at_playback_position" shape="rect" coords="310,114,540,136" alt="When Audacity is playing, recording or paused, sets the right boundary of the selection, thus drawing the selection from the cursor position to the current position of the green playback cursor (or red recording cursor)" title="When Audacity is playing, recording or paused, sets the right boundary of the selection, thus drawing the selection from the cursor position to the current position of the green playback cursor (or red recording cursor)"/><area href="#track_start_to_cursor" shape="rect" coords="310,136,540,158" alt="Selects a region in the selected track(s) from the start of the track to the cursor position" title="Selects a region in the selected track(s) from the start of the track to the cursor position"/><area href="#cursor_to_track_end" shape="rect" coords="310,158,540,180" alt="Selects a region in the selected track(s) from the cursor position to the end of the track" title="Selects a region in the selected track(s) from the cursor position to the end of the track"/><area href="#store_selection" shape="rect" coords="310,187,540,209" alt="Stores the end points of a selection for later reuse" title="Stores the end points of a selection for later reuse"/><area href="#retrieve_selection" shape="rect" coords="310,209,540,231" alt="Retrieves the end points of a previously stored selection" title="Retrieves the end points of a previously stored selection"/></map><img alt="Select-RegionMenu.png" src="../m/images/2/2e/select_regionmenu.png" width="553" height="243" usemap="#ImageMap_1_1277292063"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p>
+<div id="left_at_playback_position"></div>
+<h2><span class="mw-headline" id="Left_at_Playback_Position_.C2.A0.5B">Left at Playback Position &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">[</span></font></span></h2>
+<p><b>When playing or recording:</b> Sets the left boundary of a potential selection by moving the cursor to the current position of the green playback cursor (or red recording cursor). The selection can then be drawn by using "Right at Playback Position" (below).  
+</p><p><b>When there is no audio playing or recording:</b> Opens the "Set Left Selection Boundary" dialog. This is useful for keyboard users or for time-exact manipulation of the selection instead of using <a href="selection_toolbar.html" title="Selection Toolbar">Selection Toolbar</a>. Move the selection boundary dialog's time digits backwards to create a selection leftwards from the cursor position or to extend the current selection leftwards. Move the time digits forwards to move the cursor forwards to an exact point or to contract the current selection from the left. See "<a href="audacity_selection.html#kbrd_exact" title="Audacity Selection">Creating selections at an exact time</a>" for more details. 
+</p>
+<div id="right_at_playback_position"></div>
+<h2><span class="mw-headline" id="Right_at_Playback_Position_.C2.A0.5D">Right at Playback Position &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">]</span></font></span></h2>
+<p><b>When playing or recording:</b> Sets the right boundary of the selection, thus drawing the selection from the cursor position to the current position of the green playback cursor (or red recording cursor). This is a quick way to mark a selection for future editing while playing or recording. Selections can be <a href="label_tracks.html" title="Label Tracks">labeled</a> while playing or recording using <span class="menu">Edit&#160;&gt;&#160;Labels&#160;&gt;&#160;<a href="edit_menu_labels.html#addlabelatselection" title="Edit Menu: Labels">Add&#160;Label&#160;at&#160;Selection</a></span> or shortcut <span class="kbrd" style="background-color: #e0e0f0">Ctrl + B</span>.     
+</p>
+<div class="note">It will usually be more convenient while playing or recording to use the equivalent <a href="keyboard_shortcut_reference.html#at_playback" title="Keyboard Shortcut Reference">keyboard shortcuts</a> ( by default, <span class="kbrd" style="background-color: #e0e0f0">&#160;[&#160;</span> and <span class="kbrd" style="background-color: #e0e0f0">&#160;]&#160;</span> &#160;) to set the left and right boundary respectively.</div> 
+<p><b>When there is no audio playing or recording:</b> Opens the "Set Right Selection Boundary" dialog. Move the dialog's time digits forwards to create a selection rightwards from the cursor position or to extend the current selection rightwards. Move the time digits backwards to move the cursor backwards to an exact point or to contract the current selection from the right.
+</p>
+<div id="track_start_to_cursor"></div>
+<h2><span class="mw-headline" id="Track_Start_to_Cursor_.C2.A0Shift_.2B_J">Track Start to Cursor &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Shift + J</span></font></span></h2>
+<p>Selects a region in the selected track(s) from the start of the track to the cursor position (or extends the current selection so that it starts from the start of the track).   
+</p>
+<div id="cursor_to_track_end"></div>
+<h2><span class="mw-headline" id="Cursor_to_Track_End_.C2.A0Shift_.2B_K">Cursor to Track End &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Shift + K</span></font></span></h2>
+<p>Selects a region in the selected track(s) from the cursor position to the end of the track (or extends the current selection so that it ends at the end of the track). 
+</p>
+<div id="store_selection"></div>
+<h2><span class="mw-headline" id="Store_Selection_.C2.A0">Store Selection &#160;<font size="-1"></font></span></h2>
+<p>Stores the current position of the selection region or cursor, as observed on the <a href="timeline.html" title="Timeline">Timeline</a>. The position of this region or cursor can then be recalled by using Retrieve Selection (see below). Using this command again will overwrite the previously stored position information.
+</p><p>The position is saved in memory for each project. Therefore using Retrieve Region will not have any effect in another project unless you have already used Store Region in that project. When you close a project, its stored region is discarded.
+</p><p>The Store Region command is grayed-out if there are no <a href="audio_tracks.html" title="Audio Tracks">audio tracks</a>.
+</p>
+<div id="retrieve_selection"></div>
+<h2><span class="mw-headline" id="Retrieve_Selection_.C2.A0">Retrieve Selection &#160;<font size="-1"></font></span></h2>
+<p>Moves the selection region or cursor to the position stored by the last Store Selection command (see above). If a region is retrieved, this is only explicitly placed inside those tracks which are currently <a href="audacity_selection.html" title="Audacity Selection">selected</a>.    
+</p>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">
+<ul><li> Only the <i>position</i> of the region or cursor is retrieved. No audio content is retrieved. Labels or <a href="audacity_tracks_and_clips.html#split" title="Audacity Tracks and Clips">split lines</a> that were associated with the region or cursor are not retrieved.</li>
+<li> The screen focus does not return to the retrieved position, so you may need to <a href="zooming.html" title="Zooming">zoom out</a> or scroll the project to see the retrieved position.</li>
+<li> If the region was stored when in <a href="audio_track_dropdown_menu.html#spgram" title="Audio Track Dropdown Menu">Spectrogram view</a>, the <a href="spectral_selection.html" title="Spectral Selection">spectral selection</a> within the region is also retrieved, even if the region is retrieved when in another view. If the cursor position was stored when in Spectrogram view, the vertical position (and hence center frequency) of the click that placed the cursor is retrieved.</li></ul>
+</td></tr></table>
+</div>
+<p><a href="select_menu.html" title="Select Menu"><b>&lt;</b>&#160; Back to: Select Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020242
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.095 seconds
+Real time usage: 0.099 seconds
+Preprocessor visited node count: 216/1000000
+Preprocessor generated node count: 6519/1000000
+Post‐expand include size: 3431/2097152 bytes
+Template argument size: 1134/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   63.155      1 - -total
+ 77.22%   48.771      1 - Template:Menus
+ 71.62%   45.230      1 - Template:All-menus
+  7.41%    4.678      6 - Template:Shortcut
+  4.38%    2.763      3 - Template:Key
+  2.66%    1.677      1 - Template:ClickTip
+  2.41%    1.523      1 - Template:Intro
+  2.07%    1.308      1 - Template:Advice
+  1.97%    1.244      1 - Template:Menu
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:5623-0!*!0!!*!5!* and timestamp 20180215020242 and revision id 54577
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Select_Menu:_Region">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

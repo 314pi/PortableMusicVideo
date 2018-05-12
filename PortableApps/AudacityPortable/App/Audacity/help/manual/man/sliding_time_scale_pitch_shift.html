@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Sliding Time Scale / Pitch Shift - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Sliding_Time_Scale_-_Pitch_Shift rootpage-Sliding_Time_Scale_-_Pitch_Shift skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Sliding Time Scale / Pitch Shift</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Sliding_Time_Scale_-_Pitch_Shift#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+
+<p><b>Bold text</b>
+</p>
+
+<p><br />
+</p>
+<div class="intro"><i><b>Sliding Time Scale / Pitch Shift...</b></i> allows you to make a continuous change to the tempo and/or pitch of a selection by choosing initial and/or final change values. 
+<p>Tempo changes made without selecting a pitch change preserve the original pitch, and pitch changes made without selecting a tempo change preserve the original tempo. By changing only one of tempo and pitch and choosing the same initial and final value, you can use Sliding Time Scale / Pitch Shift in the same way as <a href="change_tempo.html" title="Change Tempo">Change Tempo</a> or <a href="change_pitch.html" title="Change Pitch">Change Pitch</a> to produce a high quality fixed change. However Sliding Time Scale / Pitch Shift lets you for example set the initial tempo change to -50% while also setting the final tempo change to +20%, the initial pitch change to +3 semitones and the final pitch change to +1 semitones. 
+</p>
+Because of the high quality <i><b><a href="glossary.html#algorithm" title="Glossary">algorithm</a></b></i> used, Sliding Time Scale / Pitch Shift is normally slower compared to performing the same effect with Change Tempo or Change Pitch.  </div>
+<dl><dd><b>Accessed by:</b> <span class="menu">Effect &gt; Sliding Time Scale / Pitch Shift...</span></dd>
+<dd><span title="Sliding Time Scale / Pitch Shift effect dialog"><a href="http://alphamanual.audacityteam.org/man/File:Sliding_Time_ScalePitch_Shift.png" class="image"><img alt="Sliding Time ScalePitch Shift.png" src="../m/images/9/90/sliding_time_scalepitch_shift.png" width="474" height="286" /></a></span></dd></dl>
+<h2><span class="mw-headline" id="Tempo_Change">Tempo Change</span></h2>
+<p>Initial and final tempo change values can be managed using the slider (which will move in whole number values only) or by entering a value in the box, which can be either a whole number or a number including a fraction.  
+</p>
+<h3><span class="mw-headline" id="Initial_.28.25.29">Initial (%)</span></h3>
+<p>The percentage of the original rate required for the beginning of the processed audio.  Positive percentages speed the audio up and negative percentages slow the audio down: -50% is half-speed, 0% is unchanged, 50% is 1.5 times the original speed, 100% is double speed and so on. 
+</p>
+<h3><span class="mw-headline" id="Final_.28.25.29">Final (%)</span></h3>
+<p>The percentage of the original rate required for the end of the processed audio.
+</p>
+<h2><span class="mw-headline" id="Pitch_Shift">Pitch Shift</span></h2>
+<div class="note">The two "Initial" input boxes are interdependent. Entering the required value in one of the boxes for Initial Pitch Shift will automatically display the equivalent value in the other Initial box. Similarly, entering a value in either "Final" input box will display the equivalent value in the other Final box.</div>
+<h3><span class="mw-headline" id="Initial_.28semitones.29">Initial (semitones)</span></h3>
+<p>Enter the pitch shift in semitones (half steps) required for the beginning of the processed audio.
+</p>
+<h3><span class="mw-headline" id="Initial_.28.25.29_2">Initial (%)</span></h3>
+<p>Alternatively, enter the pitch shift as a percentage of the original frequency as required for the beginning of the processed audio.
+</p>
+<h3><span class="mw-headline" id="Final_.28semitones.29">Final (semitones)</span></h3>
+<p>Enter the pitch shift in semitones (half steps) required for the end of the processed audio.
+</p>
+<h3><span class="mw-headline" id="Final_.28.25.29_2">Final (%)</span></h3>
+<p>Alternatively, enter the pitch shift as a percentage of the original frequency as required for the end of the processed audio.
+</p>
+<div id="buttons"></div>
+<h2><span class="mw-headline" id="Buttons">Buttons</span></h2>
+<p>Clicking on the command buttons give the following results:
+</p>
+<ul><li><span class="button">Manage</span> gives a dropdown menu enabling you to manage presets for the tool and to see some detail about the tool. For details see <a href="manage_presets.html" title="Manage presets">Manage presets</a>.</li>
+<li><span class="button">Preview</span> plays a short preview of what the audio would sound like if the effect is applied with the current settings, without making actual changes to the audio.  The length of preview is determined by your setting in <span class="menu">Edit &gt; Preferences &gt; <a href="playback_preferences.html" title="Playback Preferences">Playback</a></span>, the default setting is 6 seconds.</li>
+<li><span class="button">OK</span> applies the effect to the selected audio with the current effect settings.</li>
+<li><span class="button">Cancel</span> aborts the effect and leaves the audio unchanged.</li>
+<li><a href="help_button.html" title="Help Button"><img alt="Help Button" src="../m/images/d/d6/help_button.png" width="27" height="27" /></a> brings you to the appropriate page in the Manual, this page.</li></ul>
+<p><br />
+</p><p><br />
+</p>
+<div class="note"><a href="time_tracks.html" title="Time Tracks">Time Tracks</a> can be used to bend tempo more flexibly (also affecting pitch) using the <a href="envelope_tool.html" title="Envelope Tool">Envelope Tool</a>. </div>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<p><a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers"><b>|&lt;</b> Index of Effects, Generators and Analyzers</a> <br />
+</p><p><a href="effect_menu.html" title="Effect Menu"><b>|&lt;</b> Effect Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020403
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.102 seconds
+Real time usage: 0.108 seconds
+Preprocessor visited node count: 349/1000000
+Preprocessor generated node count: 1610/1000000
+Post‐expand include size: 13075/2097152 bytes
+Template argument size: 3656/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   52.384      1 - -total
+ 41.53%   21.757      1 - Template:I18n
+ 38.05%   19.934      1 - Template:I18n_box
+ 32.90%   17.232      1 - Template:I18n_list
+ 22.06%   11.555      1 - Template:Effectbuttons
+ 16.38%    8.579      1 - Template:Buttonlist
+ 15.73%    8.242      1 - Template:No-rename
+ 12.77%    6.692      2 - Template:I18n_link
+ 12.04%    6.305      8 - Template:Button
+ 11.78%    6.173      1 - Template:Ednote
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4056-0!*!0!!*!5!* and timestamp 20180215020403 and revision id 57656
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Sliding_Time_Scale_-_Pitch_Shift">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

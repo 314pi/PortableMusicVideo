@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>File Menu - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-File_Menu rootpage-File_Menu skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">File Menu</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/File_Menu#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<p><br />
+</p>
+<div class="intro">The <i><b>File Menu</b></i> provides commands for creating, opening and saving <i><b><a href="glossary.html#audacity_project_format" title="Glossary">Audacity projects</a></b></i>, importing and exporting audio files and performing <a href="glossary.html#batch" title="Glossary">batch</a> operations using <a href="chains_for_batch_processing_and_effects_automation.html" title="Chains - for batch processing and effects automation">Chains</a>. </div>
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_1846089869"><area href="#" shape="rect" coords="33,3,56,19" alt="File Menu" title="File Menu"/><area href="edit_menu.html" shape="rect" coords="63,3,87,19" alt="Edit Menu" title="Edit Menu"/><area href="select_menu.html" shape="rect" coords="94,3,131,19" alt="Select Menu" title="Select Menu"/><area href="view_menu.html" shape="rect" coords="138,3,167,19" alt="View Menu" title="View Menu"/><area href="transport_menu.html" shape="rect" coords="174,3,230,19" alt="Transport Menu" title="Transport Menu"/><area href="tracks_menu.html" shape="rect" coords="237,3,277,19" alt="Tracks Menu" title="Tracks Menu"/><area href="generate_menu.html" shape="rect" coords="284,3,338,19" alt="Generate Menu" title="Generate Menu"/><area href="effect_menu.html" shape="rect" coords="345,3,378,19" alt="Effect Menu" title="Effect Menu"/><area href="analyze_menu.html" shape="rect" coords="385,3,429,19" alt="Analyze Menu" title="Analyze Menu"/><area href="help_menu.html" shape="rect" coords="436,3,465,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="472,3,502,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="#new" shape="rect" coords="39,23,220,45" alt="Creates a new and empty project window to start working on new or imported Tracks" title="Creates a new and empty project window to start working on new or imported Tracks"/><area href="#open" shape="rect" coords="39,45,220,67" alt="Presents you with a file selection dialog box to open files" title="Presents you with a file selection dialog box to open files"/><area href="file_menu_recent_files.html" shape="rect" coords="39,67,220,89" alt="Lists the full path to the twelve most recently saved or opened projects or most recently imported audio files" title="Lists the full path to the twelve most recently saved or opened projects or most recently imported audio files"/><area href="#close" shape="rect" coords="39,96,220,118" alt="Closes the current project window, prompting you to save your work if you have not saved" title="Closes the current project window, prompting you to save your work if you have not saved"/><area href="#save_project" shape="rect" coords="39,118,220,140" alt="Saves the current Audacity project" title="Saves the current Audacity project"/><area href="#save_project_as" shape="rect" coords="39,140,220,162" alt="Same as &quot;Save Project&quot; above, but allows you to save a copy of an open project to a different name or location" title="Same as &quot;Save Project&quot; above, but allows you to save a copy of an open project to a different name or location"/><area href="file_menu_export.html" shape="rect" coords="39,162,220,184" alt="}For exporting audio files" title="}For exporting audio files"/><area href="file_menu_import.html" shape="rect" coords="39,191,220,213" alt="For importing audio files or label files into your project" title="For importing audio files or label files into your project"/><area href="file_menu_chains.html" shape="rect" coords="39,220,220,242" alt="Chains are Audacity's form of batch processing" title="Chains are Audacity's form of batch processing"/><area href="#page_setup" shape="rect" coords="39,249,220,271" alt="Opens the standard Page Setup dialog box prior to printing" title="Opens the standard Page Setup dialog box prior to printing"/><area href="#print" shape="rect" coords="39,271,220,293" alt="Prints all the waveforms in the current project window (and the contents of Label Tracks or other tracks), with the Timeline above" title="Prints all the waveforms in the current project window (and the contents of Label Tracks or other tracks), with the Timeline above"/><area href="#exit" shape="rect" coords="39,300,220,322" alt="Closes all project windows and exits Audacity" title="Closes all project windows and exits Audacity"/></map><img alt="FileMenu.png" src="../m/images/5/50/filemenu.png" width="233" height="330" usemap="#ImageMap_1_1846089869"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p><p><br />
+</p>
+<div id="new"></div>
+<h2><span class="mw-headline" id="New_.C2.A0Ctrl_.2B_N">New &#160;<span style="font-size:70%"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + N</span></span></span></h2>
+<p>Creates a new and empty project window to start working on new or imported Tracks. 
+This new work environment can then be saved as an <a href="audacity_projects.html" title="Audacity Projects">Audacity Project File</a> (.AUP) for easy and full retrieval of its contents via the <a href="#save_project">Save Project</a> or <a href="#save_project_as">Save Project As...</a> File menu functions.
+</p>
+<div id="open"></div>
+<h2><span class="mw-headline" id="Open..._.C2.A0Ctrl_.2B_O">Open... &#160;<span style="font-size:66%"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + O</span></span></span></h2>
+<p>Launches a file selection window where you can: 
+</p>
+<ul><li> <i><b>Open</b></i> one or more Audacity Project files (.aup) or</li>
+<li> <i><b>Import</b></i> one or more audio files or <a href="lof_files.html" title="LOF Files">lists of files (.LOF)</a>.</li></ul>
+<p>If an empty project window exists, that window will be used for the first project or imported file. Any subsequent opened projects or audio files will create new project windows. 
+</p><p>If instead you want to add the content of an audio file into a project that already contains one or more audio tracks (for example, to mix two audio files together), use <span class="menu">File &gt; Import &gt; <a href="file_menu_import.html#audio" title="File Menu: Import">Audio...</a></span> instead.
+</p>
+<div class="note"><i><b>Import</b></i> means bringing new content into an Audacity project by any means, such as File &gt; Open, File &gt; Import or dragging files into the project window. The content would typically be an audio file like  <i><b><a href="glossary.html#wav" title="Glossary">WAV</a></b></i> or  <i><b><a href="glossary.html#mp3" title="Glossary">MP3</a></b></i>, but (using File &gt; Import) could also be a <a href="label_tracks.html" title="Label Tracks">label track</a>, a <i><b><a href="glossary.html#midi" title="Glossary">MIDI</a></b></i> file or <a href="file_menu_import.html#raw_data" title="File Menu: Import">Raw Data</a>.<p> For audio files, the importer used depends on the currently selected file type in File &gt; Open or File &gt; Import &gt; Audio... and on settings in <a href="extended_import_preferences.html" title="Extended Import Preferences">Extended Import Preferences</a>.<br /> See <a href="importing_audio.html" title="Importing Audio">Importing Audio</a> for more information.</p> </div>
+<div id="recent_files"></div>
+<h2><span class="mw-headline" id="Recent_Files_.28.22Open_Recent.22_on_Mac.29">Recent Files (<i>"Open Recent"</i> on Mac)</span></h2>
+<p>Lists the full path to the twelve most recently saved or opened projects or most recently imported audio files.  The oldest item at the bottom is removed when a new item is added to the top. When you delete an Audacity project or audio file it will remain in the list, but will be removed from the list if you select it. 
+</p>
+<ul><li> To clear the entire list, choose "<b>Clear</b>" underneath the last item in the list.</li>
+<li> To manually remove an individual item from the list, exit Audacity, open <a href="preferences.html#Where_are_Preferences_stored.3F" title="Preferences">audacity.cfg</a> in a text editor and delete the unwanted item below the [Recent Files] line. Take care not to delete the [Recent Files] line itself.  </li></ul>
+<div id="close"></div>
+<h2><span class="mw-headline" id="Close_.C2.A0Ctrl_.2B_W">Close &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + W</span></font></span></h2>
+<p>Closes the current project window, prompting you to save your work if you have not already saved.
+</p>
+<div id="save_project"></div>
+<h2><span class="mw-headline" id="Save_Project_.C2.A0Ctrl_.2B_S">Save Project &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + S</span></font></span></h2>
+<p>Saves the current Audacity Project in <i><b><a href="glossary.html#uncompressed_format" title="Glossary">uncompressed</a></b></i>, <i><b><a href="glossary.html#lossless" title="Glossary">lossless</a></b></i> quality using the <i><b><a href="glossary.html#au" title="Glossary">AU</a></b></i> container format. An AUP project file is created, along with a folder with the same name as the AUP file that contains the project's audio data. For example, if you save a project as <tt>chanson.aup</tt>, a folder called <tt>chanson_data</tt> will contain the audio data. 
+</p>
+<div class="note"><i><b><a href="glossary.html#audacity_project_format" title="Glossary">Audacity projects</a></b></i> are <i>not</i> intended to be read by other applications, but 
+to provide fast loading and saving of audio within Audacity, with all project data such as <a href="label_tracks.html" title="Label Tracks">label tracks</a> and <a href="envelope_tool.html" title="Envelope Tool">envelope points</a> retained . When you are finished working on a project and you want to use the results in another application, select one of the <a href="export.html" title="Export">Export</a> commands. </div>
+<p>If you import uncompressed files such as WAV and AIFF into your project with <a href="import_export_preferences.html#import" title="Import - Export Preferences">Import / Export Preferences</a> set to "Read uncompressed audio files directly from the original (faster)", you will create a <i>dependency</i> on those files remaining accessible. In this case, a <a href="dependencies_dialog.html" title="Dependencies Dialog">Dependencies Dialog</a> may appear when saving the project. Follow the instructions in the dialog to either "Copy All Audio..." (so removing all dependencies), or to copy in selected files or none at all. If you choose to not copy in any files, <b>you must not move, rename or delete those files, or the folder they are in.</b> The dialog also lets you choose future behavior when saving a project that depends on imported files.  
+</p>
+<div id="save_project_as"></div>
+<h2><span class="mw-headline" id="Save_Project_As...">Save Project As...</span></h2>
+<p>Same as "Save Project" above, but allows you to save a copy of an open project to a different name or location. This can be useful if you want to preserve a snapshot of the state of a project at a particular time, then proceed to make further changes to the project you just saved.  
+</p>
+<div id="save_other"></div>
+<div id="export"></div>
+<h2><span class="mw-headline" id="Export"><a href="file_menu_export.html" title="File Menu: Export">Export</a></span></h2>
+<p>The <a href="file_menu_export.html" title="File Menu: Export">Export</a> submenu enables you to <b>Export</b> audio from Audacity into audio file formats that can be read and played by other applications.  Additionally you can export label files or MIDI or save a compressed copy of your project in a set of Ogg Vorbis formatted files.
+</p>
+<div id="import"></div>
+<h2><span class="mw-headline" id="Import"><a href="file_menu_import.html" title="File Menu: Import">Import</a></span></h2>
+<p>The <a href="file_menu_import.html" title="File Menu: Import">Import</a> submenu enables you to import audio files or label files into your project. Files in various audio formats can be imported into Audacity. 
+</p><p>For details of the available imports see <a href="file_menu_import.html" title="File Menu: Import">this page</a>.
+</p>
+<div id="chains"></div>
+<h2><span class="mw-headline" id="Chains"><a href="chains_for_batch_processing_and_effects_automation.html" title="Chains - for batch processing and effects automation">Chains</a></span></h2>
+<p>A <a href="chains_for_batch_processing_and_effects_automation.html" title="Chains - for batch processing and effects automation">Chain</a> is a sequence of automated commands similar to a "macro". It is often used to batch process a group of audio files, or to automate the application of a set of effects to a project, with the same sequence of effects or functions.  
+</p><p>The <a href="chains_for_batch_processing_and_effects_automation.html" title="Chains - for batch processing and effects automation">Chains</a> submenu has two commands for working with chains, one to <a href="chains_for_batch_processing_and_effects_automation.html#editchains" title="Chains - for batch processing and effects automation">create and Edit chains</a> and the other to <a href="chains_for_batch_processing_and_effects_automation.html#applychain" title="Chains - for batch processing and effects automation">Apply the chain</a>.
+</p>
+<div id="page_setup"></div>
+<h2><span class="mw-headline" id="Page_Setup...">Page Setup...</span></h2>
+<p>Opens the standard Page Setup dialog box prior to printing.
+</p>
+<div id="print"></div>
+<h2><span class="mw-headline" id="Print...">Print...</span></h2>
+<p>Prints all the <i><a href="audacity_waveform.html" title="Audacity Waveform">waveforms</a></i>  in the current project window (and the contents of <a href="label_tracks.html" title="Label Tracks">Label Tracks</a> or other tracks), with the <a href="timeline.html" title="Timeline">Timeline</a> above. Everything is printed to one page. 
+</p>
+<div class="note">To include the <a href="audio_tracks.html#Track_Control_Panel" title="Audio Tracks">Track Control Panel</a>, or to print other parts of the interface, you could use <a href="help_menu.html#tools" title="Help Menu">Screenshot Tools</a> to capture a screen print to a file, then use the print function of your favorite image editor. </div>
+<div id="exit"></div>
+<h2><span class="mw-headline" id="Exit_.C2.A0Ctrl_.2B_Q">Exit &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + Q</span></font></span></h2>
+<p>Closes all project windows and exits Audacity. If there are any unsaved changes to your project, Audacity will ask if you want to save them. Note that it is not necessary for you to save changes if you've already exported your mix as a WAV or MP3 and you are now happy with it.  But if you are working on a mix and plan to continue later where you left off, saving an Audacity Project will let you restore everything, exactly as you left it. 
+</p>
+<div class="note">On a Mac, the Exit command is not in the File Menu. Instead, use "Quit" under the <a href="audacity_menu.html" title="Audacity Menu">Audacity</a> menu. </div>
+
+<!-- 
+NewPP limit report
+Cached time: 20180215020141
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.206 seconds
+Real time usage: 0.292 seconds
+Preprocessor visited node count: 467/1000000
+Preprocessor generated node count: 7361/1000000
+Post‐expand include size: 7424/2097152 bytes
+Template argument size: 2750/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  248.884      1 - -total
+ 82.37%  205.012      1 - Template:Menus
+ 80.93%  201.428      1 - Template:All-menus
+ 13.07%   32.539      1 - Template:I18n
+ 12.43%   30.941      1 - Template:I18n_box
+ 11.04%   27.476      1 - Template:I18n_list
+  5.87%   14.610      6 - Template:I18n_link
+  3.46%    8.608      6 - Template:Autoglossonym
+  1.64%    4.085      5 - Template:Shortcut
+  0.73%    1.815      1 - Template:Intro
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:1966-0!*!0!!*!5!* and timestamp 20180215020141 and revision id 58723
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/File_Menu">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "미디어 서버:">
+<!ENTITY sharing.iconpopup.header "Songbird 미디어 서버">
+<!ENTITY sharing.iconpopup.status.label "서버 상태:">
+<!ENTITY sharing.iconpopup.status.on "켜기">
+<!ENTITY sharing.iconpopup.status.off "끄기">
+<!ENTITY sharing.iconpopup.settings.link "설정">
+<!ENTITY sharing.prefpane.label "미디어 서버">
+<!ENTITY sharing.prefpane.network.name.header.label "미디어 서버 네트워크 이름">
+<!ENTITY sharing.prefpane.network.name.content.label "네트워크 상에 나타나는 이름(재시작시 변경 필요):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "사진 폴더">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "사진을 스트리밍할">
+<!ENTITY sharing.prefpane.images.choosefolder.label "폴더 선택:">

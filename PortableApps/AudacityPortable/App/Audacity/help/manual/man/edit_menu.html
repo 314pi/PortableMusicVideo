@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Edit Menu - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Edit_Menu rootpage-Edit_Menu skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Edit Menu</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Edit_Menu#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<p><br />
+</p>
+<div class="intro">The <i><b>Edit Menu</b></i> provides standard edit commands (Undo, Redo, Cut, Copy, Paste and Delete) plus many other commands specific to editing audio or labels.<p> There are many commands available from this menu so some commands are grouped into submenus.</p></div> 
+
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_704765830"><area href="file_menu.html" shape="rect" coords="3,3,26,19" alt="File Menu" title="File Menu"/><area href="#" shape="rect" coords="33,3,57,19" alt="Edit Menu" title="Edit Menu"/><area href="select_menu.html" shape="rect" coords="64,3,101,19" alt="Select Menu" title="Select Menu"/><area href="view_menu.html" shape="rect" coords="108,3,137,19" alt="View Menu" title="View Menu"/><area href="transport_menu.html" shape="rect" coords="144,3,200,19" alt="Transport Menu" title="Transport Menu"/><area href="tracks_menu.html" shape="rect" coords="207,3,247,19" alt="Tracks Menu" title="Tracks Menu"/><area href="generate_menu.html" shape="rect" coords="254,3,308,19" alt="Generate Menu" title="Generate Menu"/><area href="effect_menu.html" shape="rect" coords="315,3,348,19" alt="Effect Menu" title="Effect Menu"/><area href="analyze_menu.html" shape="rect" coords="355,3,399,19" alt="Analyze Menu" title="Analyze Menu"/><area href="help_menu.html" shape="rect" coords="406,3,435,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="442,3,472,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="undo_redo_and_history.html" shape="rect" coords="39,23,211,45" alt="Undoes the most recent editing action" title="Undoes the most recent editing action"/><area href="undo_redo_and_history.html" shape="rect" coords="39,45,211,67" alt="Redoes the most recently undone editing action" title="Redoes the most recently undone editing action"/><area href="#cut" shape="rect" coords="39,74,211,96" alt="Removes the selected audio data and/or labels and places these on the Audacity clipboard" title="Removes the selected audio data and/or labels and places these on the Audacity clipboard"/><area href="#delete" shape="rect" coords="39,96,211,118" alt="Removes the selected audio data and/or labels without copying these to the Audacity clipboard" title="Removes the selected audio data and/or labels without copying these to the Audacity clipboard"/><area href="edit_menu_copy_paste_and_duplicate.html#copy" shape="rect" coords="39,118,211,140" alt="Copies the selected audio data to the Audacity clipboard without removing it from the project" title="Copies the selected audio data to the Audacity clipboard without removing it from the project"/><area href="edit_menu_copy_paste_and_duplicate.html#paste" shape="rect" coords="39,140,211,162" alt="Inserts whatever is on the Audacity clipboard at the position of the selection cursor in the project, replacing whatever audio data is currently selected, if any" title="Inserts whatever is on the Audacity clipboard at the position of the selection cursor in the project, replacing whatever audio data is currently selected, if any"/><area href="edit_menu_copy_paste_and_duplicate.html#duplicate" shape="rect" coords="39,162,211,184" alt="Creates a new track containing only the current selection as a new clip" title="Creates a new track containing only the current selection as a new clip"/><area href="edit_menu_remove_special.html" shape="rect" coords="39,191,211,213" alt="For more &quot;advanced&quot; removal of audio" title="For more &quot;advanced&quot; removal of audio"/><area href="edit_menu_clip_boundaries.html" shape="rect" coords="39,220,211,242" alt="Create or remove separate clips in the audio track" title="Create or remove separate clips in the audio track"/><area href="edit_menu_labels.html" shape="rect" coords="39,242,211,264" alt="These commands are to add and edit labels" title="These commands are to add and edit labels"/><area href="edit_menu_labeled_audio.html" shape="rect" coords="39,264,211,286" alt="Labeled Audio commands apply standard Edit Menu commands to the audio of one or more regions that are labeled" title="Labeled Audio commands apply standard Edit Menu commands to the audio of one or more regions that are labeled"/><area href="#metadata" shape="rect" coords="39,286,211,308" alt="The Metadata Editor modifies information about a track, such as the artist and genre" title="The Metadata Editor modifies information about a track, such as the artist and genre"/><area href="#preferences" shape="rect" coords="39,315,211,337" alt="Preferences let you change most of the default behaviors and settings of Audacity" title="Preferences let you change most of the default behaviors and settings of Audacity"/></map><img alt="EditMenu.png" src="../m/images/e/ec/editmenu.png" width="224" height="345" usemap="#ImageMap_1_704765830"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p><p><br />
+</p>
+<div class="note"><b>Mac users:</b> <span class="kbrd" style="background-color: #e0e0f0">Ctrl</span> = <span class="kbrd" style="background-color: #e0e0f0">&#8984;</span> and <span class="kbrd" style="background-color: #e0e0f0">Alt</span> = <span class="kbrd" style="background-color: #e0e0f0">Option</span>. So, for example, <span class="kbrd" style="background-color: #e0e0f0">Ctrl + Alt + K</span> = <span class="kbrd" style="background-color: #e0e0f0">&#8984; + Option + K</span></div>
+<div id="undo"></div>
+<h2><span class="mw-headline" id="Undo_.C2.A0Ctrl_.2B_Z"><a href="undo_redo_and_history.html" title="Undo, Redo and History">Undo</a> &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + Z</span></font></span></h2>
+<p>Undoes the last editing operation you performed to your project.  You can undo as many times as you want, all the way back to when you opened the window.  To undo many operations, select <a href="view_menu.html#history" title="View Menu">History...</a> from the <a href="view_menu.html" title="View Menu">View Menu</a>. The name of this menu item will change to reflect what will be undone; if you just recorded some audio, the menu item name will be <b>Undo Record</b>.
+</p>
+<div id="redo"></div>
+<h2><span class="mw-headline" id="Redo_.C2.A0Ctrl_.2B_Y"><a href="undo_redo_and_history.html" title="Undo, Redo and History">Redo</a> &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + Y</span></font></span></h2>
+<p>Redoes any editing operations that were just undone.
+After you perform a new editing operation, you can no longer redo the operations that were undone.
+</p>
+<div id="cut"></div>
+<h2><span class="mw-headline" id="Cut_.C2.A0Ctrl_.2B_X">Cut &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + X</span></font></span></h2>
+<p>Removes the selected audio data and/or <a href="label_tracks.html" title="Label Tracks">labels</a> and places these on the Audacity clipboard. Audio or labels after the selection move leftwards.
+</p>
+<div id="delete"></div>
+<h2><span class="mw-headline" id="Delete_.C2.A0Ctrl_.2B_K">Delete &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + K</span></font></span></h2>
+<p>Similar to Cut, but removes the audio data and/or labels that are currently selected without copying them to the Audacity clipboard.
+</p>
+<div id="copy"></div>
+<h2><span class="mw-headline" id="Copy_.C2.A0Ctrl_.2B_C"><a href="edit_menu_copy_paste_and_duplicate.html#copy" title="Edit Menu: Copy, Paste and Duplicate">Copy</a> &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + C</span></font></span></h2>
+<p>Copies the selected audio data to the Audacity clipboard without removing it from the project.
+</p>
+<div id="paste"></div>
+<h2><span class="mw-headline" id="Paste_.C2.A0Ctrl_.2B_V"><a href="edit_menu_copy_paste_and_duplicate.html#paste" title="Edit Menu: Copy, Paste and Duplicate">Paste</a> &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + V</span></font></span></h2>
+<p>Pastes audio which has been <a href="#cut">cut</a> or <a href="#copy">copied</a> to the Audacity clipboard, either inserting it into the <a href="audacity_selection.html" title="Audacity Selection">selected</a> track(s) at the cursor point, or replacing the current selection region(s).
+</p>
+<div id="duplicate"></div>
+<h2><span class="mw-headline" id="Duplicate_.C2.A0Ctrl_.2B_D"><a href="edit_menu_copy_paste_and_duplicate.html#duplicate" title="Edit Menu: Copy, Paste and Duplicate">Duplicate</a> &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + D</span></font></span></h2>
+<p>Creates a new track containing only the current selection as a new clip. 
+</p>
+<div id="remove_special"></div>
+<h2><span class="mw-headline" id="Remove_Special"><a href="edit_menu_remove_special.html" title="Edit Menu: Remove Special">Remove Special</a></span></h2>
+<p>The <a href="edit_menu_remove_special.html" title="Edit Menu: Remove Special">Remove Special</a> submenu has commands for more "advanced" removal of audio and labels:
+</p>
+<ul><li><a href="edit_menu_remove_special.html#split_cut" title="Edit Menu: Remove Special">Split Cut</a> and <a href="edit_menu_remove_special.html#split_delete" title="Edit Menu: Remove Special">Split Delete</a> are a "special" cut or delete which make the audio or labels to right of the selection stay in current position instead of moving leftwards. </li>
+<li><a href="edit_menu_remove_special.html#silence" title="Edit Menu: Remove Special">Silence Audio</a> replaces the current selection with silence. </li>
+<li><a href="edit_menu_remove_special.html#trim" title="Edit Menu: Remove Special">Trim Audio</a> removes all audio from the current <a href="audacity_tracks_and_clips.html" title="Audacity Tracks and Clips">clip</a> except the selected part, creating its own clip from the remaining, selected, audio.</li></ul>
+<div id="clipp_boundaries"></div>
+<h2><span class="mw-headline" id="Clip_Boundaries"><a href="edit_menu_clip_boundaries.html" title="Edit Menu: Clip Boundaries">Clip Boundaries</a></span></h2>
+<p>The <a href="edit_menu_clip_boundaries.html" title="Edit Menu: Clip Boundaries">Clip Boundaries</a> submenu has commands to create or remove separate <a href="audacity_tracks_and_clips.html" title="Audacity Tracks and Clips">clips</a> in the audio track. A clip inside an audio track is a separate section of that track which has been split so that it can be manipulated somewhat independently of the other clips in the track.
+</p>
+<div id="labeled"></div>
+<h2><span class="mw-headline" id="Labels"><a href="edit_menu_labels.html" title="Edit Menu: Labels">Labels</a></span></h2>
+<p>The <a href="edit_menu_labels.html" title="Edit Menu: Labels">Labels</a> submenu has commands that enable you to add and edit labels.
+</p><p>This command invokes the <a href="labels_editor.html" title="Labels Editor">Labels Editor</a> which lets you add or remove <a href="label_tracks.html" title="Label Tracks">Label Tracks</a> and edit their labels entirely using the keyboard, so is particularly useful for visually impaired users.
+</p><p>It brings up a dialog box showing all of your labels in a keyboard-accessible tabular view. Handy buttons in the dialog let you insert or delete a label, or import and export labels to a file. See <a href="labels_editor.html" title="Labels Editor">Labels Editor</a> for more details.
+</p><p>See <a href="edit_menu_labels.html" title="Edit Menu: Labels">Edit Menu: Labels</a> for details of this sub-menu.
+</p>
+<div id="labeled_audio"></div>
+<h2><span class="mw-headline" id="Labeled_Audio"><a href="edit_menu_labeled_audio.html" title="Edit Menu: Labeled Audio">Labeled Audio</a></span></h2>
+<p>The <a href="edit_menu_labeled_audio.html" title="Edit Menu: Labeled Audio">Labeled Audio</a> submenu has commands that offer a time saving way of performing Edit Menu operations on the <b>audio</b> of multiple fully selected range labels. 
+</p><p>The commands apply to all <a href="label_tracks.html" title="Label Tracks">labeled</a> audio regions that are <i>fully inside</i> a <a href="audacity_selection.html" title="Audacity Selection">selection</a> drawn in a label track. The selection may extend beyond the label boundaries, but audio that is not labeled and audio whose region label is only partly within the selection will not be acted on.
+</p><p>If none of the audio tracks are included in the selection, the Labeled Audio commands apply to all audio tracks in the project. However if you include only certain audio tracks in the selection, the Labeled Audio commands will only affect those selected audio tracks.
+</p><p>See <a href="edit_menu_labeled_audio.html" title="Edit Menu: Labeled Audio">Edit Menu: Labeled Audio</a> for details of this sub-menu.
+</p>
+<div id="metadata"></div>
+<h2><span class="mw-headline" id="Metadata..."><a href="metadata_editor.html" title="Metadata Editor">Metadata...</a></span></h2>
+<p>Use this function to edit the metadata tags that will be applied to exported files.
+</p>
+<div id="preferences"></div>
+<h2><span class="mw-headline" id="Preferences..._.C2.A0Ctrl_.2B_P"><a href="preferences.html" title="Preferences">Preferences...</a> &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + P</span></font></span></h2>
+<p>Displays the <a href="preferences.html" title="Preferences">Preferences</a> dialog. Preferences enable you change most of the default behaviors and settings of Audacity.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020142
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.123 seconds
+Real time usage: 0.130 seconds
+Preprocessor visited node count: 530/1000000
+Preprocessor generated node count: 7526/1000000
+Post‐expand include size: 6809/2097152 bytes
+Template argument size: 1706/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   86.690      1 - -total
+ 51.77%   44.878      1 - Template:Menus
+ 48.28%   41.855      1 - Template:All-menus
+ 29.25%   25.361      1 - Template:I18n
+ 27.39%   23.748      1 - Template:I18n_box
+ 23.65%   20.506      1 - Template:I18n_list
+ 12.47%   10.812      5 - Template:I18n_link
+  7.51%    6.509      5 - Template:Autoglossonym
+  6.83%    5.917      1 - Template:Note
+  6.59%    5.717      8 - Template:Shortcut
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:1964-0!*!0!!*!5!* and timestamp 20180215020142 and revision id 57012
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Edit_Menu">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

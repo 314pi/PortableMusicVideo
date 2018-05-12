@@ -1,0 +1,93 @@
+Active (sorted by name)
+-----------------------
+Goran 'vBm' Džaferi     <thevbm@users.sourceforge.net>          New website, Trac moderator, IRC
+JellyFrog               -                                       Server and Trac admin, Swedish
+kasper93                <kasper93@users.sourceforge.net>        Trac moderator, Polish, Code
+XhmikosR                <xhmikosr@gmail.com>                    Various stuff, Project manager
+
+
+Inactive
+--------
+_xxl                    <drevil_xxl@users.sourceforge.net>      FFmpeg
+Alexander Wild          <alexwild@users.sourceforge.net>        Code, German
+alexmarsev              <alexmarsev@users.sourceforge.net>      Code
+Armada                  <armada651@users.sourceforge.net>       Code
+Arto Jarvinen           <ar-jar@users.sourceforge.net>          Code
+Attila T. Afra          <attila.afra@gmail.com>                 Code
+Beliyaal                <beliyaal@users.sourceforge.net>        Code
+bobdynlan               <bobdynlan@users.sourceforge.net>       Code
+Casimir666              <casimir666@users.sourceforge.net>      Project founder, Code, French
+clsid                   <clsid2@users.sourceforge.net>          Code
+demi_alucard            <alysson87@gmail.com>                   Code, Portuguese (Brazil)
+Di Luo                  <sansnom05@users.sourceforge.net>       Code
+janwillem32             <janwillem32@users.sourceforge.net>     Code
+jonasno                 <jonasno@users.sourceforge.net>         Code, Swedish
+KindDragon              <kinddragon@users.sourceforge.net>      Code
+Martin Panayotov        <mvpsoft@users.sourceforge.net>         Old website
+MatMaul                 <matmaul@users.sourceforge.net>         Code
+namaiki                 <namaiki@users.sourceforge.net>         Trac moderator
+nevcairiel              <nevcairiel@users.sourceforge.net>      Code, LAVFilters maintainer
+spec-chum               <spec-chum@users.sourceforge.net>       Code
+tetsuo55                <tetsuo55@users.sourceforge.net>        Project manager
+Tomas Sen               <tomasen@users.sourceforge.net>         Code
+Underground78           <underground78@users.sourceforge.net>   Code, French, Project manager
+v0lt                    <v0lt@users.sourceforge.net>            Code, Russian
+Vodyannikov Aleksandr   <aleksoid@users.sourceforge.net>        Code, Russian
+xpc1000                 <xpc1000@users.sourceforge.net>         Code
+
+
+Translators
+-----------
+Translations are now handled using Transifex, a web-based translation platform. An up-to-date list
+of translators involved for each language can be found on https://www.transifex.com/mpc-hc/mpc-hc/.
+
+Translators (pre-Transifex era)
+-------------------------------
+Armenian                hrant77                 <hrant77@users.sourceforge.net>
+Basque                  Xabier Aramendi         <azpidatziak@users.sourceforge.net>
+Belarusian              Mister-sh               <mister-sh@users.sourceforge.net>
+Catalan                 xiulet                  <xiulet@users.sourceforge.net>
+Chinese Simplified      Bonami                  <bonami@users.sourceforge.net>
+Chinese Traditional     Kene Lin                <kenelin@users.sourceforge.net>
+Czech                   khagaroth               <khagaroth@users.sourceforge.net>
+Dutch                   Paul Tjepkema           <pietpuk123@users.sourceforge.net>
+English (British)       Boris Kotov             <doctor.z01db3rg@gmail.com>
+French                  Sebastiii               <sebastiii@users.sourceforge.net>
+German                  Markus Gaugg            <markusgaugg@users.sourceforge.net>
+German                  Luan                    <luanmail@users.sourceforge.net>
+Greek                   geogeo.gr               <geogeo64@users.sourceforge.net>
+Greek                   Zouloumis               <zouloumis@users.sourceforge.net>
+Hebrew                  Superb                  <superbsubs@users.sourceforge.net>
+Hungarian               Tamas Kleiber           <klei@users.sourceforge.net>
+Italian                 SigiTM                  <sigitm@users.sourceforge.net>
+Japanese, Chinese
+Simplified/Traditional  roytam                  <roytam1@users.sourceforge.net>
+Korean                  XNeo                    <xneokr@users.sourceforge.net>
+Polish                  arch__stanton           <arch__stanton@users.sourceforge.net>
+Polish                  Haix                    <haix@users.sourceforge.net>
+Portuguese (Brazil)     Roger Felipe            <rfrfrfrf@users.sourceforge.net>
+Romanian                Daniel Alămiță
+Romanian                lordkag                 <lordkag@users.sourceforge.net>
+Russian                 YDY                     <ydy@users.sourceforge.net>
+Slovak                  Marián Hikaník          <mhikanik@users.sourceforge.net>
+Slovenian               shvala                  <simon.hvala@hotmail.com>
+Spanish                 SquallMX                <squallmx@users.sourceforge.net>
+Turkish                 Bosluk                  <bosluk@users.sourceforge.net>
+Ukrainian               arestarh                <arestarh1986@users.sourceforge.net>
+Ukrainian               Ihor Bobalo             <ibobalo@users.sourceforge.net> (http://www.eleks.com)
+
+
+Contributors
+------------
+Alexx999, foxx1337, heksesang, judelaw, m0viefreak, madshi, mtrz, nielsm, skaarj1, VSFilterMod Team, X-Dron
+
+
+https://github.com/mpc-hc/mpc-hc/graphs/contributors
+https://www.openhub.net/p/mpc-hc/contributors?query=&sort=commits
+
+
+If you think you should be listed in this document and we don't do it already, please, contact us.
+
+Many thanks to everyone who supported development without having access to the source repository.
+
+Based on the original version (C) 2002-2006 by Gabest (e-mail unknown).

@@ -1,0 +1,1 @@
+content browser jar:browser.jar!/content/browser/ xpcnativewrappers=yes contentaccessible=yes

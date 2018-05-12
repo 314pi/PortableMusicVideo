@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>SC4 - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SC4 rootpage-SC4 skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">SC4</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/SC4#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<p><br />
+</p>
+<div class="intro">
+<p><i><b>SC4</b></i> is a stereo <i><b><a href="glossary.html#compression" title="Glossary">compressor</a></b></i> with a variable envelope follower for <i><b><a href="glossary.html#rms" title="Glossary">RMS</a></b></i> / peak behavior. Unlike the built-in <a href="compressor.html" title="Compressor">Compressor</a>, SC4 does not "look-ahead" in order to begin reducing volume before a peak occurs. 
+</p>
+</div>
+<dl><dd><b>Accessed by:</b> <span class="menu">Effect &gt; SC4...</span></dd>
+<dd><span title="SC4 effect dialog"><a href="http://alphamanual.audacityteam.org/man/File:SC4.png" class="image"><img alt="SC4.png" src="../m/images/c/c2/sc4.png" width="692" height="432" /></a></span></dd></dl>
+<div class="note">
+<ul><li> On Mac, SC4 has to be enabled at <a href="manage_effects_generators_and_analyzers.html" title="Manage Effects, Generators and Analyzers">Add / Remove Plug-ins...</a>. </li>
+<li> On GNU/Linux, SC4 is not installed by default. If SC4 is not available in your copy of Audacity, you can obtain SC4 in the <a rel="nofollow" class="external text" href="http://plugin.org.uk/download.php">LADSPA-swh plugins set</a> and then <a href="installing_effect_generator_and_analyzer_plug_ins_on_linux.html#ladspa_install" title="Installing Effect, Generator and Analyzer plug-ins on Linux">install</a> it.</div> </li></ul>
+<h2><span class="mw-headline" id="Effect_Settings">Effect Settings</span></h2>
+<h3><span class="mw-headline" id="RMS.2Fpeak">RMS/peak</span></h3>
+<p>The balance between the RMS and peak envelope followers. The followers use the <i><b><a href="glossary.html#amplitude" title="Glossary">amplitude</a></b></i> variation information in the waveform to affect the <i><b><a href="glossary.html#gain" title="Glossary">gain</a></b></i> applied by the compressor. The RMS follower is generally better for subtle, musical compression and the peak follower is better for heavier, fast compression and percussion.
+</p>
+<h3><span class="mw-headline" id="Attack_time_.28ms.29">Attack time (ms)</span></h3>
+<p>How soon the compressor starts to compress the dynamics after the threshold is exceeded, in milliseconds. 
+</p>
+<h3><span class="mw-headline" id="Release_time_.28ms.29">Release time (ms)</span></h3>
+<p>How soon the compressor starts to release the volume level back to normal after the level drops below the threshold, in milliseconds.
+</p>
+<h3><span class="mw-headline" id="Threshold_level_.28dB.29">Threshold level (dB)</span></h3>
+<p>The level at which the compressor will start to apply. 
+</p>
+<h3><span class="mw-headline" id="Ratio_.281:n.29">Ratio (1:n)</span></h3>
+<p>The gain reduction ratio used when the signal level exceeds the threshold level. Higher ratios reduce the gain more. 
+</p>
+<div class="note">
+<p>You must move this control from the default ratio of 1:1 for the effect to apply.
+</p>
+</div>  
+<h3><span class="mw-headline" id="Knee_radius_.28dB.29">Knee radius (dB)</span></h3>
+<p>The distance from the threshold where the <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Dynamic_range_compression#Soft_and_hard_knees">knee curve</a> starts. 
+</p>
+<h3><span class="mw-headline" id="Makeup_gain_.28dB.29">Makeup gain (dB)</span></h3>
+<p>The amount of gain added to the processed result.
+</p>
+<h2><span class="mw-headline" id="Effect_Output">Effect Output</span></h2>
+<h3><span class="mw-headline" id="Amplitude_.28dB.29">Amplitude (dB)</span></h3>
+<p>After applying the effect, this displays what was the original RMS (<i><b><a href="glossary.html#decibel" title="Glossary">dB</a></b></i>) level of the selection before compression. 
+</p>
+<h3><span class="mw-headline" id="Gain_reduction_.28dB.29">Gain reduction (dB)</span></h3>
+<p>Displays the degree of gain reduction that the effect applied to the original selection, in dB.
+</p>
+<div class="note">The Effect Output values are not editable and only change on applying the effect, so will appear as zero when you first open the effect. If you close and reopen the effect, the Amplitude (dB) always displays the input level prior to the last application of the effect, not the current RMS level of the selection.</div>
+<h2><span class="mw-headline" id="Real-time_preview">Real-time preview</span></h2>
+<p>This effect supports <a href="real_time_preview_of_effects.html" title="Real-time preview of effects">Real-time preview</a> - effect settings can be changed while playing and listening to the result in real-time. Text-based button controls are provided as in the image above. The Enable checkbox acts like a live "Bypass" control. Uncheck the checkbox <span class="button"><img alt="unchecked checkbox" src="../m/images/a/a8/checkboxnotchecked.png" width="13" height="13" style="vertical-align: text-top" />&#160;Enable</span> to hear the audio without the effect applied, and recheck the box <span class="button"><img alt="checked checkbox" src="../m/images/8/85/checkboxchecked.png" width="13" height="13" style="vertical-align: text-top" />&#160;Enable</span> to hear the effect applied at its current settings. 
+</p><p>The <span class="button">Manage</span> button accesses choices to add, delete, import or export presets for this effect and to set options for this effect. For details see <a href="manage_presets.html" title="Manage presets">Manage presets</a>.
+</p>
+<h2><span class="mw-headline" id="Buttons">Buttons</span></h2>
+<p>Clicking on the command buttons give the following results:
+</p>
+<ul><li><span class="button">Manage</span> gives a dropdown menu enabling you to manage presets for the tool and to see some detail about the tool. For details see <a href="manage_presets.html" title="Manage presets">Manage presets</a>.</li>
+<li> <span class="button"> Start Playback</span> starts playback of the effect preview</li>
+<li> <span class="button"> Skip Backward</span> skips forward through the effect preview</li>
+<li> <span class="button"> Skip Forward</span> skips forward through the effect preview</li>
+<li> <span class="button"><img alt="checked checkbox" src="../m/images/8/85/checkboxchecked.png" width="13" height="13" style="vertical-align: text-top" />&#160;Enable</span> listen to the preview with and without the effect applied</li>
+<li><span class="button">OK</span> applies the effect to the selected audio with the current effect settings.</li>
+<li><span class="button">Cancel</span> aborts the effect and leaves the audio unchanged.</li>
+<li><a href="help_button.html" title="Help Button"><img alt="Help Button" src="../m/images/d/d6/help_button.png" width="27" height="27" /></a> brings you to the appropriate page in the Manual, this page.</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<p><a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers"><b>|&lt;</b> Index of Effects, Generators and Analyzers</a> <br />
+</p><p><a href="effect_menu.html" title="Effect Menu"><b>|&lt;</b> Effect Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020556
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.097 seconds
+Real time usage: 0.100 seconds
+Preprocessor visited node count: 384/1000000
+Preprocessor generated node count: 1595/1000000
+Post‐expand include size: 11430/2097152 bytes
+Template argument size: 2002/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   40.751      1 - -total
+ 46.20%   18.828      1 - Template:I18n
+ 42.35%   17.257      1 - Template:I18n_box
+ 34.70%   14.139      1 - Template:I18n_list
+ 27.57%   11.236      1 - Template:Effectbuttons
+ 22.91%    9.337      1 - Template:Buttonlist
+ 13.85%    5.645     11 - Template:Button
+ 13.54%    5.519      2 - Template:I18n_link
+  7.89%    3.216      2 - Template:Autoglossonym
+  3.62%    1.475      3 - Template:Note
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4177-0!*!0!!*!5!* and timestamp 20180215020556 and revision id 57625
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/SC4">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

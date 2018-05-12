@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Creating a Crossfade - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Creating_a_Crossfade rootpage-Creating_a_Crossfade skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Creating a Crossfade</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Creating_a_Crossfade#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="intro">The purpose of a crossfade is to produce a smooth transition between two sections of audio. The two sections overlap and as one section fades out the other fades in. This technique is commonly used by DJ's, for "compilation" tracks and <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Mashup_%28music%29">mashups</a>. The use of crossfades is not limited to joining pieces of music, but can be used in many other situations where a smooth transition is required, including editing speech recordings, extending songs, creating loops for audio sequencers, repairing damaged recordings and much more.</div>
+<h2><span class="mw-headline" id="How_to_crossfade_two_tracks">How to crossfade two tracks</span></h2>
+<p>First, the tracks should be <a href="importing_audio.html" title="Importing Audio">imported</a> or <a href="record.html" title="Record">recorded</a>. By default, importing two audio files will create two audio tracks one above the other. Similarly, recording a new track will by default create a new track below any other tracks in the project. This is the arrangement that we want as the starting point (for clarity the illustrations show mono tracks, but the procedure is exactly the same for stereo tracks).
+</p>
+<div class="note">If you want to crossfade multiple songs that are currently one after the other in a single <a href="audio_tracks.html" title="Audio Tracks">audio track</a> then before making a crossfade using the methods described in this article you must <a href="audacity_selection.html" title="Audacity Selection">select</a> the first song, use <span class="menu">Edit &gt; Clip Boundaries &gt; <a href="edit_menu_clip_boundaries.html#split_new" title="Edit Menu: Clip Boundaries">Split New</a></span> to move that song to its own separate track, then select and Split New the other songs.</div>
+<h2><span class="mw-headline" id="Roughly_position_the_tracks">Roughly position the tracks</span></h2>
+<p>Drag the second track to roughly the right place using the <a href="tools_toolbar.html#timeshift" title="Tools Toolbar">Time Shift</a> tool <img src="https://manual.audacityteam.org/m/images/3/3c/TimeShiftTool.png" alt="TimeShiftTool.png"/> . Don't worry about getting the position too precise at this stage as we will adjust the position later. For crossfading two music tracks, an overlap of around 5 seconds is usually suitable, though sometimes a much shorter, or longer crossfade may sound better. How long the crossfade transition lasts is largely a matter of personal taste.
+</p>
+<dl><dd><span title="Tracks overlapped"><img alt="Crossfade-overlap-tracks.png" src="../m/images/d/d0/crossfade_overlap_tracks.png" width="564" height="323" /></span></dd></dl>
+<div class="note">For detailed information about handling Tracks and Clips, see <a href="audacity_tracks_and_clips.html" title="Audacity Tracks and Clips">Audio Tracks and Clips</a>.</div>
+<h2><span class="mw-headline" id="Align_tracks_more_precisely">Align tracks more precisely</span></h2>
+<p>Tracks will often begin and end with a short period of silence. Leading/trailing silence may be removed by selecting and deleting. Audacity's <a href="playing_and_recording.html#play_cut" title="Playing and Recording">Cut Preview</a> can be useful to check that the selection to be deleted is correct.
+</p><p>The end of the first track will be the point at which the first track finally stops (has faded to silence). The start of the second track will be the point at which the second track starts to fade in. 
+</p>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Bulbicon.png" class="image" title="Bulb icon"><img alt="Bulb icon" src="../m/images/d/d7/bulbicon.png" width="32" height="32" /></a>
+</td>
+<td align="left" valign="top">For rhythmic music it will often sound best if the second track is carefully positioned so that the beats in the second track line up with the beats in the first track. If the tempi of the tracks are different it will not be possible to make all of the beats line up. In this case, try to make the beats align at a point just to left of halfway through the overlap.  <a href="zooming.html" title="Zooming">Zoom</a> in/out as necessary to see an appropriate level of detail.
+</td></tr></table>
+</div>
+<dl><dd><span title="Beats matched"><img alt="Crossfade-beat-match.png" src="../m/images/f/f2/crossfade_beat_match.png" width="564" height="356" /></span></dd></dl>
+<p>After selecting the region to be crossfaded, create a <a href="edit_menu_clip_boundaries.html#split" title="Edit Menu: Clip Boundaries">split</a> at both ends of the selection using <span class="kbrd" style="background-color: #d0d0f8">Ctrl + I</span>. The split marks will greatly facilitate selecting the appropriate areas in each track.
+</p>
+<dl><dd><span title="Splits added at start and end of crossfade"><img alt="Crossfade-split-tracks.png" src="../m/images/e/ea/crossfade_split_tracks.png" width="564" height="304" /></span></dd></dl>
+<h2><span class="mw-headline" id="Trim_the_tracks">Trim the tracks</span></h2>
+<p>If, as in the images above, it is necessary to trim the tracks further, select the unwanted region after the fade out (in the upper track in this case) by double-clicking in it, then delete it. 
+</p>
+<div class="note">When deleting the audio before the fade in (in the lower track in this case) use <span class="menu">Edit &gt; Remove Special &gt; <a href="edit_menu_remove_special.html#split_delete" title="Edit Menu: Remove Special">Split Delete</a></span>, or the keyboard shortcut <span class="kbrd" style="background-color: #d0d0f8">Ctrl + Alt + K</span> so as to avoid moving the remaining part of the track.</div>
+<dl><dd><span title="Excess audio trimmed from ends"><img alt="Crossfade-trimmed.png" src="../m/images/6/6b/crossfade_trimmed.png" width="564" height="304" /></span></dd></dl>
+<h2><span class="mw-headline" id="Apply_fades">Apply fades</span></h2>
+<p>The quickest way to apply the fades is with the <a href="crossfade_tracks.html" title="Crossfade Tracks">Crossfade Tracks</a> effect. This effect applies a fade-out to the upper selected track, and a fade-in to the lower of the two tracks. For more complex fading, the <a href="adjustable_fade.html" title="Adjustable Fade">Adjustable Fade</a> effect may be applied to each of the tracks in turn, applying a fade-out to the overlapping section in the first track, and a fade-in to the overlapping section of the second track.
+</p>
+<dl><dd><span title="Completed crossfade"><img alt="Crossfade-complete.png" src="../m/images/d/de/crossfade_complete.png" width="564" height="303" /></span></dd></dl>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Bulbicon.png" class="image" title="Bulb icon"><img alt="Bulb icon" src="../m/images/d/d7/bulbicon.png" width="32" height="32" /></a>
+</td>
+<td align="left" valign="top">Using linear fades can cause the volume level to drop midway through the fade.
+<ul><li>For rhythmic music with closely matched tempo this will often be undesirable and may be prevented by using fade shapes that bow up higher than a linear fade (such as the <a href="fade_and_crossfade.html#equal" title="Fade and Crossfade">Equal Power</a> fade shape). </li>
+<li>For crossfading music where there is a substantial difference in tempo, a smoother sounding crossfade may be achieved by allowing the volume to drop by the use of fade shapes that dip lower than a linear fade.</li></ul>
+</td></tr></table>
+</div>
+
+<!-- 
+NewPP limit report
+Cached time: 20180215020230
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.086 seconds
+Real time usage: 0.090 seconds
+Preprocessor visited node count: 115/1000000
+Preprocessor generated node count: 352/1000000
+Post‐expand include size: 4690/2097152 bytes
+Template argument size: 3530/2097152 bytes
+Highest expansion depth: 7/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   16.231      1 - -total
+ 50.53%    8.202      3 - Template:Hint
+ 35.91%    5.828      3 - Template:Note
+ 20.62%    3.346      2 - Template:Shortcut
+ 14.66%    2.380      1 - Template:Intro
+ 11.00%    1.786      2 - Template:Menu
+ 10.32%    1.675      2 - Template:Tip
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4962-0!*!0!!*!5!* and timestamp 20180215020230 and revision id 55672
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Creating_a_Crossfade">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

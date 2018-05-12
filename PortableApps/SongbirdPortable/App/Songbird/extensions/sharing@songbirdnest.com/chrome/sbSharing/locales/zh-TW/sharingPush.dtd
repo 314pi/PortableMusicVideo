@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "重新整理">
+<!ENTITY push.playqueue.instructions "在此處拖放曲目或播放清單，為此裝置快速建立聆聽隊列">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "離線">
+<!ENTITY sharing.push.deviceState.stopped "已停止">
+<!ENTITY sharing.push.deviceState.playing "正在播放">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "已暫停">
+<!ENTITY sharing.push.deviceState.recording "正在錄音">
+<!ENTITY sharing.push.deviceState.nomedia "沒有媒體">

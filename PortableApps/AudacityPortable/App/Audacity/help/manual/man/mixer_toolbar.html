@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Mixer Toolbar - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Mixer_Toolbar rootpage-Mixer_Toolbar skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Mixer Toolbar</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Mixer_Toolbar#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<p><br />
+</p>
+<div class="intro"><i><b>Mixer Toolbar</b></i> is where you adjust Recording Volume (the amplitude at which recordings will be made) and Playback Volume (how loud the project's audio sounds, not affecting the volume of exported audio). 
+<dl><dd>Click on the toolbar image below to see this toolbar displayed in context of the default upper tooldock layout. </div></dd>
+<dd></dd>
+<dd><a href="http://alphamanual.audacityteam.org/man/File:MixerToolbar.png" class="image" title="Will automagically be replaced"><img alt="Will automagically be replaced" src="../m/images/1/15/mixertoolbar.png" width="323" height="27" /></a></dd></dl>
+
+<dl><dd><b>Recording Volume Slider:</b> Sets the recording volume.</dd></dl>
+<dl><dd><b>Playback Volume Slider:</b> Sets the playback volume.</dd></dl>
+<p><br />
+</p>
+<div id="input"></div>
+<div id="recording"></div>
+<h2><span class="mw-headline" id="Recording_Slider">Recording Slider</span></h2>
+<div class="note">
+If the recording slider does not have direct control of your sound device's input level, it will be <b>disabled</b> and set to maximum. You will need to set the recording levels using the input slider in the operating system mixer or in the soundcard control panel. <p>To locate the system mixer, see the help on our Wiki for <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Mixer_Toolbar_Issues#cp">Windows</a> (right-click the speaker icon by the system clock), <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Mixer_Toolbar_Issues#osx">Mac</a> (use /Applications/Utilities/Audio MIDI Setup or the system Sound Preferences) or <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Mixer_Toolbar_Issues#linux">Linux</a> (use ALSAmixer or PulseAudio Volume Control). </p>
+<ul><li> Note that Macs in most cases do not permit volume adjustment of USB audio devices. Use the gain control on the USB device if it has this, or adjust the level that is going into the USB device.</div> </li></ul>
+<p>This is slider with the microphone icon.  It controls the level of the currently selected "Recording Device" in  <a href="device_toolbar.html" title="Device Toolbar">Device Toolbar</a>. Inputs can also be chosen at "Recording Device" in <a href="devices_preferences.html" title="Devices Preferences">Devices Preferences</a>, in the operating system mixer or in any control panel that the soundcard may have. The Recording Slider should then control that input.     
+</p><p>After selecting the required recording source, use the recording slider in conjunction with the recording level meters on the <a href="meter_toolbar.html" title="Meter Toolbar">Meter Toolbars</a> to set the correct recording level before starting to record for real. 
+</p><p>If your input sounds distorted, lower the recording slider until no distortion can be heard, also making sure the clipping indicators on the <a href="meter_toolbar.html#annotated" title="Meter Toolbar">recording meter</a> do not light up.
+</p><p><br />
+</p>
+<div id="output"></div>
+<div id="playback"></div>
+<h2><span class="mw-headline" id="Playback_Slider">Playback Slider</span></h2>
+<p>This is the slider with the loudspeaker icon.  It enables you control the volume at which you listen to the mix of your project. This is a purely a "monitor" control. It does not affect the level of your mix and hence does not affect the level that audio is exported at. Adjusting the playback slider will not help if your mix is <i><b><a href="glossary.html#clipping" title="Glossary">clipped</a></b></i>. The playback slider does not affect the levels indicated by the <a href="meter_toolbar.html#playback" title="Meter Toolbar">playback meters</a> which do reflect the level of the mix.
+</p><p>Should your playback sound distorted, the distortion usually comes from clipping of your project's mix. You actually need to reduce the level of your tracks. It is suggested you reduce every track by the same amount using the <a href="audio_tracks.html#gain" title="Audio Tracks">gain sliders</a> in the <a href="audio_tracks.html#Track_Control_Panel" title="Audio Tracks">Track Control Panel</a>.
+</p>
+<div class="note">If <i><b><a href="glossary.html#wasapi" title="Glossary">Windows WASAPI</a></b></i> audio host is chosen in <a href="device_toolbar.html" title="Device Toolbar">Device Toolbar</a>, output is <i>emulated</i> (as shown in the hover tooltip for this slider). As a result, this slider will only scale the system output slider's current level up or down rather than directly manipulating that system slider.</div> 
+<p><br />
+</p>
+<div id="precise"></div>
+<h2><span class="mw-headline" id="Precise_Volume_Adjustment">Precise Volume Adjustment</span></h2>
+<dl><dd><span title="Playback Volume adjustment window"><img alt="Playback Volume dialog.png" src="../m/images/e/e9/playback_volume_dialog.png" width="252" height="128" /></span></dd></dl>
+<p>Double-clicking on the recording or playback volume slider will bring up the Recording Volume or Playback Volume window. Here you can make much more precise adjustments with the slider or enter a value in the text field. You can also set a <a href="keyboard_shortcut_reference.html#Mixer_Toolbar" title="Keyboard Shortcut Reference">keyboard shortcut</a> to bring up either of these windows.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180214181011
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.095 seconds
+Real time usage: 0.103 seconds
+Preprocessor visited node count: 348/1000000
+Preprocessor generated node count: 1216/1000000
+Post‐expand include size: 5231/2097152 bytes
+Template argument size: 1846/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   44.556      1 - -total
+ 79.96%   35.625      1 - Template:I18n
+ 74.49%   33.189      1 - Template:I18n_box
+ 65.71%   29.279      1 - Template:I18n_list
+ 36.84%   16.413      7 - Template:I18n_link
+ 22.06%    9.831      7 - Template:Autoglossonym
+ 11.09%    4.942      1 - Template:Annotated
+  4.23%    1.884      1 - Template:Intro
+  3.35%    1.492      1 - Template:Ednote
+  3.02%    1.346      1 - Template:Note
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:1977-0!*!0!!*!5!* and timestamp 20180214181011 and revision id 59156
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Mixer_Toolbar">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

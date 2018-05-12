@@ -1,0 +1,60 @@
+This document explains how to compile and install SMPlayer.
+
+Compiling SMPlayer should be easy. It only depends on Qt 4.
+
+
+1) How to make a deb package
+2) How to make a rpm package
+3) Generic compilation
+4) Changing installation path
+5) How to compile in Windows
+
+
+1) How to make a deb package
+----------------------------
+Be sure you have installed the following packages: libqt4-dev, zlib1g-dev,
+fakeroot, build-essential, devscripts, debhelper and g++.
+
+sudo apt-get install libqt4-dev zlib1g-dev fakeroot build-essential devscripts debhelper g++
+
+(Packages to compile with Qt5: qtbase5-dev qt5-qmake qt5-default qtscript5-dev
+qttools5-dev-tools qtbase5-private-dev libqt5webkit5-dev)
+
+Now run ./create_deb.sh
+
+
+2) How to make a rpm package
+----------------------------
+Building a rpm package is not easy. Better get a binary package from
+this repository:
+https://software.opensuse.org/download.html?project=home%3Asmplayerdev&package=smplayer
+
+
+3) Generic compilation
+----------------------
+(obsolete)
+
+
+4) Changing installation path
+-----------------------------
+By default smplayer will be installed in /usr/local. You can change it by
+using PREFIX and DESTDIR.
+
+Examples:
+make PREFIX=/usr
+make PREFIX=/usr install
+
+That would install smplayer under /usr.
+
+DESTDIR will be useful for package maintainers.
+
+make PREFIX=/usr
+make PREFIX=/usr DESTDIR=/tmp/ install
+
+That would compile smplayer for /usr but in fact it will be installed in
+/tmp/usr/
+
+
+5) How to compile in Windows
+----------------------------
+(obsolete)

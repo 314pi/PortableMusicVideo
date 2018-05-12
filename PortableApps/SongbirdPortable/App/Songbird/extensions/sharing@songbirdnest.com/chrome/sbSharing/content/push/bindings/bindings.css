@@ -1,0 +1,80 @@
+/*
+ *=BEGIN SONGBIRD GPL
+ *
+ * This file is part of the Songbird web player.
+ *
+ * Copyright(c) 2005-2010 POTI, Inc.
+ * http://www.songbirdnest.com
+ *
+ * This file may be licensed under the terms of of the
+ * GNU General Public License Version 2 (the ``GPL'').
+ *
+ * Software distributed under the License is distributed
+ * on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
+ * express or implied. See the GPL for the specific language
+ * governing rights and limitations.
+ *
+ * You should have received a copy of the GPL along with this
+ * program. If not, go to http://www.gnu.org/licenses/gpl.html
+ * or write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ *
+ *=END SONGBIRD GPL
+ */
+
+sb-player-playpause-button {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#playpause-button") !important;
+}
+
+sb-player-back-button {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#back-button") !important;
+}
+
+sb-player-stop-button {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#stop-button") !important;
+}
+
+sb-player-forward-button {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#forward-button") !important;
+}
+
+sb-push-device-controls {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#device-controls") !important;
+}
+
+sb-push-device-info {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#device-info") !important;
+}
+
+sb-device-playlist {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#device-playlist") !important;
+}
+
+sb-push-device {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#device") !important;
+}
+
+sb-device-volume-slider {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#volume-slider") !important;
+}
+
+sb-device-playpos-slider {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#playpos-slider") !important;
+}
+
+sb-device-playposition {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#play-position") !important;
+}
+
+sb-device-busy-box {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#device-busy-box") !important;
+}
+
+sb-device-shuffle-button {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#shuffle-button") !important;
+}
+
+sb-device-repeat-button {
+  -moz-binding: url("chrome://sharing/content/push/bindings/playerControls.xml#repeat-button") !important;
+}
+

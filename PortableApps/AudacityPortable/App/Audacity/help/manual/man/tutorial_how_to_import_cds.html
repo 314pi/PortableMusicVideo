@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Tutorial - How to import CDs - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Tutorial_-_How_to_import_CDs rootpage-Tutorial_-_How_to_import_CDs skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Tutorial - How to import CDs</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Tutorial_-_How_to_import_CDs#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<p><br />
+</p>
+<div class="intro">Audacity <i><b>does not</b></i> contain any function for importing (<i>ripping</i>) audio from CDs. This can, however, be achieved by using other applications to extract the data into a file format Audacity does support. </div>
+<h2><span class="mw-headline" id="Importing_data_from_CDs">Importing data from CDs</span></h2>
+<p>Users new to audio editing are often surprised to find that they cannot import the audio from CDs into Audacity with the <span class="menu">File &gt; Import &gt; <a href="file_menu_import.html#audio" title="File Menu: Import">Audio</a></span> command. In fact, most operating systems do not actually allow the import of data from the CD tracks into applications, because audio CDs do not have files or a file system like computer media, but consist essentially of a stream of <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Bit">bits</a> on the disc. That is why when you look at an audio CD in a file manager like Windows Explorer, each CD track will appear only as a small .cda "file" 44 bytes in size, which is merely header information for the stream. 
+</p><p>In order to import tracks from an audio CD, you must first usually extract (or "rip") the tracks to a <i>WAV</i> or <i>AIFF</i> audio file using CD extraction software; then you can import those WAV or AIFF files into Audacity with the usual <span class="menu">File &gt; Import &gt; <a href="file_menu_import.html#audio" title="File Menu: Import">Audio</a></span> command. 
+</p>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">Do <i><b>not</b></i> extract the CD to smaller-sized <i><b><a href="glossary.html#mp3" title="Glossary">MP3</a></b></i> format if you want to edit the audio in Audacity, because every time you export an MP3 file, some of the <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/MP3#Re-encoding_to_MP3">quality is lost</a>. Extract to <i><b><a href="glossary.html#wav" title="Glossary">WAV</a></b></i>  or <i><b><a href="glossary.html#aiff" title="Glossary">AIFF</a></b></i> which are <i><b><a href="glossary.html#lossless" title="Glossary">lossless</a></b></i>. You can always <a href="faq_installation_and_plug_ins.html#lame" title="FAQ:Installation and Plug-Ins">export to MP3</a> from Audacity after editing, but do that only once for the finished audio.
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<div id="windows"></div>
+<h3><span class="mw-headline" id="Windows">Windows</span></h3>
+<p>Audio CDs may be ripped to WAV with <i><b>Windows Media Player 11 or 12</b></i> (click <span class="menu">Tools &gt; Options &gt; Rip Music</span> and choose "WAV (Lossless)" in the Format dropdown in "Rip Settings"). Earlier versions of Windows Media Player are not appropriate for extracting CD audio for editing in Audacity, because they are unable to extract to WAV.  
+</p><p>Alternatively the Windows version of <a rel="nofollow" class="external text" href="https://www.apple.com/itunes/"><b>iTunes</b></a> <i>(which is free to download)</i> may be used to extract audio CDs to WAV or AIFF.
+</p><p><br />
+</p>
+<div id="OSX"></div>
+<h3><span class="mw-headline" id="Mac">Mac</span></h3>
+<p>Mac users have a quick way to import CDs, because when a CD is put in the drive, the CDA tracks are mounted as AIFF files in the Finder. It's thus possible to either drag the AIFF files from the Finder into Audacity, or use the <span class="menu">File &gt; Import &gt; <a href="file_menu_import.html#audio" title="File Menu: Import">Audio</a></span> command, instead of extracting the audio.  
+</p>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">If you import CD tracks into Audacity from Finder and save them as a Project, the CD <i><b>must</b></i> be present next time you open the Project, unless you set Audacity to make a copy of the data. To do this  choose <span class="menu">Audacity &gt; Preferences: Import&#160;/&#160;Export</span> and where it says "When importing audio files...", check the radio button: <span class="button"><img alt="selected radio button" src="../m/images/7/7e/radioselected.png" width="12" height="12" style="vertical-align: text-top" />&#160;Make a copy of uncompressed audio files before  editing (safer)</span>.
+</td></tr></table>
+</div>
+<p>Another possibility is to use <a rel="nofollow" class="external text" href="http://sbooth.org/Max/"><b>Max</b></a>, a free software CD ripping and encoding application. It has full support for encoding into the <a href="glossary.html#flac" title="Glossary">FLAC</a> lossless audio format. 
+</p>
+
+<p><br />
+</p>
+<div id="linux"></div>
+<h3><span class="mw-headline" id="Linux">Linux</span></h3>
+<p>On Linux or other Unix-like systems you can use <a rel="nofollow" class="external text" href="http://www.k3b.org/"><b>K3b</b></a> for the KDE desktop or <a rel="nofollow" class="external text" href="http://ripperx.sourceforge.net/faq.html"><b>RipperX</b></a> or <a rel="nofollow" class="external text" href="http://burtonini.com/blog/computers/sound-juicer"><b>Sound Juicer</b></a> for GNOME. Or use any built-in CD extraction utility that comes with the distribution.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020203
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.089 seconds
+Real time usage: 0.095 seconds
+Preprocessor visited node count: 212/1000000
+Preprocessor generated node count: 1117/1000000
+Post‐expand include size: 5094/2097152 bytes
+Template argument size: 2726/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   37.290      1 - -total
+ 70.16%   26.162      1 - Template:I18n
+ 63.81%   23.793      1 - Template:I18n_box
+ 52.35%   19.521      1 - Template:I18n_list
+ 18.67%    6.961      2 - Template:I18n_link
+ 10.39%    3.875      2 - Template:Autoglossonym
+ 10.12%    3.775      2 - Template:Advice
+  6.45%    2.406      5 - Template:Menu
+  4.42%    1.648      1 - Template:Intro
+  3.78%    1.411      1 - Template:Ednote
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4829-0!*!0!!*!5!* and timestamp 20180215020203 and revision id 57832
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Tutorial_-_How_to_import_CDs">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

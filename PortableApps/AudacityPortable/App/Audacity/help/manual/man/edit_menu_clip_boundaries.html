@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Edit Menu: Clip Boundaries - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Edit_Menu_Clip_Boundaries rootpage-Edit_Menu_Clip_Boundaries skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Edit Menu: Clip Boundaries</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Edit_Menu:_Clip_Boundaries#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="intro">Items in the <i><b>Clip Boundaries</b></i> &#160;cascading <a href="edit_menu.html" title="Edit Menu">Edit</a> menu let you create or remove separate <a href="audacity_tracks_and_clips.html" title="Audacity Tracks and Clips">clips</a> in the <a href="audio_tracks.html" title="Audio Tracks">audio track</a>.
+</div>
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_1119391645"><area href="file_menu.html" shape="rect" coords="3,3,26,19" alt="File Menu" title="File Menu"/><area href="edit_menu.html" shape="rect" coords="33,3,57,19" alt="Edit Menu" title="Edit Menu"/><area href="select_menu.html" shape="rect" coords="64,3,101,19" alt="Select Menu" title="Select Menu"/><area href="view_menu.html" shape="rect" coords="108,3,137,19" alt="View Menu" title="View Menu"/><area href="transport_menu.html" shape="rect" coords="144,3,200,19" alt="Transport Menu" title="Transport Menu"/><area href="tracks_menu.html" shape="rect" coords="207,3,247,19" alt="Tracks Menu" title="Tracks Menu"/><area href="generate_menu.html" shape="rect" coords="254,3,308,19" alt="Generate Menu" title="Generate Menu"/><area href="effect_menu.html" shape="rect" coords="315,3,348,19" alt="Effect Menu" title="Effect Menu"/><area href="analyze_menu.html" shape="rect" coords="355,3,399,19" alt="Analyze Menu" title="Analyze Menu"/><area href="help_menu.html" shape="rect" coords="406,3,435,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="442,3,472,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="undo_redo_and_history.html" shape="rect" coords="39,23,211,45" alt="Undoes the most recent editing action" title="Undoes the most recent editing action"/><area href="undo_redo_and_history.html" shape="rect" coords="39,45,211,67" alt="Redoes the most recently undone editing action" title="Redoes the most recently undone editing action"/><area href="edit_menu.html#cut" shape="rect" coords="39,74,211,96" alt="Removes the selected audio data and/or labels and places these on the Audacity clipboard" title="Removes the selected audio data and/or labels and places these on the Audacity clipboard"/><area href="edit_menu.html#delete" shape="rect" coords="39,96,211,118" alt="Removes the selected audio data and/or labels without copying these to the Audacity clipboard" title="Removes the selected audio data and/or labels without copying these to the Audacity clipboard"/><area href="edit_menu_copy_paste_and_duplicate.html#copy" shape="rect" coords="39,118,211,140" alt="Copies the selected audio data to the Audacity clipboard without removing it from the project" title="Copies the selected audio data to the Audacity clipboard without removing it from the project"/><area href="edit_menu_copy_paste_and_duplicate.html#paste" shape="rect" coords="39,140,211,162" alt="Inserts whatever is on the Audacity clipboard at the position of the selection cursor in the project, replacing whatever audio data is currently selected, if any" title="Inserts whatever is on the Audacity clipboard at the position of the selection cursor in the project, replacing whatever audio data is currently selected, if any"/><area href="edit_menu_copy_paste_and_duplicate.html#duplicate" shape="rect" coords="39,162,211,184" alt="Creates a new track containing only the current selection as a new clip" title="Creates a new track containing only the current selection as a new clip"/><area href="edit_menu_remove_special.html" shape="rect" coords="39,191,211,213" alt="For more &quot;advanced&quot; removal of audio" title="For more &quot;advanced&quot; removal of audio"/><area href="#" shape="rect" coords="39,220,211,242" alt="Create or remove separate clips in the audio track" title="Create or remove separate clips in the audio track"/><area href="edit_menu_labels.html" shape="rect" coords="39,242,211,264" alt="These commands are to add and edit labels" title="These commands are to add and edit labels"/><area href="edit_menu_labeled_audio.html" shape="rect" coords="39,264,211,286" alt="Labeled Audio commands apply standard Edit Menu commands to the audio of one or more regions that are labeled" title="Labeled Audio commands apply standard Edit Menu commands to the audio of one or more regions that are labeled"/><area href="edit_menu.html#metadata" shape="rect" coords="39,286,211,308" alt="The Metadata Editor modifies information about a track, such as the artist and genre" title="The Metadata Editor modifies information about a track, such as the artist and genre"/><area href="edit_menu.html#preferences" shape="rect" coords="39,315,211,337" alt="Preferences let you change most of the default behaviors and settings of Audacity" title="Preferences let you change most of the default behaviors and settings of Audacity"/><area href="#split" shape="rect" coords="223,223,402,245" alt="Splits the current clip into two clips at the cursor point, or into three clips at the selection boundaries" title="Splits the current clip into two clips at the cursor point, or into three clips at the selection boundaries"/><area href="#split_new" shape="rect" coords="223,245,402,267" alt="Does a Split Cut on the current selection in the current track, then creates a new track and pastes the selection into the new track" title="Does a Split Cut on the current selection in the current track, then creates a new track and pastes the selection into the new track"/><area href="#join" shape="rect" coords="223,274,402,296" alt="If you select an area that overlaps one or more clips, they are all joined into one large clip" title="If you select an area that overlaps one or more clips, they are all joined into one large clip"/><area href="#detach_at_silences" shape="rect" coords="223,296,402,318" alt="In a selection region that includes absolute silences, creates individual non-silent clips between the regions of silence" title="In a selection region that includes absolute silences, creates individual non-silent clips between the regions of silence"/></map><img alt="Edit-Clip BoundariesMenu.png" src="../m/images/5/5e/edit_clip_boundariesmenu.png" width="415" height="345" usemap="#ImageMap_1_1119391645"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p><p><br />
+</p>
+<div class="note"><b>Mac users:</b> <span class="kbrd" style="background-color: #e0e0f0">Ctrl</span> = <span class="kbrd" style="background-color: #e0e0f0">&#8984;</span> and <span class="kbrd" style="background-color: #e0e0f0">Alt</span> = <span class="kbrd" style="background-color: #e0e0f0">Option</span>. So, for example, <span class="kbrd" style="background-color: #e0e0f0">Ctrl + Alt + J</span> = <span class="kbrd" style="background-color: #e0e0f0">&#8984; + Option + J</span></div>
+<div id="split"></div>
+<h2><span class="mw-headline" id="Split_.C2.A0Ctrl_.2B_I">Split &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + I</span></font></span></h2>
+<p>Splits the current clip into up to three clips at the selection boundaries.  The audio before, within, and after the selection can now all be shifted independently
+</p>
+<dl><dd><span title="Before"><img alt="EditMenuClipBoundaries Split 01.png" src="../m/images/7/74/editmenuclipboundaries_split_01.png" width="474" height="133" /></span></dd></dl>
+<dl><dd><span title="After"><img alt="EditMenuClipBoundaries Split 02.png" src="../m/images/9/9c/editmenuclipboundaries_split_02.png" width="474" height="133" /></span></dd></dl>
+<dl><dd><span title="Moving"><img alt="EditMenuClipBoundaries Split 03.png" src="../m/images/c/c4/editmenuclipboundaries_split_03.png" width="474" height="133" /></span></dd></dl>
+<div id="split_new"></div>
+<h2><span class="mw-headline" id="Split_New_.C2.A0Ctrl.2B_Alt_.2B_I_.C2.A0_Extra">Split New &#160;<font size="-1"><span class="kbrd" style="background-color: #eaeafa">Ctrl+ Alt + I </span> &#160; <i><sup><a href="only_in_full_set.html" title="Only in full set">Extra</a></sup></i></font></span></h2>
+<p>Does a <a href="edit_menu_remove_special.html#split_cut" title="Edit Menu: Remove Special">Split Cut</a> on the current selection in the current track, then creates a new track and pastes the selection into the new track.
+</p>
+<dl><dd><span title="Before"><img alt="EditMenuClipBoundaries Split 01.png" src="../m/images/7/74/editmenuclipboundaries_split_01.png" width="474" height="133" /></span></dd></dl>
+<dl><dd><span title="After"><img alt="EditMenuClipBoundaries SplitNew 02.png" src="../m/images/0/0c/editmenuclipboundaries_splitnew_02.png" width="474" height="252" /></span></dd></dl>
+<div id="join"></div>
+<h2><span class="mw-headline" id="Join_.C2.A0Ctrl_.2B_J_.C2.A0_Extra">Join &#160;<font size="-1"><span class="kbrd" style="background-color: #eaeafa">Ctrl + J </span> &#160; <i><sup><a href="only_in_full_set.html" title="Only in full set">Extra</a></sup></i></font></span></h2>
+<p>If you select an area that overlaps one or more clips, they are all joined into one large clip.  Regions in-between clips become silence.
+</p>
+<dl><dd><span title="Before"><img alt="EditMenuClipBoundaries Join 01.png" src="../m/images/b/b9/editmenuclipboundaries_join_01.png" width="473" height="133" /></span></dd></dl>
+<dl><dd><span title="After"><img alt="EditMenuClipBoundaries Join 02.png" src="../m/images/a/ac/editmenuclipboundaries_join_02.png" width="474" height="133" /></span></dd></dl>
+<div id="detach_at_silences"></div>
+<h2><span class="mw-headline" id="Detach_at_Silences.C2.A0Ctrl_.2B_Alt_.2B_J_.C2.A0_Extra">Detach at Silences&#160;<font size="-1"><span class="kbrd" style="background-color: #eaeafa">Ctrl + Alt + J </span> &#160; <i><sup><a href="only_in_full_set.html" title="Only in full set">Extra</a></sup></i></font></span></h2>
+<p>In a selection region that includes absolute silence and other audio, creates individual non-silent clips between the regions of silence. The silence in the selection becomes blank space between the clips. 
+</p>
+<dl><dd><span title="Before"><img alt="EditMenuClipBoundaries Detach 01.png" src="../m/images/1/11/editmenuclipboundaries_detach_01.png" width="474" height="134" /></span></dd></dl>
+<dl><dd><span title="After"><img alt="EditMenuClipBoundaries Detach 02.png" src="../m/images/6/69/editmenuclipboundaries_detach_02.png" width="474" height="133" /></span></dd></dl>
+<p>If the selection is entirely silence, it becomes blank space between the audio either side of the selection.  
+</p><p><br />
+<a href="edit_menu.html" title="Edit Menu"><b>&lt;</b>&#160; Back to: Edit Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020259
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.127 seconds
+Real time usage: 0.134 seconds
+Preprocessor visited node count: 343/1000000
+Preprocessor generated node count: 7423/1000000
+Post‐expand include size: 5354/2097152 bytes
+Template argument size: 1472/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   82.891      1 - -total
+ 58.53%   48.515      1 - Template:Menus
+ 54.71%   45.350      1 - Template:All-menus
+ 24.56%   20.362      1 - Template:I18n
+ 22.26%   18.449      1 - Template:I18n_box
+ 17.94%   14.873      1 - Template:I18n_list
+  6.95%    5.758      1 - Template:Note
+  6.67%    5.532      2 - Template:I18n_link
+  4.26%    3.530      6 - Template:Key
+  4.09%    3.390      3 - Template:Fullshortcut
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4320-0!*!0!!*!5!* and timestamp 20180215020258 and revision id 57016
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Edit_Menu:_Clip_Boundaries">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

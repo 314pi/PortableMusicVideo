@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "Media Server:">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "Serverstatus:">
+<!ENTITY sharing.iconpopup.status.on "PÅ">
+<!ENTITY sharing.iconpopup.status.off "AV">
+<!ENTITY sharing.iconpopup.settings.link "Inställningar">
+<!ENTITY sharing.prefpane.label "Media Server">
+<!ENTITY sharing.prefpane.network.name.header.label "Nätverksnamn för Media Server">
+<!ENTITY sharing.prefpane.network.name.content.label "Namn så som det visas på nätverket (ändringar kräver omstart):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "Mappen Bilder">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "Strömma bilder från:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "Välj mapp">

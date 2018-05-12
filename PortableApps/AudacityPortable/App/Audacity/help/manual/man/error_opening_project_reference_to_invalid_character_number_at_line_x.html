@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Error Opening Project: Reference to invalid character number at line x - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Error_Opening_Project_Reference_to_invalid_character_number_at_line_x rootpage-Error_Opening_Project_Reference_to_invalid_character_number_at_line_x skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Error Opening Project: Reference to invalid character number at line x</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Error_Opening_Project:_Reference_to_invalid_character_number_at_line_x#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="intro">This error message usually means that when reopening the AUP <a href="audacity_projects.html" title="Audacity Projects">project file</a> normally, Audacity finds an unexpected non-English, accented or control character at the line quoted in the error message. There are three main causes of this.  
+<ul><li> The project contains imported files whose metadata contains symbols that Audacity cannot display. This may create either the "(invalid token)" or "invalid character number" error</li></ul>
+<ul><li> The project was saved containing <b>non-English or accented characters</b> using an old ANSI build of Audacity for Windows. ANSI builds are not properly <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> aware, so do not support non-English or accented characters. 
+<ul><li> The <a rel="nofollow" class="external text" href="http://www.audacityteam.org/download/windows">latest version of Audacity</a> will always fully support Unicode. You can check your Audacity version at <span class="menu">Help &gt; <a href="help_menu.html#about_audacity" title="Help Menu">About Audacity...</a></span> <i>(or <span class="menu">Audacity &gt; About Audacity</span> on Mac)</i>.  </div></li></ul></li></ul>
+<p><span style="font-weight: bold; font-size:118%">Solution:</span>
+</p>
+<ol>
+<li>Make a copy of the AUP project file and open it in a text editor. You can use the default Notepad on Windows or TextEdit on Mac, but in a few instances these could change the AUP file in such a way that Audacity could no longer open it.  We recommend instead <a rel="nofollow" class="external text" href="https://notepad-plus-plus.org/">Notepad++</a> for Windows and <a rel="nofollow" class="external text" href="http://brackets.io/">Brackets</a> or <a rel="nofollow" class="external text" href="http://www.barebones.com/products/bbedit/">BBEdit</a> for Mac.
+<li> Turn word wrap off in the menus (or in TextEdit, drag the window horizontally so that lines do not wrap).  
+<li> In the line indicated in the error message, look for one of these:
+<ul>
+<li><b>projname=</b>
+<li><b>name=</b>
+<li><b>value=</b>
+<li><b>title=</b></ul> <p>then <b>remove all characters inside the quotation marks that follow which are not a number or an A to Z letter</b>. You could also change those characters to a number or A to Z letter. For example, a string of control characters you would want to remove or change might start with <b>&amp;#</b> followed by <b>four numbers</b> and a  <b>semi-colon</b>, such as <b>&amp;#<span style="letter-spacing:-0.1em">&#8201;0&#8201;0&#8201;1&#8201;3</span>&#160;;</b>. </p><p>For symbols there will usually be <b>five characters</b> between the <b>&amp;#</b> and a <b>colon</b>.</p>
+<li>Save the changes to the .aup file.
+<li>If you re-open the project and an error occurs at another line, repeat the steps above in the new line indicated in the error message. </ol>     
+<div class="note">Here is a real-world example of a corrupt line in the GENRE tag in a project where "Country" and "Western" were incorrectly separated using the control character for a horizontal tab, also missing the closing semi-colon:
+<p><b>&lt;tag name="GENRE" value="Country &amp;#<span style="letter-spacing:-0.1em">&#8201;0&#8201;0&#8201;0&#8201;9</span>&#160;Western"/&gt;</b>
+</p><p>And the same line corrected so that the two words can be read into the project:
+</p>
+<b>&lt;tag name="GENRE" value="Country, Western"/&gt;</b></div> 
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">
+<p>If you had to rename "projname" in the AUP file, rename both the AUP project file and the corresponding _data folder so that they have the same name as "projname" in the AUP file.
+</p>
+</td></tr></table>
+</div>
+
+<!-- 
+NewPP limit report
+Cached time: 20180215020623
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.050 seconds
+Real time usage: 0.052 seconds
+Preprocessor visited node count: 34/1000000
+Preprocessor generated node count: 180/1000000
+Post‐expand include size: 2263/2097152 bytes
+Template argument size: 1763/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    9.577      1 - -total
+ 44.78%    4.289      1 - Template:Intro
+ 21.57%    2.066      2 - Template:Menu
+ 17.01%    1.629      1 - Template:Note
+ 16.51%    1.581      1 - Template:Bh
+ 14.17%    1.357      1 - Template:Advice
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:6195-0!*!0!*!*!5!* and timestamp 20180215020623 and revision id 55712
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Error_Opening_Project:_Reference_to_invalid_character_number_at_line_x">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

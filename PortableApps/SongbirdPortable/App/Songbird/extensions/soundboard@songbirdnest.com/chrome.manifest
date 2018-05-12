@@ -1,0 +1,4 @@
+overlay chrome://songbird/content/xul/layoutWithBrowserOverlay.xul chrome://soundboard/content/browser-overlay.xul
+locale  soundboard  en-US  jar:chrome/soundboard.jar!/locale/en-US/
+content soundboard  jar:chrome/soundboard.jar!/content/
+skin    soundboard  classic/1.0 jar:chrome/soundboard.jar!/skin/

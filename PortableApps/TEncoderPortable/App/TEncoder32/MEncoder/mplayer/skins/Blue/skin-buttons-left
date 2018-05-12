@@ -1,0 +1,33 @@
+section        = movieplayer
+
+  window       = main
+    decoration = disable
+    base       = main,             -1,  -2
+
+    button     = exit,             9,    4,   15,  15, evExit
+    button     = icnf,             31,   4,   15,  15, evIconify
+    button     = full,             53,   4,   15,  15, evFullScreen
+    button     = button_prev,      90,   54,  27,  27, evPrev
+    button     = button_rewind,    119,  54,  35,  35, evBackward10sec
+    button     = button_pause,     156,  54,  37,  37, evPause
+    button     = button_play,      195,  54,  39,  39, evPlay
+    button     = button_stop,      236,  54,  37,  37, evStop
+    button     = button_forward,   275,  54,  35,  35, evForward10sec
+    button     = button_next,      312,  54,  27,  27, evNext
+    button     = button_load,      366,  52,  25,  25, evLoad
+    button     = about,            5,    83,  15,  15, evAbout
+    button     = mute,             7,    54,  10,  16, evMute
+    hpotmeter  = pos, 11, 6,  NULL, 100,  0,  283, 27, 136, 15, evSetMoviePosition
+    hpotmeter  = vol, 13, 14, NULL, 100,  0,  24,  54, 48,  15, evSetVolume
+    potmeter   = waves, 11, 0, 17, 54, 0, 0, evSetVolume
+    font       = font, font
+    dlabel     = 18, 30,  52, 0, font, "$1"
+    dlabel     = 79, 30, 199, 0, font, "$o"
+  end
+
+  window       = sub
+    base       = sub, -1, -1
+    background = 197,197,197
+  end
+
+end

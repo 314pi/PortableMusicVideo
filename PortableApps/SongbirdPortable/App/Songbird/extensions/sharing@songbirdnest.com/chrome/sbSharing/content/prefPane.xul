@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://sharing/skin/css/options.css"
+    type="text/css"?>
+
+<!DOCTYPE prefwindow [
+  <!ENTITY % mainDTD SYSTEM "chrome://browser/locale/preferences/main.dtd">
+  <!ENTITY % songbirdDTD SYSTEM "chrome://songbird/locale/songbird.dtd">
+  <!ENTITY % sharingDTD SYSTEM "chrome://sharing/locale/sharingDMS.dtd">
+  %mainDTD;
+  %songbirdDTD;
+  %sharingDTD;
+]>
+
+<overlay id="sharing-preferences-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<prefwindow id="BrowserPreferences">
+  <prefpane id="sharingPrefsPanel" label="&sharing.prefpane.label;"
+    image="chrome://sharing/skin/images/songbird-32.png">
+
+    <script type="application/x-javascript" src="chrome://sharing/content/prefPane.js"/>
+
+    <preferences>
+      <preference id="sharing-pref-dms-name"
+        type="string"
+        name="extensions.sharing.dms.name" />
+      <preference id="sharing-pref-dms-images-folderlocation"
+        type="file"
+        name="extensions.sharing.dms.images.path" />
+      <preference id="sharing-pref-dms-images-enable"
+        type="bool"
+        name="extensions.sharing.dms.images.enabled" />
+    </preferences>
+
+    <stringbundle id="sharing-dms-preferences" src="chrome://sharing/locale/sharingDMS.properties"/>
+
+    <vbox class="bottomBox">
+      <groupbox flex="1">
+        <caption label="&sharing.prefpane.network.name.header.label;" />
+        <vbox>
+          <hbox align="center">
+            <label value="&sharing.prefpane.network.name.content.label;"/>
+            <textbox id="sharing-network-name-input" flex="1" preference="sharing-pref-dms-name" />
+          </hbox>
+        </vbox>
+      </groupbox>
+
+      <groupbox flex="1">
+        <caption label="&sharing.prefpane.images.folderlocation.header.label;" />
+
+        <vbox>
+          <hbox align="center">
+            <checkbox id="sharing-images-folderlocation-checkbox"
+                      oncommand="return sharingDMS.prefs.onToggleFolderWatching(event)"
+                      preference="sharing-pref-dms-images-enable"
+                      label="&sharing.prefpane.images.folderlocation.input.label;"/>
+            <filefield id="sharing-images-folderlocation-filefield" flex="1"
+                       preference="sharing-pref-dms-images-folderlocation"
+                       onsyncfrompreference="return sharingDMS.prefs.syncFromPref();"
+                       preference-editable="true"/>
+            <button id="sharing-images-folderlocation-chooseFolderButton"
+                    oncommand="sharingDMS.prefs.chooseImageFolder();"
+                    label="&chooseFolderWin.label;"/>
+          </hbox>
+          <notificationbox id="sharing-images-notification-box" />
+        </vbox>
+      </groupbox>
+
+    </vbox>
+
+  </prefpane>
+</prefwindow>
+</overlay>
+

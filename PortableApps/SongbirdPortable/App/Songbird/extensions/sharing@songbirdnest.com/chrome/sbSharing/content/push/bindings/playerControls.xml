@@ -1,0 +1,2444 @@
+<?xml version="1.0"?>
+<!-- vim: set sw=2 : -->
+<!--
+/*
+ *=BEGIN SONGBIRD GPL
+ *
+ * This file is part of the Songbird web player.
+ *
+ * Copyright(c) 2005-2010 POTI, Inc.
+ * http://www.songbirdnest.com
+ *
+ * This file may be licensed under the terms of of the
+ * GNU General Public License Version 2 (the ``GPL'').
+ *
+ * Software distributed under the License is distributed
+ * on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
+ * express or implied. See the GPL for the specific language
+ * governing rights and limitations.
+ *
+ * You should have received a copy of the GPL along with this
+ * program. If not, go to http://www.gnu.org/licenses/gpl.html
+ * or write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ *
+ *=END SONGBIRD GPL
+ */
+-->
+
+<!DOCTYPE bindings [
+  <!ENTITY % sbDTD SYSTEM "chrome://songbird/locale/songbird.dtd">
+  <!ENTITY % sharingPushDTD SYSTEM "chrome://sharing/locale/sharingPush.dtd">
+  %sbDTD;
+  %sharingPushDTD;
+]>
+
+<!--
+********************************************************************************
+* @NOTE: WORK IN PROGRESS, NOT CLEAN YET
+********************************************************************************
+-->
+
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+<!--
+********************************************************************************
+* device-button base class
+********************************************************************************
+-->
+  <binding id="device-button-base" extends="chrome://songbird/content/bindings/playerControls.xml#sb-button-base">
+    <implementation>
+      <!--
+      **
+       * property disabled
+       * -->
+      <property name="disabled"
+                onset="if (val) this.setAttribute('disabled', 'true');
+                       else this.removeAttribute('disabled');
+                       return val;"
+                onget="return this.hasAttribute('disabled');" />
+
+
+      <!--
+      **
+       * property device
+       * -->
+      <property name="device">
+        <getter><![CDATA[
+          return this._device;
+        ]]></getter>
+        <setter><![CDATA[
+          this._device = val;
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor><![CDATA[
+        this._device = null;
+      ]]></constructor>
+
+      <!--
+      **
+       * DTOR
+       * -->
+      <destructor><![CDATA[
+        this.destroy();
+      ]]></destructor>
+
+      <!--
+      **
+       * destroy
+       * -->
+      <method name="destroy">
+        <body><![CDATA[
+        this.device = null;
+        ]]></body>
+      </method>
+
+    </implementation>
+  </binding>
+
+<!--
+********************************************************************************
+* playpause-button
+********************************************************************************
+-->
+  <binding id="playpause-button">
+
+    <content>
+      <xul:hbox id="sb-player-playpause-button" flex="1" xbl:inherits="class">
+
+        <xul:button type="sb-clickhold"
+                    id="sb-player-playpause-button-play"
+                    sbid="play"
+                    class="sb-player-playpause-button-play sb-player-button opaque"
+                    oncommand="onPlay();"
+                    delayDuration="2000"
+                    tooltiptext="&tooltip.control.play;"
+                    xbl:inherits="label,position">
+          <xul:menupopup xbl:inherits="popupanchor,popupalign">
+            <xul:menuitem id="menu_play" oncommand="onPlay();event.stopPropagation();" class="menuitem-iconic" label="&menu.control.play.button;"/>
+            <xul:menuitem id="menu_pause" oncommand="onPause();event.stopPropagation();" class="menuitem-iconic" label="&menu.control.pause.button;"/>
+            <xul:menuitem id="menu_stop" oncommand="onStop();event.stopPropagation();" class="menuitem-iconic" label="&menu.control.stop.button;"/>
+          </xul:menupopup>
+        </xul:button>
+
+        <xul:button type="sb-clickhold"
+                    id="sb-player-playpause-button-pause"
+                    sbid="pause"
+                    class="sb-player-playpause-button-pause sb-player-button opaque"
+                    oncommand="onPause();"
+                    delayDuration="2000"
+                    tooltiptext="&tooltip.control.pause;"
+                    xbl:inherits="label,position">
+          <xul:menupopup xbl:inherits="popupanchor,popupalign">
+            <xul:menuitem id="menu_play" oncommand="onPlay();event.stopPropagation();" class="menuitem-iconic" label="&menu.control.play.button;"/>
+            <xul:menuitem id="menu_pause" oncommand="onPause();event.stopPropagation();" class="menuitem-iconic" label="&menu.control.pause.button;"/>
+            <xul:menuitem id="menu_stop" oncommand="onStop();event.stopPropagation();" class="menuitem-iconic" label="&menu.control.stop.button;"/>
+          </xul:menupopup>
+        </xul:button>
+
+      </xul:hbox>
+    </content>
+
+    <implementation>
+
+      <field name="play">document.getAnonymousElementByAttribute(this, 'sbid', 'play');</field>
+      <field name="pause">document.getAnonymousElementByAttribute(this, 'sbid', 'pause');</field>
+
+      <!--
+      **
+       * property device
+       * -->
+      <property name="device">
+        <getter><![CDATA[
+          return this._device;
+        ]]></getter>
+        <setter><![CDATA[
+          if (this._device) {
+            this._device.removeListener(this._deviceListener);
+          }
+          this._device = val;
+          if (this._device) {
+            this._device.addListener(this._deviceListener);
+            this.onStateReceived(val.state);
+          }
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * property disabled
+       * -->
+      <property name="disabled">
+        <getter><![CDATA[
+          return this._disabled;
+        ]]></getter>
+        <setter><![CDATA[
+          this._disabled = val;
+          this._setDisabled(this._disabled || this._disabledDevice);
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * property disabledDevice
+       * -->
+      <property name="disabledDevice">
+        <getter><![CDATA[
+          return this._disabledDevice;
+        ]]></getter>
+        <setter><![CDATA[
+          this._disabledDevice = val;
+          this._setDisabled(this._disabled || this._disabledDevice);
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor><![CDATA[
+        this._disabledDevice = true;
+        this._disabled = true;
+
+        this.disabledDevice = true;
+        this.disabled = false;
+
+        this.play.hidden = false;
+        this.pause.hidden = true;
+
+        this._device = null;
+
+        var self = this;
+        Components.utils.import("resource://sharing/sbSharingPushMediaRendererListener.jsm");
+        this._deviceListener = new sbSharingPushMediaRendererListener();
+        this._deviceListener.onDeviceStateReceived = function( aNewState ) {
+          self.onStateReceived(aNewState);
+        };
+      ]]></constructor>
+
+      <!--
+      **
+       * DTOR
+       * -->
+      <destructor><![CDATA[
+        this.destroy();
+      ]]></destructor>
+
+      <!--
+      **
+       * destroy
+       * -->
+      <method name="destroy">
+        <body><![CDATA[
+        this.device = null;
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method onPlay
+       * -->
+      <method name="onPlay">
+        <body><![CDATA[
+          var evt = document.createEvent("Event");
+          evt.initEvent("play", true, true);
+          this.dispatchEvent(evt);
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method onPause
+       * -->
+      <method name="onPause">
+        <body><![CDATA[
+          var evt = document.createEvent("Event");
+          evt.initEvent("pause", true, true);
+          this.dispatchEvent(evt);
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method onStop
+       * -->
+      <method name="onStop">
+        <body><![CDATA[
+          var evt = document.createEvent("Event");
+          evt.initEvent("stop", true, true);
+          this.dispatchEvent(evt);
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method _setDisabled
+       * -->
+      <method name="_setDisabled">
+        <parameter name="aDisabled"/>
+        <body><![CDATA[
+          if (aDisabled) {
+            this.play.setAttribute('disabled', 'true');
+            this.pause.setAttribute('disabled', 'true');
+          }
+          else {
+            this.play.removeAttribute('disabled');
+            this.pause.removeAttribute('disabled');
+          }
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method onStateReceived
+       *   updates the state of embedded controls
+       * -->
+      <method name="onStateReceived">
+        <parameter name="aNewState"/>
+        <body><![CDATA[
+          var sbISharingPushMediaRenderer = Components.interfaces.sbISharingPushMediaRenderer;
+          switch(aNewState) {
+            case sbISharingPushMediaRenderer.OFFLINE:
+              // disable controls
+              this.disabledDevice = true;
+              // show play
+              this.play.hidden = false;
+              this.pause.hidden = true;
+              break;
+            case sbISharingPushMediaRenderer.TRANSITION:
+              // disable controls
+              this.disabledDevice = true;
+              // visibilty does not change
+              break;
+            case sbISharingPushMediaRenderer.NOMEDIA:
+            case sbISharingPushMediaRenderer.STOPPED:
+              // enable controls
+              this.disabledDevice = false;
+              // show play
+              this.play.hidden = false;
+              this.pause.hidden = true;
+              break;
+            case sbISharingPushMediaRenderer.PLAYING:
+              // enable controls
+              this.disabledDevice = false;
+              // show pause
+              this.play.hidden = true;
+              this.pause.hidden = false;
+              break;
+            case sbISharingPushMediaRenderer.PAUSED:
+              // enable controls
+              this.disabledDevice = false;
+              // show play
+              this.play.hidden = false;
+              this.pause.hidden = true;
+              break;
+          }
+        ]]></body>
+      </method>
+
+    </implementation>
+
+  </binding>
+
+<!--
+********************************************************************************
+* back-button
+********************************************************************************
+-->
+  <binding id="back-button" extends="chrome://sharing/content/push/bindings/playerControls.xml#device-button-base">
+
+    <handlers>
+
+      <handler event="mousedown">
+        <![CDATA[
+        this._bBwdMouseDown = true;
+        this._bBwdIsHolding = false;
+        this._timer = window.setTimeout(
+          function() {
+            onTimer();
+          },
+          1000);
+      ]]>
+      </handler>
+
+      <handler event="mouseover">
+        <![CDATA[
+        this._bBwdMouseDown = this._bBwdMouseDownOld;
+        this._bBwdIsHolding = this._bBwdIsHoldingOld;
+      ]]>
+      </handler>
+
+      <handler event="mouseout">
+        <![CDATA[
+        this._bBwdMouseDownOld = this._bBwdMouseDown;
+        this._bBwdIsHoldingOld = this._bBwdIsHolding;
+        this._bBwdMouseDown = false;
+        this._bBwdIsHolding = false;
+      ]]>
+      </handler>
+
+      <handler event="mouseup">
+        <![CDATA[
+        this._bBwdMouseDown = false;
+
+        if(!this._bBwdIsHolding) {
+          var evt = document.createEvent("Event");
+          evt.initEvent("prev", true, true);
+          this.dispatchEvent(evt);
+        }
+
+        this._bBwdIsHolding = false;
+      ]]>
+      </handler>
+
+    </handlers>
+
+    <implementation>
+      <!--
+      **
+       * Timer method
+       * -->
+      <method name="onTimer">
+        <body>
+          <![CDATA[
+            if(!this._bBwdMouseDown) {
+              return;
+            }
+
+            var self = this;
+            this._bBwdIsHolding = true;
+
+            var evt = document.createEvent("Event");
+            evt.initEvent("backward", true, true);
+            this.dispatchEvent(evt);
+
+            window.clearTimeout(this._timer);
+            this._timer = null;
+            this._timer = window.setTimeout(
+              function() {
+                self.onTimer();
+              },
+              100);
+        ]]>
+        </body>
+      </method>
+
+
+    </implementation>
+
+  </binding>
+
+
+<!--
+********************************************************************************
+* stop-button
+********************************************************************************
+-->
+  <binding id="stop-button">
+
+    <content>
+      <xul:hbox flex="1" xbl:inherits="hidden,class">
+
+        <xul:button type="sb-clickhold"
+              sbid="stop"
+              oncommand="onStop();"
+              class="sb-player-stop-button-stop sb-player-button"
+              tooltiptext="&tooltip.control.stop;"
+              xbl:inherits="label,position">
+        </xul:button>
+
+      </xul:hbox>
+    </content>
+
+    <implementation>
+
+      <!--
+      **
+       * property device
+       * -->
+      <property name="device">
+        <getter><![CDATA[
+          return this._device;
+        ]]></getter>
+        <setter><![CDATA[
+          this._device = val;
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor><![CDATA[
+        this._device = null;
+        this.disabled = false;
+      ]]></constructor>
+
+      <!--
+      **
+       * DTOR
+       * -->
+      <destructor><![CDATA[
+        this.destroy();
+      ]]></destructor>
+
+      <!--
+      **
+       * destroy
+       * -->
+      <method name="destroy">
+        <body><![CDATA[
+        this.device = null;
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method onStop
+       * -->
+      <method name="onStop">
+        <body><![CDATA[
+          var evt = document.createEvent("Event");
+          evt.initEvent("stop", true, true);
+          this.dispatchEvent(evt);
+        ]]></body>
+      </method>
+
+    </implementation>
+  </binding>
+
+
+<!--
+********************************************************************************
+* next-button
+********************************************************************************
+-->
+
+  <binding id="forward-button" extends="chrome://sharing/content/push/bindings/playerControls.xml#device-button-base">
+
+    <handlers>
+
+      <handler event="mousedown">
+        <![CDATA[
+        this._bFwdMouseDown = true;
+        this._bFwdIsHolding = false;
+        this._timer = window.setTimeout(
+          function() {
+            onTimer();
+          },
+          1000);
+      ]]>
+      </handler>
+
+      <handler event="mouseup">
+        <![CDATA[
+        this._bFwdMouseDown = false;
+
+        if(!this._bFwdIsHolding) {
+          var evt = document.createEvent("Event");
+          evt.initEvent("next", true, true);
+          this.dispatchEvent(evt);
+        }
+
+        this._bFwdIsHolding = false;
+      ]]>
+      </handler>
+
+      <handler event="mouseover">
+        <![CDATA[
+        this._bFwdMouseDown = this._bFwdMouseDownOld;
+        this._bFwdIsHolding = this._bFwdIsHoldingOld;
+      ]]>
+      </handler>
+
+      <handler event="mouseout">
+        <![CDATA[
+        this._bFwdMouseDownOld = this._bFwdMouseDown;
+        this._bFwdIsHoldingOld = this._bFwdIsHolding;
+        this._bFwdMouseDown = false;
+        this._bFwdIsHolding = false;
+      ]]>
+      </handler>
+
+    </handlers>
+
+    <implementation>
+      <!--
+      **
+       * Timer method
+       * -->
+      <method name="onTimer">
+        <body>
+          <![CDATA[
+            if(!this._bFwdMouseDown) {
+              return;
+            }
+
+            var self = this;
+            this._bFwdIsHolding = true;
+            
+            var evt = document.createEvent("Event");
+            evt.initEvent("forward", true, true);
+            this.dispatchEvent(evt);
+
+            window.clearTimeout(this._timer);
+            this._timer = null;
+  		      this._timer = window.setTimeout(
+              function() {
+                self.onTimer();
+              },
+              100);
+        ]]>
+        </body>
+      </method>
+
+
+    </implementation>
+
+  </binding>
+
+<!--
+********************************************************************************
+* shuffle-button
+********************************************************************************
+-->
+  <binding id="shuffle-button">
+
+    <content>
+      <xul:stack sbid="sb-player-shuffle-button" xbl:inherits="class=class">
+        <xul:button sbid="shuffle_off"
+                 class="sb-player-shuffle-button-off sb-player-button"
+                 tooltiptext="&tooltip.control.shuf_off;"
+                 oncommand="onShuffle(event);"
+                 xbl:inherits="label,position">
+        </xul:button>
+        <xul:button sbid="shuffle_on"
+                 class="sb-player-shuffle-button-on sb-player-button"
+                 tooltiptext="&tooltip.control.shuffle;"
+                 hidden="true"
+                 oncommand="onShuffle(event);"
+                 xbl:inherits="label,position">
+        </xul:button>
+      </xul:stack>
+    </content>
+
+    <implementation>
+      <field name="shuffle_off">document.getAnonymousElementByAttribute(this, 'sbid', 'shuffle_off');</field>
+      <field name="shuffle_on">document.getAnonymousElementByAttribute(this, 'sbid', 'shuffle_on');</field>
+
+      <!--
+      **
+       * property disabled
+       * -->
+      <property name="disabled"
+                onset="if (val) this.setAttribute('disabled', 'true');
+                       else this.removeAttribute('disabled');
+                       return val;"
+                onget="return this.hasAttribute('disabled');" />
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor><![CDATA[
+      ]]></constructor>
+
+      <method name="onShuffle">
+        <parameter name="event"/>
+        <body><![CDATA[
+        if (this.disabled) {
+          return;
+        }
+        var evt = document.createEvent("Event");
+        switch(event.target.getAttribute("sbid")) {
+          case "shuffle_off":
+            this.shuffle_off.setAttribute("hidden", true);
+            this.shuffle_on.removeAttribute("hidden");
+            // set to ON
+            evt.initEvent("shuffleon", true, true);
+            break;
+          case "shuffle_on":
+            this.shuffle_on.setAttribute("hidden", true);
+            this.shuffle_off.removeAttribute("hidden");
+            // set to OFF
+            evt.initEvent("shuffleoff", true, true);
+            break;
+          default:
+            return;
+        }
+        this.dispatchEvent(evt);
+        ]]></body>
+      </method>
+
+    </implementation>
+  </binding>
+
+<!--
+********************************************************************************
+* repeat-button
+********************************************************************************
+-->
+  <binding id="repeat-button">
+
+    <content>
+      <xul:stack sbid="sb-player-repeat-button" xbl:inherits="class=class" >
+        <xul:button sbid="repeat_none"
+                   class="sb-player-repeat-button-repnone sb-player-button"
+                   oncommand="onRepeat(event);"
+                   tooltiptext="&menu.control.repx;"
+                   xbl:inherits="label,position">
+        </xul:button>
+        <xul:button sbid="repeat_1"
+                   class="sb-player-repeat-button-rep1 sb-player-button"
+                   oncommand="onRepeat(event);"
+                   tooltiptext="&menu.control.rep1;"
+                   hidden="true"
+                   xbl:inherits="label,position">
+        </xul:button>
+        <xul:button sbid="repeat_all"
+                   class="sb-player-repeat-button-repall sb-player-button"
+                   oncommand="onRepeat(event);"
+                   tooltiptext="&menu.control.repa;"
+                   hidden="true"
+                   xbl:inherits="label,position">
+        </xul:button>
+      </xul:stack>
+    </content>
+
+    <implementation>
+      <field name="repeat_none">document.getAnonymousElementByAttribute(this, 'sbid', 'repeat_none');</field>
+      <field name="repeat_1">document.getAnonymousElementByAttribute(this, 'sbid', 'repeat_1');</field>
+      <field name="repeat_all">document.getAnonymousElementByAttribute(this, 'sbid', 'repeat_all');</field>
+
+      <!--
+      **
+       * property disabled
+       * -->
+      <property name="disabled"
+                onset="if (val) this.setAttribute('disabled', 'true');
+                       else this.removeAttribute('disabled');
+                       return val;"
+                onget="return this.hasAttribute('disabled');" />
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor><![CDATA[
+      ]]></constructor>
+
+      <method name="onRepeat">
+        <parameter name="event"/>
+        <body><![CDATA[
+        if (this.disabled) {
+          return;
+        }
+        var evt = document.createEvent("Event");
+        switch(event.target.getAttribute("sbid")) {
+          case "repeat_none":
+            this.repeat_none.setAttribute("hidden", true);
+            this.repeat_all.removeAttribute("hidden");
+            this.repeat_1.setAttribute("hidden", true);
+            // set to ALL
+            evt.initEvent("repeatall", true, true);
+            break;
+          case "repeat_all":
+            this.repeat_none.setAttribute("hidden", true);
+            this.repeat_all.setAttribute("hidden", true);
+            this.repeat_1.removeAttribute("hidden");
+            // set to ONE
+            evt.initEvent("repeatone", true, true);
+            break;
+          case "repeat_1":
+            this.repeat_none.removeAttribute("hidden");
+            this.repeat_all.setAttribute("hidden", true);
+            this.repeat_1.setAttribute("hidden", true);
+            // set to NONE
+            evt.initEvent("repeatnone", true, true);
+            break;
+          default:
+            return;
+        }
+        this.dispatchEvent(evt);
+        ]]></body>
+      </method>
+
+    </implementation>
+  </binding>
+
+
+<!--
+********************************************************************************
+* device-info
+********************************************************************************
+-->
+
+  <binding id="device-info">
+    <content>
+      <xul:hbox align="center">
+        <xul:stack>
+          <xul:vbox class="device-image-box">
+            <html:div class="device-image-div">
+              <html:img class="device-image" sbid="icon"/>
+            </html:div>
+          </xul:vbox>
+          <xul:vbox pack="end" align="right" class="device-image-box">
+            <xul:image sbid="deviceState" class="device-state-overlay-image"/>
+          </xul:vbox>
+        </xul:stack>
+      </xul:hbox>
+    </content>
+
+    <implementation>
+      <field name="deviceState">document.getAnonymousElementByAttribute(this, 'sbid', 'deviceState');</field>
+      <field name="icon">document.getAnonymousElementByAttribute(this, 'sbid', 'icon');</field>
+
+      <!-- strings -->
+      <field name="offline" readonly="true">"&sharing.push.deviceState.offline;"</field>
+      <field name="stopped" readonly="true">"&sharing.push.deviceState.stopped;"</field>
+      <field name="playing" readonly="true">"&sharing.push.deviceState.playing;"</field>
+      <field name="transition" readonly="true">"&sharing.push.deviceState.transition;"</field>
+      <field name="paused" readonly="true">"&sharing.push.deviceState.paused;"</field>
+      <field name="recording" readonly="true">"&sharing.push.deviceState.recording;"</field>
+      <field name="stopped" readonly="true">"&sharing.push.deviceState.stopped;"</field>
+      <field name="nomedia" readonly="true">"&sharing.push.deviceState.nomedia;"</field>
+
+      <!-- settings -->
+      <field name="maxImgWidth" readonly="true">120</field>
+      <field name="maxImgHeight" readonly="true">120</field>
+
+      <!--
+      **
+       * property device
+       * -->
+      <property name="device">
+        <getter><![CDATA[
+          return this._device;
+        ]]></getter>
+        <setter><![CDATA[
+          if (this._device) {
+            this._device.removeListener(this._deviceListener);
+          }
+          this._device = val;
+          if (this._device) {
+            this._device.addListener(this._deviceListener);
+            this.onUpdateDeviceData();
+            this.onStateReceived(val.state);
+          }
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor>
+        <![CDATA[
+        var sbISharingPushMediaRenderer =
+          Components.interfaces.sbISharingPushMediaRenderer;
+        this.stateStrings = {};
+        this.stateStrings[sbISharingPushMediaRenderer.OFFLINE] =
+          "dsoi-offline";
+        this.stateStrings[sbISharingPushMediaRenderer.STOPPED] =
+          "dsoi-stopped";
+        this.stateStrings[sbISharingPushMediaRenderer.PLAYING] =
+          "dsoi-playing";
+        this.stateStrings[sbISharingPushMediaRenderer.TRANSITION] =
+          "dsoi-transition";
+        this.stateStrings[sbISharingPushMediaRenderer.PAUSED] =
+          "dsoi-paused";
+        this.stateStrings[sbISharingPushMediaRenderer.RECORDING] =
+          "dsoi-recording";
+        this.stateStrings[sbISharingPushMediaRenderer.NOMEDIA] =
+          "dsoi-nomedia";
+
+        this._device = null;
+
+        var self = this;
+        function _onImageLoaded() {
+          var img = self.icon;
+          var width = img.naturalWidth;
+          var height = img.naturalHeight;
+          var ratioNeed = Math.max( width / self.maxImgWidth, height / self.maxImgHeight );
+          if( ratioNeed != 1 ) {
+            // needs scaling
+            img.setAttribute("width", Math.round(width / ratioNeed));
+            img.setAttribute("height", Math.round(height / ratioNeed));
+          }
+        }
+        this.icon.addEventListener("load", _onImageLoaded, true);
+
+        var self = this;
+        // listener for sbISharingPushMediaRenderer
+        // implements partially sbISharingPushMediaRendererListener
+        Components.utils.import("resource://sharing/sbSharingPushMediaRendererListener.jsm");
+        this._deviceListener = new sbSharingPushMediaRendererListener();
+        this._deviceListener.onDeviceStateReceived = function( aNewState ) {
+          self.onStateReceived(aNewState);
+        };
+        ]]>
+      </constructor>
+
+      <!--
+      **
+       * DTOR
+       * -->
+      <destructor><![CDATA[
+        this.destroy();
+      ]]></destructor>
+
+      <!--
+      **
+       * destroy
+       * -->
+      <method name="destroy">
+        <body><![CDATA[
+        this.device = null;
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method onUpdateDeviceData
+       *   updates the friendly name and icon
+       * -->
+      <method name="onUpdateDeviceData">
+        <body><![CDATA[
+          var iconUrl = null;
+          if (this._device) {
+            iconUrl = this._device.iconUrl;
+          }
+          if (!iconUrl) {
+            iconUrl = "chrome://sharing/skin/images/mini_speaker.png"
+          }
+          if (iconUrl) {
+            this.icon.setAttribute("src", iconUrl);
+            this.icon.removeAttribute("hidden");
+          }
+          else {
+            this.icon.setAttribute("hidden", true);
+          }
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method onStateReceived
+       *   updates the state of embedded controls
+       * -->
+      <method name="onStateReceived">
+        <parameter name="aNewState"/>
+        <body><![CDATA[
+          this.deviceState.setAttribute("class", "device-state-overlay-image " + this.stateStrings[aNewState]);
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method formatState
+       *   returns the device state as a string
+       * -->
+      <method name="formatState">
+        <parameter name="aState"/>
+        <body><![CDATA[
+          return (this.stateStrings[aState])
+            ? this.stateStrings[aState]
+            : "???";
+        ]]></body>
+      </method>
+
+    </implementation>
+  </binding>
+
+<!--
+********************************************************************************
+* volume-slider
+********************************************************************************
+-->
+
+  <binding id="volume-slider" extends="chrome://songbird/content/bindings/playerControls.xml#volume-slider">
+    <implementation>
+
+      <!--
+      **
+       * property disabled
+       * -->
+      <property name="disabled"
+                onset="if (val) this.setAttribute('disabled', 'true');
+                       else this.removeAttribute('disabled');
+                       return val;"
+                onget="return this.hasAttribute('disabled');" />
+
+      <property name="value">
+        <getter>
+          return this.slider.getAttribute('curpos');
+        </getter>
+        <setter><![CDATA[
+          // update the button states
+          this.progress_value = val;
+          return this.slider.setAttribute('curpos', val);
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * property device
+       * -->
+      <property name="device">
+        <getter><![CDATA[
+          return this._device;
+        ]]></getter>
+        <setter><![CDATA[
+          if (this._device) {
+            this._device.removeListener(this._deviceListener);
+          }
+          this._device = val;
+          if (this._device) {
+            this._device.addListener(this._deviceListener);
+            this.onVolumeReceived(this._device.volume);
+          }
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor>
+      <![CDATA[
+        // remove listeners bound in baseclass
+        if (this.remote_volume) {
+          this.remote_volume.unbind();
+        }
+        if (this.remote_mute) {
+          this.remote_mute.unbind();
+        }
+
+        this._device = null;
+        this._lastVolume = 0;
+        this._changingVolume = false;
+
+        var self = this;
+        // listener for sbISharingPushMediaRenderer
+        // implements partially sbISharingPushMediaRendererListener
+        Components.utils.import("resource://sharing/sbSharingPushMediaRendererListener.jsm");
+        this._deviceListener = new sbSharingPushMediaRendererListener();
+        this._deviceListener.onSoundVolumeReceived = function( aNewVolume ) {
+          self._lastVolume = aNewVolume;
+          self.onVolumeReceived(aNewVolume);
+        };
+        this._deviceListener.onMuteStateReceived = function( aMuted ) {
+          self.minbutton.checked = !!aMuted;
+          if (self._changingVolume) {
+            return;
+          }
+          if (aMuted) {
+            self.value = 0;
+          }
+          else {
+            self.value = self._lastVolume / 100 * self.sliderScale;
+          }
+        };
+
+      ]]>
+      </constructor>
+
+      <!--
+      **
+       * DTOR
+       * -->
+      <destructor><![CDATA[
+        this.destroy();
+      ]]></destructor>
+
+      <!--
+      **
+       * destroy
+       * -->
+      <method name="destroy">
+        <body><![CDATA[
+        this.device = null;
+        ]]></body>
+      </method>
+
+      <method name="snapToMin">
+        <body></body>
+      </method>
+
+      <!--
+      **
+       * method onVolumeReceived
+       *   updates the volume slider
+       * -->
+      <method name="onVolumeReceived">
+        <parameter name="aNewVolume"/>
+        <body><![CDATA[
+          if (!this._device || this._changingVolume || this._device.mute) {
+            return;
+          }
+          this.value = aNewVolume / 100 * this.sliderScale;
+        ]]></body>
+      </method>
+
+      <method name="slidermousemove">
+        <parameter name="event"/>
+        <body><![CDATA[
+          if (this.disabled) {
+            return;
+          }
+          if (this._tracking == this._TRACKING_THUMB) {
+            this.progress_value = this.value;
+          } else if (this._tracking == this._TRACKING_NONE) {
+            return;
+          } else {
+            this.handlemouse(event);
+          }
+          this.sendChangeEvent();
+        ]]></body>
+      </method>
+
+      <method name="onTrackVolume">
+        <body><![CDATA[
+          if (this.disabled || !this.device) {
+            return;
+          }
+          this._changingVolume = true;
+        ]]></body>
+      </method>
+
+      <method name="onReleaseVolume">
+        <body><![CDATA[
+          if (this.disabled || !this._device) {
+            return;
+          }
+          this._changingVolume = false;
+          if (this.value > 0 && this._device.mute) {
+            this._device.mute = false;
+          }
+          this._device.volume = Math.round(this.value / this.sliderScale * 100);
+        ]]></body>
+      </method>
+
+    </implementation>
+  </binding>
+
+<!--
+********************************************************************************
+* playpos-slider
+********************************************************************************
+-->
+
+  <binding id="playpos-slider" extends="chrome://songbird/content/bindings/progressSlider.xml#progress-slider">
+    <handlers>
+      <handler event="progressSliderChange" action="this.onTrackPosition();"/>
+      <handler event="progressSliderRelease" action="this.onReleasePosition();"/>
+    </handlers>
+
+    <implementation>
+
+      <!--
+      **
+       * property disabled
+       * -->
+      <property name="disabled"
+                onset="if (val) this.setAttribute('disabled', 'true');
+                       else this.removeAttribute('disabled');
+                       return val;"
+                onget="return this.hasAttribute('disabled');" />
+
+      <field name="canScrub">false</field>
+
+      <!--
+      **
+       * property device
+       * -->
+      <property name="device">
+        <getter><![CDATA[
+          return this._device;
+        ]]></getter>
+        <setter><![CDATA[
+          this._device = val;
+          this.canScrub = (this._device)
+            ? this._device.hasCapability(Components.interfaces.sbISharingPushMediaRenderer.CAP_TIME_SCRUBBING)
+            : false;
+          this.disabled = !this.canScrub;
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor><![CDATA[
+        this._device = null;
+        this.sliderScale = 10000;
+        this.duration = 0;
+        // hide min/max buttons
+        this.minbutton.setAttribute("hidden", true);
+        this.maxbutton.setAttribute("hidden", true);
+        this._changingPosition = false;
+      ]]></constructor>
+
+
+      <!--
+      **
+       * destroy
+       * -->
+      <method name="destroy">
+        <body><![CDATA[
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method setPlayPosition
+       *   updates the play position
+       * -->
+      <method name="setPlayPosition">
+        <parameter name="aNewPlayPosition"/>
+        <parameter name="aDuration"/>
+        <body><![CDATA[
+          if (this._changingPosition) {
+            return;
+          }
+          this.duration = aDuration;
+          if (0 == this.duration)
+          {
+            this.value = 0;
+            this.disabled = true;
+          }
+          else
+          {
+            this.value = aNewPlayPosition / this.duration * this.sliderScale;
+            this.disabled = !this.canScrub;
+          }
+        ]]></body>
+      </method>
+
+      <method name="onTrackPosition">
+        <body><![CDATA[
+          if (this.disabled || !this._device) {
+            return;
+          }
+          this._changingPosition = true;
+        ]]></body>
+      </method>
+
+      <method name="onReleasePosition">
+        <body><![CDATA[
+          if (this.disabled || !this._device) {
+            return;
+          }
+          this._changingPosition = false;
+          // set new value in nanoseconds
+          this._device.playPosition = Math.round(this.value / this.sliderScale * this.duration);
+        ]]></body>
+      </method>
+
+    </implementation>
+  </binding>
+
+<!--
+********************************************************************************
+* play-position
+********************************************************************************
+-->
+
+  <binding id="play-position">
+    <content>
+        <xul:hbox flex="1"
+                  pack="center"
+                  align="center">
+          <xul:description sbid="playpos-label-position"/>
+          <xul:sb-device-playpos-slider
+               sbid="playpos-slider"
+               flex="1"
+               orient="horizontal"
+               maxpos="10000"
+               minbutton="false"
+               maxbutton="false"/>
+          <xul:description sbid="playpos-label-duration"/>
+        </xul:hbox>
+    </content>
+
+    <implementation>
+      <field name="slider">document.getAnonymousElementByAttribute(this, 'sbid', 'playpos-slider');</field>
+      <field name="label_position">document.getAnonymousElementByAttribute(this, 'sbid', 'playpos-label-position');</field>
+      <field name="label_duration">document.getAnonymousElementByAttribute(this, 'sbid', 'playpos-label-duration');</field>
+
+      <!--
+      **
+       * property device
+       * -->
+      <property name="device">
+        <getter><![CDATA[
+          return this._device;
+        ]]></getter>
+        <setter><![CDATA[
+          if (this._device) {
+            this._device.removeListener(this._deviceListener);
+          }
+          this._device = val;
+          if (this._device) {
+            this._device.addListener(this._deviceListener);
+            this.onPlayPositionReceived(val.playPosition, val.playDuration);
+          }
+          this.slider.device = val;
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor><![CDATA[
+        this._device = null;
+
+        var self = this;
+        Components.utils.import("resource://sharing/sbSharingPushMediaRendererListener.jsm");
+        this._deviceListener = new sbSharingPushMediaRendererListener();
+        this._deviceListener.onPlayPositionReceived = function( aNewPlayPosition ) {
+          self.onPlayPositionReceived( aNewPlayPosition, (self._device) ? self._device.playDuration : 0 );
+        };
+
+      ]]></constructor>
+
+      <!--
+      **
+       * destroy
+       * -->
+      <method name="destroy">
+        <body><![CDATA[
+        this.slider.destroy();
+        if (this._device) {
+          this._device.removeListener(this._deviceListener);
+        }
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method onPlayPositionReceived
+       *   updates the play position
+       * -->
+      <method name="onPlayPositionReceived">
+        <parameter name="aNewPlayPosition"/>
+        <parameter name="aDuration"/>
+        <body><![CDATA[
+          this.setPlayPosition(aNewPlayPosition, aDuration);
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method setPlayPosition
+       *   updates the play position
+       * -->
+      <method name="setPlayPosition">
+        <parameter name="aNewPlayPosition"/>
+        <parameter name="aDuration"/>
+        <body><![CDATA[
+          this.label_position.setAttribute("value", this.formatValue(aNewPlayPosition));
+          this.label_duration.setAttribute("value", this.formatValue(aDuration));
+          this.slider.setPlayPosition(aNewPlayPosition, aDuration);
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method formatValue
+       *  formats the play position as H:MM:SS
+       *  aNewPlayPosition: the play position in nano seconds
+       * -->
+      <method name="formatValue">
+        <parameter name="aTimeNs"/>
+        <body>
+              <![CDATA[
+          var seconds = aTimeNs / (1000*1000*1000);
+          var hrs = 0;
+          var mns = 0;
+          var secs = 0;
+
+          function frmtNum(num,fill) {
+            var s = (fill?"0":"") + Math.floor(num);
+            return fill ? s.substr(s.length - 2) : s;
+          }
+
+          hrs = Math.floor(seconds / 3600);
+          seconds = seconds % 3600;
+          mns = Math.floor(seconds / 60);
+          secs = seconds % 60;
+
+          return "" + ((hrs>0)?(hrs+":"):"") + frmtNum(mns,(hrs>0)) + ":" + frmtNum(secs,true);
+        ]]></body>
+      </method>
+
+    </implementation>
+  </binding>
+
+<!--
+********************************************************************************
+* device-busy-box
+********************************************************************************
+-->
+
+  <binding id="device-busy-box">
+    <content>
+      <xul:vbox
+            pack="center"
+            flex="1">
+        <xul:stack flex="1">
+          <xul:vbox class="playcontrols-inner" flex="1" align="center" pack="top">
+            <xul:image sbid="spinnerimg" src=""/>
+          </xul:vbox>
+          <xul:hbox class="device-playcontrols-spinner" flex="1" align="center" pack="center" />
+        </xul:stack>
+      </xul:vbox>
+    </content>
+
+    <implementation>
+      <field name="spinnerimg">document.getAnonymousElementByAttribute(this, 'sbid', 'spinnerimg');</field>
+      <field name="timerID" readonly="true">this._timerID</field>
+
+      <!--
+      **
+       * property hidden
+       * -->
+      <property name="hidden">
+        <getter><![CDATA[
+          return this.getAttribute("hidden");
+        ]]></getter>
+        <setter><![CDATA[
+          if (val) {
+            this.setAttribute("hidden", true);
+          }
+          else {
+            this.removeAttribute("hidden");
+          }
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * property image
+       * -->
+      <property name="image">
+        <getter><![CDATA[
+          return this.getAttribute("image");
+        ]]></getter>
+        <setter><![CDATA[
+          this.setAttribute("image", val);
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * property device
+       * -->
+      <property name="device">
+        <getter><![CDATA[
+          return this._device;
+        ]]></getter>
+        <setter><![CDATA[
+          this._device = val;
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor><![CDATA[
+        this._timer = 0;
+        this._timerID = 0;
+        this._timers = [];
+        this._device = null;
+        this.hidden = true;
+      ]]></constructor>
+
+      <!--
+      **
+       * DTOR
+       * -->
+      <destructor><![CDATA[
+        this.destroy();
+      ]]></destructor>
+
+      <!--
+      **
+       * destroy
+       * -->
+      <method name="destroy">
+        <body><![CDATA[
+        this.stop();
+        this.device = null;
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * start
+       * -->
+      <method name="start">
+        <parameter name="timers"/>
+        <body><![CDATA[
+          this.stop();
+          this._timers = [];
+          this._timerID = 0;
+          for(var i = 0; i < timers.length; i++) {
+            var t = timers[i];
+            var timer = {timeout: 1, callback: null, visible: true};
+            if ("function" == typeof(t["callback"])) {
+              timer.callback = t["callback"];
+            }
+            var to = parseInt(t["timeout"]);
+            if (!isNaN(to) && (to > 0)) {
+              timer.timeout = to;
+            }
+            if ("undefined" != typeof(t["visible"])) {
+              timer.visible = !!t["visible"];
+            }
+            this._timers.push(timer);
+          }
+          var img = new Image();
+          // bug or feature?
+          // when creating a new image and setting src to the same as another image
+          // all images with the same URL restart their animation..
+          // So we have to append some fragment to make the URL unique
+          img.src = this.image + "#" + (new Date()).getTime();
+          this.spinnerimg.src = img.src
+          this._runTimer(0);
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * stop
+       * -->
+      <method name="stop">
+        <body><![CDATA[
+          if (this._timer) {
+            window.clearTimeout(this._timer);
+            this._timer = null;
+          }
+          this.hidden = true;
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * _onTimer
+       * -->
+      <method name="_onTimer">
+        <body><![CDATA[
+          this._timer = null;
+          var timer = this._timers[this._timerID];
+          if (timer.callback) {
+            try {
+              timer.callback(this._timerID);
+            }
+            catch(e) {}
+          }
+          if (this._timerID+1 >= this._timers.length) {
+            this.hidden = true;
+            return;
+          }
+          this._runTimer(this._timerID+1);
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * _runTimer
+       * -->
+      <method name="_runTimer">
+        <parameter name="id"/>
+        <body><![CDATA[
+          if ("undefined" == typeof(this._timers[id])) {
+            return;
+          }
+          this._timerID = id;
+          var timer = this._timers[this._timerID];
+          this.hidden = !timer.visible;
+          var self = this;
+//dump("__push__1: volume RUN TIMER " + this._timerID + "\n");
+          this._timer = window.setTimeout(function() {self._onTimer();}, timer.timeout);
+        ]]></body>
+      </method>
+
+    </implementation>
+
+  </binding>
+
+<!--
+********************************************************************************
+* device-controls
+********************************************************************************
+-->
+
+  <binding id="device-controls">
+    <content>
+      <xul:stack flex="1">
+
+        <xul:hbox pack="center">
+          <xul:vbox>
+            <xul:hbox pack="center"
+                      align="center"
+                      class="playcontrols-inner">
+
+              <xul:sb-device-shuffle-button sbid="shuffle-button" class="sb-player-button sb-push-button-shuffle" />
+
+              <xul:sb-player-back-button
+                   sbid="back-button"
+                   tooltiptext = "&tooltip.control.back;"
+                   class="sb-player-button"/>
+
+              <xul:sb-player-playpause-button
+                   sbid="play-pause-button"
+                   popupanchor="topleft"
+                   popupalign="bottomleft"
+                   class="sb-player-button"/>
+
+              <xul:sb-player-forward-button
+                   sbid="forward-button"
+                   tooltiptext = "&tooltip.control.fwd;"
+                   class="sb-player-button" />
+
+              <xul:sb-device-repeat-button sbid="repeat-button" class="sb-player-button sb-push-button-repeat" />
+
+            </xul:hbox>
+
+            <!-- volume control -->
+            <xul:hbox flex="1"
+                      pack="center"
+                      align="center"
+                      class="playcontrols-inner">
+              <xul:sb-device-volume-slider
+                   sbid="volume-control"
+                   flex="1"
+                   orient="horizontal"
+                   maxpos="100"
+                   minbutton="true"
+                   maxbutton="true"/>
+            </xul:hbox>
+
+            <!-- play position -->
+            <xul:sb-device-playposition sbid="play-position" flex="1"/>
+
+          </xul:vbox>
+        </xul:hbox>
+
+        <!-- Spinner Layer for UI feedback -->
+        <xul:sb-device-busy-box sbid="busy-box"
+            image="chrome://sharing/skin/images/playbutton-device-busy.gif"/>
+      </xul:stack>
+
+    </content>
+
+    <implementation>
+      <field name="backButton">document.getAnonymousElementByAttribute(this, 'sbid', 'back-button');</field>
+      <field name="playPauseButton">document.getAnonymousElementByAttribute(this, 'sbid', 'play-pause-button');</field>
+      <field name="forwardButton">document.getAnonymousElementByAttribute(this, 'sbid', 'forward-button');</field>
+      <field name="volumeControl">document.getAnonymousElementByAttribute(this, 'sbid', 'volume-control');</field>
+      <field name="playPosition">document.getAnonymousElementByAttribute(this, 'sbid', 'play-position');</field>
+      <field name="deviceBusyBox">document.getAnonymousElementByAttribute(this, 'sbid', 'busy-box');</field>
+      <field name="shuffleButton">document.getAnonymousElementByAttribute(this, 'sbid', 'shuffle-button');</field>
+      <field name="repeatButton">document.getAnonymousElementByAttribute(this, 'sbid', 'repeat-button');</field>
+
+      <!--
+      **
+       * property device
+       * -->
+      <property name="device">
+        <getter><![CDATA[
+          return this._device;
+        ]]></getter>
+        <setter><![CDATA[
+          this._device = val;
+          this.backButton.device = val;
+          this.playPauseButton.device = val;
+          this.forwardButton.device = val;
+          this.volumeControl.device = val;
+          this.playPosition.device = val;
+          this.deviceBusyBox.device = val;
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor><![CDATA[
+        this._device = null;
+      ]]></constructor>
+
+      <!--
+      **
+       * DTOR
+       * -->
+      <destructor><![CDATA[
+        this.destroy();
+      ]]></destructor>
+
+      <!--
+      **
+       * destroy
+       * -->
+      <method name="destroy">
+        <body><![CDATA[
+        this.device = null;
+
+        this.backButton.destroy();
+        this.playPauseButton.destroy();
+        this.forwardButton.destroy();
+        this.volumeControl.destroy();
+        this.playPosition.destroy();
+        this.deviceBusyBox.destroy();
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method setPlayPosition
+       *   updates the play position
+       * -->
+      <method name="setPlayPosition">
+        <parameter name="aNewPlayPosition"/>
+        <parameter name="aDuration"/>
+        <body><![CDATA[
+          this.playPosition.setPlayPosition(aNewPlayPosition, aDuration);
+        ]]></body>
+      </method>
+
+    </implementation>
+
+  </binding>
+
+<!--
+********************************************************************************
+* device-playlist
+********************************************************************************
+-->
+
+  <binding id="device-playlist" extends="chrome://songbird/content/bindings/playlist.xml#playlist">
+    <implementation>
+
+      <field name="device">null</field>
+      <field name="_super" readonly="true">this.__proto__.__proto__</field>
+      <field name="pushcontentmenu">null</field>
+      <field name="contextRow">-1</field>
+      <field name="currentPlayingIndex">-1</field>
+      <field name="menuPlay">this.pushcontentmenu.getElementsByAttribute('sbid', 'playlist-menu-play').item(0);</field>
+      <field name="menuPause">this.pushcontentmenu.getElementsByAttribute('sbid', 'playlist-menu-pause').item(0);</field>
+      <field name="menuStop">this.pushcontentmenu.getElementsByAttribute('sbid', 'playlist-menu-stop').item(0);</field>
+      <field name="menuRemove">this.pushcontentmenu.getElementsByAttribute('sbid', 'playlist-menu-remove').item(0);</field>
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor><![CDATA[
+      ]]></constructor>
+
+      <!--
+      **
+       * DTOR
+       * -->
+      <destructor><![CDATA[
+        this.destroy();
+      ]]></destructor>
+
+      <!--
+      **
+       * destroy
+       * -->
+      <method name="destroy">
+        <body><![CDATA[
+        this.device = null;
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method override _onPlaylistSelectClick
+       *  Called when an playlist item has been clicked 
+       * (as opposite to clicking anywhere else in the list)
+       * -->
+      <method name="_onPlaylistSelectClick">
+        <body>
+        <![CDATA[
+        this._super._onPlaylistSelectClick.call(this);
+        try {
+          var evt = document.createEvent("Event");
+          evt.initEvent("clickitem", true, true);
+          this.dispatchEvent(evt);
+        } catch(e) {}
+        ]]>
+        </body>
+      </method>
+
+      <!--
+      **
+       * method override _canDrop
+       *  This method checks if the items in the current d&d operation can be
+       *  dropped here.
+       * -->
+      <method name="_canDrop">
+        <parameter name="event"/>
+        <body><![CDATA[
+          // call base implementation
+          var can = this._super._canDrop.call(this, event);
+          if (!can) {
+            // We accept only a subset of what the baseclass accepts, so if baseclass
+            // already returns false we are done.
+            return false;
+          }
+
+          // check if we have media items
+          var data = DNDUtils.getTransferDataForFlavour(this._TYPE_X_SB_TRANSFER_MEDIA_ITEMS,
+                                                    this._dragSession);
+          // now check if we have a media list
+          if (!data) {
+            data = DNDUtils.getTransferDataForFlavour(this._TYPE_X_SB_TRANSFER_MEDIA_LIST,
+                                                    this._dragSession);
+          }
+          return !!data
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method override acceptDropSource
+       *  This method is called from the baseclass in _canDrop to verify if the
+       *  source of the items dragged is acceptable.
+       * -->
+      <method name="acceptDropSource">
+        <parameter name = "aMediaList"/>
+        <body><![CDATA[
+          // we accept for now only items from the main library
+          return (Components.classes["@songbirdnest.com/Songbird/library/Manager;1"]
+             .getService(Ci.sbILibraryManager).mainLibrary === aMediaList.library);
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method _showMenuItem
+       * -->
+      <method name="_showMenuItem">
+        <parameter name = "aMenuItem"/>
+        <parameter name = "aEnable"/>
+        <body><![CDATA[
+          if (!aMenuItem) {
+            return;
+          }
+          aMenuItem.hidden = !aEnable;
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method _enableMenuItem
+       * -->
+      <method name="_enableMenuItem">
+        <parameter name = "aMenuItem"/>
+        <parameter name = "aEnable"/>
+        <body><![CDATA[
+          if (!aMenuItem) {
+            return;
+          }
+          aMenuItem.disabled = !aEnable;
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method override _onPlaylistContextMenu
+       * -->
+      <method name="_onPlaylistContextMenu">
+        <parameter name="evt"/>
+        <body><![CDATA[
+          if (!this.pushcontentmenu) {
+            return;
+          }
+          if (evt.originalTarget != this._treechildren) {
+            return;
+          }
+
+          var tree = this.tree;
+          if (tree.currentIndex < 0) {
+            return;
+          }
+          this.contextRow = tree.boxObject.getRowAt(evt.clientX, evt.clientY);
+          if (-1 == this.contextRow) {
+            // context menu only on tracks
+            return;
+          }
+
+          this._context_x = evt.screenX;
+          this._context_y = evt.screenY;
+
+          var forCurrentPlaying = (this.contextRow == this.currentPlayingIndex);
+          var isPaused = (this.device.state == Components.interfaces.sbISharingPushMediaRenderer.PAUSED);
+          var canPlay = true;
+          try {
+            canPlay = this.device.canPlay(this.mediaListView.getItemByIndex(this.contextRow));
+          }
+          catch(e) {}
+
+          this._showMenuItem(this.menuPlay,   ! forCurrentPlaying || isPaused);
+          this._showMenuItem(this.menuPause,    forCurrentPlaying && ! isPaused);
+          this._showMenuItem(this.menuStop,     forCurrentPlaying);
+          this._enableMenuItem(this.menuPlay,   canPlay);
+          this._enableMenuItem(this.menuPause,  canPlay);
+
+          this.pushcontentmenu.showPopup(tree, this._context_x, this._context_y,
+                                        "context", null, null, null);
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method override sendPlayEvent
+       * -->
+      <method name="sendPlayEvent">
+        <body><![CDATA[
+          try {
+            var evt = document.createEvent("Event");
+            evt.initEvent("playitem", true, true);
+            this.dispatchEvent(evt);
+          } catch(e) {}
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method override startCellEditing
+       * items are not editable here
+       * -->
+      <method name="startCellEditing">
+        <parameter name="row"/>
+        <parameter name="col"/>
+        <body><![CDATA[
+          this._cancelEditTimer();
+        ]]></body>
+      </method>
+
+    </implementation>
+
+  </binding>
+
+<!--
+********************************************************************************
+* device
+********************************************************************************
+-->
+
+  <binding id="device">
+    <content>
+      <xul:vbox flex="1">
+        <!-- Device info -->
+        <xul:sb-push-device-info sbid="device-info" pack="center" />
+
+        <!-- error notifications -->
+        <xul:notificationbox flex="1" sbid="device-notification-box">
+
+          <!-- Main Content Section -->
+          <xul:stack flex="1"  sbid="device-playlist-stack">
+
+            <!-- Playlist -->
+            <xul:vbox flex="1">
+              <xul:sb-device-playlist
+                   xbl:inherits="enableColumnDrag,hidefilters"
+                   sbid="device-playlist"
+                   flex="1"
+                   enableColumnDrag="true"
+                   hidefilters="true"
+                   usedefaultcommands="true"/>
+              <xul:menupopup sbid="playlist-menu">
+                <xul:menuitem sbid="playlist-menu-play" oncommand="_sendCmd('playitem')" class="menuitem-iconic" label="&menu.control.play;"/>
+                <xul:menuitem sbid="playlist-menu-pause" oncommand="_sendCmd('pause')" class="menuitem-iconic" label="&menu.control.pause;"/>
+                <xul:menuitem sbid="playlist-menu-stop" oncommand="_sendCmd('stop')" class="menuitem-iconic" label="&menu.control.stop.button;"/>
+                <xul:menuseparator/>
+                <xul:menuitem sbid="playlist-menu-remove" oncommand="_removeSelectedTracks()" class="menuitem-iconic" label="&hotkeys.remove;"/>
+              </xul:menupopup>
+            </xul:vbox>
+
+            <!-- Message Layer for Empty Play Queue -->
+            <xul:vbox sbid="device-playlist-instructions"
+                  pack="center"
+                  flex="1"
+                  ondragover="_onEmptyQueueDragDrop(event);">
+              <xul:vbox class="playqueue-instructions"
+                        pack="center">
+                <xul:description class="playqueue-instructions-inner">&push.playqueue.instructions;</xul:description>
+              </xul:vbox>
+            </xul:vbox>
+
+            <!-- Message Layer for Play Queue while asynchronous queue
+               operations are in progress -->
+            <xul:vbox sbid="device-playlist-progress"
+                  pack="center"
+                  flex="1"
+                  hidden="true">
+              <xul:vbox
+                    class="playqueue-instructions"
+                    pack="center">
+                <xul:description>&playqueue.inprogress;</xul:description>
+                <xul:hbox pack="center">
+                  <xul:image class="playqueue-inprogress-image"/>
+                </xul:hbox>
+              </xul:vbox>
+            </xul:vbox>
+
+          </xul:stack>
+        </xul:notificationbox>
+        <!-- playqueue menu -->
+        <xul:vbox>
+          <xul:hbox class="sb-commands-toolbar-bkg" flex="1">
+            <xul:hbox class="sb-commands-toolbar" flex="1">
+              <xul:toolbar flex="1" sbid="playlist-toolbar" id="playlist-toolbar">
+                <xul:toolbarbutton
+                  sbid="save-playlist"
+                  id="save-playlist"
+                  disabled="true"
+                  label="&window.save;"
+                  oncommand="onPlaylistSave(event)"
+                  tooltiptext="&push.playqueue.save;"/>
+                <xul:toolbarbutton
+                  sbid="clear-playlist"
+                  id="clear-playlist"
+                  disabled="true"
+                  label="&albumart.displaypane.selected.menu.clear;"
+                  oncommand="onPlaylistClear(event)"
+                  tooltiptext="&push.playqueue.clear;"/>
+              </xul:toolbar>
+              <xul:toolbar>
+                <xul:toolbarbutton
+                  sbid="toggle-album-art"
+                  id="toggle-album-art"
+                  class="sb-displaypane-menubutton"
+                  type="checkbox"
+                  autocheck="true"
+                  checked="true"
+                  tooltiptext="&push.playqueue.toggleAlbumArt;"
+                  oncommand="onToggleAlbumArt(event)"/>
+              </xul:toolbar>
+            </xul:hbox>                    
+          </xul:hbox>
+        </xul:vbox>              
+        <!-- album art image -->
+        <xul:vbox height="0" class="album-art-box" id="album-art-box">
+            <svg:svg height="0" width="300" id="svg-album-art">
+              <svg:image class="album-art-image" id="svg-album-art-image"
+                width="100%" height="100%"
+                xlink:href="chrome://sharing/skin/images/album-art-default.png"/>
+            </svg:svg>
+        </xul:vbox>        
+        <!-- artist profile button -->
+        <xul:vbox>
+          <xul:hbox flex="1" align="center" pack="center">
+            <xul:button
+              class="artist-profile-button" 
+              sbid="artist-profile"
+              id="artist-profile"
+              label="&push.playqueue.artistProfile;"
+              oncommand="onPushArtistProfile(event)"
+              disabled="true"
+            />            
+          </xul:hbox>
+        </xul:vbox>
+        <!-- play controls -->        
+        <xul:sb-push-device-controls sbid="device-controls"/>
+
+      </xul:vbox>
+    </content>
+
+    <implementation>
+      <field name="albumArtBox">document.getAnonymousElementByAttribute(this, 'id', 'album-art-box');</field>
+      <field name="albumArtContainer">document.getAnonymousElementByAttribute(this, 'id', 'svg-album-art');</field>
+      <field name="albumArtImage">document.getAnonymousElementByAttribute(this, 'id', 'svg-album-art-image');</field>
+      <field name="deviceInfo">document.getAnonymousElementByAttribute(this, 'sbid', 'device-info');</field>
+      <field name="devicePlaylistStack">document.getAnonymousElementByAttribute(this, 'sbid', 'device-playlist-stack');</field>
+      <field name="devicePlaylist">document.getAnonymousElementByAttribute(this, 'sbid', 'device-playlist');</field>
+      <field name="devicePlaylistInstructions">document.getAnonymousElementByAttribute(this, 'sbid', 'device-playlist-instructions');</field>
+      <field name="devicePlaylistProgress">document.getAnonymousElementByAttribute(this, 'sbid', 'device-playlist-progress');</field>
+      <field name="deviceControls">document.getAnonymousElementByAttribute(this, 'sbid', 'device-controls');</field>
+      <field name="notificationBox">document.getAnonymousElementByAttribute(this, 'sbid', 'device-notification-box');</field>
+      <field name="playlistMenu">document.getAnonymousElementByAttribute(this, 'sbid', 'playlist-menu');</field>
+      <field name="toggleAlbumArt">document.getAnonymousElementByAttribute(this, 'sbid', 'toggle-album-art');</field>
+      <field name="savePlaylistButton">document.getAnonymousElementByAttribute(this, 'sbid', 'save-playlist');</field>
+      <field name="clearPlaylistButton">document.getAnonymousElementByAttribute(this, 'sbid', 'clear-playlist');</field>
+      <field name="artistProfileButton">document.getAnonymousElementByAttribute(this, 'sbid', 'artist-profile');</field>      
+      <field name="onvaluereceived">null</field>
+
+      <!--
+      **
+       * property hidden
+       *  can't use the "hidden" attribute - constructor will not get called
+       *  when the XUL element is not visible
+       * -->
+      <property name="hidden">
+        <getter><![CDATA[
+          return this.style.visibility != 'visible';
+        ]]></getter>
+        <setter><![CDATA[
+          this.style.visibility = (val) ? 'collapse' : 'visible';
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * property device
+       * -->
+      <property name="device">
+        <getter><![CDATA[
+          return this._device;
+        ]]></getter>
+        <setter><![CDATA[
+          if (this._device) {
+            this._device.removeListener(this._deviceListener);
+          }
+          this._device = val;
+          if (this._device) {
+            this._device.addListener(this._deviceListener);
+          }
+          this.deviceInfo.device = val;
+          this.devicePlaylist.device = val;
+          this.deviceControls.device = val;
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * property mediaList
+       * -->
+      <property name="mediaList">
+        <getter><![CDATA[
+          return this._mediaList;
+        ]]></getter>
+        <setter><![CDATA[
+          if (this._mediaList) {
+            this._mediaList.removeListener(this._mediaListListener);
+          }
+          this._mediaList = val;
+          this.devicePlaylist.bind(
+            LibraryUtils.createStandardMediaListView(this._mediaList));
+          this._mediaList.addListener(
+              this._mediaListListener,
+              false,
+              Ci.sbIMediaList.LISTENER_FLAGS_LISTCLEARED
+            | Ci.sbIMediaList.LISTENER_FLAGS_BATCHEND);
+          this._onPlaylistItemCountChanged(this._mediaList.length);
+          return val;
+        ]]></setter>
+      </property>
+
+      <!--
+      **
+       * CTOR
+       * -->
+      <constructor><![CDATA[
+        Components.utils.import("resource://app/jsmodules/sbLibraryUtils.jsm");
+        this._device = null;
+        this._mediaList = null;
+
+        var self = this;
+
+        Components.utils.import("resource://sharing/sbSharingPushMediaRendererListener.jsm");
+        this._deviceListener = new sbSharingPushMediaRendererListener();
+        this._deviceListener.onDeviceValueReceived = function( aName, aVal ) {
+          if (self.onvaluereceived) {
+            try {
+              self.onvaluereceived(aName, self._device, aVal);
+            } catch(e) {}
+          }
+        };
+        this._deviceListener.onDeviceStateReceived = function( aNewState ) {
+          this.onDeviceValueReceived("state", aNewState);
+        };
+        this._deviceListener.onSoundVolumeReceived = function( aNewVolume ) {
+          this.onDeviceValueReceived("volume", aNewVolume);
+        };
+        this._deviceListener.onMuteStateReceived = function( aMuted ) {
+          this.onDeviceValueReceived("mute", aMuted);
+        };
+        this._deviceListener.onPlayPositionReceived = function( aNewPlayPosition ) {
+          this.onDeviceValueReceived("playPosition", aNewPlayPosition);
+        };
+        this._deviceListener.onCurrentItemReceived = function( item, uid ) {
+          this.onDeviceValueReceived("currentItem", item);
+        };
+
+        this.deviceControls.volumeControl.minbutton.addEventListener(
+          "click", this._onMuteCmd, false);
+
+        this.devicePlaylist.pushcontentmenu = this.playlistMenu;
+
+        this._mediaListListener = {
+          onListCleared: function (aMediaList, aExcludeLists) {
+            self._onPlaylistItemCountChanged(0);
+          },
+          onBatchEnd: function (aMediaList) {
+            self._onPlaylistItemCountChanged(aMediaList.length);
+          }
+        };
+
+        // set some default values
+        this.setAttribute("flex", 1);
+        this.setAttribute("enableColumnDrag", true);
+        this.setAttribute("hidefilters", true);
+
+        this.hidden = true;
+        
+        var mainWindow = window.QueryInterface(Ci.nsIInterfaceRequestor)
+                   .getInterface(Ci.nsIWebNavigation)
+                   .QueryInterface(Ci.nsIDocShellTreeItem)
+                   .rootTreeItem
+                   .QueryInterface(Ci.nsIInterfaceRequestor)
+                   .getInterface(Ci.nsIDOMWindow);
+
+          this._onResizePlaylistPane = function() {
+            var w = parseInt(this._playlistPane.width);
+            w = Math.min(Math.max(w,150),300);
+            var h = w * this._aspect;             
+            this.albumArtBox.height = h;
+            this.albumArtBox.width = w;
+            this.albumArtContainer.height.baseVal.value = h;
+            this.albumArtContainer.width.baseVal.value = w;
+          };          
+
+         var w = self.albumArtImage.width.baseVal.value;
+         var h = self.albumArtImage.height.baseVal.value;
+         this._aspect = h/w;
+         
+          var paneSplitter = mainWindow.document.getElementById("displaypane_right_sidebar_splitter");          
+          paneSplitter.addEventListener("dragging",function(){
+            self._onResizePlaylistPane();
+          },false);
+          var displayPaneManager = Cc["@songbirdnest.com/Songbird/DisplayPane/Manager;1"].getService(Ci.sbIDisplayPaneManager);
+          var dpInstantiator = displayPaneManager.getInstantiatorForWindow(window);
+          this._playlistPane = dpInstantiator.displayPane;
+          this._onResizePlaylistPane();
+
+      ]]></constructor>
+
+      <!--
+      **
+       * DTOR
+       * -->
+      <destructor><![CDATA[
+        this.destroy();
+      ]]></destructor>
+
+      <!--
+      **
+       * destroy
+       * -->
+      <method name="destroy">
+        <body><![CDATA[
+        var self = this;
+        this.device = null;
+        this.deviceControls.volumeControl.minbutton.removeEventListener(
+          "click", this._onMuteCmd, false);
+        if (this._mediaList) {
+          try {this._mediaList.removeListener(this._mediaListListener);}
+          catch(e) {}
+        }
+
+        this.devicePlaylist.destroy();
+        this.deviceInfo.destroy();
+        this.deviceControls.destroy();
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method _onEmptyQueueDragDrop
+       * -->
+      <method name="_onEmptyQueueDragDrop">
+        <parameter name="evt"/>
+        <body><![CDATA[
+          this.devicePlaylistInstructions.setAttribute("hidden", true);
+          this.savePlaylistButton.removeAttribute('disabled');
+          this.clearPlaylistButton.removeAttribute('disabled');
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method _sendCmd
+       * -->
+      <method name="_sendCmd">
+        <parameter name="cmd"/>
+        <body><![CDATA[
+          var evt = document.createEvent("Event");
+          evt.initEvent(cmd, true, true);
+          this.dispatchEvent(evt);
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method _onMuteCmd
+       * -->
+      <method name="_onMuteCmd">
+        <body><![CDATA[
+          var evt = document.createEvent("Event");
+          evt.initEvent("mute", true, true);
+          this.dispatchEvent(evt);
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method _onPlaylistItemCountChanged
+       * -->
+      <method name="_onPlaylistItemCountChanged">
+        <parameter name="count"/>
+        <body><![CDATA[
+          if (count) {
+            this.devicePlaylistInstructions.setAttribute("hidden", true);
+            this.savePlaylistButton.removeAttribute('disabled');
+            this.clearPlaylistButton.removeAttribute('disabled');
+          }
+          else {
+            this.devicePlaylistInstructions.removeAttribute("hidden");
+            this.savePlaylistButton.setAttribute('disabled',true);
+            this.clearPlaylistButton.setAttribute('disabled',true);
+          }
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method onPlaylistSave
+       * -->
+      <method name="onPlaylistSave">
+        <parameter name="evt"/>
+        <body><![CDATA[
+          var Cc = Components.classes;
+          var Ci = Components.interfaces;
+          var Cu = Components.utils;
+          Cu.import("resource://app/jsmodules/sbProperties.jsm");
+
+          var mainWindow = window.QueryInterface(Ci.nsIInterfaceRequestor)
+                                 .getInterface(Ci.nsIWebNavigation)
+                                 .QueryInterface(Ci.nsIDocShellTreeItem)
+                                 .rootTreeItem
+                                 .QueryInterface(Ci.nsIInterfaceRequestor)
+                                 .getInterface(Ci.nsIDOMWindow);
+          var servicePane = mainWindow.gServicePane;
+
+          var mainLibrary = Cc["@songbirdnest.com/Songbird/library/Manager;1"]
+                 .getService(Ci.sbILibraryManager).mainLibrary;
+          var librarySPS = Cc['@songbirdnest.com/servicepane/library;1']
+                             .getService(Ci.sbILibraryServicePaneService);
+
+          var properties =
+                Cc["@songbirdnest.com/Songbird/Properties/MutablePropertyArray;1"]
+                  .createInstance(Ci.sbIMutablePropertyArray);
+          properties.appendProperty(SBProperties.mediaListName, this._mediaList.name);
+
+          var mediaList = mainLibrary.createMediaList("simple", properties);
+          mediaList.addAll(this._mediaList);
+
+          var node = librarySPS.getNodeForLibraryResource(mediaList);
+          if (node) {
+            // Make the new node visible
+            for (let parent = node.parentNode; parent; parent = parent.parentNode)
+              if (!parent.isOpen)
+                parent.isOpen = true;
+
+            // Ask the service pane to start editing our new node
+            // so that the user can give it a name
+            servicePane.startEditingNode(node);
+          }
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method onPlaylistClear
+       * -->
+      <method name="onPlaylistClear">
+        <parameter name="evt"/>
+        <body><![CDATA[
+        this._mediaList.clear();
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method onToggleAlbumArt
+       * -->
+      <method name="onToggleAlbumArt">
+        <parameter name="evt"/>
+        <body><![CDATA[
+        this.albumArtBox.collapsed = !this.toggleAlbumArt.checked;
+        this._onResizePlaylistPane();
+        ]]></body>
+      </method>
+
+      <!--
+      **
+       * method onPushArtistProfile
+       * -->
+      <method name="onPushArtistProfile">
+        <parameter name="evt"/>
+        <body><![CDATA[
+          try {
+            var evt = document.createEvent("Event");
+            evt.initEvent("artistprofile", true, true);
+            this.dispatchEvent(evt);
+          } catch(e) {}
+        ]]></body>
+      </method>
+      <!--
+      **
+       * method _removeSelectedTracks
+       * -->
+      <method name="_removeSelectedTracks">
+        <body><![CDATA[
+        this.devicePlaylist.removeSelectedTracks();
+        ]]></body>
+      </method>
+      <!--
+      **
+       * method onResizePlaylistPane
+       * -->
+      <method name="onResizePlaylistPane">
+        <body><![CDATA[
+        this._onResizePlaylistPane();
+        ]]></body>
+      </method>
+
+    </implementation>
+  </binding>
+
+
+</bindings>

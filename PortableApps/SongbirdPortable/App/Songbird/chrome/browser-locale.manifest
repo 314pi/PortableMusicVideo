@@ -1,0 +1,2 @@
+locale browser-region en-US jar:browser-locale.jar!/locale/browser-region/
+locale browser en-US jar:browser-locale.jar!/locale/browser/

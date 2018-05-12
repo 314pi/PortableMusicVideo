@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<encoders generator="AIMP" version="1000">
+	<encoder Name="AAC (FAAC)" App="faac.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="8000;11025;12000;16000;22050;24000;32000;44100;48000;64000;88200;96000" SampleFormats="16" Channels="1;2" />
+			</inputformats>
+			<property name="Ext" value=".aac" />
+		</description>
+		<presets>
+			<preset Name="Preset 1 ( ~35 kbps)" cmdparams="-q 10 - -o %output%" />
+			<preset Name="Preset 2 ( ~45 kbps)" cmdparams="-q 30 - -o %output%" />
+			<preset Name="Preset 3 ( ~60 kbps)" cmdparams="-q 50 - -o %output%" />
+			<preset Name="Preset 4 ( ~80 kbps)" cmdparams="-q 75 - -o %output%" />
+			<preset Name="Preset 5 (~128 kbps)" cmdparams="-q 100 - -o %output%" default="1" />
+			<preset Name="Preset 6 (~150 kbps)" cmdparams="-q 200 - -o %output%" />
+			<preset Name="Preset 7 (~180 kbps)" cmdparams="-q 300 - -o %output%" />
+			<preset Name="Preset 8 (~200 kbps)" cmdparams="-q 400 - -o %output%" />
+			<preset Name="Preset 9 (~280 kbps)" cmdparams="-q 500 - -o %output%" />
+		</presets>
+	</encoder>	
+	<encoder Name="AAC m4a (FAAC)" App="faac.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="8000;11025;12000;16000;22050;24000;32000;44100;48000;64000;88200;96000" SampleFormats="16" Channels="1;2" />
+			</inputformats>
+			<property name="Ext" value=".m4a" />
+		</description>
+		<presets>
+			<preset Name="Preset 1 ( ~35 kbps)" cmdparams="-w -q 10 - -o %output%" />
+			<preset Name="Preset 2 ( ~45 kbps)" cmdparams="-w -q 30 - -o %output%" />
+			<preset Name="Preset 3 ( ~60 kbps)" cmdparams="-w -q 50 - -o %output%" />
+			<preset Name="Preset 4 ( ~80 kbps)" cmdparams="-w -q 75 - -o %output%" />
+			<preset Name="Preset 5 (~128 kbps)" cmdparams="-w -q 100 - -o %output%" default="1" />
+			<preset Name="Preset 6 (~150 kbps)" cmdparams="-w -q 200 - -o %output%" />
+			<preset Name="Preset 7 (~180 kbps)" cmdparams="-w -q 300 - -o %output%" />
+			<preset Name="Preset 8 (~200 kbps)" cmdparams="-w -q 400 - -o %output%" />
+			<preset Name="Preset 9 (~280 kbps)" cmdparams="-w -q 500 - -o %output%" />
+		</presets>
+	</encoder>	
+	<encoder Name="AAC m4a (Nero)" App="neroAacEnc.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="8000;11025;12000;16000;22050;24000;32000;44100;48000;64000;88200;96000" SampleFormats="16" Channels="1;2;4;6;8" />
+			</inputformats>
+			<property name="Ext" value=".m4a" />
+		</description>
+		<presets>
+			<preset Name="ABR:  ~16 kbps" cmdparams="-br 16000 -ignorelength -if - -of %output%" />
+			<preset Name="ABR:  ~32 kbps" cmdparams="-br 32000 -ignorelength -if - -of %output%" />
+			<preset Name="ABR:  ~64 kbps" cmdparams="-br 64000 -ignorelength -if - -of %output%" />
+			<preset Name="ABR:  ~80 kbps" cmdparams="-br 80000 -ignorelength -if - -of %output%" />
+			<preset Name="ABR: ~128 kbps" cmdparams="-br 128000 -ignorelength -if - -of %output%" />
+			<preset Name="ABR: ~192 kbps" cmdparams="-br 192000 -ignorelength -if - -of %output%" />
+			<preset Name="ABR: ~224 kbps" cmdparams="-br 224000 -ignorelength -if - -of %output%" />
+			<preset Name="ABR: ~256 kbps" cmdparams="-br 256000 -ignorelength -if - -of %output%" />
+			<preset Name="ABR: ~320 kbps" cmdparams="-br 320000 -ignorelength -if - -of %output%" />
+			<preset Name="ABR: ~360 kbps" cmdparams="-br 360000 -ignorelength -if - -of %output%" />
+			<preset Name="ABR: ~400 kbps" cmdparams="-br 400000 -ignorelength -if - -of %output%" />
+
+			<preset Name="CBR:   16 kbps" cmdparams="-cbr 16000 -ignorelength -if - -of %output%" />
+			<preset Name="CBR:   32 kbps" cmdparams="-cbr 32000 -ignorelength -if - -of %output%" />
+			<preset Name="CBR:   64 kbps" cmdparams="-cbr 64000 -ignorelength -if - -of %output%" />
+			<preset Name="CBR:   80 kbps" cmdparams="-cbr 80000 -ignorelength -if - -of %output%" />
+			<preset Name="CBR:  128 kbps" cmdparams="-cbr 128000 -ignorelength -if - -of %output%" />
+			<preset Name="CBR:  192 kbps" cmdparams="-cbr 192000 -ignorelength -if - -of %output%" default="1" />
+			<preset Name="CBR:  224 kbps" cmdparams="-cbr 224000 -ignorelength -if - -of %output%" />
+			<preset Name="CBR:  256 kbps" cmdparams="-cbr 256000 -ignorelength -if - -of %output%" />
+			<preset Name="CBR:  320 kbps" cmdparams="-cbr 320000 -ignorelength -if - -of %output%" />
+			<preset Name="CBR:  360 kbps" cmdparams="-cbr 360000 -ignorelength -if - -of %output%" />
+			<preset Name="CBR:  400 kbps" cmdparams="-cbr 400000 -ignorelength -if - -of %output%" />
+			<preset Name="CBR:  512 kbps" cmdparams="-cbr 512000 -ignorelength -if - -of %output%" />
+			
+			<preset Name="VBR:  ~16 kbps" cmdparams="-q 0.0 -ignorelength -if - -of %output%" />
+			<preset Name="VBR:  ~30 kbps" cmdparams="-q 0.1 -ignorelength -if - -of %output%" />
+			<preset Name="VBR:  ~60 kbps" cmdparams="-q 0.2 -ignorelength -if - -of %output%" />
+			<preset Name="VBR:  ~90 kbps" cmdparams="-q 0.3 -ignorelength -if - -of %output%" />
+			<preset Name="VBR: ~130 kbps" cmdparams="-q 0.4 -ignorelength -if - -of %output%" />
+			<preset Name="VBR: ~180 kbps" cmdparams="-q 0.5 -ignorelength -if - -of %output%" default="1" />
+			<preset Name="VBR: ~220 kbps" cmdparams="-q 0.6 -ignorelength -if - -of %output%" />
+			<preset Name="VBR: ~270 kbps" cmdparams="-q 0.7 -ignorelength -if - -of %output%" />
+			<preset Name="VBR: ~310 kbps" cmdparams="-q 0.8 -ignorelength -if - -of %output%" />
+			<preset Name="VBR: ~360 kbps" cmdparams="-q 0.9 -ignorelength -if - -of %output%" />
+			<preset Name="VBR: ~410 kbps" cmdparams="-q 1.0 -ignorelength -if - -of %output%" />
+		</presets>
+	</encoder>	
+	<encoder Name="AAC m4a (FDK)" App="fdkaac.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="8000;11025;12000;16000;22050;24000;32000;44100;48000;64000;88200;96000" SampleFormats="16" Channels="1;2;4;6;8" />
+			</inputformats>
+			<property name="Ext" value=".m4a" />
+		</description>
+		<presets>
+			<preset Name="CBR 16 kbps" cmdparams="-b 16 -I -S -o %output% -" />
+			<preset Name="CBR 32 kbps" cmdparams="-b 32 -I -S -o %output% -" />
+			<preset Name="CBR 64 kbps" cmdparams="-b 64 -I -S -o %output% -" />
+			<preset Name="CBR 128 kbps" cmdparams="-b 128 -I -S -o %output% -" />
+			<preset Name="CBR 256 kbps" cmdparams="-b 256 -w 20000 -I -S -o %output% -" default="1" />
+			<preset Name="CBR 320 kbps" cmdparams="-b 320 -w 20000 -I -S -o %output% -" />
+			<preset Name="CBR 512 kbps" cmdparams="-b 512 -w 20000 -I -S -o %output% -" />
+			<preset Name="VBR 1 ~80 kbps" cmdparams=" -m 1 -I -S -o %output% -" />
+			<preset Name="VBR 2 ~90 kbps" cmdparams=" -m 2 -I -S -o %output% -" />
+			<preset Name="VBR 3 ~110 kbps" cmdparams=" -m 3 -I -S -o %output% -" />
+			<preset Name="VBR 4 ~130 kbps" cmdparams=" -m 4 -I -S -o %output% -" />
+			<preset Name="VBR 5 ~200 kbps" cmdparams=" -m 5 -I -S -o %output% -" />
+		</presets>
+	</encoder>
+	<encoder Name="ALAC (refalac)" App="qaac\refalac.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="8000;16000;22050;24000;32000;44100;48000;96000;192000" SampleFormats="8;16;24" Channels="1;2;4;6" />
+			</inputformats>
+			<property name="Ext" value=".m4a" />
+		</description>
+		<presets>
+			<preset Name="Compression: Default"     cmdparams="-s --ignorelength - -o  %output%" default="1" />
+			<preset Name="Compression: Fast Stereo" cmdparams="-s --fast --ignorelength - -o %output%" />
+		</presets>
+	</encoder>	
+	<encoder Name="ALAC (QAAC)" App="qaac\qaac.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="32000;44100;48000;88200;96000" SampleFormats="16;24" Channels="1;2;6" />
+			</inputformats>
+			<property name="Ext" value=".m4a" />
+		</description>
+		<presets>
+			<preset Name="Default Preset" cmdparams="--alac --ignorelength - -o %output%" default="1" />
+		</presets>
+	</encoder>	
+	<encoder Name="AAC m4a (QAAC)" App="qaac\qaac.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="8000;11025;12000;16000;22050;24000;32000;44100;48000" SampleFormats="16" Channels="1;2" />
+			</inputformats>
+			<property name="Ext" value=".m4a" />
+		</description>
+		<presets>
+			<preset Name="Preset 1 ( ~48 kbps)" cmdparams="-s --tvbr 0 --ignorelength - -o %output%" />
+			<preset Name="Preset 2 ( ~64 kbps)" cmdparams="-s --tvbr 16 --ignorelength - -o %output%" />
+			<preset Name="Preset 3 ( ~80 kbps)" cmdparams="-s --tvbr 32 --ignorelength - -o %output%" />
+			<preset Name="Preset 4 (~100 kbps)" cmdparams="-s --tvbr 48 --ignorelength - -o %output%" />
+			<preset Name="Preset 5 (~130 kbps)" cmdparams="-s --tvbr 64 --ignorelength - -o %output%" />
+			<preset Name="Preset 6 (~165 kbps)" cmdparams="-s --tvbr 80 --ignorelength - -o %output%" default="1" />
+			<preset Name="Preset 7 (~225 kbps)" cmdparams="-s --tvbr 96 --ignorelength - -o %output%" />
+			<preset Name="Preset 8 (~255 kbps)" cmdparams="-s --tvbr 112 --ignorelength - -o %output%" />
+			<preset Name="Preset 9 (~320 kbps)" cmdparams="-s --tvbr 127 --ignorelength - -o %output%" />
+		</presets>
+	</encoder>	
+	<encoder Name="DTS " App="dcaenc.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="8000;11025;12000;16000;22050;24000;32000;44100;48000" SampleFormats="16;32" Channels="1;2;4;6" />
+			</inputformats>
+		<property name="Ext" value=".dts" />
+		</description>
+		<presets>
+			<preset Name="Bitrate: ~32"     cmdparams="-i - -o %output% -l -b 32" />
+			<preset Name="Bitrate: ~56"     cmdparams="-i - -o %output% -l -b 56" />
+			<preset Name="Bitrate: ~64"     cmdparams="-i - -o %output% -l -b 64" />
+			<preset Name="Bitrate: ~96"     cmdparams="-i - -o %output% -l -b 96" />
+			<preset Name="Bitrate: ~112"     cmdparams="-i - -o %output% -l -b 112" />
+			<preset Name="Bitrate: ~128"     cmdparams="-i - -o %output% -l -b 128" />
+			<preset Name="Bitrate: ~192"     cmdparams="-i - -o %output% -l -b 192" />
+			<preset Name="Bitrate: ~224"     cmdparams="-i - -o %output% -l -b 224" />
+			<preset Name="Bitrate: ~256"     cmdparams="-i - -o %output% -l -b 256" />
+			<preset Name="Bitrate: ~320"     cmdparams="-i - -o %output% -l -b 320" />
+			<preset Name="Bitrate: ~384"     cmdparams="-i - -o %output% -l -b 384" />
+			<preset Name="Bitrate: ~448"     cmdparams="-i - -o %output% -l -b 448" />
+			<preset Name="Bitrate: ~512"     cmdparams="-i - -o %output% -l -b 512" />
+			<preset Name="Bitrate: ~576"     cmdparams="-i - -o %output% -l -b 576" />
+			<preset Name="Bitrate: ~640"     cmdparams="-i - -o %output% -l -b 640" />
+			<preset Name="Bitrate: ~768"     cmdparams="-i - -o %output% -l -b 768" />
+			<preset Name="Bitrate: ~960"     cmdparams="-i - -o %output% -l -b 960" default="1" />
+			<preset Name="Bitrate: ~1024"     cmdparams="-i - -o %output% -l -b 1024" />
+			<preset Name="Bitrate: ~1152"     cmdparams="-i - -o %output% -l -b 1152" />
+			<preset Name="Bitrate: ~1280"     cmdparams="-i - -o %output% -l -b 1280" />
+			<preset Name="Bitrate: ~1344"     cmdparams="-i - -o %output% -l -b 1344" />
+			<preset Name="Bitrate: ~1408"     cmdparams="-i - -o %output% -l -b 1408" />
+			<preset Name="Bitrate: ~1411.2"     cmdparams="-i - -o %output% -l -b 1411.2" />
+			<preset Name="Bitrate: ~1472"     cmdparams="-i - -o %output% -l -b 1472" />
+			<preset Name="Bitrate: ~1536"     cmdparams="-i - -o %output% -l -b 1536" />
+			<preset Name="Bitrate: ~1920"     cmdparams="-i - -o %output% -l -b 1920" />
+			<preset Name="Bitrate: ~2048"     cmdparams="-i - -o %output% -l -b 2048" />
+			<preset Name="Bitrate: ~3072"     cmdparams="-i - -o %output% -l -b 3072" />
+			<preset Name="Bitrate: ~3840"     cmdparams="-i - -o %output% -l -b 3840" />
+		</presets>
+	</encoder>
+	<encoder Name="MusePack SV8" App="mpcenc.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="32000;37800;44100;48000" SampleFormats="16" Channels="1;2" />
+			</inputformats>
+			<property name="Ext" value=".mpc" />
+		</description>
+		<presets>
+			<preset Name="Quality:  0 ( ~20 kbps)"  cmdparams="--silent --xlevel --quality 0 - %output%" />
+			<preset Name="Quality:  1 ( ~30 kbps)"  cmdparams="--silent --xlevel --quality 1 - %output%" />
+			<preset Name="Quality:  2 ( ~60 kbps)"  cmdparams="--silent --xlevel --quality 2 - %output%" />
+			<preset Name="Quality:  3 ( ~90 kbps)"  cmdparams="--silent --xlevel --quality 3 - %output%" />
+			<preset Name="Quality:  4 (~130 kbps)"  cmdparams="--silent --xlevel --quality 4 - %output%" />
+			<preset Name="Quality:  5 (~180 kbps)"  cmdparams="--silent --xlevel --quality 5 - %output%" default="1" />
+			<preset Name="Quality:  6 (~210 kbps)"  cmdparams="--silent --xlevel --quality 6 - %output%" />
+			<preset Name="Quality:  7 (~240 kbps)"  cmdparams="--silent --xlevel --quality 7 - %output%" />
+			<preset Name="Quality:  8 (~270 kbps)"  cmdparams="--silent --xlevel --quality 8 - %output%" />
+			<preset Name="Quality:  9 (~300 kbps)"  cmdparams="--silent --xlevel --quality 9 - %output%" />
+			<preset Name="Quality: 10 (~350 kbps)"  cmdparams="--silent --xlevel --quality 10 - %output%" />
+		</presets>
+	</encoder>
+	<encoder Name="Opus" App="opusenc.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="44100;48000" SampleFormats="16" Channels="1;2;4;6;8" />
+			</inputformats>
+			<property name="Ext" value=".opus" />
+		</description>
+		<presets>
+			<preset Name="Preset:   ~8 kbps" cmdparams="--bitrate 8 --ignorelength - %output%" />
+			<preset Name="Preset:  ~16 kbps" cmdparams="--bitrate 16 --ignorelength - %output%" />
+			<preset Name="Preset:  ~24 kbps" cmdparams="--bitrate 24 --ignorelength - %output%" />
+			<preset Name="Preset:  ~32 kbps" cmdparams="--bitrate 32 --ignorelength - %output%" />
+			<preset Name="Preset:  ~40 kbps" cmdparams="--bitrate 40 --ignorelength - %output%" />
+			<preset Name="Preset:  ~48 kbps" cmdparams="--bitrate 48 --ignorelength - %output%" />
+			<preset Name="Preset:  ~56 kbps" cmdparams="--bitrate 56 --ignorelength - %output%" />
+			<preset Name="Preset:  ~64 kbps" cmdparams="--bitrate 64 --ignorelength - %output%" />
+			<preset Name="Preset:  ~80 kbps" cmdparams="--bitrate 80 --ignorelength - %output%" />
+			<preset Name="Preset:  ~96 kbps" cmdparams="--bitrate 96 --ignorelength - %output%" />
+			<preset Name="Preset: ~112 kbps" cmdparams="--bitrate 112 --ignorelength - %output%" />
+			<preset Name="Preset: ~128 kbps" cmdparams="--bitrate 128 --ignorelength - %output%" default="1" />
+			<preset Name="Preset: ~144 kbps" cmdparams="--bitrate 144 --ignorelength - %output%" />
+			<preset Name="Preset: ~160 kbps" cmdparams="--bitrate 160 --ignorelength - %output%" />
+			<preset Name="Preset: ~192 kbps" cmdparams="--bitrate 192 --ignorelength - %output%" />
+			<preset Name="Preset: ~224 kbps" cmdparams="--bitrate 224 --ignorelength - %output%" />
+			<preset Name="Preset: ~256 kbps" cmdparams="--bitrate 256 --ignorelength - %output%" />
+			<preset Name="Preset: ~320 kbps" cmdparams="--bitrate 320 --ignorelength - %output%" />
+			<preset Name="Preset: ~360 kbps" cmdparams="--bitrate 360 --ignorelength - %output%" />
+			<preset Name="Preset: ~420 kbps" cmdparams="--bitrate 420 --ignorelength - %output%" />
+			<preset Name="Preset: ~510 kbps" cmdparams="--bitrate 510 --ignorelength - %output%" />
+		</presets>
+	</encoder>	
+	<encoder Name="TAK" App="takc.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="8000;16000;22050;24000;32000;44100;48000;96000;192000" SampleFormats="8;16;24" Channels="1;2;4;6" />
+			</inputformats>
+			<property name="Ext" value=".tak" />
+		</description>
+		<presets>
+			<preset Name="Compression: Default"     cmdparams="-e -p2 -ihs -v -silent - %output%" />
+			<preset Name="Compression: Recommended" cmdparams="-e -p2m -ihs -v -silent - %output%" default="1" />
+			<preset Name="Compression: High"        cmdparams="-e -p4 -ihs -v -silent - %output%" />
+			<preset Name="Compression: Maximum"     cmdparams="-e -p4m -ihs -v -silent - %output%" />
+		</presets>
+	</encoder>
+	<encoder Name="TTA" App="tta.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="8000;16000;22050;24000;32000;44100;48000;96000;192000" SampleFormats="8;16;24" Channels="1;2;4;6" />
+			</inputformats>
+			<property name="Ext" value=".tta" />
+		</description>
+		<presets>
+			<preset Name="Compression: Default"     cmdparams="-e -eb - - %output%" default="1" />
+		</presets>
+	</encoder>	
+	<encoder Name="AC3 (Dolby Digital)" App="aften.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="8000;11025;12000;16000;22050;24000;32000;44100;48000" SampleFormats="8;16;24" Channels="1;2;6" />
+			</inputformats>
+			<property name="Ext" value=".ac3" />
+		</description>
+		<presets>
+			<preset Name="VBR: 0" cmdparams="-v 0 -readtoeof 1 -q 0 - %output%" />
+			<preset Name="VBR: ~40" cmdparams="-v 0 -readtoeof 1 -q 40 - %output%" />
+			<preset Name="VBR: ~80" cmdparams="-v 0 -readtoeof 1 -q 80 - %output%" />
+			<preset Name="VBR: ~120" cmdparams="-v 0 -readtoeof 1 -q 120 - %output%" />
+			<preset Name="VBR: ~160" cmdparams="-v 0 -readtoeof 1 -q 160 - %output%" />
+			<preset Name="VBR: ~200" cmdparams="-v 0 -readtoeof 1 -q 200 - %output%" />
+			<preset Name="VBR: ~240" cmdparams="-v 0 -readtoeof 1 -q 240 - %output%" default="1" />
+			<preset Name="VBR: ~320" cmdparams="-v 0 -readtoeof 1 -q 320 - %output%" />
+			<preset Name="VBR: ~400" cmdparams="-v 0 -readtoeof 1 -q 400 - %output%" />
+			<preset Name="VBR: ~500" cmdparams="-v 0 -readtoeof 1 -q 500 - %output%" />
+			<preset Name="VBR: ~600" cmdparams="-v 0 -readtoeof 1 -q 600 - %output%" />
+			<preset Name="VBR: ~700" cmdparams="-v 0 -readtoeof 1 -q 700 - %output%" />
+			<preset Name="VBR: ~800" cmdparams="-v 0 -readtoeof 1 -q 800 - %output%" />
+			<preset Name="VBR: ~900" cmdparams="-v 0 -readtoeof 1 -q 900 - %output%" />
+			<preset Name="VBR: ~1023" cmdparams="-v 0 -readtoeof 1 -q 1023 - %output%" />
+		</presets>
+	</encoder>
+	<encoder Name="WMAx86" App="WMAEncode.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="8000;16000;22050;24000;32000;44100;48000;96000;192000" SampleFormats="8;16;24;32" Channels="1;2;4;6" />
+			</inputformats>
+			<property name="Ext" value=".wma" />
+		</description>
+		<presets>
+			<preset Name="Lossless"     			cmdparams="- %output% --silent --codec lsl --ignorelength" />
+			<preset Name="Standard: VBR 192" 		cmdparams="- %output% --silent --mode vbr2pass --bitrate 192 --allowstdin2pass --ignorelength" />
+			<preset Name="Professional: VBR 384"    cmdparams="- %output% --silent --codec pro --mode vbr2pass --bitrate 384 --allowstdin2pass --ignorelength" />
+			<preset Name="Standard: CBR 192" 		cmdparams="- %output% --silent --mode cbr --bitrate 192 --allowstdin2pass --ignorelength" />
+			<preset Name="Professional: CBR 384"    cmdparams="- %output% --silent --codec pro --mode cbr --bitrate 384 --allowstdin2pass --ignorelength" />
+			<preset Name="Voice"    				cmdparams="- %output% --silent --codec voice --bitrate 20 --ignorelength" />
+		</presets>
+	</encoder>
+	<encoder Name="WMAx64" App="WMAEncode64.exe">
+		<description>
+			<inputformats type="autogen">
+				<autogen SampleRates="8000;16000;22050;24000;32000;44100;48000;96000;192000" SampleFormats="8;16;24;32" Channels="1;2;4;6" />
+			</inputformats>
+			<property name="Ext" value=".wma" />
+		</description>
+		<presets>
+			<preset Name="Lossless"     			cmdparams="- %output% --silent --codec lsl --ignorelength" />
+			<preset Name="Standard: VBR 192" 		cmdparams="- %output% --silent --mode vbr2pass --bitrate 192 --allowstdin2pass --ignorelength" />
+			<preset Name="Professional: VBR 384"    cmdparams="- %output% --silent --codec pro --mode vbr2pass --bitrate 384 --allowstdin2pass --ignorelength" />
+			<preset Name="Standard: CBR 192" 		cmdparams="- %output% --silent --mode cbr --bitrate 192 --allowstdin2pass --ignorelength" />
+			<preset Name="Professional: CBR 384"    cmdparams="- %output% --silent --codec pro --mode cbr --bitrate 384 --allowstdin2pass --ignorelength" />
+			<preset Name="Voice"     				cmdparams="- %output% --silent --codec voice --bitrate 20 --ignorelength" />
+		</presets>
+	</encoder>
+</encoders>

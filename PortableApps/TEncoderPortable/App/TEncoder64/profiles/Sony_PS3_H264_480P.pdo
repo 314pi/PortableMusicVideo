@@ -1,0 +1,17 @@
+[Main]
+Ext=mp4
+Container=2
+Encoder=1
+VCodec=4
+VBitrate=2000
+Width=720
+Height=576
+VideoSize=720x576
+FPS=25
+VAR=0
+ACodec=2
+ABitrate=128
+ASR=7
+AChan=1
+CustomVideo=
+CustomAudio=

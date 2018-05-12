@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Philips Songbird">
+<!ENTITY sharing.push.refreshdevicelist "Uppdatera">
+<!ENTITY push.playqueue.instructions "Dra och släpp spår eller spellistor här om du vill skapa en snabbuppspelningskö för den här enheten">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "Offline">
+<!ENTITY sharing.push.deviceState.stopped "Stoppad">
+<!ENTITY sharing.push.deviceState.playing "Spelas">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "Pausad">
+<!ENTITY sharing.push.deviceState.recording "Spelar in">
+<!ENTITY sharing.push.deviceState.nomedia "Inga media">

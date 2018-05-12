@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Toolbars Overview - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Toolbars_Overview rootpage-Toolbars_Overview skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Toolbars Overview</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Toolbars_Overview#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<p><br />
+</p>
+<div class="intro"><i><b>Toolbars</b></i> provide quick access to many functions in Audacity. In some cases the functions provided by a toolbar are available only through that toolbar. Other than the <a href="#spectral_selection">Spectral Selection Toolbar</a> and the <a href="#scrub" title="Toolbars Overview">Scrub Toolbar</a>, all toolbars are enabled by default. If your desired toolbar is not visible, choose <span class="menu">View &gt; <a href="view_menu_toolbars.html" title="View Menu: Toolbars">Toolbars</a></span> and click to put a checkmark by the toolbar you wish to enable.
+<ul><li> The Meter toolbars are a special case. You may have one or both of the separate Recording and Playback Meter toolbars visible (both are visible by default). Alternatively you can have only the Combined Meter Toolbar visible (which displays recording and playback levels in a single meter).</li>
+<li>The tooltips for the toolbars and tools <i>(visible when hovering over the toobar or tool)</i> will display the shortcut for that tool/toolbar if one is set.</div></li></ul>
+<div id="tooldock"></div>
+<h2><span class="mw-headline" id="Toolbar_dock_areas">Toolbar dock areas</span></h2>
+<p>There are two dock areas for toolbars in Audacity. By default, most of the Audacity toolbars are in the upper dock, with only the Selection Toolbar in the lower dock.
+</p><p>Toolbars can be <a href="#arrange">arranged and resized</a> within either of the two docks, or floated free of the docks. 
+</p>
+<div id="upper_tooldock"></div> 
+<p><b>Hover over each green-bordered toolbar in the dock images to learn more then click to go to that toolbar's details page. Or <a href="#toolbars">jump to the brief toolbar descriptions</a></b>.
+</p>
+<h3><span class="mw-headline" id="Upper_Toolbar_dock_area">Upper Toolbar dock area</span></h3>
+<dl><dd><div class="noresize"><map name="ImageMap_1_812951406"><area href="transport_toolbar.html" shape="rect" coords="2,2,121,16" alt="Transport Toolbar has buttons for controlling playback and recording and for moving to the project start or end" title="Transport Toolbar has buttons for controlling playback and recording and for moving to the project start or end"/><area href="transport_toolbar.html" shape="rect" coords="0,42,298,95" alt="Transport Toolbar has buttons for controlling playback and recording and for moving to the project start or end" title="Transport Toolbar has buttons for controlling playback and recording and for moving to the project start or end"/><area href="tools_toolbar.html" shape="rect" coords="181,2,271,16" alt="Tools Toolbar lets you choose various tools for selection, volume adjustment, zooming and time-shifting of audio" title="Tools Toolbar lets you choose various tools for selection, volume adjustment, zooming and time-shifting of audio"/><area href="tools_toolbar.html" shape="rect" coords="299,42,384,95" alt="Tools Toolbar lets you choose various tools for selection, volume adjustment, zooming and time-shifting of audio" title="Tools Toolbar lets you choose various tools for selection, volume adjustment, zooming and time-shifting of audio"/><area href="meter_toolbar.html" shape="rect" coords="359,2,523,16" alt="Recording Meter Toolbar lets you see if audio being recorded is clipped, which results in distortion" title="Recording Meter Toolbar lets you see if audio being recorded is clipped, which results in distortion"/><area href="meter_toolbar.html" shape="rect" coords="385,42,806,68" alt="Recording Meter Toolbar lets you see if audio being recorded is clipped, which results in distortion" title="Recording Meter Toolbar lets you see if audio being recorded is clipped, which results in distortion"/><area href="meter_toolbar.html" shape="rect" coords="650,2,806,16" alt="Playback Meter Toolbar lets you see if audio being edited is clipped, which results in distortion" title="Playback Meter Toolbar lets you see if audio being edited is clipped, which results in distortion"/><area href="meter_toolbar.html" shape="rect" coords="385,69,806,95" alt="Playback Meter Toolbar lets you see if audio being edited is clipped, which results in distortion" title="Playback Meter Toolbar lets you see if audio being edited is clipped, which results in distortion"/><area href="mixer_toolbar.html" shape="rect" coords="4,178,94,191" alt="Mixer Toolbar lets you adjust Recording Volume (the amplitude at which recordings will be made) and Playback Volume (how loud the project's audio sounds, not affecting the volume of exported audio" title="Mixer Toolbar lets you adjust Recording Volume (the amplitude at which recordings will be made) and Playback Volume (how loud the project's audio sounds, not affecting the volume of exported audio"/><area href="mixer_toolbar.html" shape="rect" coords="0,96,294,121" alt="Mixer Toolbar lets you adjust Recording Volume (the amplitude at which recordings will be made) and Playback Volume (how loud the project's audio sounds, not affecting the volume of exported audio" title="Mixer Toolbar lets you adjust Recording Volume (the amplitude at which recordings will be made) and Playback Volume (how loud the project's audio sounds, not affecting the volume of exported audio"/><area href="edit_toolbar.html" shape="rect" coords="155,178,235,191" alt="Edit Toolbar has buttons for editing and zooming which are an alternative to using menu items or keyboard shortcuts for these tasks" title="Edit Toolbar has buttons for editing and zooming which are an alternative to using menu items or keyboard shortcuts for these tasks"/><area href="edit_toolbar.html" shape="rect" coords="295,96,598,121" alt="Edit Toolbar has buttons for editing and zooming which are an alternative to using menu items or keyboard shortcuts for these tasks" title="Edit Toolbar has buttons for editing and zooming which are an alternative to using menu items or keyboard shortcuts for these tasks"/><area href="device_toolbar.html" shape="rect" coords="269,178,368,191" alt="Device Toolbar selects Audio Host, recording device, recording channels and playback device, avoiding the need to open Devices Preferences to make these settings" title="Device Toolbar selects Audio Host, recording device, recording channels and playback device, avoiding the need to open Devices Preferences to make these settings"/><area href="device_toolbar.html" shape="rect" coords="0,122,565,148" alt="Device Toolbar selects Audio Host, recording device, recording channels and playback device, avoiding the need to open Devices Preferences to make these settings" title="Device Toolbar selects Audio Host, recording device, recording channels and playback device, avoiding the need to open Devices Preferences to make these settings"/><area href="transcription_toolbar.html" shape="rect" coords="439,178,580,191" alt="Transcription Toolbar|Transcription Toolbar lets you play audio at a slower or faster speed than normal, also affecting pitch" title="Transcription Toolbar|Transcription Toolbar lets you play audio at a slower or faster speed than normal, also affecting pitch"/><area href="transcription_toolbar.html" shape="rect" coords="599,96,806,121" alt="Transcription Toolbar|Transcription Toolbar lets you play audio at a slower or faster speed than normal, also affecting pitch" title="Transcription Toolbar|Transcription Toolbar lets you play audio at a slower or faster speed than normal, also affecting pitch"/></map><img alt="Dock1Annotated.png" src="../m/images/4/4c/dock1annotated.png" width="807" height="193" usemap="#ImageMap_1_812951406"/></div></dd></dl>
+<div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:315px;top:-5px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p>&#160;
+</p>
+<div id="lower_tooldock"></div>
+<h3><span class="mw-headline" id="Lower_Toolbar_dock_area">Lower Toolbar dock area</span></h3>
+<dl><dd><div class="noresize"><map name="ImageMap_2_782304882"><area href="selection_toolbar.html" shape="rect" coords="3,48,625,106" alt="Selection Toolbar includes controls for Project Rate, Snap To and for manipulating units of time or other selection formats" title="Selection Toolbar includes controls for Project Rate, Snap To and for manipulating units of time or other selection formats"/></map><img alt="Selection Toolbar in lower tooldock green-boxed.png" src="../m/images/3/3b/selection_toolbar_in_lower_tooldock_green_boxed.png" width="712" height="108" usemap="#ImageMap_2_782304882"/></div></dd></dl>
+<p>Additionally if you choose to show the <a href="spectral_selection_toolbar.html" title="Spectral Selection Toolbar">Spectral Selection Toolbar</a> from the <a href="view_menu.html" title="View Menu">View Menu</a> <i>(it is not shown by default)</i> then it will also be shown in the Lower Toolbar dock area. The image of the Selection Toolbar shown in this example has non-default settings for the <a href="selection_toolbar.html#formats" title="Selection Toolbar">selection formats</a>.
+</p>
+<dl><dd><div class="noresize"><map name="ImageMap_3_1819852604"><area href="spectral_selection_toolbar.html" shape="rect" coords="521,52,740,97" alt="Spectral Selection Toolbar includes controls for manipulating a Spectral Selection. Using the &quot;Center Frequency&quot; and &quot;Width&quot; boxes, or the &quot;Low Frequency&quot; and &quot;High Frequency&quot; boxes, you can create or adjust a precisely defined spectral selection without having to click or drag with a mouse in Spectrogram view." title="Spectral Selection Toolbar includes controls for manipulating a Spectral Selection. Using the &quot;Center Frequency&quot; and &quot;Width&quot; boxes, or the &quot;Low Frequency&quot; and &quot;High Frequency&quot; boxes, you can create or adjust a precisely defined spectral selection without having to click or drag with a mouse in Spectrogram view."/></map><img alt="Spectral Selection Toolbar in lower tooldock green-boxed.png" src="../m/images/4/47/spectral_selection_toolbar_in_lower_tooldock_green_boxed.png" width="743" height="101" usemap="#ImageMap_3_1819852604"/></div></dd></dl>
+<p><br />
+</p>
+<div id="toolbars"></div>
+<h2><span class="mw-headline" id="The_Toolbars">The Toolbars</span></h2>
+<p>The individual toolbars are described briefly below. Click on any toolbar image to go the details page for that toolbar.
+</p>
+<div id="transport"></div>
+<div id="transport_toolbar"></div>
+<h4><span class="mw-headline" id="Transport_Toolbar"><a href="transport_toolbar.html" title="Transport Toolbar">Transport Toolbar</a></span></h4>
+<dl><dd><a href="transport_toolbar.html" title="Transport Toolbar controls recording, playback, pausing and stopping"><img alt="Transport Toolbar controls recording, playback, pausing and stopping" src="../m/images/5/5e/transporttoolbar.png" width="327" height="55" class="thumbborder" /></a>
+<ul><li> Controls playback and recording and skips to start or end of project when neither playing or recording.</li></ul></dd></dl>
+<div id="tools"></div>
+<div id="tools_toolbar"></div>
+<h4><span class="mw-headline" id="Tools_Toolbar"><a href="tools_toolbar.html" title="Tools Toolbar">Tools Toolbar</a></span></h4>
+<dl><dd><a href="tools_toolbar.html" title="Tools Toolbar showing the default Selection Tool chosen"><img alt="Tools Toolbar showing the default Selection Tool chosen" src="../m/images/8/82/toolstoolbar.png" width="94" height="55" class="thumbborder" /></a>
+<ul><li> Chooses various tools for selection, volume adjustment, zooming and time-shifting of audio.</li></ul></dd></dl>
+<div id="recording"></div>
+<div id="recording_toolbar"></div>
+<h4><span class="mw-headline" id="Recording_Meter_Toolbar"><a href="meter_toolbar.html#recording" title="Meter Toolbar"><span title="Meter Toolbars">Recording Meter Toolbar</span></a></span></h4>
+<dl><dd><a href="meter_toolbar.html" title="RecordMeter Toolbar"><img alt="RecordMeter Toolbar" src="../m/images/b/bd/recordmetertoolbar.png" width="460" height="27" class="thumbborder" /></a>
+<ul><li>Displays recording levels and toggles <a href="meter_toolbar.html#recordinglevel" title="Meter Toolbar"><span title="Meter Toolbars">input monitoring</span></a> when not recording. <p><i>Note the two vertical bars at the right of this toolbar which mean that this toolbar can be resized by clicking and dragging on the bars.</i></p></li></ul></dd></dl>
+<div id="playback"></div>
+<div id="playback_toolbar"></div>
+<h4><span class="mw-headline" id="Playback_Meter_Toolbar"><a href="meter_toolbar.html#playback" title="Meter Toolbar"><span title="Meter Toolbars">Playback Meter Toolbar</span></a></span></h4>
+<dl><dd><a href="meter_toolbar.html" title="PlayMeter Toolbar"><img alt="PlayMeter Toolbar" src="../m/images/7/7d/playmetertoolbar.png" width="460" height="27" class="thumbborder" /></a>
+<ul><li>Displays playback levels. <p><i>Note the two vertical bars at the right of this toolbar which mean that this toolbar can be resized by clicking and dragging on the bars.</i></p></li></ul></dd></dl>
+<div id="mixer"></div>
+<div id="mixer_toolbar"></div>
+<h4><span class="mw-headline" id="Mixer_Toolbar"><a href="mixer_toolbar.html" title="Mixer Toolbar">Mixer Toolbar</a></span></h4>
+<dl><dd><a href="mixer_toolbar.html" title="Mixer Toolbar has controls to manage the recording and playback levels"><img alt="Mixer Toolbar has controls to manage the recording and playback levels" src="../m/images/1/15/mixertoolbar.png" width="323" height="27" class="thumbborder" /></a>
+<ul><li> Adjusts the recording and playback volumes of the devices currently selected in <a href="device_toolbar.html" title="Device Toolbar">Device Toolbar</a>. </li></ul></dd></dl>
+<div id="edit"></div>
+<div id="edit_toolbar"></div>
+<h4><span class="mw-headline" id="Edit_Toolbar"><a href="edit_toolbar.html" title="Edit Toolbar">Edit Toolbar</a></span></h4>
+<dl><dd><a href="edit_toolbar.html" title="Edit Toolbar"><img alt="Edit Toolbar" src="../m/images/a/a0/edittoolbar.png" width="363" height="27" class="thumbborder" /></a>
+<ul><li>Cut, copy, paste, trim audio, silence audio, undo, redo, four zoom tools. </li></ul></dd></dl>
+<div id="transcription"></div>
+<div id="transcription_toolbar"></div>
+<h4><span class="mw-headline" id="Transcription_Toolbar"><a href="transcription_toolbar.html" title="Transcription Toolbar">Transcription Toolbar</a></span></h4>
+<dl><dd><a href="transcription_toolbar.html" title="Transcription Toolbar has a control slider to enable playing audio at a slower or faster speed than normal"><img alt="Transcription Toolbar has a control slider to enable playing audio at a slower or faster speed than normal" src="../m/images/2/2c/transcriptiontoolbar.png" width="140" height="27" class="thumbborder" /></a>
+<ul><li> Plays audio at a slower or faster speed than normal, affecting pitch.</li></ul></dd></dl>
+<div id="scrub"></div>
+<div id="scrub_toolbar"></div>
+<h4><span class="mw-headline" id="Scrub_Toolbar"><a href="scrub_toolbar.html" title="Scrub Toolbar">Scrub Toolbar</a></span></h4>
+<dl><dd><a href="scrub_toolbar.html" title="Scrub Toolbar"><img alt="Scrub Toolbar" src="../m/images/a/a9/scrubtoolbar.png" width="92" height="27" class="thumbborder" /></a>
+<ul><li> Starts, stops or switches to Scrub play or Seek play, and hides or displays the Scrub Ruler.</li>
+<li> This toolbar is not shown by default. Select <span class="menu">View &gt; Toolbars &gt; <a href="scrub_toolbar.html" title="Scrub Toolbar">Scrub Toolbar</a></span> to show the toolbar, which by default docks in the upper dock. </li></ul></dd></dl>
+<div id="device"></div>
+<div id="device_toolbar"></div>
+<h4><span class="mw-headline" id="Device_Toolbar"><a href="device_toolbar.html" title="Device Toolbar">Device Toolbar</a></span></h4>
+<dl><dd><a href="device_toolbar.html" title="Device Toolbar has controls for selecting audio host, recording device, number of recording channels and playback device"><img alt="Device Toolbar has controls for selecting audio host, recording device, number of recording channels and playback device" src="../m/images/0/05/devicetoolbar.png" width="618" height="27" class="thumbborder" /></a>
+<ul><li>Selects audio host, recording device, number of recording channels and playback device.<p><i>Note the two vertical bars at the right of this toolbar which mean that this toolbar can be resized by clicking and dragging on the bars.</i></p></li></ul></dd></dl>
+<div id="selection"></div>
+<div id="selection_toolbar"></div>
+<h4><span class="mw-headline" id="Selection_Toolbar"><a href="selection_toolbar.html" title="Selection Toolbar">Selection Toolbar</a></span></h4>
+<dl><dd><a href="selection_toolbar.html" title="Selection Toolbar includes controls for Project Rate, Snap To and for manipulating units of time or other selection formats"><img alt="Selection Toolbar includes controls for Project Rate, Snap To and for manipulating units of time or other selection formats" src="../m/images/f/fc/selectiontoolbar.png" width="684" height="57" class="thumbborder" /></a>
+<ul><li> Controls the <i><b><a href="glossary.html#sample_rate" title="Glossary">sample rate</a></b></i> of the project, <a href="selection_toolbar.html#snap" title="Selection Toolbar">snapping</a> to the <a href="selection_toolbar.html#formats" title="Selection Toolbar">selection format</a> and adjusts cursor and <a href="audacity_selection.html" title="Audacity Selection">region</a> position by keyboard input.<p><i>The default position of Selection Toolbar is at the bottom of the main Audacity window, thus it is not visible in the Toolbars image at the top of this page.</i></p></li></ul></dd></dl>
+<p><br />
+</p>
+<div id="spectral_selection"></div>
+<div id="spectral_selection_toolbar"></div>
+<h4><span class="mw-headline" id="Spectral_Selection_Toolbar"><a href="spectral_selection_toolbar.html" title="Spectral Selection Toolbar">Spectral Selection Toolbar</a></span></h4>
+<dl><dd><a href="spectral_selection_toolbar.html#center" title="SpectralSelection Toolbar (FrequencyWidth variant)"><img alt="SpectralSelection Toolbar (FrequencyWidth variant)" src="../m/images/c/cb/spectralselectiontoolbarfrequencywidth.png" width="245" height="55" class="thumbborder" /></a><a href="spectral_selection_toolbar.html#lowhigh" title="SpectralSelection Toolbar (LowHigh variant)"><img alt="SpectralSelection Toolbar (LowHigh variant)" src="../m/images/f/ff/spectralselectiontoolbarlowhigh.png" width="238" height="55" class="thumbborder" /></a></dd></dl>
+<dl><dd><ul><li>Displays and lets you adjust the current spectral (frequency) selection without having to be in <a href="audio_track_dropdown_menu.html#spgram" title="Audio Track Dropdown Menu">Spectrogram view</a>. </li>
+<li>This toolbar is not shown by default. Select <span class="menu">View &gt; Toolbars &gt; <a href="spectral_selection_toolbar.html" title="Spectral Selection Toolbar">Spectral Selection Toolbar</a></span> to show the toolbar, which by default docks in the lower dock, beside or under <a href="selection_toolbar.html" title="Selection Toolbar">Selection Toolbar</a>. </li>
+<li>Choose your preferred format option from the dropdown menu above the boxes: <span class="button">Center frequency and Width &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span> or <span class="button">Low and High Frequencies &#160;<img alt="menu dropdown" src="../m/images/e/ed/menudownarrow.png" width="9" height="6" style="vertical-align: middle" /></span>.</li></ul></dd></dl>
+<div class="note">In Center frequency and Width view, to clear the spectral selection entirely just use the <span class="kbrd" style="background-color: #e0e0f0">Delete</span> key after having clicked on any of the digits (note carefully that this is <i><b>not</b></i> the Delete key on the numerical keypad).  When in Low and High Frequencies view you can clear either input box individually with the <span class="kbrd" style="background-color: #e0e0f0">Delete</span> key.</div>
+<div id="arrange"></div>
+<h2><span class="mw-headline" id="Arranging_and_resizing_Toolbars">Arranging and resizing Toolbars</span></h2>
+<p>Toolbars can be docked in two toolbar areas of the Audacity Project window, providing there is space available: either above the <a href="timeline.html" title="Timeline">Timeline</a>, or above the <a href="status_bar.html" title="Status Bar">Status Bar</a> at the bottom of the window (Selection Toolbar is in this location by default). Toolbars may also be floated anywhere else in or outside the project window, including on a secondary monitor. The toolbar positions on exiting Audacity are always remembered when restarting Audacity next time.
+</p><p>Toolbars can be docked or floated by dragging on their serrated left edge. When docking a toolbar into a toolbar area, a black triangle will appear, indicating an available docking position. The default toolbar docked positions can be restored at any time by clicking <span class="menu">View &gt; Toolbars &gt; <a href="view_menu_toolbars.html#reset_toolbars" title="View Menu: Toolbars">Reset Toolbars</a></span>.  Some of the Toolbars can be resized (the Meter Toolbars and the Device Toolbar) by clicking and dragging on the vertical bars at the right of the toolbars.
+</p><p>If you change your mind part way through a drag or a resize of a toolbar you can simply use the Escape key <span class="kbrd" style="background-color: #e0e0f0">Esc</span> to abort the action. 
+</p><p><br />
+</p>
+<dl><dd><b>The image below shows Mixer Toolbar being docked to the right of Device Toolbar:</b></dd>
+<dd><span title="The black triangle indicates an available docking position for Mixer Toolbar alongside Device Toolbar"><img alt="Docking a toolbar black triangle.png" src="../m/images/9/98/docking_a_toolbar_black_triangle.png" width="814" height="115" /></span></dd></dl>
+<p><br />
+</p>
+<dl><dd><b>The image below shows the Transport and Recording Meter toolbars floated outside the Project window, with the Recording Meter dragged wider:</b></dd>
+<dd><span title="Audacity Project Window with some toolbars floated outside the window"><img alt="Floating Toolbars.png" src="../m/images/e/e8/floating_toolbars.png" width="782" height="557" /></span></dd></dl>
+
+<!-- 
+NewPP limit report
+Cached time: 20180215020215
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.212 seconds
+Real time usage: 0.229 seconds
+Preprocessor visited node count: 601/1000000
+Preprocessor generated node count: 2118/1000000
+Post‐expand include size: 13788/2097152 bytes
+Template argument size: 3679/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  130.331      1 - -total
+ 32.69%   42.610      1 - Template:Annotated
+ 29.91%   38.986      1 - TheToolbars
+ 26.78%   34.897      1 - Template:I18n
+ 25.03%   32.626      1 - Template:I18n_box
+ 21.88%   28.517      1 - Template:I18n_list
+ 11.76%   15.322      6 - Template:I18n_link
+  8.83%   11.506     12 - Template:Toolbar
+  6.77%    8.819      6 - Template:Autoglossonym
+  3.83%    4.998      1 - Template:Note
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:2691-0!*!0!!*!5!* and timestamp 20180215020215 and revision id 58975
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="#" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Toolbars_Overview">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

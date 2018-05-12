@@ -1,0 +1,91 @@
+cdrtools
+========
+
+  Copyright :	Jörg Schilling
+  Source    :	http://sourceforge.net/projects/cdrtools/
+  License   :	CDDL (cdrecord, cdda2wav, readcd)
+		GPL (mkisofs)
+
+
+Mode2CDMaker, dat2file
+======================
+
+  Copyright :	DeXT
+  Source    :	http://web.archive.org/web/20120421170005/http://webs.ono.com/de_xt/ (Internet Archive)
+  License   :	GPL
+
+
+rrenc/rrdec
+===========
+
+  Copyright :	Oleg Rudyk
+  Source    :	http://sourceforge.net/projects/cd-rr/
+  License   :	GPLv3
+
+
+VCDImager
+=========
+
+  Maintainer:	Herbert Valerio Riedel
+  Source    :	http://www.gnu.org/software/vcdimager/
+  License   :   GPL
+
+
+mpg123
+======
+
+  Copyright: 	Michael Hipp and others
+  Source: 	http://www.mpg123.org/
+  Lizenz: 	GPL 
+
+
+madplay
+=======
+
+  Copyright :	Robert Leslie
+  Source    :	http://sourceforge.net/projects/mad/
+  License   :	GPL
+
+
+lame
+====
+
+  Source   :	http://lame.sourceforge.net/index.html
+  License  :	GPL
+
+
+oggenc/oggdec
+=============
+
+  Source   :	http://www.xiph.org/downloads/
+  License  :	GPL
+
+
+flac
+====
+
+  Copyright:	Josh Coalson 
+  Source   :	http://xiph.org/flac/index.html
+  License  :	GPL
+
+
+WaveGain
+========
+
+  Copyright: 	John Edwards
+  Lizenz: 	LGPL 
+
+
+cygwin1.dll, cygiconv-2.dll, cygintl-3.dll
+==========================================
+
+  Source   :	www.cygwin.com
+  License  :	GPL
+
+
+sh.exe
+======
+
+  Source   :	ftp://ftp.berlios.de/pub/cdrecord/alpha/win32/ash-20010129-src.tar.gz
+  License  :	4-clause BSD license
+

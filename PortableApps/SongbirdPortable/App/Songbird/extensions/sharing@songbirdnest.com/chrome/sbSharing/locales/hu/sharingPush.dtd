@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "Frissítés">
+<!ENTITY push.playqueue.instructions "Húzzon át ide zeneszámokat vagy lejátszási listákat, ha „röptében” szeretne lejátszási sort készíteni az eszközön">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "Kijelentkezve">
+<!ENTITY sharing.push.deviceState.stopped "Leállítva">
+<!ENTITY sharing.push.deviceState.playing "Lejátszás">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "Szüneteltetve">
+<!ENTITY sharing.push.deviceState.recording "Rögzítés">
+<!ENTITY sharing.push.deviceState.nomedia "Az adathordozó nincs a helyén">

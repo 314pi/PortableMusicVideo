@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Noise - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Noise rootpage-Noise skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Noise</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Noise#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+
+<p><br />
+</p>
+<div class="intro"><i><b>Noise</b></i> generates one of three different types of noise: white, pink or brownian. </div>
+<dl><dd><b>Accessed by:</b> <span class="menu">Generate &gt; Noise...</span></dd>
+<dd><span title="Noise generator dialog"><a href="http://alphamanual.audacityteam.org/man/File:Noise.png" class="image"><img alt="Noise.png" src="../m/images/6/67/noise.png" width="474" height="178" /></a></span></dd>
+<dd><i><b>The image above illustrates replacing a selection region with generated audio.</b></i> </dd></dl>
+<h2><span class="mw-headline" id="Noise">Noise</span></h2>
+<p>Generates one of three different types of noise. 
+</p>
+<ul><li>White noise is that which has the greatest ability to mask other sounds, as it has similar energy at all frequency levels. </li>
+<li>Pink noise and Brownian noise both have more energy at lower frequencies, especially Brownian, which has the most muffled, low pitched sound of the three types. By their nature, pink and Brownian noise may have a few peaks not exactly at the requested amplitude if the tracks are only a few seconds long.</li></ul>
+<h2><span class="mw-headline" id="Amplitude">Amplitude</span></h2>
+<p>Lets you type an <i><b><a href="glossary.html#amplitude" title="Glossary">amplitude</a></b></i> value for the loudness of the generated audio. Permitted values are between 0 (silence) and 1 (the maximum possible volume without <i><b><a href="glossary.html#clipping" title="Glossary">clipping</a></b></i>), with a default of 0.8.
+</p>
+<h2><span class="mw-headline" id="Duration">Duration</span></h2>
+<p>Type (or use the keyboard arrows) to enter the required Duration. If the first digit you want is highlighted, just type the whole number. If the required first digit is not highlighted, use <span class="kbrd" style="background-color: #e0e0f0">Left</span> or <span class="kbrd" style="background-color: #e0e0f0">Right</span> arrow on your keyboard to move to the first digit, then type. You can also increment a highlighted digit with keyboard <span class="kbrd" style="background-color: #e0e0f0">Up</span> or <span class="kbrd" style="background-color: #e0e0f0">Down</span> arrow instead of typing.
+</p>
+<ul><li> <b>When generating at the cursor</b>, Duration initializes to 30.000 seconds (except for the DTMF generator which defaults to 1.000 second). However, your last entered Duration is always remembered.</li>
+<li> <b>When replacing a selection region</b>, Duration always displays the exact duration of that selection to the nearest audio <i><b><a href="glossary.html#sample" title="Glossary">sample</a></b></i>. </li></ul>
+<h2><span class="mw-headline" id="The_command_buttons">The command buttons</span></h2>
+<p>Clicking on the command buttons give the following results:
+</p>
+<ul><li><span class="button">Manage</span> gives a dropdown menu enabling you to manage presets for the tool and to see some detail about the tool. For details see <a href="manage_presets.html" title="Manage presets">Manage presets</a>.</li>
+<li><span class="button">Preview</span> plays a short preview of what the audio would sound like if the effect is applied with the current settings, without making actual changes to the audio.  The length of preview is determined by your setting in <span class="menu">Edit &gt; Preferences &gt; <a href="playback_preferences.html" title="Playback Preferences">Playback</a></span>, the default setting is 6 seconds.</li>
+<li><span class="button">OK</span> applies the effect to the selected audio with the current effect settings.</li>
+<li><span class="button">Cancel</span> aborts the effect and leaves the audio unchanged.</li>
+<li><a href="help_button.html" title="Help Button"><img alt="Help Button" src="../m/images/d/d6/help_button.png" width="27" height="27" /></a> brings you to the appropriate page in the Manual, this page.</li></ul>
+<p><br />
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<p><a href="index_of_effects_generators_and_analyzers.html#generators" title="Index of Effects, Generators and Analyzers"><b>|&lt;</b> Index of Effects, Generators and Analyzers</a>
+</p><p><a href="generate_menu.html" title="Generate Menu"><b>|&lt;</b> Generate Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020343
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.073 seconds
+Real time usage: 0.076 seconds
+Preprocessor visited node count: 222/1000000
+Preprocessor generated node count: 771/1000000
+Post‐expand include size: 9620/2097152 bytes
+Template argument size: 1368/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   25.471      1 - -total
+ 41.71%   10.624      1 - Template:Effectbuttons
+ 30.86%    7.861      1 - Template:Buttonlist
+ 28.07%    7.149      1 - Template:No-rename
+ 21.83%    5.561      8 - Template:Button
+ 20.62%    5.251      1 - Template:Ednote
+ 10.03%    2.554      4 - Template:Key
+  5.39%    1.372      1 - Template:Generators
+  4.83%    1.230      2 - Template:Menu
+  4.56%    1.162      1 - Template:Intro
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:6199-0!*!0!!*!5!* and timestamp 20180215020342 and revision id 55846
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Noise">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

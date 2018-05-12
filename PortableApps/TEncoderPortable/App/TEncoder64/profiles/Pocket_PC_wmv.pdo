@@ -1,0 +1,17 @@
+[Main]
+Ext=wmv
+Container=2
+Encoder=1
+VCodec=6
+VBitrate=1024
+Width=320
+Height=240
+VideoSize=320x240
+FPS=25
+VAR=0
+ACodec=8
+ABitrate=32
+ASR=7
+AChan=1
+CustomVideo=
+CustomAudio=

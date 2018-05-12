@@ -1,0 +1,33 @@
+locale  sharing de chrome/sbSharing/locales/de/
+locale  sharing da chrome/sbSharing/locales/da/
+locale  sharing th chrome/sbSharing/locales/th/
+locale  sharing tr chrome/sbSharing/locales/tr/
+locale  sharing el chrome/sbSharing/locales/el/
+locale  sharing fi chrome/sbSharing/locales/fi/
+locale  sharing pt-PT chrome/sbSharing/locales/pt-PT/
+locale  sharing he chrome/sbSharing/locales/he/
+skin sharing classic/1.0 chrome/sbSharing/skin/
+locale  sharing hu chrome/sbSharing/locales/hu/
+locale  sharing es-ES chrome/sbSharing/locales/es-ES/
+locale  sharing it chrome/sbSharing/locales/it/
+locale  sharing ja chrome/sbSharing/locales/ja/
+overlay chrome://browser/content/preferences/preferences.xul chrome://sharing/content/prefPane.xul
+locale  sharing en-US chrome/sbSharing/locales/en-US/
+content  sharing  chrome/sbSharing/content/
+locale  sharing zh-CN chrome/sbSharing/locales/zh-CN/
+overlay chrome://songbird/content/xul/playQueue.xul chrome://sharing/content/push/pushController.xul
+category profile-after-change sbSharingService @songbirdnest.com/sharing-service;1
+locale  sharing ru chrome/sbSharing/locales/ru/
+locale  sharing cs chrome/sbSharing/locales/cs/
+locale  sharing nn-NO chrome/sbSharing/locales/nn-NO/
+locale  sharing fr chrome/sbSharing/locales/fr/
+locale  sharing zh-TW chrome/sbSharing/locales/zh-TW/
+resource sharing modules/
+locale  sharing ko chrome/sbSharing/locales/ko/
+locale  sharing nl chrome/sbSharing/locales/nl/
+locale  sharing pl chrome/sbSharing/locales/pl/
+locale  sharing pt-BR chrome/sbSharing/locales/pt-BR/
+locale  sharing ar chrome/sbSharing/locales/ar/
+locale  sharing sv-SE chrome/sbSharing/locales/sv-SE/
+overlay chrome://songbird/content/xul/layoutWithBrowserOverlay.xul chrome://sharing/content/overlay.xul
+locale  sharing sk chrome/sbSharing/locales/sk/

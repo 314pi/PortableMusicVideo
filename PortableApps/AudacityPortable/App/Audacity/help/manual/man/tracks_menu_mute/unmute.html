@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Tracks Menu: Mute/Unmute - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Tracks_Menu_Mute_Unmute rootpage-Tracks_Menu_Mute_Unmute skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Tracks Menu: Mute/Unmute</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Tracks_Menu:_Mute/Unmute#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="intro">The <b>Mute/Unmute</b> submenu enables you to mute or unmute all of the tracks in your project in one go, without having to use the buttons <span class="button">Mute</span> and <span class="button">Unmute</span> in each track's <a href="../audio_tracks.html#panel" title="Audio Tracks">Track Control Panel</a>.</div>
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_799339014"><area href="../transport_menu.html" shape="rect" coords="0,3,26,19" alt="Transport Menu" title="Transport Menu"/><area href="../tracks_menu.html" shape="rect" coords="33,3,73,19" alt="Tracks Menu" title="Tracks Menu"/><area href="../generate_menu.html" shape="rect" coords="80,3,134,19" alt="Generate Menu" title="Generate Menu"/><area href="../effect_menu.html" shape="rect" coords="141,3,174,19" alt="Effect Menu" title="Effect Menu"/><area href="../analyze_menu.html" shape="rect" coords="181,3,225,19" alt="Analyze Menu" title="Analyze Menu"/><area href="../help_menu.html" shape="rect" coords="232,3,261,19" alt="Help Menu" title="Help Menu"/><area href="../extra_menu.html" shape="rect" coords="268,3,298,19" alt="Extra Menu" title="Extra Menu"/><area href="../menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="../tracks_menu_add_new.html" shape="rect" coords="39,23,230,45" alt="Adds a new track" title="Adds a new track"/><area href="../tracks_menu_mix.html" shape="rect" coords="39,52,230,74" alt="Mixes down selected tracks to mono or stereo tracks" title="Mixes down selected tracks to mono or stereo tracks"/><area href="../tracks_menu.html#resample" shape="rect" coords="39,74,230,96" alt="Allows you to resample the selected track(s) to a new sample rate for use in the project" title="Allows you to resample the selected track(s) to a new sample rate for use in the project"/><area href="../tracks_menu.html#remove_tracks" shape="rect" coords="39,103,230,125" alt="Removes the selected track(s) from the project" title="Removes the selected track(s) from the project"/><area href="#" shape="rect" coords="39,132,230,154" alt="Mutes or unmutes audio tracks in the project" title="Mutes or unmutes audio tracks in the project"/><area href="../tracks_menu_pan.html" shape="rect" coords="39,154,230,176" alt="Pans left right or center audio tracks in the project" title="Pans left right or center audio tracks in the project"/><area href="../tracks_menu_align_tracks.html" shape="rect" coords="39,183,230,205" alt="Commands that provide an automatic way of aligning selected tracks with the cursor, the selection, or with the start of the project" title="Commands that provide an automatic way of aligning selected tracks with the cursor, the selection, or with the start of the project"/><area href="../tracks_menu_sort_tracks.html" shape="rect" coords="39,205,230,227" alt="Sorts all tracks in the project from top to bottom in the project window, by Start Time or by Name" title="Sorts all tracks in the project from top to bottom in the project window, by Start Time or by Name"/><area href="../sync_locked_track_groups.html" shape="rect" coords="39,234,230,256" alt="Ensures that length changes occurring anywhere in a defined group of tracks also take place in all audio or label tracks in that group" title="Ensures that length changes occurring anywhere in a defined group of tracks also take place in all audio or label tracks in that group"/><area href="#mute_all_tracks" shape="rect" coords="242,135,460,157" alt="Mutes all the audio tracks in the project as if you had used the mute buttons from the Track Control Panel on each track" title="Mutes all the audio tracks in the project as if you had used the mute buttons from the Track Control Panel on each track"/><area href="#unmute_all_tracks" shape="rect" coords="242,157,460,179" alt="Unmutes all the audio tracks in the project as if you had released the mute buttons from the Track Control Panel on each track" title="Unmutes all the audio tracks in the project as if you had released the mute buttons from the Track Control Panel on each track"/></map><img alt="Tracks-MuteUnmuteMenu.png" src="../../m/images/d/df/tracks_muteunmutemenu.png" width="473" height="264" usemap="#ImageMap_1_799339014"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="../click_tip.html" title="Click for details"><img alt="Click for details" src="../../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p><p>If a track is muted, it cannot be heard in the project and is not exported from it. Note that how the mute buttons affect other tracks depends on your <a href="../tracks_preferences.html#Behaviors" title="Tracks Preferences">Solo button preference setting</a>. Sometimes it can be as easy to change the mute setting on all tracks (or all but one) by using the mute or solo buttons.
+</p>
+<div id="mute_all_tracks"></div>
+<h2><span class="mw-headline" id="Mute_All_Tracks_.C2.A0Ctrl_.2B_U">Mute All Tracks &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + U</span></font></span></h2>
+<p>Mutes all the audio tracks in the project, as if you had used the <span class="button">Mute</span> buttons from the <a href="../audio_tracks.html#Track_Control_Panel" title="Audio Tracks">Track Control Panel</a> on each track. 
+</p>
+<div id="unmute_all_tracks"></div>
+<h2><span class="mw-headline" id="Unmute_All_Tracks_.C2.A0Ctrl_.2B_Shift_.2B_U">Unmute All Tracks &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl + Shift + U</span></font></span></h2>
+<p>Unmutes all the audio tracks in the project, as if you had used the <span class="button">Mute</span> buttons from the <a href="../audio_tracks.html#Track_Control_Panel" title="Audio Tracks">Track Control Panel</a> on each track.
+</p><p><br />
+</p><p><br />
+<a href="../tracks_menu.html" title="Tracks Menu"><b>&lt;</b>&#160; Back to: Tracks Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020517
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.072 seconds
+Real time usage: 0.075 seconds
+Preprocessor visited node count: 159/1000000
+Preprocessor generated node count: 6372/1000000
+Post‐expand include size: 2080/2097152 bytes
+Template argument size: 391/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   53.294      1 - -total
+ 82.49%   43.962      1 - Template:Menus
+ 76.35%   40.691      1 - Template:All-menus
+ 10.00%    5.329      1 - Template:Intro
+  7.58%    4.039      4 - Template:Button
+  4.19%    2.231      2 - Template:Shortcut
+  3.02%    1.607      1 - Template:ClickTip
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:5642-0!*!0!!*!5!* and timestamp 20180215020517 and revision id 51379
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="../audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="../new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="../preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="../menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="../toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="../keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="../index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="../tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="../tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="../digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="../glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="../subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="../faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Tracks_Menu:_Mute/Unmute">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

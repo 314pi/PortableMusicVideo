@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "שרת מדיה:">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "מצב השרת:">
+<!ENTITY sharing.iconpopup.status.on "מופעל">
+<!ENTITY sharing.iconpopup.status.off "כבוי">
+<!ENTITY sharing.iconpopup.settings.link "הגדרות">
+<!ENTITY sharing.prefpane.label "שרת מדיה">
+<!ENTITY sharing.prefpane.network.name.header.label "שם הרשת של שרת המדיה">
+<!ENTITY sharing.prefpane.network.name.content.label "השם כפי שמופיע ברשת (שינויים מחייבים אתחול):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "תיקיית תמונות">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "הזרם תמונות מ-:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "בחר תיקייה">

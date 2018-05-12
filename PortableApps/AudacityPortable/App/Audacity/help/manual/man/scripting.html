@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Scripting - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Scripting rootpage-Scripting skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Scripting</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Scripting#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<p><br />
+</p>
+<div class="intro">The scripting module is an experimental <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/GUI_Plugins">GUI plug-in</a> that allows Audacity to be driven from an external <a rel="nofollow" class="external text" href="https://www.perl.org/">Perl</a> or <a rel="nofollow" class="external text" href="https://www.python.org/">Python</a> script.  Commands are sent to Audacity over a named pipe.  Any scripting language that supports named pipes can be used.
+External scripting is one of <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/index.php?title=Creating_your_own_Plugin">several ways</a> to extend the functionality of Audacity.</div>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">Scripting support is currently considered <b>experimental</b> and is mainly intended for use by developers for the time being.
+<ul><li> Feel free to try it out, but don't be too surprised if there are problems, or if the details of commands change between versions of Audacity.  </li>
+<li> Currently Windows or Linux are recommended.  Mac requires more work to get anything useful at all.</li></ul>
+<p>There is a fuller list of limitations at the foot of this page.
+</p>
+</td></tr></table>
+</div>
+<div id="scripting"></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#How_to_get_started_with_scripting"><span class="tocnumber">1</span> <span class="toctext">How to get started with scripting</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Building"><span class="tocnumber">1.1</span> <span class="toctext">Building</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Getting_Started"><span class="tocnumber">1.2</span> <span class="toctext">Getting Started</span></a></li>
+<li class="toclevel-2"><a href="#Giving_mod-script-pipe_a_Workout"><span class="tocnumber">1.3</span> <span class="toctext">Giving mod-script-pipe a Workout</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Commands"><span class="tocnumber">2</span> <span class="toctext">Commands</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Help"><span class="tocnumber">2.1</span> <span class="toctext">Help</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Message"><span class="tocnumber">2.2</span> <span class="toctext">Message</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Select"><span class="tocnumber">2.3</span> <span class="toctext">Select</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#BatchCommand"><span class="tocnumber">2.4</span> <span class="toctext">BatchCommand</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#MenuCommand"><span class="tocnumber">2.5</span> <span class="toctext">MenuCommand</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#CompareAudio"><span class="tocnumber">2.6</span> <span class="toctext">CompareAudio</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Screenshot"><span class="tocnumber">2.7</span> <span class="toctext">Screenshot</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#GetMenus"><span class="tocnumber">2.8</span> <span class="toctext">GetMenus</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#GetPreference"><span class="tocnumber">2.9</span> <span class="toctext">GetPreference</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#SetPreference"><span class="tocnumber">2.10</span> <span class="toctext">SetPreference</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#GetTrackInfo"><span class="tocnumber">2.11</span> <span class="toctext">GetTrackInfo</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#SetTrackInfo"><span class="tocnumber">2.12</span> <span class="toctext">SetTrackInfo</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#GetProjectInfo"><span class="tocnumber">2.13</span> <span class="toctext">GetProjectInfo</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#SetProjectInfo"><span class="tocnumber">2.14</span> <span class="toctext">SetProjectInfo</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Import"><span class="tocnumber">2.15</span> <span class="toctext">Import</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Export"><span class="tocnumber">2.16</span> <span class="toctext">Export</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#OpenProject"><span class="tocnumber">2.17</span> <span class="toctext">OpenProject</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#SaveProject"><span class="tocnumber">2.18</span> <span class="toctext">SaveProject</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="#Adding_Commands_to_Audacity_.28for_developers.29"><span class="tocnumber">3</span> <span class="toctext">Adding Commands to Audacity <i>(for developers)</i></span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="#Known_Issues_.26_Missing_Features"><span class="tocnumber">4</span> <span class="toctext">Known Issues &amp; Missing Features</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="How_to_get_started_with_scripting">How to get started with scripting</span></h2>
+<p>Audacity can currently only be used with scripting if you compile a separate plug-in module from our <a rel="nofollow" class="external text" href="https://github.com/audacity/audacity">Git sources</a> called "mod-script-pipe", as well as compile Audacity itself. These need to be compiled on the same day, which helps ensure the versions match.  See the Wiki <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Developer_Guide">Developer Guide</a> for help. You'll also need the scripting language Python (version 3.6 or later recommended) to try out the examples. For actually writing scripts, any language that can write to and read from a named pipe should be able to use the interface.  We for example have an earlier script in Perl available.
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/audacity/audacity/tree/master/lib-src/mod-script-pipe">mod-script-pipe</a> - The module you will need to compile.</li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/audacity/audacity/tree/master/scripts/piped-work">'pipe work'</a> - Sample scripts for exercising the pipe.</li></ul>
+<p>We may provide a ready-compiled mod-script-pipe at some future time. If you just want to use scripting but don't want to do the developer steps then you will need to wait for that to be released. Feel free to <a rel="nofollow" class="external text" href="https://web.audacityteam.org/contact/#feedback">let us know</a> if you would like ready-to-go scripting in Audacity, and what you would use it for. 
+</p><p><br />
+</p>
+<div id="build"></div>
+<h3><span class="mw-headline" id="Building">Building</span></h3>
+<p>Ensure you have the latest <a rel="nofollow" class="external text" href="https://github.com/audacity/audacity">Git version of Audacity</a> built, installed and working. The scripting module, "mod-script-pipe" is in Git (under lib-src), but is not built automatically.
+</p><p>In MSVC, open "mod-script-pipe.vcproj" and build. If all goes to plan, the DLL will be placed in the "modules" directory.
+</p><p>Under GCC, move into the lib-src/mod-script-pipe directory and type "make". This will build the module then copy "mod-script-pipe.so" to the "modules" directory in the source code tree. To have Audacity see mod-script-pipe.so, copy it to /usr/local/share/audacity/modules or ~/.audacity-files/modules/.
+</p>
+
+<p>While mod-script-pipe allows a script to communicate with Audacity, it is not concerned with the actual interpretation and processing of received commands. That is done by Audacity itself, so for full scripting capabilities it is important to have a recent build of the main program as well as the scripting module.
+</p>
+<div id="test"></div>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Getting_Started">Getting Started</span></h3>
+<ul><li> Run Audacity</li>
+<li> Go into edit-&gt;preferences-&gt;modules
+<ul><li> Choose mod-script-pipe (which should show 'New') and change that to 'Enabled'.  </li></ul></li>
+<li> Restart Audacity </li>
+<li> Check that it now does show 'Enabled'.</li></ul>
+<p>This establishes that Audacity is finding mod-script pipe, and that the version is compatible (compiled on the same day).
+</p><p>This python script is then the best way of checking that the pipe is working:
+</p>
+<ul><li> <a rel="nofollow" class="external free" href="https://github.com/audacity/audacity/blob/master/scripts/piped-work/pipe-test.py">https://github.com/audacity/audacity/blob/master/scripts/piped-work/pipe-test.py</a></li></ul>
+<p>After running it, you can use do("") at the python command line to try out commands.  Each command name ends with a colon, and may be followed by parameters.  For example:
+</p>
+<pre>do("Help:")
+
+</pre>
+<p><br />
+</p>
+
+<p><br />
+</p>
+<div id="commands"></div>
+<h2><span class="mw-headline" id="Commands">Commands</span></h2>
+<p>Some documentation for the parts of Audacity that can currently be controlled via script command follows. Be aware that this is likely to change significantly until scripting has matured. Note also that commands and parameters are <b>case-sensitive</b>.
+</p><p>The command invocations should take the following form:
+</p>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>Command: Param1=Value1 Param2=Value2</tt>
+</td>
+<td width="50%" valign="top"><tt></tt>
+</td></tr></table>
+<p>This is followed by a line break. Then the command is executed, and any responses are written on the return pipe, on separate lines. The end of the responses is signalled by an empty line. Further commands should not be sent until all responses have been read.
+</p>
+<ul><li> See also <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Scripting_Syntax">additional commands</a> on the Audacity Wiki.</li></ul>
+<p><br />
+</p>
+<hr />
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Bulbicon.png" class="image" title="Bulb icon"><img alt="Bulb icon" src="../m/images/d/d7/bulbicon.png" width="32" height="32" /></a>
+</td>
+<td align="left" valign="top">A couple of commands are often used in testing, just to establish that something in scripting is working:
+<ul><li> Help command gives help on individual commands.</li>
+<li> Message command echos a message back to your script.</li></ul>
+</td></tr></table>
+</div>
+<hr />
+<div id="help"></div>
+<h3><span class="mw-headline" id="Help">Help</span></h3>
+<p>Returns information about the parameters accepted by a given command.
+</p><p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>CommandName:</b>
+</td>
+<td width="80%" valign="top">The command on which to get help
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>Help: CommandName=Select</tt>
+</td>
+<td width="50%" valign="top"><tt>Select<br />Parameters:<br />EndTime: a floating-point number (default: 0)<br />FirstTrack: an integer (default: 0)<br /> LastTrack: an integer (default: 0)<br />Mode: one of: None, All, Range, Name (default: All)<br />StartTime: a floating-point number (default: 0)<br />TrackName: any value (default: 0)<br />Help finished: OK</tt>
+</td></tr></table>
+<hr />
+<div id="message"></div>
+<h3><span class="mw-headline" id="Message">Message</span></h3>
+<p>Sends a message to the command's status target. Since command status messages are currently sent to the script (if the command was triggered by a script), this means the message is sent back to the script.
+</p><p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>MessageString:</b>
+</td>
+<td width="80%" valign="top">The message to send
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>Message: MessageString=hello</tt>
+</td>
+<td width="50%" valign="top"><tt>hello<br />Message finished: OK</tt>
+</td></tr></table>
+<p><br />
+</p>
+<hr />
+<div id="select"></div>
+<h3><span class="mw-headline" id="Select">Select</span></h3>
+<p>Provides some control over the project selection. Tracks between FirstTrack and LastTrack inclusive are selected, and the time interval selected is from StartTime to EndTime. Alternatively, if TrackName is specified, then the track with that name is selected.
+</p><p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>FirstTrack:</b>
+</td>
+<td width="80%" valign="top">An integer (default: 0)
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>LastTrack:</b>
+</td>
+<td width="80%" valign="top">An integer (default: 0)
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>TrackName:</b>
+</td>
+<td width="80%" valign="top">Name of a track (not required if using FirstTrack and LastTrack)
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>StartTime:</b>
+</td>
+<td width="80%" valign="top">A floating-point number (default: 0)
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>EndTime:</b>
+</td>
+<td width="80%" valign="top">A floating-point number (default: 0)
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Mode:</b>
+</td>
+<td width="80%" valign="top">One of: None, All, Range, Name (default: All)
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>Select: Mode=Range FirstTrack=0 LastTrack=1 StartTime=3.2 EndTime=8.4</tt>
+</td>
+<td width="50%" valign="top"><tt>Selected track 'Audio Track 1'<br />Selected track 'Audio Track 2'<br /> Select finished: OK</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>Select: Mode=Range FirstTrack=0 LastTrack=0 StartTime=0.1 EndTime=9.9</tt>
+</td>
+<td width="50%" valign="top"><tt>Selected track 'Audio Track 1'<br />Select finished: OK</tt>
+</td></tr></table>
+<p><br />
+</p>
+<hr />
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Bulbicon.png" class="image" title="Bulb icon"><img alt="Bulb icon" src="../m/images/d/d7/bulbicon.png" width="32" height="32" /></a>
+</td>
+<td align="left" valign="top">A couple of the commands open the way to a lot more commands that are not listed here.  You can use the select command to select audio, and then use:
+<ul><li> MenuCommand - allows any single menu command to be actioned by the external script.  You'll want to use the ones which don't bring up dialogs.</li>
+<li> BatchCommand - allows any command used in <a href="chains_for_batch_processing_and_effects_automation.html" title="Chains - for batch processing and effects automation">Chains</a> to also be used in scripting.  So for example any effect can be used.  Although effects create dialogs, used from batch they don't, as you can pass in the parameters you want.</li></ul>
+</td></tr></table>
+</div>
+<hr />
+<div id="batch"></div>
+<h3><span class="mw-headline" id="BatchCommand">BatchCommand</span></h3>
+<p>This can be invoked differently from the other commands because, at the moment, all unrecognized commands are treated as batch commands. To see what these commands do and how they should be formed, please examine the Edit Chains dialog. As an example, the batch system can be used to apply an effect to some selected audio, selected by the select command.
+</p><p>It is also possible to explicitly call a batch command. This is illustrated with the Noise command in the examples, where in the second version it is explicitly called with 'BatchCommand:'.
+If BatchCommand: and a ChainName is provided, the command applies the saved batch chain of that name rather than a single command.
+</p><p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>ChainName:</b>
+</td>
+<td width="80%" valign="top">If provided, applies the batch chain of that name
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>CommandName:</b>
+</td>
+<td width="80%" valign="top">Name of the batch command to execute
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>ParamString:</b>
+</td>
+<td width="80%" valign="top">Parameters for the batch command
+</td></tr></table>
+<p><br />
+<b>Examples:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>ChangeTempo: Percentage=10.0</tt>
+</td>
+<td width="50%" valign="top"><tt>BatchCommand finished: OK</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>Noise</tt>
+</td>
+<td width="50%" valign="top"><tt>Noise finished: OK</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>BatchCommand: CommandName=Noise</tt>
+</td>
+<td width="50%" valign="top"><tt>BatchCommand finished: OK</tt>
+</td></tr></table>
+<hr />
+<div id="menu"></div>
+<h3><span class="mw-headline" id="MenuCommand">MenuCommand</span></h3>
+<p>Executes a 'menu command', using the system that controls the Audacity menus. This is simple but powerful, and many of the tasks that can be performed by clicking menu items or pressing shortcuts can also be triggered by a script using this command.  
+</p>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Bulbicon.png" class="image" title="Bulb icon"><img alt="Bulb icon" src="../m/images/d/d7/bulbicon.png" width="32" height="32" /></a>
+</td>
+<td align="left" valign="top">The names of commands accessed via MenuCommand are coded names that differ slightly from the text actually in the menus.  For example:
+<ul><li> RemoveTracks rather than 'Remove Tracks'</li>
+<li> Record1stChoice rather than 'Record'.</li></ul>
+<p>Use <b>the GetMenus: command</b> to see a full list of available commands. 
+</p>
+</td></tr></table>
+</div>
+<p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>CommandName:</b>
+</td>
+<td width="80%" valign="top">Name of the menu command to execute
+</td></tr></table>
+<p><br />
+<b>Examples:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>MenuCommand: CommandName=SplitDelete</tt>
+</td>
+<td width="50%" valign="top"><tt>MenuCommand finished: OK</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>MenuCommand: CommandName=Play</tt>
+</td>
+<td width="50%" valign="top"><tt>MenuCommand finished: OK</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>MenuCommand: CommandName=TrackMute</tt>
+</td>
+<td width="50%" valign="top"><tt>MenuCommand finished: OK</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>MenuCommand: CommandName=RemoveTracks</tt>
+</td>
+<td width="50%" valign="top"><tt>MenuCommand finished: OK</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>MenuCommand: CommandName=Record1stChoice</tt>
+</td>
+<td width="50%" valign="top"><tt>MenuCommand finished: OK</tt>
+</td></tr></table>
+<p><br />
+</p>
+<hr />
+<div id="compare"></div>
+<h3><span class="mw-headline" id="CompareAudio">CompareAudio</span></h3>
+<p>With two tracks selected, running this command compares the tracks sample by sample, and counts the number of samples whose absolute difference exceeds the given threshold. The total count is returned, as well as the number of seconds of audio that these samples represent.
+</p><p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Threshold:</b>
+</td>
+<td width="80%" valign="top">Floating point number 0.0 to 1.0
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>CompareAudio: Threshold=0.1</tt>
+</td>
+<td width="50%" valign="top"><tt>Comparing tracks 'Audio Track 1' and 'Audio Track 2'.<br />Finished comparison: 764480 samples (17.335 seconds) exceeded the error threshold of 0.200000.<br />CompareAudio finished: OK</tt>
+</td></tr></table>
+<hr />
+<div id="screenshot"></div>
+<h3><span class="mw-headline" id="Screenshot">Screenshot</span></h3>
+<p>The <i>screenshot</i> command is modelled closely on the Screenshot Tools dialog and takes three parameters.
+</p><p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>FilePath:</b>
+</td>
+<td width="80%" valign="top">A string representing the directory path in which the captured images should be saved.
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>CaptureMode:</b>
+</td>
+<td width="80%" valign="top">A string specifying which area of the screen should be captured.
+<p>Possible values:
+<i>window, fullwindow, windowplus, fullscreen, toolbars, selectionbar, tools, control, mixer, meter, edit, device, transcription, trackpanel, ruler, tracks, firsttrack, secondtrack.</i>
+</p>
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Background:</b>
+</td>
+<td width="80%" valign="top">Type of background to use in the shots where one is possible.
+<p>Possible values:
+<i>White, Blue, None.</i>
+</p>
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>Screenshot: FilePath=/home/dan/Temp CaptureMode=fullwindow Background=None</tt>
+</td>
+<td width="50%" valign="top"><tt>Saved /home/dan/Temp/fullwindow001.png<br />Screenshot finished: OK</tt>
+</td></tr></table>
+<p><br />
+</p>
+<hr />
+<div id="get_all_menu_commands"></div>
+<h3><span class="mw-headline" id="GetMenus">GetMenus</span></h3>
+<p>Returns a list of all available menu commands. These are the commands that can be sent using MenuCommand.
+</p><p><b>Parameters:</b>
+</p><p>none.
+</p><p><br />
+<b>Examples:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>GetMenus</tt>
+</td>
+<td width="50%" valign="top"><tt>New<br />
+<p>Open<br />
+Close<br />
+Save<br />
+SaveAs<br />
+ExportMp3<br />
+ExportWav<br />
+ExportOgg<br />
+Export<br />
+...<br />
+GetMenus finished: OK</tt>
+</p>
+</td></tr></table>
+<p><br />
+There are also two related commands:
+</p>
+<ul><li> <b>GetMenusPlus</b>
+<ul><li> Sends the <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/WIT_Audacity_Menus">list of menus in JSON format</a>.</li></ul></li>
+<li> <b>GetBoxes</b>
+<ul><li> Sends a list of on-screen rectangular regions, in JSON format</li></ul></li></ul>
+<p><br />
+</p>
+<hr />
+<div id="getpref"></div>
+<h3><span class="mw-headline" id="GetPreference">GetPreference</span></h3>
+<p>Prints the value of the requested preference as a response.
+</p><p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>PrefName:</b>
+</td>
+<td width="80%" valign="top">String containing the name of the preference (as in audacity.cfg)
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>GetPreference: PrefName=/CsPresets/NoiseGen_Duration</tt>
+</td>
+<td width="50%" valign="top"><tt>30<br />GetPreference finished: OK</tt>
+</td></tr></table>
+<hr />
+<div id="setpref"></div>
+<h3><span class="mw-headline" id="SetPreference">SetPreference</span></h3>
+<p>Sets the preference with the given name to the given value.
+</p>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">The preference is changed in the audacity.cfg file.  You may need to use the ReloadPreferences command (which does not exist yet) to see the effect.
+</td></tr></table>
+</div>
+<p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>PrefName:</b>
+</td>
+<td width="80%" valign="top">String containing the name of the preference (as in audacity.cfg)
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>PrefValue:</b>
+</td>
+<td width="80%" valign="top">Value of the preference
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>SetPreference: PrefName=/CsPresets/NoiseGen_Duration PrefValue=12.0</tt>
+</td>
+<td width="50%" valign="top"><tt>SetPreference finished: OK</tt>
+</td></tr></table>
+<hr />
+<div id="get_track_info"></div>
+<h3><span class="mw-headline" id="GetTrackInfo">GetTrackInfo</span></h3>
+<p>Allows information about a project's tracks to be returned to the script.
+</p><p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>TrackIndex:</b>
+</td>
+<td width="80%" valign="top">An integer (default: 0) identifying the track
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Type:</b>
+</td>
+<td width="80%" valign="top">Info to get. One of:
+<ul><li> Name</li>
+<li> StartTime</li>
+<li> EndTime </li>
+<li> Pan</li>
+<li> Gain</li>
+<li> Mute</li>
+<li> Solo</li>
+<li> Selected</li>
+<li> Focused</li>
+<li> Linked</li></ul>
+<p>(default: Name)
+</p>
+</td></tr></table>
+<p><br />
+<b>Examples:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>GetTrackInfo: Type=Name TrackIndex=0</tt>
+</td>
+<td width="50%" valign="top"><tt>Audio Track<br />GetTrackInfo finished: OK</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>GetTrackInfo: Type=EndTime TrackIndex=0</tt>
+</td>
+<td width="50%" valign="top"><tt>24.000000<br />GetTrackInfo finished: OK</tt>
+</td></tr></table>
+<p><br />
+</p>
+<hr />
+<div id="set_track_info"></div>
+<h3><span class="mw-headline" id="SetTrackInfo">SetTrackInfo</span></h3>
+<p>For setting track information - currently track name only. (Note mute/solo can be set with menu commands)
+</p>
+<ul><li> If you want to set a name with spaces in it, put the name in single quotes.</li></ul>
+<p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>TrackIndex:</b>
+</td>
+<td width="80%" valign="top">Specifies which track to modify
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Name:</b>
+</td>
+<td width="80%" valign="top">String to which the track name is to be set
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Mute:</b>
+</td>
+<td width="80%" valign="top">True or False
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Solo:</b>
+</td>
+<td width="80%" valign="top">True or False
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Pan:</b>
+</td>
+<td width="80%" valign="top">-1.0 is left 1.0 is right
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Gain:</b>
+</td>
+<td width="80%" valign="top">0 to 100.0 on a log scale.
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Selected:</b>
+</td>
+<td width="80%" valign="top">True or False
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Focused:</b>
+</td>
+<td width="80%" valign="top">True or False
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>SetTrackInfo: TrackIndex=0 Name=Eric Mute=True</tt>
+</td>
+<td width="50%" valign="top"><tt>SetTrackInfo finished: OK</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>SetTrackInfo: TrackIndex=0 Name='Baron Munchausen' Mute=True</tt>
+</td>
+<td width="50%" valign="top"><tt>SetTrackInfo finished: OK</tt>
+</td></tr></table>
+<hr />
+<div id="get_project_info"></div>
+<h3><span class="mw-headline" id="GetProjectInfo">GetProjectInfo</span></h3>
+<p>Returns the chosen information about the tracks in the current project.
+</p><p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>SelectedTracks:</b>
+</td>
+<td width="80%" valign="top">An integer (default: 0) identifying the track
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Type:</b>
+</td>
+<td width="80%" valign="top">Info to get. One of:
+<ul><li>Name</li>
+<li>NumberOfTracks</li>
+<li>SelectedTracks</li>
+<li>SoloTracks</li>
+<li>MuteTracks</li>
+<li>FocusedTrackID</li></ul>
+<p>(default: Name)
+</p>
+</td></tr></table>
+<p>Name is the filename.  
+</p><p><br />
+<b>Examples:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>GetProjectInfo: Type=SoloTracks</tt>
+</td>
+<td width="50%" valign="top"><tt>001010000</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>GetProjectInfo: Type=FocusedTrackID</tt>
+</td>
+<td width="50%" valign="top"><tt>5</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>GetProjectInfo: Type=NumberOfTracks</tt>
+</td>
+<td width="50%" valign="top"><tt>9</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>GetProjectInfo: Type=MuteTracks</tt>
+</td>
+<td width="50%" valign="top"><tt>00010</tt>
+</td></tr></table>
+<p>The SelectedTrack, MuteTracks and SoloTracks types all return a series of 0's and 1's indicating which tracks have that property.
+</p><p><br />
+</p>
+<hr />
+<div id="set_project_info"></div>
+<h3><span class="mw-headline" id="SetProjectInfo">SetProjectInfo</span></h3>
+<p>Allows state of one parameter type on all of a project's tracks to be set.
+</p><p>The TrackSet parameter represents the setting for tracks numbering left to right, starting with track 1, as in 12345...
+</p><p>The characters in the string represent enabling (1) disabling (0), or leaving alone (x) the parameter indicated by Type=ParamTracks for each channel.
+</p>
+<ul><li> '1' means that parameter is asserted in that track, for example, for MuteTracks, a 1 will mute that track.</li>
+<li> '0' de-asserts it, for example for MuteTracks a 0 unmutes that track.</li>
+<li> 'x' will leave the indicated track in its current state.</li></ul>
+<p><br />
+</p><p>The string length is not required to match the number of channels in a project.  If the string of 1s and 0s is shorter than the number of channels, then channels beyond the “reach” of the TrackSet string are untouched.   
+</p><p>If the TrackSet string is longer than the number of channels in the project, then those characters in the string beyond the last track in the project are ignored.
+</p><p><br />
+<b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Type:</b>
+</td>
+<td width="80%" valign="top">Info to set. One of:
+<ul><li>SelectedTracks</li>
+<li>SoloTracks</li>
+<li>MuteTracks</li></ul>
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>SelectedTracks:</b>
+</td>
+<td width="80%" valign="top">A string of characters: {1,0,x} indicating Assert, Deassert or leave alone, respectively
+</td></tr></table>
+<p><br />
+</p><p><b>Examples:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>SetProjectInfo: Type=SoloTracks TrackSet=10010xxx1</tt>
+</td>
+<td width="50%" valign="top"><tt>SetProjectInfo finished: OK</tt>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>SetProjectInfo: Type=MuteTracks TrackSet=101000xxx</tt>
+</td>
+<td width="50%" valign="top"><tt>SetProjectInfo finished: OK</tt>
+</td></tr></table>
+<hr />
+<div id="import"></div>
+<h3><span class="mw-headline" id="Import">Import</span></h3>
+<p>Load audio data from a file into a track. The file type is detected from the extension, and any format understood by Audacity can be used.
+</p>
+<ul><li> If the filename has spaces in it, put the name inside single quotes.</li></ul>
+<p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Filename:</b>
+</td>
+<td width="80%" valign="top">Name of the file to import
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>Import: Filename=/home/dan/ArtTatum-Indiana.flac</tt>
+</td>
+<td width="50%" valign="top"><tt>Import finished: OK</tt>
+</td></tr></table>
+<hr />
+<div id="export"></div>
+<h3><span class="mw-headline" id="Export">Export</span></h3>
+<p>Save audio from the project into a file. The file type to export to is detected from the extension, and any format understood by Audacity can be used.
+</p><p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Mode:</b>
+</td>
+<td width="80%" valign="top">Either 'All' or 'Selection' - sets which audio is to be exported
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Filename:</b>
+</td>
+<td width="80%" valign="top">File to export to
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Channels:</b>
+</td>
+<td width="80%" valign="top">Number of channels to export
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>Export: Mode=All Filename=/home/dan/ArtTatum-Indiana.mp3 Channels=2</tt>
+</td>
+<td width="50%" valign="top"><tt>Exported to MP3 format: /home/dan/ArtTatum-Indiana.mp3<br />Export finished: OK</tt>
+</td></tr></table>
+<p><br />
+</p>
+<hr />
+<div id="OpenProject"></div>
+<h3><span class="mw-headline" id="OpenProject">OpenProject</span></h3>
+<p>Opens an audacity project file, optionally from a supplied file name. If the Filename parameter is omitted or empty the user is prompted to choose a project to open. Note that if the current project is not empty and unsaved, a new project window is opened, which may break your script.
+</p><p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Filename:</b>
+</td>
+<td width="80%" valign="top">File name of the project to open. Default is to prompt the user to choose a file. Must include .aup file extension.<br />default=ask user
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>AddToHistory:</b>
+</td>
+<td width="80%" valign="top">Include opened file in File -&gt; Recent Files? Has no effect on User prompted files; they always appear in Recent Files.<br />default=yes
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>OpenProject: Filename=myproject.aup</tt>
+</td>
+<td width="50%" valign="top"><tt>OpenProject finished: OK</tt>
+</td></tr></table>
+<hr />
+<div id="SaveProject"></div>
+<h3><span class="mw-headline" id="SaveProject">SaveProject</span></h3>
+<p>Saves an Audacity project file, optionally to a supplied file name. If the Filename parameter is omitted or empty the user is prompted to choose a saved file. Note: trying to overwrite another existing project will result in an error message to the user.
+</p><p><b>Parameters:</b>
+</p>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Filename:</b>
+</td>
+<td width="80%" valign="top">File name of the project to save to. Default is to prompt the User to choose a file. Must include .aup file extension.<br />default=ask user
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>Compress:</b>
+</td>
+<td width="80%" valign="top">Save audio in compressed (OGG) format?<br />default=no
+</td></tr></table>
+<table width="90%" style="background:#ffe0e0; border:1px solid #aaaacc;">
+<tr>
+<td width="20%" valign="top"><b>AddToHistory:</b>
+</td>
+<td width="80%" valign="top">Include opened file in File -&gt; Recent Files? Has no effect on User prompted files; they always appear in Recent Files.<br />default=yes
+</td></tr></table>
+<p><br />
+<b>Example:</b>
+</p>
+<table width="100%" style="background:#e0e0bb; border:1px solid #cccccc;">
+<tr>
+<td width="50%"><b>Send</b>
+</td>
+<td width="50%"><b>Receive</b>
+</td></tr></table>
+<table width="100%" style="background:#f0f0cc; border:1px solid #cccccc;">
+<tr>
+<td width="50%" valign="top"><tt>SaveProject: Filename=myproject.aup</tt>
+</td>
+<td width="50%" valign="top"><tt>SaveProject finished: OK</tt>
+</td></tr></table>
+<p><br />
+</p><p><br />
+</p><p><br />
+</p>
+<hr />
+<div id="adding"></div>
+<h2><span class="mw-headline" id="Adding_Commands_to_Audacity_.28for_developers.29">Adding Commands to Audacity <i>(for developers)</i></span></h2>
+<p>For a command to be callable from a script, a CommandType object for it must be added to the CommandDirectory, which is a singleton class. A CommandType has the job of creating specific Command objects, which actually do the work.
+</p><p>To implement a new command called Foo, it is simplest to create new classes FooCommandType and FooCommand which derive from CommandType and CommandImplementation respectively, and then override the virtual methods as appropriate. Then add an instance of FooCommandType to the CommandDirectory.
+</p><p>In the future, the repetitive nature of some of this code may be reduced, for example by using macros (as in wxwidgets). For more information on the workings of the command system, see the source code - in particular the files in the src/commands directory.
+</p>
+<hr />
+<div id="issues"></div>
+<h2><span class="mw-headline" id="Known_Issues_.26_Missing_Features">Known Issues &amp; Missing Features</span></h2>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">Some current issues:
+<ul><li> Scripting only works with one project at a time. </li>
+<li> For some menu commands, the project window must have focus for the command to succeed.</li>
+<li> Scripts have no control over the type and verbosity of responses they receive. (Related: it's not straightforward to get 'output' responses from commands like GetTrackInfo.)</li>
+<li> Current commands could have stricter parameter validation.</li>
+<li> There's no consistent way to abort or interrupt commands.</li>
+<li> There are still many parts of Audacity that cannot currently be controlled from a script because commands for them have not yet been created.</li>
+<li> Due to a slight problem with module management, the scripting module is not unloaded when Audacity quits. This means the script pipes are not properly deleted.</li>
+<li> There may or may not be security problems relating to the use of pipes. You're advised not to use mod-script-pipe on a system with multiple simultaneous users.</li>
+<li> The interface on the script side of the pipe is still quite low-level. It may be possible to generate libraries for specific scripting languages from the internal descriptions of the commands.</li></ul>
+</td></tr></table>
+</div>
+
+<!-- 
+NewPP limit report
+Cached time: 20180215020234
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.244 seconds
+Real time usage: 0.254 seconds
+Preprocessor visited node count: 1137/1000000
+Preprocessor generated node count: 3751/1000000
+Post‐expand include size: 26560/2097152 bytes
+Template argument size: 9902/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   86.623      1 - -total
+ 32.01%   27.730      1 - Template:I18n
+ 29.65%   25.681      1 - Template:I18n_box
+ 25.64%   22.214      1 - Template:I18n_list
+ 18.06%   15.642     42 - Template:Param
+ 14.56%   12.616     32 - Template:Send_Receive
+ 10.23%    8.861      3 - Template:I18n_link
+  5.74%    4.973      3 - Template:Autoglossonym
+  4.00%    3.464     18 - Template:Send_Receive_Title
+  2.44%    2.111      3 - Template:Advice
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:2703-0!*!0!!en!5!* and timestamp 20180215020234 and revision id 58995
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Scripting">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

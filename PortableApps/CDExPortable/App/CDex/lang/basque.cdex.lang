@@ -1,0 +1,992 @@
+//
+// CDex - Open Source Digital Audio CD Extractor
+//
+// Copyright (C) 2006 - 2014 Georgy Berdyshev
+// Copyright (C) 2008 - 2014 Ariane Paola Gomes
+// Copyright (C) 2002 Sean M Burke
+// Copyright (C) 2002 Albert L. Faber
+//
+// http://cdex.mu/
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+
+
+//////////////////////////////////////////////////////////////////////////////
+// CDex - International Support File                                        //
+//////////////////////////////////////////////////////////////////////////////
+//
+//
+// Welcome to CDex language definition file
+// 
+// This file will be read by CDex if it is put inside \Lang folder
+// of CDex root directory. It also must have the cdex..lang extension
+// yielding something like my_language.cdex.lang
+//
+// 
+// To define a string follow this format:
+//
+// number "my_string"
+//
+// number is the identification of the following string. Each number is related
+// with a string that will appear inside CDex. Padding spaces are not important.
+//  Inside menu definitions use & to give access to the keyboard menu shortcut.
+// You can use returns inside string. They will be preserved in the program.
+//
+// CDex loads the strings on startup. It won't perceive any changes in this file
+//  if you don't reload the program.
+//
+// PLEASE, CHECK THAT STRINGS WON'T BE CLIPPED IN THE PROGRAM. The reserved space 
+// for every string is limited and must be suitable for all languages. If some 
+// of your strings are clipped try shortening the phrase while keeping its 
+// significance
+//  
+//////////////////////////////////////////////////////////////////////////////
+
+// language file revision level
+REVISION=/*$Id$*/
+
+// set language characteristics
+LANGUAGE=9
+SUBLANG=1
+
+// use CODEPAGE 65001 if this file is UTF-8 encoded text file
+// otherwhise fill out the proper ANSI codepage
+CODEPAGE=65001
+
+// 99 (063 hex) => LANGUAGE ID, use english description
+// since this value is used to set the LOCALE settings
+#0063# "Basque"
+
+#0001# "Ongi"
+#0002# "Ezeztatu"
+#0003# "Utzi"
+#0004# "Bersaiatu"
+#0005# "Ezikusi"
+#0006# "Bai"
+#0007# "Ez"
+
+// Ripper Main menu entries
+#M0BD4# "#&Agiria#&Editatu#&Bihurtu#&Tresnak#&CDDB#A&ukerak#&Laguntza#"
+
+// Ripper File Menu
+#M800D# "&Sistema Argibideak"
+#M802D# "&Alderatu Bi Agiri"
+#ME141# "I&rten"
+
+// Ripper Edit menu
+#M8026# "&Hautatu Denak\tKtrl+A"
+#M8023# "&Kopiatu bilduma argibideak Gakora"
+#M8024# "&Berrizendatu Bidea\tF2"
+#M0BD40000# "&Aldatu Bidearen Izena"
+#M8042# "&Hitz Guztien Lehen Hizkia Larri"
+#M8043# "Lehen hizkia &larri"
+#M8044# "hizki denak &xehe"
+#M8045# "HIZKI DENAK &LARRI"
+#M804D# "E&lkarraldatu Artista<->Bidea"
+#M802A# "B&erritu Bide Zerrenda\tF5"
+#M8047# "&Gehitu / Editatu Mota zerrenda"
+
+// Ripper Convert menu
+#M8004# "Atera CD bideak(k) WAV agirira\tF8"
+#M8005# "Atera CD bideak(k) Audio Agiri Konprimitura\tF9"
+#M8007# "Atera CD-aren zati bat\tF10"
+#M803E# "Berkodeatu Audio Agiri Konprimitua(k)"
+#M8006# "Bihurtu WAV agiria(k) Konprimituriko Audio agiri(eta)ra\tF11"
+#M8029# "Bihurtu Audio Agiri Konprimitua WAV agiri(eta)ra\tF12"
+#M8022# "Gehitu RIFF-WAV idazburua(k) MP2 edo MP3 agiri(eta)ra"
+#M8030# "Bereiztu RIFF-WAV idazburua(k) MP2 edo MP3 agiri(eta)tik"
+
+// Ripper Tools menu
+#M802E# "&Multimedia agiri Irakurgailua"
+#M8031# "&Grabatu Sarrera Analogikotik"
+#M8066# "&Sortu CUE orria"
+#M8067# "&Atzeman aurre-tarteak"
+#M8068# "&Irakurri UPC/ISRC kodea"
+#M8065# "Irakurri &MusicBrainz-tik"
+// Ripper CDDB Menu
+#M8018# "Irakurri &Tokiko CDDB-tik"
+#M801B# "Irakurri &Hurruneko CDDB-tik"
+#M801A# "Irakurri &CD Irakurgailua .ini-tik"
+#M8033# "Irakurri C&D-Idazkia"
+#M80E8# "Irakurri &WinampDB-tik"
+#M8027# "Gorde CD &Irakurgailua .ini-an"
+#M8028# "Gorde &Tokiko freedb-an"
+#M8032# "Aurkeztu H&urruneko freedb-an"
+#M803B# "&freedb Multzo Eskabidea"
+
+// Ripper Options Menu
+#M8003# "E&zarpenak\tF4"
+#M8046# "Itxuratu &Winamp Pluginak"
+#M801C# "Erakutsi &Irakurgailu Tresnabarra"
+#M801D# "Erakutsi &Grabaketa Tresnabarra"
+#M80E9# "Erakutsi &Profil Tresnabarra"
+#M802C# "Erakutsi &Erauzketa Egoera Xehetasunak\tF3"
+#M802F# "Garbitu E&rauzketa Egoera"
+#M0BD40001# "Hautatu &Hizkuntza"
+
+// Ripper Help Menu
+#ME143# "CDex &Laguntza\tF1"
+#ME140# "CDex &Buruz..."
+
+// Player Menu
+#M0C80# "#&Agiria#A&ukerak#&Irakur-zerrenda#&Laguntza#"
+
+// NOTE: File, help menu and Configure &Winamp Plugins entries 
+// are already defined in the main menu
+
+// Ripper Options Menu
+#M804B# "&Zorizko Irakurketa"
+#M0C800000# "&Hizkuntza"
+
+// Ripper Playlist Menu
+#M8049# "&Gorde"
+#M804A# "G&arbitu"
+
+// About Dialog
+#D00640000# "CDex audio CD ateratzaile programari buruz"
+#D00640412# "CDex Bertsioa "
+#D006404BC# "It&xi"
+// Translator URL
+#D006404BB# "azpidatziak@gmail.com"
+// Translator information
+#D006404BA# "Xabier Aramendi"
+
+// CD Auto Detection dialog box
+#D0BE20000# "Berez-Atzeman Emaitzak"
+#D0BE203FB# "Utzi"
+#D0BE204BE# "Behean dago azterketa moduen zerrenda bat; hautatu egoera 'Pass' duen moduetako bat eta sakatu ONGI botoia"
+#D0BE204BD# "MMC egoera"
+// freedb Accessing dialog box
+#D00870000# "Sarbidea freedb"
+#D008704BF# "Oraingo Ekintza"
+#D008704C0# "Mezua"
+#D008704C1# "Kreditoak: freedb.freedb.org)"
+
+// freedb Settings dialog box
+#0C8D# "Hurruneko freedb"
+#D06030000# "Hurruneko freedb"
+#D06030484# "freedb (berezko ataka 888 edo 8880)\nHTTP (berezko ataka 80)"
+#D0603043D# "Berez elkarketatu hurruneko freedb-ra"
+#D06030426# "Gehitu Gunea"
+#D06030425# "Eskabide Guneak"
+#D06030483# "Berrezarri Denak"
+#D06030475# "Aurkeztu Aukerak"
+#D0603041E# "Erabili Proxya"
+#D06030421# "Egiaztapena"
+#D060304C7# "Hurruneko Zerbitzaria"
+#D060304CB# "Zure Post@ helbidea"
+#D060304CF# "Proxy Ataka"
+#D060304D0# "Sarhitza"
+#D060304CE# "Epemuga (segundu)"
+#D060304C9# "Helbidea"
+#D060304CC# "Helburua"
+#D060304CA# "Protokoloa"
+#D060304C8# "Kokalekua"
+#D060304CD# "Ataka"
+
+// freedb Found inexact match dialog box
+#D00880000# "Berdintasun Ez Zehatza Aurkitu da"
+#D0BFF04C0# "Mezua"
+#D0BFF0559# "Kode orrialde mapaketa"
+#D0BFF04A5# "Hurrengoa"
+#D0BFF055C# "Ber-aurkeztu sarrera (gomendagarria kode orrialdea ez dagoenean UTF-8 bezala ezarrita)"
+#D0BFF0000# "Sarbidea freedb"
+
+// Generate CUE sheet dialog
+#D00B70008# "Itxi"
+#D00B704A4# "Gorde"
+#D00B7055C# "Barneratu Aurre-Tarteak"
+#D00B7055D# "Barneratu ISRC kodeak"
+#D00B704A5# "Copy to clipboard"
+#0CA5# "Cue orriak (*.cue)|*.cue|Agiri Guztiak (*.*)|*.*||"
+
+// CD-ROM Settings dialog box
+#0C89# "CD Gidagailua"
+#D0BDB0000# "CD Gidagailua"
+#D0BDB0430# "Generikoa\nToshiba\nToshiba (berria)\nIBM\nNEC\nDEC\nIMS\nKodak\nRicoh\nHP\nPhilips\nPlasmon\nGrundig CD-R,\nMitsumi CD-R\nPlextor\nSony\nYamaha\nNRC\nIMS CDD-5\nNorberea"
+#D0BDB0444# "Berez-Atzeman"
+#D0BDB0436# "Elkarraldatu Ezker eta Eskuin bideak"
+#D0BDB047E# "Atera CD-a erauzketa osatutakoan"
+#D0BDB043D# "Gaitu Jitter Zuzenketa"
+#D0BDB047F# "Hautatu CD Bide Guztiak (berezkoa)"
+#D0BDB043E# "Erabili Jatorrizko NT SCSI liburutegia"
+#D0BDB04D1# "CD Gidagailua"
+#D0BDB04D2# "Irakurri Sailak"
+#D0BDB04D3# "Irakurri Gainjarpena"
+#D0BDB04D9# "Bloke Alderaketa"
+#D0BDB04D6# "CD-ROM Gidagailu Mota"
+#D0BDB04DA# "CD Abiadura"
+#D0BDB04D4# "Hasiera Oreka (sailak)"
+#D0BDB04D5# "Amaiera Oreka (sailak)"
+#D0BDB04DB# "Bizkorpen denbora (seg)"
+#D0BDB04D8# "Bersaiakera Zenbatekoa"
+#D0BDB04D7# "Erauzketa Metodoa"
+#D0BDB0480# "Blokeatu CD-a aterapenean zehar"
+#D0BDB0481# "Erabili CD-Idazkia (eskuragarri badago)"
+#D0BDB0431# "Estandarra\nParanoia, Gainjarpena Bakarrik\nParanoia, Egiaztatu Gabe\nParanoia, Urratu konponketarik ez\nParanoia, Osoa"
+
+// freedb Submit Options dialog box
+#D00A00000# "freedb Aurkezpen aukerak"
+#D00A004E2# "Aurkeztu honen bidez:"
+#D00A00414# "Post@"
+#D00A00401# "HTTP bidez"
+#D00A004E4# "SMTP zerbitzari helbidea"
+#D00A004E5# "Aurkezpenaren HTTP helbidea (helburua gabe)"
+#D00A004E3# "Aurkezpenaren post@ helbidea"
+
+// Config Winamp Plugin Dialog box
+#D00AA0000# "Itxuratu Winamp Sarrera Pluginak"
+#D00AA0499# "Honi buruz"
+#D00AA049A# "Itxuratu"
+
+// CD Ripping dialog box
+#D0BDC0000# "Grabatu Bideak"
+#D0BDC042C# "izendatua"
+#D0BDC042E# "geh"
+#D0BDC042D# "gut"
+
+// Drop Files dialog box
+#D00900000# "Hautatu aukerak eroritako agirientzat"
+#D00900452# "Irteera RIFF WAV agiria"
+#D0090044C# "Ezabatu WAV agiria kodeatu ondoren"
+#D0090042F# "Normalizatu"
+#D00900430# "Kodeatu"
+#D00900431# "Normalizatu + Kodeatu"
+
+// Edit Genres dialog box
+#D00AC0000# "Gehitu / Editatu Motak"
+#D00AC049C# "Txertatu Berria"
+
+// Enter profile Name dialog box
+#D00AF0000# "Sartu profil izena"
+
+// Encoder dialog box
+#0C8A# "Kodeatzailea"
+#D06020000# "Kodeatzailea"
+#D06020537# "Kodeatzailea"
+#D06020452# "Bihurtu Riff WAV agirira"
+#D06020423# "Apalena\nArruntetik Behera\nArrunta\nArruntetik Gora\nHandiena"
+#D06020536# "Hari Lehentasuna"
+#D06020535# "Kodeaketa Aukerak"
+#D06020453# "Ez ezabatu erauzitako WAV agiria bihurketaren ondoren"
+
+// Encoder DOS APE dialog box
+#D0BFD0400# "Monoa"
+#D0BFD0401# "Estereoa"
+#D0BFD04DE# "Konpresio maila"
+#D0BFD04DD# "Bideak"
+#D0BFD04DF# "Etiketa Heuskarria"
+#D0BFD04B4# "APE Etiketa (berezkoa)\nID3V1 Etiketa"
+#D0BFD0459# "Azkarra\nArrunta\nHandia\nOso Handia"
+
+// Encoder Blade Dialog box
+#D0BE80409# "Zuzeneko MP3 Kodeaketa"
+#D0BE804E0# "Bitneurria"
+#D0BE804E1# "Bideak"
+#D0BE80400# "Estereoa"
+#D0BE80401# "J-estereoa"
+#D0BE80402# "Duala"
+#D0BE80403# "Monoa"
+#D0BE80427# "Pribatua"
+#D0BE80428# "Egiazt.-batura"
+#D0BE80429# "Jatorrizkoa"
+#D0BE8042A# "Copyrighta"
+
+// Encoder Lame dialog box
+#D008B0548# "Gutx Bitneurria"
+#D008B054A# "Modua"
+#D008B054B# "Ontasuna"
+#D008B054E# "BNA Ontasuna"
+#D008B0549# "Geh"
+#D008B054D# "BNA (kbs-ko)"
+#D008B054C# "BNA Metodoa"
+#D008B0547# "Bertsioa"
+#D008B054F# "Irteera Lagineurria"
+#D008B0463# "MPEG I\nMPEG II\nMPEG II.5"
+#D008B0400# "Estereoa"
+#D008B0401# "J-estereoa"
+#D008B0402# "Behartu Estereoa"
+#D008B0403# "Monoa"
+#D008B0427# "Pribatua"
+#D008B0428# "Egiazt.-batura"
+#D008B0429# "Jatorrizkoa"
+#D008B042A# "Copyrighta"
+#D008B0409# "Zuzeneko MP3 Kodeaketa"
+#D008B0459# "Ezgaituta\nVBR Berezkoa\nVBR-Zaharra\nVBR-Berria\nVBR-MTRH\nVBR-ABR"
+#D008B0458# "VBR 0\nVBR 1\nVBR 2\nVBR 3\nVBR 4\nVBR 5\nVBR 6\nVBR 7\nVBR 8\nVBR 9"
+#D008B0414# "Arrunta ( q=5 )\nApala ( q=9 )\nHandia ( q=2 )\nAhotsa (ahots grabaketarako)\nR3Mix Aurrezarp (zaharkitua)\nOntasun Oso Handia ( q=0 )\naurrezarp estandarra\naurrezarp azkar estandarra\naurrezarp hertzekoa\naurrezarp azkar hertzekoa\naurrezarp gaitza\naurrezarp ABR\naurrezarp CBR"
+
+// Encoder External settings box
+#D008D0000# ""
+#D008D052D# "Parametro katea"
+#D008D052C# "Kodeatzaile helburua"
+#D008D052E# "Bitneurria"
+#D008D0463# "Zuzeneko kodeaketa"
+#D008D0464# "Ezkutatu DOS kutxa leihoa"
+#D008D052F# "Agiri Luzapena"
+#D008D0465# "Bidali WAV idazburua stdin-ra"
+
+// Encoder Wincodec settings box
+#D008A0000# ""
+#D008A0409# "Zuzeneko MP3 Kodeaketa"
+#D008A053A# "Windows MP3 Kodeka"
+#D008A053B# "Kodek Bitneurri Hautapena"
+#D008A043E# "Ontasun Handia"
+
+// Encoder MP2 encoder settings box
+#D0BF9040F# "MPEG-1"
+#D0BF90410# "MPEG-2"
+#D0BF90546# "Bitneurria"
+#D0BF90409# "Zuzeneko MP2 Kodeaketa"
+#D0BF90545# "Bideak"
+#D0BF90400# "Estereoa"
+#D0BF90401# "J-estereoa"
+#D0BF90402# "Duala"
+#D0BF90403# "Monoa"
+#D0BF90427# "Pribatua"
+#D0BF90428# "Egiazt.-batura"
+#D0BF90429# "Jatorrizkoa"
+#D0BF9042A# "Copyrighta"
+#D0BF9047F# "Idatzi Ancillary Datuak (Antex)"
+#D0BF90480# "Ahalbidetu betegarri gabe"
+#D0BF90544# "BNA (esperimentala)"
+#D0BF90458# "Ezer ez\nBNA 0\nBNA 1\nBNA 2\nBNA 3\nBNA 4\nBNA 5\nBNA 6\nBNA 7\nBNA 8\nBNA 9"
+
+// Encoder external VQF settings box
+#D0BEA0000# ""
+#D0BEA041B# "44KHz-48Kbps\n44KHz-40Kbps\n22KHz-32Kbps\n22KHz-24Kbps\n22KHz-20Kbps\n16KHz-16Kbps\n11KHz-10Kbps\n11KHz-8Kbps\n8KHz-8Kbps"
+#D0BEA0549# "VQF kodeatzaile helburua"
+#D0BEA0547# "VQF modua"
+
+// Encoder WMA8 settings box
+#D0BEC03F5# "22 Kbit/s\n32 Kbit/s\n36 Kbit/s\n40 Kbit/s\n48 Kbit/s\n64 Kbit/s\n80 Kbit/s\n96 Kbit/s\n128 Kbit/s\n160 Kbit/s"
+#D0BEC0409# "Zuzeneko MP3 Kodeaketa"
+#D0BEC0441# "Gaitu Eskubide Digital Kudeaketa"
+#D0BEC0414# "Monoa"
+#D0BEC04B6# "Estereoa"
+#D0BEC0538# "Bitneurria"
+#D0BEC0539# "Bideak"
+
+// Encoder external Xing settings box
+#D0BF00000# ""
+#D0BF00414# "BNG"
+#D0BF00401# "BNA"
+#D0BF00429# "Jatorrizkoa"
+#D0BF0042A# "Copyrighta"
+#D0BF0045C# "Iragazi Maiztasun Handiak"
+#D0BF0045D# "Behartu Estereo Arrunta"
+#D0BF0045E# "Behera nahastu monora"
+#D0BF0045F# "Utzi kodeatzaileari lagin neurria hautatzea"
+#D0BF00532# "Kodeatzaile helburua"
+#D0BF00533# "Bitneurria"
+#D0BF00534# "BNA Neurria"
+
+
+// Encoder FLAC
+#D0BFE0400# "Estereoa"
+#D0BFE0401# "Monoa"
+#D0BFE0409# "Zuzeneko Kodeaketa"
+#D0BFE0540# "Bideak"
+#D0BFE055A# "Konpresio maila ezarpena"
+#D0BFE0559# "konpresio-maila 0"
+
+// Encoder WAV settings box
+#D0BF10000# ""
+#D0BF1053E# "Lagineurria"
+#D0BF1053F# "Bideak"
+#D0BF10414# "Estereoa"
+#D0BF10401# "Monoa"
+#D0BF1053D# "Konpresioa"
+#D0BF1053C# "Heuskarria"
+#D0BF10439# "WAV\nApple/SGI AIFF\nSun/Next au (big endian)\nDec au (little endian))\nRaw PCM (big endian)\nRaw PCM (little endian)"
+#D0BF10409# "Zuzeneko Kodeaketa"
+
+// Encoder FAAC settings box
+#D0BF20000# ""
+#D0BF20463# "MPEG-2"
+#D0BF20415# "MPEG-4"
+#D0BF20466# "Nagusia\nKorapilotasun apala\nSSR\nLTD"
+#D0BF204AF# "16000\n18000\n19500"
+#D0BF204B1# "Erabili BME"
+#D0BF20468# "Erabili MS Estereoa"
+#D0BF20526# "Bitneurria / bidea"
+#D0BF20528# "Bandazabalera (Hz)"
+#D0BF20527# "Profila"
+#D0BF204B0# "Ahalbidetu Temporal Noise Shaping (TNS)"
+
+// Encoder Vorbis settings box
+#D0BF60000# ""
+#D0BF60400# "Estereoa"
+#D0BF60401# "Monoa"
+#D0BF60409# "Zuzeneko Kodeaketa"
+#D0BF604B3# "Erabili Ontasun ezarpena (gomendatua)"
+#D0BF60540# "Bideoak"
+#D0BF60541# "Erabili Bitneurri kudeatzailea"
+#D0BF60550# "Gutxienezko Bitneurria"
+#D0BF60551# "Bitneurri Izendatua"
+#D0BF60552# "Gehienezko Bitneurria"
+
+// Encoder Gogo settings box
+#D0BF80000# ""
+#D0BF8040F# "MPEG-1"
+#D0BF80410# "MPEG-2"
+#D0BF80409# "Zuzeneko MP3 Kodeaketa"
+#D0BF80458# "Ezer ez\nVBR 0\nVBR 1\nVBR 2\nVBR 3\nVBR 4\nVBR 5\nVBR 6\nVBR 7\nVBR 8\nVBR 9"
+#D0BF80400# "Monoa"
+#D0BF80401# "Estereoa"
+#D0BF80402# "J-Estereoa"
+#D0BF80403# "MS-Estereo"
+#D0BF8047B# "Erabili MMX/3DNow"
+#D0BF8047C# "Erabili Psiko-akustikoak"
+#D0BF8047D# "Ezarri Behe-Igaropen iragazkia bitneurri apalentzat"
+#D0BF80529# "Bitneurri Aldakorra"
+#D0BF8052A# "Bitneurria"
+#D0BF8052B# "Modua"
+
+// Encoder External Musepack settings box
+#D00A90000# ""
+#D00A90531# "Parametro katea"
+#D00A90530# "Musepack kodeatzailearen helburua"
+#D00A90464# "Ezkutatu MSDOS leihoa"
+#D00A90463# "Zuzeneko Kodeaketa"
+
+// Encoder NTTVQF settings box
+#D0BFB0000# ""
+#D0BFB0409# "Zuzeneko VQF Kodeaketa"
+#D0BFB0462# "32 Kbit/s\n40 Kbit/s\n48 Kbit/s\n56 Kbit/s\n64 Kbit/s\n80 Kbit/s\n96 Kbit/s\n112 Kbit/s\n128 Kbit/s\n160 Kbit/s\n192 Kbit/s\n224 Kbit/s\n256 Kbit/s\n320 Kbit/s"
+#D0BFB0400# "Monoa"
+#D0BFB0401# "Estereoa"
+#D0BFB0542# "Bitneurria bide bakoitzeko"
+#D0BFB0543# "Bideak"
+ 
+// File compare two files dialog box
+#D00970000# "Alderatu bi WAV agiri"
+#D00970446# "Alderatu"
+#D00970522# "Lehen agirizena"
+#D00970523# "Bigarren agirizena"
+#D00970524# "Garapena"
+
+// File name string info dialog box
+#D00930000# "Agirizen arbidide aukerak"
+#D00930516# "Adibideak:\n%1\%2\%4  ->     Artista\Bilduma\Bide-Izena.mp3 (edo .wav) irteera agiria sortzen du\n%1 - %2 - %3  -> Artista - Bilduma - Bide-Zenbakia.mp3 (edo .wav) irteera agiria sortzen du\n%l1 - %u2  -> - BILDUMA.mp3 (edo .wav) irteera agiria sortzen du"
+#D00930517# "Agiri izen heuskarri kateak hurrengo ezagutarazleak izan ditzake"
+#D00930518# "Ezkerbarra hizkia (\) zuzenbide bereizketa bat adierazteko erabili daiteke\n. Ez duzu lehen hizki bezala erabili behar !"
+
+// File name property page
+#0C8E# "Agirizenak"
+#D0BF40000# "Agirizenak"
+#D0BF40479# "Hizki Ordezk"
+#D0BF4047D# "Banandu bideizena Artista, Bidean bananketa hizkia erabiliz:"
+#D0BF40443# "Gehitu Agiriak M3U irakur-zer.-ra"
+#D0BF40444# "Gehitu Agiriak PLS irakur-z.-ra"
+#D0BF4051B# "Agirizena"
+#D0BF40519# "Irteera agirizen heuskarria eta zuzenbideak"
+#D0BF4051C# "WAV -> MP3"
+#D0BF4051D# "Grabaturiko Bideak"
+#D0BF4051A# "Agirizen Heuskarria"
+#D0BF40520# "Agirizena"
+#D0BF4051E# "Agirizen Heuskarria"
+#D0BF40521# "Mota"
+#D0BF4051F# "Irakur-zerrenda"
+
+// File overwrite dialog box
+#D00AE0000# "Agiri Gainidazketa Ohartarazpena"
+#D00AE0512# "Bai"
+#D00AE04A1# "&Bai Guztiari"
+#D00AE0511# "Ez"
+#D00AE04A2# "&Ez Guztiari"
+#D00AE0513# "Agiria"
+#D00AE0514# "jadanik badago.  Ordeztu dagoen agiria?"
+
+// Generic Property Page
+#0C8B# "Orokorra: Generikoa"
+#D06040000# "Orokorra"
+#D06040414# "Ezer ez\nID3-V1\nID3-V2\nID3-V1 &  ID3-V2"
+#D06040411# "Normalizatu"
+#D060404AB# "Berezgaitasunez itzali erauzi / kodeatu ondoren"
+#D0604050F# "Seinalea bada <"
+#D0604050C# "Normalizatu Bolumena"
+#D0604050D# "Hona"
+#D06040510# "Seinalea bada >"
+#D06040507# "Agiri Etiketa aukerak"
+#D0604050A# "Etiketa aipamen eremua"
+#D0604050E# "Hona"
+#D06040508# "ID3 Etiketa Bertsioa"
+#D0604050B# "Kodeatuta-eremuz"
+#D06040506# "Temp zuzenbidea"
+#D06040509# "Bide Zbk Heuskarria"
+#D060404AC# "CD Digital Irakurketa"
+
+// Tag Property Page
+#0CA2# "Kodeaketa: Etiketak"
+#D0C01050A# "Etiketa aipamen eremua"
+#D0C010508# "ID3 Etiketa Bertsioa"
+#D0C01050B# "Eremuz kodeatuta"
+#D0C010509# "Bide Zbk Heuskarria"
+#D0C01048F# "ID3_V1"
+#D0C010560# "ID3_V2.3"
+#D0C01055E# "ID3_V2.4"
+#D0C010000# "Etiketa Aukerak"
+#D0C0104AD# "N"
+#D0C01050C# "Argazki Idazkia"
+#D0C01050D# "Argazkia"
+#D0C010565# "Argazki aukerak"
+#D0C010566# "Gehitu argazkia"
+
+// General Info Dialog Box
+#D0BDF0000# "Argibide Orokorrak"
+#D0BDF0502# "CD Bolumen ID-a"
+#D0BDF0500# "freedb Diska ID-a"
+#D0BDF0501# "ASPI Kudeatzailea"
+#D0BDF0503# "SE Bertsioa"
+#D0BDF0504# "SCSI Argibideak"
+#D0BDF0505# "Gidagailu Mota(k)"
+#D0BDF0442# "Kopiatu Gakora"
+
+// Local CDDB Settings TAB
+#0C8C# "Tokiko CDDB"
+#D0BFA0000# "Tokiko CDDB"
+#D0BFA044B# "Windows-heuskarriko CDDB Agiriak"
+#D0BFA044C# "Unix-heuskarriko CDDB Agiriak"
+#D0BFA0459# "Biltegiratu CDPlayer.ini Agirietan"
+#D0BFA045A# "Biltegiratu tokiko CDDB-an"
+#D0BFA045B# "Erabili Zuzenbide Izen Luzeak"
+#D0BFA04B5# "Idatzi MS-DOS idazki agiriak bezala "
+#D0BFA04FE# "CDDB Helburua"
+#D0BFA04FF# "Winamp in_cdda.cdb helburua (Winamp 2.78 heuskarria)"
+#D0BFA04FD# "Tokiko CDDB Ezarpenak"
+
+// Main Window (Title View)
+#D0BD80000# " "
+#D0BD804C2# "Artista"
+#D0BD804C3# "Bilduma"
+#D0BD804C4# "Mota"
+#D0BD804C5# "Urtea"
+#D0BD804C6# "Bide Oreka"
+
+// Mpeg to RIFF-WAV conversion dialog box
+#D00860000# "Bihurtu MP2/MP3 hona-> RIFF-WAV"
+#D008604FC# "Prozesatzen"
+
+// Mpeg to WAV conversion dialog box
+#D0BEB0000# "Bihurtu konprimitutako agiria WAV agirira"
+#D0BEB04FB# "Prozesatzen"
+
+// Open file dialog box
+#D02630000# "Ireki Agiri Elkarrizketa"
+#D026303EE# "Begiratu azpiagiritegietan"
+#D026303F1# "Ezabatu Jatorrizkoa"
+#D0263042F# "Normalizatu"
+#D02630430# "RIFF-WAV"
+#D026303EF# "Hautatu Denak"
+#D026303F0# "Ireki"
+#D02630495# "Ezarpenak"
+#D026304AC# "Heutsi Jatorrizko Zuzenbide Antolakuntzari"
+#D026304FA# "Agiri Eskuragarriak:"
+#D026304F9# "Zuzenbidea"
+
+// Partial track copy dialog box
+#D06010000# "Grabatu bide zatiak"
+#D0601041D# "WAV agiria"
+#D06010412# "Audio Agiri Konprimitua (Kodeatuta)"
+#D060104F5# "Bidea"
+#D060104F6# "Min"
+#D060104F7# "Seg"
+#D060104F8# "Frame"
+#D060104F0# "Agiri ezaugarriak"
+#D060104F2# "Maila (agiri bat hasiera kokapenetik gelditze kokapenera)"
+#D060104F3# "Hasiera Kokapena"
+#D060104F4# "Gelditze Kokapena"
+#D060104F1# "Irteera Mota"
+
+// Player view window
+#D0C800489# "Xehetasunak"
+
+// Record from Analog In dialog box
+#D0BF50000# "Grabatu Sarrera Analogikotik"
+#D0BF50640# "Luzera Askea"
+#D0BF50641# "Grabatu bakarrik:"
+#D0BF5046E# "Bilatu"
+#D0BF504B7# "Gehitu zenbakitze sekuentziala agirizenari, hemendik hasita: "
+#D0BF504EE# "Grabaketa Egoera"
+#D0BF5046B# "Grabatu"
+#D0BF50445# "Pausatu"
+#D0BF50450# "Gelditu"
+#D0BF50642# "Monoa"
+#D0BF50643# "Estereoa"
+#D0BF503F5# "Bideak"
+#D0BF504EB# "Sarrera Gailua"
+#D0BF504EC# "Irteera Agirizena"
+#D0BF504ED# "Irteera Agiri Mota"
+#D0BF504EA# "Lagin Neurria"
+#D0BF504EF# "segundu"
+#D0BF504F0# "Irteera Zuzenbidea"
+
+// RIFF-WAV to MPEG dialog box
+#D02630064# "Utzi"
+#D0BF30000# "Kendu RIFF-WAV idazburua MPEG agiri(eta)tik"
+#D0BF304E9# "Prozesatzen"
+
+// Substitute Characters dialog box
+#D0BF70000# "Hizki Ordezpena"
+#D0BF704E6# "Legezkanpoko Agirizen Hizkiak"
+#D0BF704E7# "Besteak (ordezpena ez da nahitaezkoa)"
+#D0BF704E8# "tartea :="
+
+// Ripper Status dialog box
+#D00960000# "Erauzketa Egoera Argibide Xehea"
+
+// String Table
+#0065#	"&CDex-ri buruz..."
+#0066#	"Gorde honela..."
+#0067#	"Ireki"
+#0BBA#	"Adierazle Kontrola"
+#0BBB#	"Askotarikoa"
+#0BBC#	"Irakurri Bidea"
+#0BBE#	"Gelditu Irakurketa"
+#0BBF#	"Atera CD-a"
+#0BC0#	"Ezin da Internet Saio bat ireki. Mesedez egiaztatu zure internet itxurapena."
+#0BC1#	"CDex"
+#0BC2#	"Windows socket abiarazpen hutsegitea"
+#0BC3#	"Azkar Aurrera\nAzkar Aurrera"
+#0BC4#	"Azkar Atzera\nAzkar Atzera"
+#0BC5#	"Pausatu\nPausatu"
+#0BC6#	"Jauzi Hurrengo Bidera\nJauzi Hurrengo Bidera"
+#0BC7#	"Jauzi Aurreko Bidera\nJauzi Aurreko Bidera"
+#0BC8#	"Lortu bilduma argibidak hurruneko freedb-tik"
+#0BD4#	"CDex Erauzgailua\n\nCDex Erauzgailua\n\n\nCDex.Agiritza\nCDex Agiritza"
+#0BDE#	"CDex Bertsioa "
+#0BDF#	"artistarik ez"
+#0BE0#	"izenbururik ez"
+#0BE1#	"Mota"
+#0BE2#	"Izenburua"
+#0BE3#	"freedb ID-a"
+#0BE4#	"Artista"
+#0BE5#	"Bide Zenbakia"
+#0BE6#	"Bolumen ID-a"
+#0BE7#	"Bide Izena"
+#0BE8#	"Bide Zenbakia 0-etik Hasita"
+#0BE9#	"Bide zenbatekoa"
+#0BEA#	"Izena"
+#0BEB#	"Bidea"
+#0BEC#	"Hasiera Denbora"
+#0BED#	"Irakur Denbora"
+#0BEE#	"Neurria"
+#0BEF#	"Egoera"
+#0BF0#	"CDex Bertsioa "
+#0BF1#	"Artista eremuak baliogabeko hizkiak ditu\n Ordeztu baliogabeko hizkiak tarteekin"
+#0BF2#	"Bilduma eremuak baliogabeko hizkiak ditu\n Ordeztu baliogabeko hizkiak tarteekin"
+#0BF3#	"[%d] bide-izenak baliogabeko hizkiak ditu\n Ordeztu baliogabeko hizkiak tarteekin"
+#0BF4#	"Ez duzu biderik hautatuta.  Mesedez hautatu audio bide bat edo gehiago zerrendatik."
+#0BF5#	"Ezinezkoa Gako datuak ezartzea"
+#0BF6#	"%d bidea bilatzen (%02d:%02d:%02d)\n"
+#0BF7#	"Bidea Konprimitutako Audio Agiri batera erauzten (%s) %s agirira"
+#0BF8#	"Erauzketa/kodeaketa utzi egin da hemen %s"
+#0BF9#	"Bidea Konprimitutako Audio Agiri batera erauztea egoki amaitu da, iraupena guztira: %s"
+#0BFA#	"Bidea WAV-ra erauzten (%s) %s agirira"
+#0BFB#	"Erauzketa utzi egin da hemen %s"
+#0BFC#	"Bidea WAV-ra erauztea egoki amaitu da, iraupena guztira: %s"
+#0BFD#	"Ezinezkoa irteera zuzenbidea sortzea: "
+#0BFE#	"Igarotako denbora: %s   ||   Gelditzen da: %s   ||   Denb. guztira: %s"
+#0BFF#	"%d bidea ateratzen (%d%% osatuta, agiria %d/%d)"
+#0C00#	"Gailur Balioa %4.2f dB = %3d %%"
+#0C01#	"Jitter (akatsak: %d)"
+#0C02#	"%d bidea bihurtzen (%d %% osatuta, agiria %d/%d)"
+#0C03#	"%d bidea normaltzen (%d %% osatuta, agiria %d/%d)"
+#0C04#	"%d bidearen Gailur Balioa zehazten (%d %% osatuta, agiria %d/%d)"
+#0C05#	"Gailur Balioa %4.2f dB = %3d %%"
+#0C06#	"Agirira: %s"
+#0C07#	"%d bidea ateratzen (agiria %d/%d)"
+#0C08#	"Agiria xede heuskarrira bihurtzen (agiria %d/%d)"
+#0C09#	"Bidea normaltzen ezaugarri honekin %5.2f (agiria %d/%d)"
+#0C0A#	"Gailur balioa lortzen (agiria %d/%d)"
+#0C0B#	"Prozesatzen (agiria %d/%d)"
+#0C0C#	"CD Bideak Ateratzen"
+#0C0D#	"Agiri Bihurketa"
+#0C0E#	"%5d akats bide honetan %s\n\n"
+#0C0F#	"Jitter akatsak gertatu dira.  Mesedez ikusi laguntza agiria jitter arazoak konpontzeko.\n\n"
+#0C10#	"Urtea"
+#0C11#	"DatuBidea"
+#0C12#	"AudioBidea"
+#0C13#	"Mesedez bete Bide, Artista, eta Bide argibide guztiak, eta zihurtatu\n Mota eremua egoki ezarrita dagoela \nsarrera bat hurruneko CD datubasean aurkeztu aurretik."
+#0C14#	"Eskatutako bilduma argibideak ez dira aurkitu tokiko CDDB-an"
+#0C15#	"Eskatutako bilduma argibideak ez dira aurkitu CDPlayer.ini agirian"
+#0C16#	"MP3 etiketa aldatu egin da. \nGorde aldaketak?"
+#0C17#	"Akats bat gertatu da ID3v2 etiketa gordetzerakoan.\nZihurtatu agiria ez dagoela irakurtzeko bakarrik bezala markatuta!"
+// dago, edo ez dago?
+#0C18#	"Akats bat gertatu da ID3v2 etiketa irakurtzerakoan."
+#0C19#	"Akats bat gertatu da sarrera agiria irekitzerakoan."
+#0C1A#	"Hutsegitea sistema itzaltzeko pribilegioa ezartzerakoan"
+#0C1B#	"Normalkuntza ezaugarria da %7.4f x"
+#0C1C#	"Post@ helbide baliogabea.  Mesedez bete\n\nzure post@ helbidea Hurruneko CDDB aukerak menuan."
+#0C1D#	"Hurruneko zerbitzariak ez du nahikoa garaiz erantzun. \n Handitu Epemuga balioa CDDB aukera ikusleihoan, \n Edo saiatu berriro."
+#0C1E#	"irakurri/idatzi ahalbidetuta\n"
+#0C1F#	"Ongi, irakurri bakarrik\n"
+#0C20#	"Ez da bat datorrenik aurkitu\n"
+#0C21#	"Ongi Erantzuan\n"
+#0C22#	"Berdintasun zehatz ugari aurkitu dira. Zerrendako hurrengoak dira.\n"
+#0C23#	"Berdintasun ez zehatz ugari aurkitu dira. Zerrendako hurrengoak dira.\n"
+#0C24#	"Adierazitako CDDB sarrera ez da aurkitu\n"
+#0C25#	"Jadanik eskuemanda\n"
+#0C26#	"Datubase sarrera hondatuta dago.\n"
+#0C27#	"Eskuematerik ez\n"
+#0C28#	"Eskuematea ez da ongi egin, elkarketa isten\n"
+#0C29#	"Ez da elkarketarik ahalbidetzen: baimena ukatuta\n"
+#0C2A#	"Elkarketarik ez, gertaketa handiegia\n"
+#0C2B#	"Zerbitzari Akatsa, mesedez hautatu beste zerbitzari bat\n"
+#0C2C#	"Protokolo maila jadanik cur_level\n"
+#0C2D#	"Legezkanpoko Protokolo Maila\n"
+#0C2E#	"Elkarketa Hutsegitea honegaitik"
+#0C2F#	"Bihurtu"
+#0C30#	"Modulo Izena"
+#0C31#	"Modulo Argibideak"
+#0C32#	"Mota Taula (genres.txt) ez da CDex zuzenbidean aurkitu\n(saiatutako kokalekua: %s)\nEgiaztatu zure CDex ezarpena!"
+#0C33#	"Mota"
+#0C34#	"CDDB Mota"
+#0C35#	"ID3 V1 ID"
+#0C36#	"Mota Berria"
+#0C37#	"Ezezaguna"
+#0C38#	"Zerbitzari Erantzun Baliogabea"
+#0C39#	"%1 = Artista\t\t%5 = CD BolumenID-a\n%2 = Bilduma\t\t%6 = CDDB ID-a\n%3 = Bide Zenbakia\t%7 = Bide Zenbakia Hutsetik Hasita\n%4 = Bide Izena\t%8 = Bide Zenbatekoa Guztira\n%Y = Urtea\t\t%G = Mota\n%A = Artista Izena (ez du eragiten bananketa aukerak)\nErabili l edo u aurrezehazlea hizki xehe/larriak behartzeko"
+#0C3A#	"CDex Irakurgailua, Bertsioa "
+#0C3B#	"freedb akats bat gertatu da.  Ikusi mezu kutxa xehetasunetarako\n"
+#0C3C#	"AKATSA: Ezinezkoa kanpoko kodeatzailea abiaraztea"
+#0C3D#	"AKATSA: Ezinezkoa datuak bidaltzea kanpoko kodeatzailera"
+#0C3E#	"Ezinezkoa VQF eskript agiria sortzea"
+#0C3F#	"Ezinezkoa %s kodeatzailea gertatzea.\nZihurtatu CDex.exe DLL-ak ezarrita dauden tokitik abiarazi duzula.\nLasterbide bat sortu baduzu, zihurtatu zuzenbidea zuzen ezarrita dagoela."
+#0C40#	"Sarrera Jario Baliogabea"
+#0C41#	"Ezin da ireki/sortu agiria: %s"
+#0C42#	"AKATSA: Ezinezkoa hodia sortzea kanpoko kodeatzailera"
+#0C43#	"GoGo DLL-ak Hamarren Unitate bat behar du"
+#0C44#	"%2d bidea (%5.2f MB) Diskako toki askea %5d MB"
+#0C45#	"Bide irakurketa: %d (%02d:%02d:%02d)\n"
+#0C46#	" (maila)"
+#0C47#	"Ezin da Gakoa ireki"
+#0C48#	"Ezin da Gakoa hustu"
+#0C49#	"Elkarketa Irekitzen"
+#0C4A#	"Kaixo Katea Bidaltzen"
+#0C4B#	"Estatistika komandoa bidaltzen"
+#0C4C#	"Proto Maila Bidaltzen"
+#0C4D#	"Eskabidea Bidaltzen"
+#0C4E#	"Hasi Hurreneko Eskabidea"
+#0C4F#	"Hurruneko erantzuna lortzen"
+#0C50#	"SMTP zerbitzari helbide ezezaguna.  Mesedez bete\nSMTP zerbitzari helbidea CDDB aurkezpen aukera ikusleihoan."
+#0C51#	"Hutsegitea katea hurruneko zerbitzarira bidaltzerakoan"
+#0C52#	"Zerbitzarira Elkarketatzen"
+#0C53#	"Zerbitzaria ez dago gertu"
+#0C54#	"Bidaltzen"
+#0C55#	"Datuak bidaltzen"
+#0C56#	"Idazki-gorputza bidaltzen"
+#0C57#	"Zerbitzari erantzun gabe"
+#0C58#	" (Kodeatzailea Eskuragarri, bertsio argibideak ez daude eskuragarri)"
+#0C59#	" Alfa %d"
+#0C5A#	" Beta %d"
+#0C5B#	"Adierazitako bitneurria ez dator bat hautaturiko irteera maiztasunarekin"
+#0C5C#	" (ez dago eskuragarri)"
+#0C5D#	"bertsioa"
+#0C5E#	"gailua"
+#0C5F#	"Ezinezkoa %s agiria irekitzea"
+#0C60#	"Agiri-neurria txikiegia da alderatzeko"
+#0C61#	"Bigarren agiriak %d byteko oreka bat du"
+#0C62#	"Lehen agiriak %d byteko oreka bat du"
+#0C63#	"Agiriak ezberdinak dira, ezinezkoa bloke berdinik aurkitzea"
+#0C64#	"Agiriak ezberdinak dira, hemendik hasita %d"
+#0C65#	"Ez da ezberdintasunik aurkitu\n%d byte alderatu dira guztira"
+#0C66#	"CDex itxurapena"
+#0C67#	"Mesedez hautatu agiritegi bat"
+#0C68#	"Mesedez hautatu zerrendaturiko gaietako bat, edo sakatu ezeztatu uzteko"
+#0C6A#	"datu etiketa ez da aurkitu"
+#0C6B#	"%s agiria ez da MPEG RIFF-WAV agiri bat"
+#0C6C#	"Ezin da heuskarri etiketarik aurkitu %s agirian"
+#0C6D#	"Erabili Berez-Atzematea Ezarpen Generikoa ez badabil bakarrik!\nBerez-Atzematerako, Audio CD bat gertatu behar da CD-ROM gidagailuan.\nJarraitzea nahi duzu?"
+#0C6E#	"Grabaketa denbora guztira (MM:SS:FF) %02d:%02d:%02d berdin %d zatirekin"
+#0C6F#	"Agirizena"
+#0C70#	"Eguna"
+#0C71#	"Helburua"
+#0C72#	"Neurria (MB)"
+#0C73#	"Gorde"
+#0C74#	"Agiri neurriak lehen/bigarrenean dira %d/%d byte"
+#0C75#	"Ongi"
+#0C76#	"Lehen agirizena ez da baliozkoa"
+#0C77#	"Bigarren agirizena ez da baliozkoa"
+#0C78#	"Hutsegitea Ogg Kodeaketa jarioa abiaraztean.  Badaiteke adierazitako bitneurria bat ez etortzea hautaturiko irteera maiztasunarekin.  Saiatu Ontasun ezarpenak erabiltzen Bitneurri ezarpenen ordez."
+#0C79#  "Kodeaketa utzi egin da hemen %s"
+#0C7A#  "Bidea Konprimitutako Audio agiri batera kodeatzea egoki amaitu da, iraupena guztira: %s"
+#0C7B#	"Mota"
+#0C80#	"CDex Irakurgailua\n\nCDex Irakurgailua\n\n\nCDex.Agiritza\nCDex Agiritza"
+#0C81#	"Ez da agiririk hautatu"
+#0C82#	"Berez"
+#0C83#	"Berezkoa"
+#0C84#	"Bihurketa akatsa: Sarrera agirizena irteera agirizenaren berdina da.\nMesedez hautatu beste bihurketa irteera zuzenbidea bat!\nSarrera agirizean  : %s\nIrteera agirizena : %s"
+#0C85#	"Jatorrizko NT SCSI Liburutegi sostengua ez dago sostengaturik sistema eragile honetan.\nASPI gidagailuak ezarri behar dituzu CDex erabiltzeko.  Ikusi CDex Laguntza Agira argibide gehiagorako.\n"
+#0C86#	"Akatsa: Hutsegitea Windows ASPI gidagailuak gertatzerakoan.\nASPI gidagailuak ezarri behar dituzu CDex erabiltzeko.  Ikusi CDex Laguntza Agiria argibide gehiagorako.\n"
+#0C87#	"Akatsa: Hutsegitea ASPI gidagailu egoera lortzerakoan.\nMesedez egiaztatu ASPI gidagailu ezarpena.  Ikusi CDex Laguntza Agiria argibide gehiagorako.\n"
+#0C88#	"Euskara"
+#0C8F#  "..."
+#0C90#  "Hautatu Zuzenbidea"
+#0C91#  "Kodeatzaileak (*.exe;*.bat)|*.exe;*.bat|Agiri Guztiak (*.*)|*.*||"
+#0C92#  "Hautatu kodeatzailea"
+#0C93#  "Handia"
+#0C94#  "Txikia"
+#0C95#  "ezer ez"
+#0C96#  "estandarra"
+#0C97#  "Irakurri"
+#0C98#  "Atapi"
+#0C99#  "Gaitu"
+#0C9A#  "Dentsitatea"
+#0C9B#  "Endian"
+#0C9C#  "Emaitza"
+#0C9D#  "Igaropena"
+#0C9E#  "Hutsegitea"
+#0C9F#  "Hutsegitea wnaspi32.dll gidagailua gertatzerakoan!\nErabili "Jatorrizko NT SCSI liburutegia" gidagailu aukera ordez?"
+#0CA0#  "Egiaztatu Hizkuntza agiri Gehigarri/Eguneketarik dagoen"
+#0CA3# "Mesedez hautatu '%s' child gai bat."
+#0CA4# "Argazkiak (*.jpg;*.png)|*.jpg;*.png|Argazki Guztiak (*.*)|*.*||"
+#0D48# "CRC"
+#0DAC# "Tartea"
+#0D49# "ISRC"
+#138C# "Hurrengoa"
+#1389# "Hutsegitea elkartzerakoan, mesedez egiaztatu sare/proxy ezarpenak"
+#138A# "Berdintasun ez-zehatza aurkitu da, mesedez hautatu bat eta sakatu hurrengoa botoia\r\nEdo sakatu Ezeztatu botoia uzteko"
+#1390# "Aurreikuspena"
+#1391# "Atzeman Tarteak"
+#139C# "Atzeman %d bidearen tartea"
+#1392# "Irakurri UPC/ISRC kodea"
+#1393# "Irakurri UPC/ISRC kodea\r\nMesedez itxaron!"
+
+#8003#	"Hautatu CDex itxuratzeko\nItxuratu"
+#8004#	"Atera CD bidea(k) WAV agirira\nAtera CD bidea(k) WAV agirira"
+#8005#	"Atera CD bidea(k) Konprimitutako Audio Agiri(eta)ra\nAtera CD bidea(k) Konprimitutako Audio Agiri(eta)ra"
+#8006#	"Bihurtu WAV agiria(k) Konprimitutako Audio Agiri(eta)ra\nBihurtu WAV agiria(k) Konprimitutako Audio Agiri(eta)ra"
+#8007#	"Atera CD zati bat WAV edo Konprimitutako Audio Agiri(eta)\nAtera CD zati bat WAV edo Konprimitutako Audio Agiri(eta)"
+#800D#	"Hautatu sistema argibideak lortzeko\nHautatu sistema argibideak lortzeko"
+#800E#	"Itxuratu CD Ezarpenak\nItxuratu CD Ezarpenak"
+#800F#	"Atera CD-a\nAtera CD-a (Aldatu-F1)"
+#8010#	"Azkar Aurrera\nAzkar Aurrera"
+#8011#	"Azkar Atzera\nAzkar Atzera"
+#8012#	"Jauzi hurrengo bidera\nJauzi hurrengo bidera (Aldatu-F3)"
+#8013#	"Jauzi aurreko bidera\nJauzi aurreko bidera"
+#8015#	"Irakurri audio bidea(k)\nIrakurri audio bidea(k) (Aldatu-F4)"
+#8016#	"Gelditu Irakurketa\nGelditu Irakurketa (Aldatu-F5)"
+#8017#	"Pausatu/berrekin irakurketa\nPausatu/berrekin irakurketa"
+#8018#	"Lortu bilduma argibideak tokiko CDDB-tik\nIrakurri bilduma argibideak tokiko CDDB-tik"
+#801A#	"Lortu bilduma argibideak CDPlayer.ini-tik\nIrakurri bilduma argibideak CDPlayer.ini agiritik"
+#801B#	"Lortu bilduma argibideak hurruneko CDDB-tik\nLortu bilduma argibideak hurruneko CDDB-tik"
+#801C#	"Erakutsi edo ezkutatu irakurketa tresnabarra"
+#801D#	"Erakutsi edo ezkutatu grabaketa tresnabarra"
+#801E#	"Jauzi aurreko bidera\nJauzi aurreko bidera  (Aldatu-F2)"
+#801F#	"Azkar Atzera\nAzkar Atzera"
+#8022#	"Bihurtu MP3 agiria(k) hona-> Riff Wav agiriak"
+#8023#	"Kopiatu bilduma argibideak gakora"
+#8024#	"Berrizendatu hautaturiko bidea"
+#8026#	"Hautatu Bide Dena(k)"
+#8027#	"Gorde bilduma argibideak CDPlayer.ini agirian"
+#8028#	"Gorde bilduma argibideak tokiko CDDB agiri(et)an"
+#8029#	"Bihurtu Konprimitutako Audio Agiria(k) WAV agirira\nBihurtu Konprimitutako Audio Agiria(k) WAV agirira"
+#802A#	"Birgertatu bilduma argibideak diskatik"
+#802B#	"Egoera erakusten du"
+#802C#	"Erakutsi hautaturiko bide(en) Erauzketa Egoera Argibideak\nErakutsi hautaturiko bide(en) Erauzketa Egoera Argibideak"
+#802D#	"Alderatu bi WAV agiriren edukiak\nAlderatu bi WAV agiriren edukiak"
+#802E#	"Irakurri Multimedia Agiriak\nIrakkurri Multimedia Agiriak"
+#802F#	"Garbitu CD honen erauzketa egoera"
+#8030#  "Kendu RIFF-WAV idazburua(k) MP2 edo MP3 agiri(eta)tik\nKendu the RIFF-WAV idazburua(k) MP2 edo MP3 agiri(eta)tik"
+#8031#	"Grabatu WAV bat edo MP3 bat zure ordenagailuaren sarrera analogikotik\nGrabatu sarrera analogikotik"
+#8032#	"Aurkeztu bilduma argibideak hurruneko CDDB datubasean"
+#8033#	"Lortu bilduma argibide CD-Idazkia (sostengatua/eskuragarria bada)"
+#8035#	"Hautatu Agiriak\nHautatu Agiriak
+#8036#	"Hautatu Agiriak\nHautatu Agiriak"
+#8037#	"Jauzi Aurreko agirira\nJauzi Aurreko agirira"
+#8038#	"Jauzi Hurrengo agirira\nJauzi Hurrengo agirira"
+#8039#	"Irakurri Agiria(k)\nIrakurri Agiria(k)"
+#803A#	"Gelditu Agirien Irakurketa\nGelditu Agirien Irakurketa"
+#803B#	"CDDB Multzo Eskabidea\nCDDB Multzo Eskabidea"
+#803E#	"Ber-kodeatu (transkodeatu) Konprimitutako Audio Agiria(k)\nBer-kodeatu (transkodeatu) Konprimitutako Audio Agiria(k)"
+
+#8046#	"Itxuratu Winamp Pluginak\nWinamp Pluginak itxuratzen ditu"
+#8047#	"Editatu mota ezagunen zerrenda\nEditatu Mota Zerrenda"
+#8048#	"Pausatu irakurketa\nPausatu irakurketa (Aldatu-F6)"
+#804B#	"Irakurri bideak zorizko hurrenkeran\nIrakurri bideak zorizko hurrenkeran"
+#804D#	"Aldatu Artista/Bide sailkapena (artista anitzeko CD-entzat)\nAldatu Artista/Bide sailkapena (artista anitzeko CD-entzat)"
+#804E#	"Hautatu oraingo CD Gidagailua\nHautatu oraingo CD Gidagailua"
+#804F#	"Hautatu profila\nHautatu profila"
+#8050#	"Gorde oraingo ezarpenak profilean\nGorde oraingo ezarpenak profilean"
+#8052#	"Ezabatu profila\nEzabatu hautaturiko profila"
+#80E8#  "Irakurri bilduma datuak Winamp CD datubasetik\nIrakurri bilduma datuak Winamp CD datubasetik"
+#E000#	"CDex"
+#E001#	"Sakatu F1 laguntza lortzeko CDex audio CD erauzle programan"
+#E100#	"Sortu agiri berri bat\nBerria"
+#E101#	"Ireki badagoen agiri bat\nIreki"
+#E102#	"Itxi oraingo agiria\nItxi"
+#E103#	"Gorde oraingo agiria\nGorde"
+#E104#	"Gorde oraingo agiria izen berri batekin\nGorde Honela"
+#E105#	"Aldatu irarketa aukerak\nOrrialde Ezarpena"
+#E106#	"Aldatu irakurgailu eta irarketa aukerak\nIrarketa Ezarpena"
+#E107#	"Irarkitu oraingo agiria\nIrarkitu"
+#E109#	"Erakutsi orrialde osoak\nIrarkitu Aurreikuspena"
+#E110#	"Ireki agiri hau"
+#E111#	"Ireki agiri hau"
+#E112#	"Ireki agiri hau"
+#E113#	"Ireki agiri hau"
+#E114#	"Ireki agiri hau"
+#E115#	"Ireki agiri hau"
+#E116#	"Ireki agiri hau"
+#E117#	"Ireki agiri hau"
+#E118#	"Ireki agiri hau"
+#E119#	"Ireki agiri hau"
+#E11A#	"Ireki agiri hau"
+#E11B#	"Ireki agiri hau"
+#E11C#	"Ireki agiri hau"
+#E11D#	"Ireki agiri hau"
+#E11E#	"Ireki agiri hau"
+#E11F#	"Ireki agiri hau"
+#E120#	"Ezabatu hautapena\nEzabatu"
+#E121#	"Ezabatu dena\NEzabatu Dena"
+#E123#	"Ebaki hautapena eta jarri Gakoan\nEbaki"
+#E124#	"Bilatu adierazitako idazkia\nBilatu"
+#E125#	"Txertatu Gako edukiak\nItsatsi"
+#E128#	"Berregin azken ekintza\nBerregin"
+#E129#	"Ordeztu adierazitako idazkia beste idazki batekin\nOrdeztu"
+#E12A#	"Hautatu agiri osoa\nHautatu Dena"
+#E12B#	"Desegin azken ekintza\NDesegin"
+#E12C#	"Berregin aurretik desegindako ekintza\nBerregin"
+#E135#	"Banandu oraingo leihoa paneletan\nBanandu"
+#E140#	"Erakutsi CDex argibideak, bertsio zenbakia, eta copyrighta\nHoni buruz"
+#E141#	"Utzi aplikazioa\nIrten"
+#E142#	"CDex Laguntza irekitzen du\nCDex Laguntza Irekitzen du
+#E143#	"Ireki CDex eskuliburua\nCDex Erabilpen Laguntza"
+#E144#	"Erakutsi laguntza nola erabili buruzko jarraipideak\nLaguntza"
+#E145#	"Erakutsi laguntza botoi-klikagarri, menu eta leihoentzat\nLaguntza"
+#E146#	"Erakutsi laguntza oraingo eginkizun edo komandoarentzat\nLaguntza"
+#E150#	"Aldatu hurrengo leiho panelera\nHurrengo Panela"
+#E151#	"Aldatu atzera aurreko leiho panelera\nAurreko Panela"
+#E700#	"EXT"
+#E701#	"LAR"
+#E702#	"ZBK"
+#E703#	"SCRL"
+#E704#	"OVR"
+#E705#	"GRB"
+#E800#	"Erakutsi edo ezkutatu tresnabarra\nAldatu Tresnabarra"
+#E801#	"Erakutsi edo ezkutatu egoerabarra\nAldatu Egoerabarra"
+#EF00#	"Birneurriratu leihoa"
+#EF01#	"Mugitu leihoa"
+#EF02#	"Txikiagotu leihoa ikur batera"
+#EF03#	"Handitu leihoa neurri osora"
+#EF04#	"Aldatu hurrengo agiri leihora"
+#EF05#	"Aldatu aurreko agiri leihora""
+#EF06#	"Utzi aplikazioa"
+#EF12#	"Leheneratu leihoa neurri arruntera"
+#EF13#	"Gaitu Eginkizun Zerrenda"
+#F003#	"Izenburugabea"
+#F005#  "Itxi irarketa aurreikuspen modua\nEzeztatu Aurreikuspena"

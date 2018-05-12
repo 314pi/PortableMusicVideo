@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "Médiaszerver:">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "A szerver állapota:">
+<!ENTITY sharing.iconpopup.status.on "BE">
+<!ENTITY sharing.iconpopup.status.off "KI">
+<!ENTITY sharing.iconpopup.settings.link "Beállítások">
+<!ENTITY sharing.prefpane.label "Médiaszerver">
+<!ENTITY sharing.prefpane.network.name.header.label "Médiaszerver hálózati név">
+<!ENTITY sharing.prefpane.network.name.content.label "A hálózaton megjelenő név (a módosításokhoz újraindítás szükséges):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "Képek mappa">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "Képek letöltése a következő helyről:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "Mappa kiválasztása">

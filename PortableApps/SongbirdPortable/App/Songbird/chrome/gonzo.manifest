@@ -1,0 +1,10 @@
+override chrome://songbird/skin/icons/displaypane-contentpane-bottom.png chrome://songbird/skin/icons/mac/displaypane-contentpane-bottom.png os=darwin
+skin  songbird  gonzo  jar:gonzo.jar!/feathers/gonzo/songbird/chrome/skin/
+override chrome://songbird/skin/icons/displaypane-servicepane-bottom.png chrome://songbird/skin/icons/mac/displaypane-servicepane-bottom.png os=darwin
+locale  gonzo  en-US  jar:gonzo.jar!/feathers/gonzo/songbird/chrome/locale/en-US/
+skin  mozapps  gonzo  chrome://songbird-mozapps/skin/
+override chrome://songbird/skin/icons/displaypane-right-sidebar.png chrome://songbird/skin/icons/mac/displaypane-right-sidebar.png os=darwin
+content gonzo  jar:gonzo.jar!/feathers/gonzo/songbird/chrome/content/
+skin  songbird-os-specific  gonzo  jar:gonzo.jar!/feathers/gonzo/songbird/chrome/skin/os-specific/
+skin  gonzo  gonzo  jar:gonzo.jar!/feathers/gonzo/songbird/chrome/skin/
+skin  global  gonzo  chrome://songbird-global/skin/

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Transcription Toolbar - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Transcription_Toolbar rootpage-Transcription_Toolbar skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Transcription Toolbar</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Transcription_Toolbar#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="intro"><i><b>Transcription Toolbar</b></i> lets you Play or Loop Play audio at a slower or faster speed than normal, also affecting <i><b><a href="glossary.html#pitch" title="Glossary">pitch</a></b></i>. Slower than normal speeds can make it easier to transcribe speech or song lyrics.<p>Click on the toolbar image below to see this toolbar displayed in context of the default upper tooldock layout.</p> </div>
+<dl><dd></dd>
+<dd><a href="http://alphamanual.audacityteam.org/man/File:TranscriptionToolbar.png" class="image" title="Will automagically be replaced"><img alt="Will automagically be replaced" src="../m/images/2/2c/transcriptiontoolbar.png" width="140" height="27" /></a></dd></dl>
+
+<p><b>Transcription Toolbar</b> has its own Play-at-Speed button which plays (or restarts playback) at the speed set by the Play-at-Speed slider to the right. Playback can be paused and resumed at the adjusted speed using the Pause button 
+<span title="Pause button"><img alt="Pause.png" src="../m/images/4/47/pause.png" width="16" height="16" /></span> in <a href="transport_toolbar.html" title="Transport Toolbar">Transport Toolbar</a> or the shortcut <span class="kbrd" style="background-color: #e0e0f0">P</span>. Irrespective of the setting on the slider, using <span class="kbrd" style="background-color: #d0d0f8">Space</span> or the green Play button on Transport Toolbar will only play at normal speed. You can however set a <a href="keyboard_preferences.html" title="Keyboard Preferences">keyboard shortcut</a> for "Play-at-Speed" with which you can start or restart playback at adjusted speed.       
+</p><p>Drag the slider to set a lowest speed of one-hundredth of normal (0.01x) to three times as fast (3.00x). Using the keyboard, right-click on the slider then use the keyboard arrow keys to change speed by 0.05x increments. Alternatively you can set keyboard shortcuts for "Decrease playback speed" and "Increase playback speed". Each press of those shortcuts decreases or increases speed respectively by 0.03x increments.  
+</p><p>To set a precise playback speed, double-click over the slider (or create a keyboard shortcut for "Adjust playback speed"), enter the desired speed in the box and click OK. 
+</p>
+<dl><dd><span title="Transcription Toolbar&#39;s Playback Speed dialog"><img alt="Transcription Toolbar Playback Speed dialog.png" src="../m/images/7/71/transcription_toolbar_playback_speed_dialog.png" width="350" height="155" /></span></dd></dl>
+<ul><li> To <b>Loop Play at speed</b> (play the track or selection over and over at adjusted speed until you stop), hold down <span class="kbrd" style="background-color: #e0e0f0">Shift</span> while clicking the Play-at-Speed button. This causes the button image to change to Loop Play <img alt="The Loop Play button" src="../m/images/7/7e/loop_play.png" title="The Loop Play button" width="16" height="16" />. The standard <span class="kbrd" style="background-color: #e0e0f0">Shift + Space</span> shortcut for Loop Play will only play at normal speed whatever the setting on the Play-at-Speed slider, but you can set a keyboard shortcut for "Loop Play at speed" in Keyboard Preferences.
+<li> To <b><a href="playing_and_recording.html#play_cut" title="Playing and Recording">Play Cut Preview</a> at speed</b> (play audio either side of a <a href="audacity_selection.html" title="Audacity Selection">selection</a> at adjusted speed to preview what deleting the selection will sound like), hold down <span class="kbrd" style="background-color: #e0e0f0">Ctrl</span> while clicking the Play-at-Speed button (this works on Mac too, but using <span class="kbrd" style="background-color: #e0e0f0">&#8984;</span> while clicking does not). This causes the button image to change to Play Cut Preview <img alt="The Play Cut Preview button" src="../m/images/5/55/play_cut_preview.png" title="The Play Cut Preview button" width="15" height="15" /> <i>(like the green Play button but with a vertical cut through it)</i>. The standard <span class="kbrd" style="background-color: #e0e0f0">C</span> shortcut for Play Cut Preview will only play at normal speed whatever the setting on the Play-at-Speed slider, but you can set a keyboard shortcut for "Play Cut Preview at speed" in Keyboard Preferences. </ul>   
+
+<p>It is not currently possible to change speed during playback. To change speed when audio is already playing, change the speed first with the slider, then click the green Play-at-Speed button to play at the new speed. Playback resumes from the original cursor position. This can also be achieved by setting keyboard shortcuts to control Play-at-Speed as described above. 
+</p>
+<div class="note"><a href="file_export_dialog.html" title="File Export Dialog">Export</a> of the audio will be at normal speed whatever the position of the Play-at-Speed slider. To export at an adjusted speed, use <a href="effect_menu.html#tempo" title="Effect Menu">Change Tempo...</a> in the <a href="effect_menu.html" title="Effect Menu">Effect Menu</a> to change speed without modifying pitch. Alternatively, use either <a href="effect_menu.html#speed" title="Effect Menu">Change Speed...</a> or a <a href="time_tracks.html" title="Time Tracks">Time Track</a> to change speed also affecting pitch.  </div>
+<p><br />
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020136
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.098 seconds
+Real time usage: 0.104 seconds
+Preprocessor visited node count: 432/1000000
+Preprocessor generated node count: 1468/1000000
+Post‐expand include size: 6748/2097152 bytes
+Template argument size: 2451/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   46.053      1 - -total
+ 67.76%   31.207      1 - Template:I18n
+ 64.23%   29.581      1 - Template:I18n_box
+ 57.33%   26.402      1 - Template:I18n_list
+ 35.06%   16.146      8 - Template:I18n_link
+ 20.58%    9.479      8 - Template:Autoglossonym
+  8.43%    3.881      1 - Template:Annotated
+  7.36%    3.387      6 - Template:Key
+  6.05%    2.787      1 - Template:Img
+  3.28%    1.512      1 - Template:Shortcut
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:2078-0!*!0!*!*!5!* and timestamp 20180215020136 and revision id 58245
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Transcription_Toolbar">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

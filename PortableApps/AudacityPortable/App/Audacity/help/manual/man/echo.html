@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Echo - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Echo rootpage-Echo skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Echo</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Echo#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+
+
+<p><br />
+</p>
+<div class="intro">This effect repeats the audio you have selected again and again, normally softer each time. The delay time between each repeat is fixed, with no pause in between each repeat.</div>
+<dl><dd><b>Accessed by:</b> <span class="menu">Effect &gt; Echo...</span></dd>
+<dd><span title="Echo effect dialog"><a href="http://alphamanual.audacityteam.org/man/File:Echo.png" class="image"><img alt="Echo.png" src="../m/images/c/ce/echo.png" width="474" height="178" /></a></span></dd></dl>
+<div class="note">Unless your requested echo length (delay time) is <i>less</i> than the length of the selection, no echoes will be created. Also Echo does not generate additional audio beyond that selected. So if necessary you must <b>add sufficient silence</b> to the end of your track(s) to accommodate your echo settings. 
+<dl><dd>To add silence:</dd></dl>
+<ol><li> Click in the selection and press <span class="kbrd" style="background-color: #e0e0f0">End</span> on your keyboard, or choose <span class="menu">Transport &gt; Cursor To &gt; <a href="transport_menu_cursor_to.html#track_end" title="Transport Menu: Cursor to">Track End</a></span>  </li>
+<li> Choose <span class="menu">Generate &gt; <a href="generate_menu.html#Silence..." title="Generate Menu">Silence...</a></span></li>
+<li> Choose the duration of the silence you want to add to the selected audio, and click OK. </li></ol>
+This leaves the generated silence selected. Before running the Echo effect itself, click in the <a href="audio_tracks.html#Track_Control_Panel" title="Audio Tracks">Track Control Panel</a> to select both the original audio and the inserted silence (or hold <span class="kbrd" style="background-color: #e0e0f0">Shift</span> and press <span class="kbrd" style="background-color: #e0e0f0">Home</span>).</div>
+<div id="time"></div>
+<h2><span class="mw-headline" id="Delay_time_.28seconds.29">Delay time (seconds)</span></h2>
+<p>The amount of delay between the echoes, in other words the length of each echo.   
+</p>
+<div id="factor"></div>
+<h2><span class="mw-headline" id="Decay_factor">Decay factor</span></h2>
+<p>Usually a number between 0 and 1.  A value of 0 means no echo, and a value of 1 means that each echo is exactly as loud as the original, so this merely extends the current selection unchanged. A value of 0.5 reduces the <i><b><a href="glossary.html#amplitude" title="Glossary">amplitude</a></b></i> or loudness of each echo by half each time, so the audio dies out quite slowly. Smaller values make it die out more quickly. Values above 1 increase the amplitude of the echo each time, which you could use as a special effect.
+</p>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">Because echoes are often <i>added</i> to the original audio, the processed audio will often have a higher peak level than the original. If <i><b><a href="glossary.html#clipping" title="Glossary">clipping</a></b></i> results, you can <span class="menu">Edit &gt; <a href="edit_menu.html#undo" title="Edit Menu">Undo</a></span> the Echo effect, <span class="menu">Effect &gt; <a href="effect_menu.html#amplify" title="Effect Menu">Amplify</a></span> to a lower level, then apply Echo again.
+</td></tr></table>
+</div> 
+<div class="note"><b>Using Echo for loops:</b> Echo can be used to create a simple loop with volume changes without any problem about gaps between each segment of the loop. 
+<ul><li> If you want a loop with no volume changes, use <span class="menu">Effect &gt; <a href="effect_menu.html#Repeat..." title="Effect Menu">Repeat...</a></span> instead.</li>
+<li> You can also create echoes with <span class="menu">Effect &gt; <a href="delay.html" title="Delay">Delay...</a></span> which generates the additional audio needed for your chosen delay time and number of echoes.</div></li></ul>
+<p><br />
+Clicking on the command buttons give the following results:
+</p>
+<ul><li><span class="button">Manage</span> gives a dropdown menu enabling you to manage presets for the tool and to see some detail about the tool. For details see <a href="manage_presets.html" title="Manage presets">Manage presets</a>.</li>
+<li><span class="button">Preview</span> plays a short preview of what the audio would sound like if the effect is applied with the current settings, without making actual changes to the audio.  The length of preview is determined by your setting in <span class="menu">Edit &gt; Preferences &gt; <a href="playback_preferences.html" title="Playback Preferences">Playback</a></span>, the default setting is 6 seconds.</li>
+<li><span class="button">OK</span> applies the effect to the selected audio with the current effect settings.</li>
+<li><span class="button">Cancel</span> aborts the effect and leaves the audio unchanged.</li>
+<li><a href="help_button.html" title="Help Button"><img alt="Help Button" src="../m/images/d/d6/help_button.png" width="27" height="27" /></a> brings you to the appropriate page in the Manual, this page.</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<p><a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers"><b>|&lt;</b> Index of Effects, Generators and Analyzers</a> <br />
+</p><p><a href="effect_menu.html" title="Effect Menu"><b>|&lt;</b> Effect Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020555
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.124 seconds
+Real time usage: 0.133 seconds
+Preprocessor visited node count: 409/1000000
+Preprocessor generated node count: 1799/1000000
+Post‐expand include size: 14995/2097152 bytes
+Template argument size: 4447/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   72.411      1 - -total
+ 39.77%   28.799      1 - Template:I18n
+ 36.69%   26.571      1 - Template:I18n_box
+ 32.79%   23.746      1 - Template:I18n_list
+ 19.17%   13.883      1 - Template:No-rename
+ 15.29%   11.069      1 - Template:Ednote
+ 14.42%   10.443      1 - Template:Effectbuttons
+ 13.54%    9.805      3 - Template:I18n_link
+ 12.26%    8.874      8 - Template:Button
+ 10.76%    7.793      1 - Template:Buttonlist
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:2558-0!*!0!!*!5!* and timestamp 20180215020555 and revision id 57001
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Echo">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

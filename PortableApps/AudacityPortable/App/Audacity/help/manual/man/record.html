@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Record - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Record rootpage-Record skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Record</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Record#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="intro"><b>To record:</b>
+<ul><li>Set the Recording Device, </li>
+<li>monitor and then adjust the recording level, </li>
+<li>then press the Record <img alt="Record button" src="../m/images/e/e8/record.png" title="Record button" width="16" height="16" /> button. <p> <b>Correct adjustment of level before recording is essential to avoid noise or distortion.</b> </p></div></li></ul>
+<div class="note">If you are having problems recording, have a look at the <a href="faq_recording_how_to_s.html" title="FAQ:Recording - How To's">FAQ on recording</a> which answers some frequently asked questions.</div>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Bulbicon.png" class="image" title="Bulb icon"><img alt="Bulb icon" src="../m/images/d/d7/bulbicon.png" width="32" height="32" /></a>
+</td>
+<td align="left" valign="top">When making recordings, particular critical recordings, you should consider shutting down all other applications giving Audacity sole use of the computer.  This can help to avoid skips, small dropouts, and ticks in your recordings.
+<div class="note">And on Mac that means fully Quitting them not just closing them, as otherwise Mac will leave them open consuming computer resources.</div> 
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<ol><li> Set the <a href="device.html" title="Device">Recording Device</a> either in the <a href="devices_preferences.html" title="Devices Preferences">Devices section of Preferences</a> or in <a href="device_toolbar.html" title="Device Toolbar">Device Toolbar</a>. 
+<li> Click in the <a href="meter_toolbar.html#recording" title="Meter Toolbar">Recording Meter</a> to start <a href="meter_toolbar.html#Monitoring" title="Meter Toolbar">monitoring</a> as in the following image:<br />
+<dl><dd><span title="Recording Meter Toolbar in use, default size"><img alt="Recording Toolbar in use.png" src="../m/images/7/7a/recording_toolbar_in_use.png" width="473" height="33" /></span></dd></dl>
+<li> Singing or playing the loudest part of what you are recording, adjust the recording level using the right-hand slider on <a href="mixer_toolbar.html" title="Mixer Toolbar">Mixer Toolbar</a>:<br />
+<dl><dd><span title="Mixer Toolbar Playback and Recording Sliders"><img alt="MixerToolbarWithoutInputSelect.png" src="../m/images/2/2b/mixertoolbarwithoutinputselect.png" width="326" height="30" /></span></dd></dl>
+so that the moving Meter Toolbar bars do not get too close to the right-hand edge of the meter. 
+<li> Optionally, turn on <span class="menu">Transport &gt; Transport Options &gt; <a href="transport_menu_transport_options.html#software_playthrough_onoff" title="Transport Menu: Transport Options">Software Playthrough (on/off)</a></span> (so it has a check mark) to hear what the recording will sound like.
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">Do not enable Software Playthrough when <a href="tutorial_recording_audio_playing_on_the_computer.html" title="Tutorial - Recording audio playing on the computer">recording computer playback</a> because it creates echoes and feedback. To hear what a recording of computer playback will sound like, make a test recording to check the level before recording for real.
+</td></tr></table>
+</div>  
+<li> Press the Record <img alt="Record button" src="../m/images/e/e8/record.png" title="Record button" width="16" height="16" /> button to record for real. 
+<li> Audacity will record until you stop the recording using the Stop <img alt="Stop button" src="../m/images/f/f9/stop.png" title="Stop button" width="16" height="16" /> button.</ol>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Bulbicon.png" class="image" title="Bulb icon"><img alt="Bulb icon" src="../m/images/d/d7/bulbicon.png" width="32" height="32" /></a>
+</td>
+<td align="left" valign="top">If you have just made a <strong class="selflink">recording</strong> it is strongly recommended that you immediately export your audio using <span class="menu">File &gt; Export &gt; <a href="file_export_dialog.html" title="File Export Dialog">Export Audio...</a></span> to <i><b><a href="glossary.html#wav" title="Glossary">WAV</a></b></i> or <i><b><a href="glossary.html#aiff" title="Glossary">AIFF</a></b></i> (ideally to an external drive) as a safety copy before you start editing the project.
+</td></tr></table>
+</div> 
+<p><br />
+<span style="font-weight: bold; font-size:118%">More help at:</span> 
+</p>
+<ul><li><a href="basic_recording_editing_and_exporting.html" title="Basic Recording, Editing and Exporting">Basic Recording, Editing and Exporting</a> - more getting-started information
+<ul><li><a href="recording.html" title="Recording">Recording</a> a detailed description of various ways of controlling recording in Audacity</li></ul></li>
+<li><a href="tutorial_your_first_recording.html" title="Tutorial - Your First Recording"> Tutorial - Your First Recording</a> for recording microphones, guitar or keyboard</li>
+<li><a href="tutorial_copying_tapes_lps_or_minidiscs_to_cd.html" title="Tutorial - Copying tapes, LPs or minidiscs to CD">Tutorial - Copying tapes, LPs or MiniDiscs to CD</a>
+<ul><li><a href="recording_with_usb_turntables.html" title="Recording with USB turntables">Recording with USB turntables or USB cassette decks</a></li></ul></li>
+<li><a href="faq_recording_troubleshooting.html" title="FAQ:Recording - Troubleshooting">Troubleshooting Recordings: Frequently Asked Questions</a></li>
+<li><a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Recording_Tips">Recording Tips</a> on the Wiki </li></ul>
+<p><br />
+<a href="../quick_help.html" title="Quick Help"><b>|&lt;</b> Back to: Getting Started</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020259
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.093 seconds
+Real time usage: 0.098 seconds
+Preprocessor visited node count: 262/1000000
+Preprocessor generated node count: 1095/1000000
+Post‐expand include size: 5878/2097152 bytes
+Template argument size: 2372/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   34.110      1 - -total
+ 74.52%   25.420      1 - Template:I18n
+ 68.34%   23.310      1 - Template:I18n_box
+ 58.73%   20.033      1 - Template:I18n_list
+ 29.99%   10.228      5 - Template:I18n_link
+ 17.49%    5.966      5 - Template:Autoglossonym
+  5.50%    1.876      2 - Template:Tip
+  4.08%    1.393      1 - Template:Intro
+  3.77%    1.286      2 - Template:Note
+  3.39%    1.158      2 - Template:Menu
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:2641-0!*!0!*!*!5!* and timestamp 20180215020259 and revision id 58600
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Record">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

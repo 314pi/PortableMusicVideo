@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "새로 고침">
+<!ENTITY push.playqueue.instructions "이 장치에 바로 음악 대기열을 만들려면 여기에 트랙 또는 음악 목록을 끌어다 놓으면 됩니다.">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "오프라인">
+<!ENTITY sharing.push.deviceState.stopped "정지됨">
+<!ENTITY sharing.push.deviceState.playing "재생">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "일시 정지됨">
+<!ENTITY sharing.push.deviceState.recording "녹음 중">
+<!ENTITY sharing.push.deviceState.nomedia "미디어 없음">

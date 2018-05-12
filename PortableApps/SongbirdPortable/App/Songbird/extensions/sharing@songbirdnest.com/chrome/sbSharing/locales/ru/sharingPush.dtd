@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "Обновить">
+<!ENTITY push.playqueue.instructions "Перетащите сюда композиции или списки воспроизведения, чтобы создать список для прослушивания на этом устройстве">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "Офлайн">
+<!ENTITY sharing.push.deviceState.stopped "Остановлено">
+<!ENTITY sharing.push.deviceState.playing "Воспроизведение">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "Приостановлено">
+<!ENTITY sharing.push.deviceState.recording "Запись">
+<!ENTITY sharing.push.deviceState.nomedia "Медиаконтент отсутствует">

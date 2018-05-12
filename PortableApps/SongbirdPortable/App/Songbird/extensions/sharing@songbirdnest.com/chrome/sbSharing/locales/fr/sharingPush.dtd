@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "Actualiser">
+<!ENTITY push.playqueue.instructions "Glissez-déplacez ici des pistes ou des listes de lecture pour créer une file d'écoute instantanée pour cet appareil">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "Hors ligne">
+<!ENTITY sharing.push.deviceState.stopped "Arrêté">
+<!ENTITY sharing.push.deviceState.playing "Lecture">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "Interrompu">
+<!ENTITY sharing.push.deviceState.recording "Enregistrement">
+<!ENTITY sharing.push.deviceState.nomedia "Aucun support multimédia">

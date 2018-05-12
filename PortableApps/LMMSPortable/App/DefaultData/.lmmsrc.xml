@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE lmms-config-file>
+<lmms version="1.0.2">
+  <app nomsgaftersetup="0" displaydbv="0" nommpz="0" configured="1"/>
+  <audioportaudio backend="Windows DirectSound" device="Primary Sound Driver"/>
+  <audiosdl device=""/>
+  <mixer framesperaudiobuffer="256" hqaudio="0" audiodev="PortAudio" mididev="WinMM MIDI"/>
+  <paths workingdir="" fldir="" stkdir="DEFAULTAPPDIRECTORY\LMMS\data\stk\rawwaves\" vstdir="DEFAULTAPPDIRECTORY\VSTplugins\" artwork="DEFAULTAPPDIRECTORY\LMMS\data\themes\default\" defaultsf2="" backgroundartwork="" laddir="DEFAULTAPPDIRECTORY\LMMS\plugins\ladspa\"/>
+  <tooltips disabled="0"/>
+  <ui smoothscroll="0" compacttrackbuttons="0" enableautosave="0" manualchannelpiano="0" disablechannelactivityindicators="0" animateafp="0" displaywaveform="0" oneinstrumenttrackwindow="0" syncvstplugins="0" printnotelabels="0"/>
+  <recentfiles/>
+</lmms>

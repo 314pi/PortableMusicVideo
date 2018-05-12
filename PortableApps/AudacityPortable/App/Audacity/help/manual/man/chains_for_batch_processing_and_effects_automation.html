@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Chains - for batch processing and effects automation - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Chains_-_for_batch_processing_and_effects_automation rootpage-Chains_-_for_batch_processing_and_effects_automation skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Chains - for batch processing and effects automation</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Chains_-_for_batch_processing_and_effects_automation#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+
+
+<p><br />
+</p>
+<div class="intro">
+A <i><b>Chain</b></i> is a sequence of preconfigured commands in a set order (mainly effects) that can be applied automatically to <a href="audacity_projects.html" title="Audacity Projects">projects</a> or audio files. Any <a href="effect_menu.html#built-in" title="Effect Menu">built-in</a>, <a href="effect_menu.html#LADSPA_effects" title="Effect Menu">LADSPA</a>, <a href="effect_menu.html#LV2_effects" title="Effect Menu">LV2</a>, <a href="effect_menu.html#nyquist_effects" title="Effect Menu">Nyquist</a>, <a href="effect_menu.html#vst" title="Effect Menu">VST</a> or <a href="effect_menu.html#Audio_Unit_effects" title="Effect Menu">Audio Unit</a> (Mac) effect shown in the <a href="effect_menu.html" title="Effect Menu">Effect Menu</a> can be added to a Chain. You can also add plug-ins in any format that are shown in the <a href="generate_menu.html" title="Generate Menu">Generate</a> or <a href="analyze_menu.html" title="Analyze Menu">Analyze</a> Menus (including <a href="analyze_menu.html#vamp" title="Analyze Menu">Vamp</a> analysis effects), the built-in <a href="find_clipping.html" title="Find Clipping">Find Clipping</a> analyzer and a number of export commands. </div>
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_2120540147"><area href="file_menu.html" shape="rect" coords="33,3,56,19" alt="File Menu" title="File Menu"/><area href="edit_menu.html" shape="rect" coords="63,3,87,19" alt="Edit Menu" title="Edit Menu"/><area href="select_menu.html" shape="rect" coords="94,3,131,19" alt="Select Menu" title="Select Menu"/><area href="view_menu.html" shape="rect" coords="138,3,167,19" alt="View Menu" title="View Menu"/><area href="transport_menu.html" shape="rect" coords="174,3,230,19" alt="Transport Menu" title="Transport Menu"/><area href="tracks_menu.html" shape="rect" coords="237,3,277,19" alt="Tracks Menu" title="Tracks Menu"/><area href="generate_menu.html" shape="rect" coords="284,3,338,19" alt="Generate Menu" title="Generate Menu"/><area href="effect_menu.html" shape="rect" coords="345,3,378,19" alt="Effect Menu" title="Effect Menu"/><area href="analyze_menu.html" shape="rect" coords="385,3,429,19" alt="Analyze Menu" title="Analyze Menu"/><area href="help_menu.html" shape="rect" coords="436,3,465,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="472,3,502,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="file_menu.html#new" shape="rect" coords="39,23,220,45" alt="Creates a new and empty project window to start working on new or imported Tracks" title="Creates a new and empty project window to start working on new or imported Tracks"/><area href="file_menu.html#open" shape="rect" coords="39,45,220,67" alt="Presents you with a file selection dialog box to open files" title="Presents you with a file selection dialog box to open files"/><area href="file_menu_recent_files.html" shape="rect" coords="39,67,220,89" alt="Lists the full path to the twelve most recently saved or opened projects or most recently imported audio files" title="Lists the full path to the twelve most recently saved or opened projects or most recently imported audio files"/><area href="file_menu.html#close" shape="rect" coords="39,96,220,118" alt="Closes the current project window, prompting you to save your work if you have not saved" title="Closes the current project window, prompting you to save your work if you have not saved"/><area href="file_menu.html#save_project" shape="rect" coords="39,118,220,140" alt="Saves the current Audacity project" title="Saves the current Audacity project"/><area href="file_menu.html#save_project_as" shape="rect" coords="39,140,220,162" alt="Same as &quot;Save Project&quot; above, but allows you to save a copy of an open project to a different name or location" title="Same as &quot;Save Project&quot; above, but allows you to save a copy of an open project to a different name or location"/><area href="file_menu_export.html" shape="rect" coords="39,162,220,184" alt="}For exporting audio files" title="}For exporting audio files"/><area href="file_menu_import.html" shape="rect" coords="39,191,220,213" alt="For importing audio files or label files into your project" title="For importing audio files or label files into your project"/><area href="file_menu_chains.html" shape="rect" coords="39,220,220,242" alt="Chains are Audacity's form of batch processing" title="Chains are Audacity's form of batch processing"/><area href="file_menu.html#page_setup" shape="rect" coords="39,249,220,271" alt="Opens the standard Page Setup dialog box prior to printing" title="Opens the standard Page Setup dialog box prior to printing"/><area href="file_menu.html#print" shape="rect" coords="39,271,220,293" alt="Prints all the waveforms in the current project window (and the contents of Label Tracks or other tracks), with the Timeline above" title="Prints all the waveforms in the current project window (and the contents of Label Tracks or other tracks), with the Timeline above"/><area href="file_menu.html#exit" shape="rect" coords="39,300,220,322" alt="Closes all project windows and exits Audacity" title="Closes all project windows and exits Audacity"/><area href="#apply_chain" shape="rect" coords="232,223,360,245" alt="Creates a new Chain or edits an existing chain" title="Creates a new Chain or edits an existing chain"/><area href="#edit_chains" shape="rect" coords="232,245,360,267" alt="Show the existing chains and allows you to select and run one" title="Show the existing chains and allows you to select and run one"/></map><img alt="File-ChainsMenu.png" src="../m/images/e/e1/file_chainsmenu.png" width="373" height="330" usemap="#ImageMap_1_2120540147"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p><p><br />
+</p>
+<div class="note">There are two related Chain commands accessible from the File Menu called <a href="#editchains">Edit Chains</a> and <a href="#applychain">Apply Chain</a>:</div>
+<h2><span class="mw-headline" id="How_to_use_Chains">How to use Chains</span></h2>
+<p>The two uses of Chains are for: 
+</p>
+<ul><li> <b>Batch processing</b> (where many audio files are processed unattended with one or more effects then exported to a new file)</li>
+<li> <b>Effects automation</b> (where the <a href="audacity_selection.html" title="Audacity Selection">selected audio</a> in the <a href="audio_tracks.html" title="Audio Tracks"> track</a> or tracks in the current project is subjected to the same prescribed sequence of effects, and optionally, a file exported from the entire audio.)</li></ul>
+<p>Look first at Edit Chains to determine if an existing Chain will suit your needs (Audacity only ships with one) or to create a new chain. Next, use Apply Chain to perform the action on your selected audio.
+</p><p>See the <a href="#examples">examples</a> below. 
+</p>
+<div id="edit_chains"></div>
+<h2><span class="mw-headline" id="Edit_Chains"><a href="edit_chains.html" title="Edit Chains">Edit Chains</a></span></h2>
+<p>Use <span class="menu">File &gt; Chains &gt; <a href="edit_chains.html" title="Edit Chains">Edit Chains...</a></span> if you need to create a new Chain or to edit an existing Chain. 
+</p>
+<ul><li>The Chain can include a number of common Audacity functions and effects to be executed in any order you specify.</li>
+<li>To create an audio file as part of the Chain process you must include an "Export"  command (such as <b>ExportWAV</b>).  </li>
+<li>In many cases the parameters for each command in the Chain can be specified within the Edit Chains dialog. </li></ul>
+<dl><dd><span title="Edit Chains dialog box"><img alt="Edit chains W10.png" src="../m/images/a/aa/edit_chains_w10.png" width="826" height="327" /></span></dd></dl>
+<p>The left hand box in the dialog (labeled <b>Chains</b>) contains a list of already defined Chains. Until you add a new Chain, it only has a single built-in "MP3 Conversion" Chain. You can:
+</p>
+<ul><li>Use the <span class="button">Add</span> button to create a new Chain</li>
+<li>Use left-click <i>(or use the <span class="kbrd" style="background-color: #e0e0f0">Up</span> or <span class="kbrd" style="background-color: #e0e0f0">Down</span> arrow on the keyboard)</i> to select the Chain you want to work on </li>
+<li>Delete any user-added Chain with the <span class="button">Remove</span> button</li>
+<li>Rename any user-added Chain with the <span class="button">Rename</span> button</li></ul>
+<div class="note">The Remove and Rename buttons are grayed out when the <b>MP3 Conversion</b> Chain is selected.</div>
+<p>The right-hand box (labeled <b>Chain</b>) lists the ordered sequence of commands for the Chain selected in the "Chains" box on the  left. You can: 
+</p>
+<ul><li>Add or remove commands for the selected Chain </li>
+<li>Change the order in which the commands execute in the Chain </li>
+<li>Edit the parameters for some effects in the Chain  </li></ul>
+<p>For further details on creating, editing and sharing Chains, see the <a href="edit_chains.html" title="Edit Chains">Edit Chains</a> page.
+</p>
+<div id="apply_chain"></div>
+<h2><span class="mw-headline" id="Apply_Chain"><a href="apply_chain.html" title="Apply Chain">Apply Chain</a></span></h2>
+<p>Use <span class="menu">File &gt; Chains &gt; <a href="apply_chain.html" title="Apply Chain">Apply Chain...</a></span>  to show the existing chains. Select the chain you require by using left-click <i>(or using the <span class="kbrd" style="background-color: #e0e0f0">Up</span> or <span class="kbrd" style="background-color: #e0e0f0">Down</span> arrow on the keyboard)</i> to select the Chain you want to work on, then <b>either:</b>
+</p>
+<ul><li> choose <span class="button">Apply to Current Project</span> to run the Chain on the entire project in the current window <b>or</b>
+<li>choose <span class="button">Apply to Files...</span> to run the Chain on selected external audio files in a single directory </ul>
+<dl><dd><span title="Apply Chain dialog box"><img alt="Apply Chain W10.png" src="../m/images/7/7f/apply_chain_w10.png" width="400" height="243" /></span></dd></dl>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">If you already have audio in the current project window, you must save and close that project using <span class="menu">File &gt; <a href="file_menu.html#close" title="File Menu">Close</a></span> before applying a Chain to files.
+</td></tr></table>
+</div>
+<p>For more details see the <a href="apply_chain.html" title="Apply Chain">Apply Chain</a> page.
+</p>
+<div id="examples"></div>
+<h2><span class="mw-headline" id="Chain_Examples">Chain Examples</span></h2>
+<p>In this section we look at a couple of examples of how a Chain might be used. In the image below we have added two additional Chains.  It is important to note that the only Chain that Audacity ships with is <b>MP3 Conversion</b> (shown as selected in blue). All other Chains must be added by the user.
+</p>
+<dl><dd><dl><dd><dl><dd><span title="Edit Chains dialog showing an example of a full dialog with the MP3 Conversion selected and displayed"><img alt="Chain examples full window.png" src="../m/images/f/fb/chain_examples_full_window.png" width="750" height="221" /></span></dd></dl></dd></dl></dd></dl>
+<p><br />
+</p>
+<div class="example"><h3><span class="mw-headline" id="Example_1:_Loud_MP3">Example 1: Loud MP3</span></h3>
+<p>A <b>batch processing</b> Chain to compress and normalize <i><b><a href="glossary.html#wav" title="Glossary">WAV</a></b></i> files then convert them to MP3:
+</p>
+<ol>
+<li> Insert <a href="compressor.html" title="Compressor">Compressor</a> to reduce the <i><b><a href="glossary.html#dynamic_range" title="Glossary">dynamic range</a></b></i> of each WAV, also normalizing them to maximum <i><b><a href="glossary.html#amplitude" title="Glossary">amplitude</a></b></i>  of 0 <i><b><a href="glossary.html#decibel" title="Glossary">dB</a></b></i>
+<li> Insert ExportMP3 to convert them to <i><b><a href="glossary.html#mp3" title="Glossary">MP3</a></b></i> format
+<li> Click <span class="button">OK</span> to close the "Edit Chains" window
+<div style="margin-left:-28px;margin-top:6px"> <span title="Edit Chains dialog showing an example of a chain for batch processing to compress and normalize then export as MP3"><img alt="Chain examples cropped LoudMP3.png" src="../m/images/a/ae/chain_examples_cropped_loudmp3.png" width="800" height="205" /></span> </div>
+<li> Finally, choose <span class="menu">File &gt; Chains &gt; <a href="#applychain">Apply Chain...</a></span>, select the "Loud MP3" Chain then click <span class="button">Apply to Files...</span> where you can select the files on which to run the Chain.</ol></div>
+<p><br />
+</p>
+<div class="example"><h3><span class="mw-headline" id="Example_2:_NR.26EQ">Example 2: NR&amp;EQ</span></h3>
+<p>An <b>effects automation</b> Chain for the current project that applies noise reduction and equalization:
+</p>
+<ol>
+<li> Insert <a href="normalize.html" title="Normalize">Normalize</a> with settings of:
+<ol><li> Remove any <i><b><a href="glossary.html#dc_offset" title="Glossary">DC offset</a></b></i>
+<li> -10 dB (to allow for boosting <i><b><a href="glossary.html#frequency" title="Glossary">frequencies</a></b></i> later in the Chain without <i><b><a href="glossary.html#clipping" title="Glossary">clipping</a></b></i>) </ol>
+<li> Insert <a href="noise_reduction.html" title="Noise Reduction">Noise Reduction</a>
+<li> Insert <a href="equalization.html" title="Equalization">Equalization</a> (to perform the frequency adjustment)
+<li> Insert another Normalize at different settings (without offset removal, setting a final amplitude of -1 dB)
+<li> Click <span class="button">OK</span> to close the "Edit Chains" window
+<div style="margin-left:-28px;margin-top:5px"><span title="Edit Chains dialog showing an example of a chain for noise reduction and equalization"><img alt="Chain examples cropped NRandEQ.png" src="../m/images/f/fb/chain_examples_cropped_nrandeq.png" width="692" height="301" /></span> </div>
+<li> Finally, choose <span class="menu">File &gt; Chains &gt; <a href="#applychain">Apply Chain...</a></span>, select the "NR&amp;EQ" Chain then click <span class="button">Apply to Current Project</span> to apply the Chain to the selected track(s) in the current project window.</ol>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Bulbicon.png" class="image" title="Bulb icon"><img alt="Bulb icon" src="../m/images/d/d7/bulbicon.png" width="32" height="32" /></a>
+</td>
+<td align="left" valign="top">
+<ul><li> If a Noise Profile exists, that Noise Profile will be used. It is often best to capture a suitable Noise Profile before running a Chain.</li>
+<li> If a Noise Profile does not exist:
+<ul><li>If the Chain is applied to the current project (as above), the current selection is used to create the Noise Profile. Therefore, other effect commands in the Chain will also only apply to that selection. If an export command is added, the entire file will be exported.</li>
+<li> If the Chain is applied to files, the first file (all of it) is used to create the Noise Profile. It may be useful to prepare a file containing a suitable Noise Profile and name it so that it is alphabetically the first file of those to be run in the Chain. </li></ul></li></ul>
+</td></tr></table>
+</div></div>
+<p><br />
+</p><p><a href="file_menu.html" title="File Menu"><b>&lt;</b>&#160; Back to: File Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020236
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.164 seconds
+Real time usage: 0.176 seconds
+Preprocessor visited node count: 472/1000000
+Preprocessor generated node count: 7694/1000000
+Post‐expand include size: 11888/2097152 bytes
+Template argument size: 7266/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   97.840      1 - -total
+ 47.07%   46.055      1 - Template:Menus
+ 43.34%   42.405      1 - Template:All-menus
+ 24.79%   24.259      1 - Template:I18n
+ 23.22%   22.718      1 - Template:I18n_box
+ 20.00%   19.571      1 - Template:I18n_list
+  8.35%    8.169      3 - Template:I18n_link
+  6.68%    6.540      2 - Template:Example
+  5.54%    5.417      9 - Template:Button
+  5.00%    4.894      3 - Template:Autoglossonym
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4315-0!*!0!!*!5!* and timestamp 20180215020235 and revision id 59258
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Chains_-_for_batch_processing_and_effects_automation">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

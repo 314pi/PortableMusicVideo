@@ -1,0 +1,17 @@
+[Main]
+Ext=mpeg
+Container=1
+Encoder=1
+VCodec=1
+VBitrate=4000
+Width=720
+Height=576
+VideoSize=720x576
+FPS=29.97
+VAR=0
+ACodec=6
+ABitrate=192
+ASR=7
+AChan=1
+CustomVideo=
+CustomAudio=

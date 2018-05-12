@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Status Bar - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Status_Bar rootpage-Status_Bar skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Status Bar</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Status_Bar#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+
+<div class="intro">The Audacity <b>Status Bar</b> is to be found at the bottom of the Audacity window. It cannot be relocated or floated. Its function is to display messages about recording or playback, to indicate parts of Audacity that are being hovered over by the mouse, and to provide hints about how to use Audacity. </div>
+<div id="sections"></div>
+<h2><span class="mw-headline" id="Status_Bar_sections">Status Bar sections</span></h2>
+<p>There are three sections in the Status bar:
+</p>
+<ul><li>the current status: <b>Playing</b>, <b>Playing Paused</b>, <b>Scrubbing</b>, <b>Recording</b>, <b>Recording Paused</b> or <b>Stopped</b></li>
+<li>the central information and hints section </li>
+<li>the <a href="#rate">Actual Rate</a> of the audio (the active sample rate, only shown when playing or recording).</li></ul>
+<p>When you hover over the audio area in any <a href="audio_tracks.html" title="Audio Tracks">audio track</a>, Status Bar displays <i><b>"Click and drag to select audio"</b></i>. Dragging horizontally always selects a region of time. When you release the drag or otherwise hover over the left or right edge of a selection, the Status Bar message changes to advise that you can click and drag to move that selection boundary.
+</p>
+<dl><dd><span title="Status Bar showing status messages when hovering over the audio area of any audio track"><img alt="Staus Bar - Click and drag to select audio.png" src="../m/images/3/34/staus_bar_click_and_drag_to_select_audio.png" width="717" height="82" /><span></dd></dl>
+<div id="length"></div>
+<h2><span class="mw-headline" id="Recording_length"><a href="recording_length.html" title="Recording length">Recording length</a></span></h2>
+<p>When recording, the audio data is written to your hard disk. For example, if you record without having yet saved a Project, the data is written to Audacity's temporary folder specified in <a href="directories_preferences.html" title="Directories Preferences">Directories Preferences</a>. Therefore, the amount of time you can record for is limited by the available disk space on the drive you are writing to. There are no other restrictions on recording length. As soon as you start your first recording in the current project window, the center section of the Status Bar gives a clear indication of how long you can record for, based on that remaining space:
+</p>
+<dl><dd><span title="Status Bar showing disk space remaining for recording"><img alt="Status Bar - Disk-space remaining for recording.png" src="../m/images/e/e7/status_bar_disk_space_remaining_for_recording.png" width="683" height="85" /><span></dd></dl>
+<p>The "Disk space remaining" message will continue to display thereafter as soon as you leave the mouse stationary for a couple of seconds. If you run out of disk space at any time after starting or completing a recording, the default Status Bar message will change to "Out of disk space".     
+</p>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">The time remaining will be less at higher project rates and higher bit depths because these will require more disk space. See <a href="quality_preferences.html" title="Quality Preferences">Quality Preferences</a> for details.
+</td></tr></table>
+</div>
+<div id="odl"></div>
+<h2><span class="mw-headline" id="Reading_files_directly_using_On-Demand_Loading">Reading files directly using <a href="on_demand_loading.html" title="On-Demand Loading">On-Demand Loading</a></span></h2>
+<p>When reading imported <i><b><a href="glossary.html#uncompressed" title="Glossary">uncompressed files</a></b></i> files directly from the original files, the percentage of the waveform that has been computed is displayed in the center section of the Status Bar. When multiple files are being imported, the Status Bar will display the overall percentage of the multiple tracks that has been computed. To make the Status Bar display the percentage completion of a particular track, move the mouse over that track.
+</p>
+<dl><dd><span title="Status Bar showing On-Demand Loading with import complete and the percentage of waveform calculation complete"><img alt="Staus Bar ODL calculation.png" src="../m/images/b/b7/staus_bar_odl_calculation.png" width="719" height="287" /></span></dd></dl>
+<div id="other"></div>
+<h2><span class="mw-headline" id="Other_Status_Bar_center_section_displays">Other Status Bar center section displays</span></h2>
+<ul><li>When <a href="scrubbing_and_seeking.html" title="Scrubbing and Seeking">Scrubbing and Seeking</a> you will messages relating to those actions.</li>
+<li>When you hover over the sliders in Mixer Toolbar the Playback and Recording volumes are displayed in Status Bar.    </li>
+<li>Many other buttons and tools in the Audacity window will display the name of the button or tool in Status Bar when you hover over the button or tool. Buttons in <a href="transport_toolbar.html" title="Transport Toolbar">Transport Toolbar</a> that display a Status Bar message include in parentheses the current <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">keyboard shortcut</a> for that button.</li>
+<li>When making a <a href="spectral_selection.html" title="Spectral Selection">Spectral Selection</a>, hovering over the edges or center line of a frequency selection also displays relevant help messages.</li></ul>
+</li></ul>
+<div id="rate"></div>
+<h2><span class="mw-headline" id="Actual_Rate">Actual Rate</span></h2>
+</li></ul>
+<p>While <a href="play.html" title="Play">playback</a> or <a href="record.html" title="Record">recording</a> is taking place (or is <a href="transport_menu.html#pause" title="Transport Menu">paused</a>), or when <a href="meter_toolbar.html#Monitoring" title="Meter Toolbar">monitoring</a>, <b>Actual Rate</b> in the right-hand section of Status Bar shows the <i><b><a href="glossary.html#sample_rate" title="Glossary">sample rate</a></b></i> of that audio transport. "Actual Rate" when playing should be the rate communicated by Audacity to the soundcard. "Actual Rate" when recording is the rate communicated by the soundcard to Audacity. 
+</p>
+<div class="note">In general terms, the actual rate for playback will be the project rate chosen in <a href="selection_toolbar.html" title="Selection Toolbar">Selection Toolbar</a>. If the soundcard does not support the rate you choose, Audacity will try to <i><b><a href="glossary.html#resampling" title="Glossary">resample</a></b></i> the audio to the highest available (or next higher) rate supported by the card, and this rate will appear as "Actual Rate". 
+<p>When recording, the actual rate sent by the soundcard to Audacity can often differ from the chosen project rate, depending how the "Host" chosen in <a href="device_toolbar.html" title="Device Toolbar">Device Toolbar</a> handles the card's settings in the operating system. For an explanation of how this works on Windows, see the <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Windows_7_OS#sample_rates">sample rates</a> section of the <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Windows_7_OS">Windows 7 Wiki page</a>. If the "Actual Rate" is different from the project rate then Audacity will resample from "Actual Rate" to the project rate.</p> </div>
+<dl><dd><span title="Status Bar showing the Actual Rate in use"><img alt="Staus Bar Actual Rate 44100.png" src="../m/images/e/e2/staus_bar_actual_rate_44100.png" width="721" height="79" /></span></dd></dl>
+<div id="grab"></div>
+<h2><span class="mw-headline" id="Grab_Handle">Grab Handle</span></h2>
+<p>The small hatched triangular area at bottom right of the Status Bar indicates where you can drag with the mouse to resize the Audacity window up, down, left or right on any operating system.
+</p>
+<dl><dd><span title="Bottom right corner of Status Bar showing the Grab Handle"><img alt="Status Bar Grab Handle .png" src="../m/images/3/3b/status_bar_grab_handle.png" width="76" height="31" /></span></dd></dl>
+<div class="note">The Grab Handle will not be available if you are using Audacity in a full screen window.</div></span>
+<p></span>
+</span>
+</span>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020141
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.092 seconds
+Real time usage: 0.098 seconds
+Preprocessor visited node count: 245/1000000
+Preprocessor generated node count: 1075/1000000
+Post‐expand include size: 5484/2097152 bytes
+Template argument size: 3147/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   28.229      1 - -total
+ 75.85%   21.411      1 - Template:I18n
+ 69.60%   19.648      1 - Template:I18n_box
+ 58.61%   16.545      1 - Template:I18n_list
+ 26.61%    7.512      3 - Template:I18n_link
+ 15.98%    4.512      3 - Template:Autoglossonym
+  5.26%    1.486      3 - Template:Ednote
+  4.72%    1.334      2 - Template:Note
+  3.83%    1.082      1 - Template:Intro
+  3.51%    0.990      1 - Template:Advice
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4926-0!*!0!!*!5!* and timestamp 20180215020141 and revision id 58224
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Status_Bar">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

@@ -1,0 +1,57 @@
+﻿[FILE]
+Author=Alexandru Bogdan Munteanu (muntealb@gmail.com)
+Name=Romanian (RO)
+VersionID=0
+Help=AIMP-en.chm
+LangId=1048
+
+[Lastfm]
+3=A apărut o eroare!
+4=Vizitator
+1=Ești logat ca:
+5=Trebuie să te loghezi!
+6=Starea cozii jurnalizatorului [scrobbler]: %d / %d
+2=Unele funcții n-o să mai fie disponibile după delogare. Vrei să continui?
+
+[Lastfm.Auth]
+btnAllowAccess=Permite Accesul
+btnOk=OK
+Caption=Autorizare
+lbDetails=Trebuie să aprobi cererea de permitere a accesului la profilul tău Last.fm pentru ca implantul [plugin] pentru acest serviciu să funcționeze bine:\n\n1. Clichează pe butonul "Permite Accesul" pentru a deschide profilul tău Last.fm în exploratorul de internet [browser].\n\n2. Clichează pe butonul "Da, Permit Accesul" ["Yes, Allow Access"] din pagina deschisă în explorator.\n\n3. Clichează pe butonul "OK" din fereastră după ce ai aprobat permisiunea.
+
+[Lastfm.Settings]
+btnLogOff=Deloghează
+C1=Last.fm
+btnLog=Arată Jurnalul
+btnAuthorize=Loghează
+lbAuthorizationWarning=* Autorizarea accesului AIMP la profilul Last.fm este necesară
+lbProfileLink=Profilul Meu la Last.fm
+L1=Fila Redată
+L2=Jurnalizează fila dacă e redată în procent de:
+G2=Autentificare și Autorizare
+G1=Diverse
+cbScrobbling=*Permite jurnalizarea [scrobbling] în profilul Last.fm a piesei redate
+cbTrayIcon=Arată icoana Last.fm în sertar
+cbTrackInfo=Arată informații despre piesă la pornirea redării
+cbTrayNotifyOnError=Notifică despre erori
+cbAlbumArtSearch=Descarcă coperțile albumelor de pe Last.fm
+cbAutoLove=*"Iubești" [love] piesa cînd o notezi cu 5 stele în redarea jurnalizată
+cbAutoUnlove=*"Neiubești" [unlove] piesa cînd o notezi cu mai puțin de 3 stele
+
+[Lastfm.TrackInfo]
+Caption=Informații despre fila redată
+L1=Salut, %s!
+pnlScrobblingProgress.h=Progresul jurnalizatorului
+L4=Ascultători: %d
+L3=Redări: %d
+Status=Caut informația...|Informațiile despre piesă n-au fost găsite|Nu e redat nimic
+
+[Lastfm.TrayIcon]
+acProfile=Profilul Meu
+acScrobbling=Activează Jurnalizarea
+acSettings=Opțiuni
+acShowTrackInfo=Informații despre Piesă
+acRecommendations=Recomandările Mele
+acErrorInfo=Detaliile Erorii
+acLoveTrack=Iubește
+acUnloveTrack=Neiubește

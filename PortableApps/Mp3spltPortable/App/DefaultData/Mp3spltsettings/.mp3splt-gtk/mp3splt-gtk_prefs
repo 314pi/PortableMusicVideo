@@ -1,0 +1,68 @@
+
+[general]
+#
+# language of the gui: en = english, fr = french, de = german
+language=en
+
+[split]
+frame_mode=false
+adjust_mode=false
+adjust_threshold=-4800
+adjust_offset=80
+adjust_gap=30
+#
+# 0 - No tags, 1 - Default tags, 2 - Original tags, 3 - Tags from filename
+tags=1
+#
+# 0 - same tags version as the input file, 1 - ID3v1 tags, 2 - ID3v2 tags, 3 - ID3v1 & ID3v2 tags
+tags_version=0
+#
+# this is the path where you will find your split files 
+save_path=DEFAULTMP3SPLTSAVEPATH
+#
+# 0 - error mode, 1 - wrap mode, 2 - time mode, 3 - normal mode, 4 - equal time tracks
+split_mode=3
+#
+# value in seconds to split every X seconds (for the time split)
+split_mode_time_value=60
+#
+# number of tracks when to split in X tracks (for the equal time tracks split)
+split_mode_equal_time_tracks=10
+
+adjust_min=0
+replace_underscore_by_space=false
+artist_text_properties=0
+album_text_properties=0
+title_text_properties=0
+comment_text_properties=0
+default_comment_tag=
+tags_from_filename_regex=
+test_regex_fname=
+
+genre=Other
+
+[player]
+#
+# 1 = PLAYER_AUDACIOUS, 2 = PLAYER_SNACKAMP, 3 = PLAYER_GSTREAMER
+default_player=3
+refresh_rate=200
+wave_quality=0
+
+amplitude_wave_ticked=false
+
+[output]
+#
+# the output format, contains @a,@b, @g, @p, @t and @n, see the program for more details
+output_format=@f_@mm_@ss_@h0h__@Mm_@Ss_@H0h
+#
+# can be true or false - if we use the default output or not for cddb, cue and freedb search
+default_output_format=true
+create_dirs_if_needed=true
+splitpoint_names_from_filename=false
+
+[gui]
+root_x_position=643
+root_y_position=420
+width=650
+height=420
+browser_directory=DEFAULTMP3SPLTSAVEPATH

@@ -1,0 +1,12 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "Yenile">
+<!ENTITY push.playqueue.instructions "Bu cihazda hazır bir dinleme sırası oluşturmak için şarkıları veya çalma listelerini buraya sürükleyip bırakın.">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "Çevrimdışı">
+<!ENTITY sharing.push.deviceState.stopped "Durdu">
+<!ENTITY sharing.push.deviceState.playing "Oynatılıyor">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "Durduruldu">
+<!ENTITY sharing.push.deviceState.recording "Kaydediliyor">
+<!ENTITY sharing.push.deviceState.nomedia "Mevcut ortam yok">

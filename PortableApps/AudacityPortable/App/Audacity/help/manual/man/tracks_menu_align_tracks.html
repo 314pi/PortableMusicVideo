@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Tracks Menu: Align Tracks - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Tracks_Menu_Align_Tracks rootpage-Tracks_Menu_Align_Tracks skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Tracks Menu: Align Tracks</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Tracks_Menu:_Align_Tracks#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="intro">The <b>Align Tracks</b> submenu provides a set of commands to help you align your selected tracks in various ways.  In particular there are two very useful commands that enable you to align tracks end-to-end, one after the other, or align them all together.
+</div>
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_743259270"><area href="transport_menu.html" shape="rect" coords="0,3,26,19" alt="Transport Menu" title="Transport Menu"/><area href="tracks_menu.html" shape="rect" coords="33,3,73,19" alt="Tracks Menu" title="Tracks Menu"/><area href="generate_menu.html" shape="rect" coords="80,3,134,19" alt="Generate Menu" title="Generate Menu"/><area href="effect_menu.html" shape="rect" coords="141,3,174,19" alt="Effect Menu" title="Effect Menu"/><area href="analyze_menu.html" shape="rect" coords="181,3,225,19" alt="Analyze Menu" title="Analyze Menu"/><area href="help_menu.html" shape="rect" coords="232,3,261,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="268,3,298,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="tracks_menu_add_new.html" shape="rect" coords="39,23,230,45" alt="Adds a new track" title="Adds a new track"/><area href="tracks_menu_mix.html" shape="rect" coords="39,52,230,74" alt="Mixes down selected tracks to mono or stereo tracks" title="Mixes down selected tracks to mono or stereo tracks"/><area href="tracks_menu.html#resample" shape="rect" coords="39,74,230,96" alt="Allows you to resample the selected track(s) to a new sample rate for use in the project" title="Allows you to resample the selected track(s) to a new sample rate for use in the project"/><area href="tracks_menu.html#remove_tracks" shape="rect" coords="39,103,230,125" alt="Removes the selected track(s) from the project" title="Removes the selected track(s) from the project"/><area href="tracks_menu_mute/unmute.html" shape="rect" coords="39,132,230,154" alt="Mutes or unmutes audio tracks in the project" title="Mutes or unmutes audio tracks in the project"/><area href="tracks_menu_pan.html" shape="rect" coords="39,154,230,176" alt="Pans left right or center audio tracks in the project" title="Pans left right or center audio tracks in the project"/><area href="#" shape="rect" coords="39,183,230,205" alt="Commands that provide an automatic way of aligning selected tracks with the cursor, the selection, or with the start of the project" title="Commands that provide an automatic way of aligning selected tracks with the cursor, the selection, or with the start of the project"/><area href="tracks_menu_sort_tracks.html" shape="rect" coords="39,205,230,227" alt="Sorts all tracks in the project from top to bottom in the project window, by Start Time or by Name" title="Sorts all tracks in the project from top to bottom in the project window, by Start Time or by Name"/><area href="sync_locked_track_groups.html" shape="rect" coords="39,234,230,256" alt="Ensures that length changes occurring anywhere in a defined group of tracks also take place in all audio or label tracks in that group" title="Ensures that length changes occurring anywhere in a defined group of tracks also take place in all audio or label tracks in that group"/><area href="#align_end_to_end" shape="rect" coords="242,66,485,88" alt="Aligns the selected tracks one after the other, based on their top-to-bottom order in the project window" title="Aligns the selected tracks one after the other, based on their top-to-bottom order in the project window"/><area href="#align_together" shape="rect" coords="242,88,485,110" alt="Align the selected tracks so that they start at the same (averaged) start time" title="Align the selected tracks so that they start at the same (averaged) start time"/><area href="#start_to_zero" shape="rect" coords="242,117,485,139" alt="Aligns the start of selected tracks with the start of the project" title="Aligns the start of selected tracks with the start of the project"/><area href="#start_to_cursorselection_start" shape="rect" coords="242,139,485,161" alt="Aligns the start of selected tracks with the current cursor position or with the start of the current selection" title="Aligns the start of selected tracks with the current cursor position or with the start of the current selection"/><area href="#start_to_selection_end" shape="rect" coords="242,161,485,183" alt="Aligns the start of selected tracks with the end of the current selection" title="Aligns the start of selected tracks with the end of the current selection"/><area href="#end_to_cursorselection_start" shape="rect" coords="242,183,485,205" alt="Aligns the end of selected tracks with the current cursor position or with the start of the current selection" title="Aligns the end of selected tracks with the current cursor position or with the start of the current selection"/><area href="#end_to_selection_end" shape="rect" coords="242,205,485,227" alt="Aligns the end of selected tracks with the end of the current selection" title="Aligns the end of selected tracks with the end of the current selection"/><area href="#move_selection_with_tracks_onoff" shape="rect" coords="242,234,485,256" alt="Toggles on/off the selection moving with the realigned tracks, or staying put" title="Toggles on/off the selection moving with the realigned tracks, or staying put"/></map><img alt="Tracks-Align TracksMenu.png" src="../m/images/a/a6/tracks_align_tracksmenu.png" width="498" height="264" usemap="#ImageMap_1_743259270"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p>
+</li></ul>
+<p>These commands provide an automatic way of aligning <a href="audacity_selection.html" title="Audacity Selection">selected tracks</a> with the cursor, the selection, or with the start of the project. 
+</p><p>With the exception of the first two commands ("Align End to End" and "Align Together"), each selected track is moved along <i>equally</i> so they remain synchronized with each other. If a <a href="label_tracks.html" title="Label Tracks">label track</a> is included in the selection, its labels will also move equally so they remain synchronized.
+</p><p>When aligning end to end or aligning together, the tracks are always moved individually to enforce the requested alignment (as described below). Label tracks are not affected by these two commands.
+</p><p>When there is a selection, the commands that align tracks with the cursor/selection will align with the start of the selection, and when there is a cursor, the commands that align tracks with the cursor/selection will align with the cursor. 
+</p>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">If <a href="sync_locked_track_groups.html" title="Sync-Locked Track Groups">Sync-Lock Tracks</a> is enabled, unselected tracks in a Sync-Locked Track Group will also move so that all the tracks in that group remain synchronized, <b>except for</b> the Align "End to End" and "Together" commands where only the selected tracks will move. Aligning end to end or together overrides Sync-Lock Tracks if necessary, so the selected tracks in that group may become desynchronized.
+</td></tr></table>
+</div>
+<div class="note">
+If a track contains multiple clips and one of the Align commands is applied to that track then <i>all the clips move and maintain their relative positions</i> to each other within the track. The start of the first clip is the "start of the track" and the end of the last clip is the "end of the track".</div>
+<div id="align_move"></div>
+<div id="align_end_to_end"></div>
+<h2><span class="mw-headline" id="Align_End_to_End_.C2.A0">Align End to End &#160;<font size="-1"></font></span></h2>
+<p>Aligns the selected tracks one after the other, based on their top-to-bottom order in the project window. The first selected track remains where it is, the start of the second selected track aligns with the end of the first selected track and so on. If you name a group of <a href="importing_audio.html" title="Importing Audio">imported</a> files from an album so that their alphabetical order is the same as the order you want to align them in, Align End to End will make the imported files play in their album order. 
+</p><p>After the align, all tracks in the project (not just the selected tracks) will be fitted to the window so that the end of the last track will be visible in the project window. 
+</p>
+<dl><dd>Before doing <span class="menu">Tracks &gt; Align Tracks &gt; Align End to End</span></dd>
+<dd><span title="Three tracks, before doing Align End To End"><img alt="AlignEndToEnd Before.png" src="../m/images/9/9e/alignendtoend_before.png" width="642" height="244" /></span></dd>
+<dd>After doing <span class="menu">Tracks &gt; Align Tracks &gt; Align End to End</span></dd>
+<dd><span title="Three tracks, after doing Align End To End"><img alt="AlignEndToEnd After.png" src="../m/images/8/88/alignendtoend_after.png" width="642" height="244" /></span></dd>
+<dd>Note that zoom level has changed to display the entire project, and that the original selection has been retained.</dd></dl>
+<div id="align_together"></div>
+<h2><span class="mw-headline" id="Align_Together_.C2.A0">Align Together &#160;<font size="-1"></font></span></h2>
+<p>If you select multiple tracks, this command moves the tracks so that they all start at the same time, so audio within them changes its synchronization. The resultant start time is an average of all of the tracks' original starting times. To adjust the starting times of tracks with complete flexibility, use <a href="tools_toolbar.html#timeshift" title="Tools Toolbar">Time Shift Tool</a>.
+</p>
+<dl><dd>Before doing <span class="menu">Tracks &gt; Align Tracks &gt; Align Together</span></dd>
+<dd><span title="Three tracks, before doing Align Together"><img alt="AlignTogether Before.png" src="../m/images/2/21/aligntogether_before.png" width="642" height="244" /></span></dd>
+<dd>After doing <span class="menu">Tracks &gt; Align Tracks &gt; Align Together</span></dd>
+<dd><span title="Three tracks, after doing Align Together"><img alt="AlignTogether After.png" src="../m/images/f/f2/aligntogether_after.png" width="642" height="244" /></span></dd>
+<dd>Note that the three tracks now start at the same time, and the start time is the average of the original start times of the three tracks.</dd></dl>
+<div id="start_to_zero"></div>
+<h2><span class="mw-headline" id="Start_to_Zero_.C2.A0">Start to Zero &#160;<font size="-1"></font></span></h2>
+<p>Aligns the start of selected tracks with the start of the project.
+</p>
+<div id="start_to_cursorselection_start"></div>
+<h2><span class="mw-headline" id="Start_to_Cursor.2FSelection_Start_.C2.A0">Start to Cursor/Selection Start &#160;<font size="-1"></font></span></h2>
+<p>Aligns the start of selected tracks with the current cursor position or with the start of the current selection.
+</p>
+<div id="start_to_selection_end"></div>
+<h2><span class="mw-headline" id="Start_to_Selection_End_.C2.A0">Start to Selection End &#160;<font size="-1"></font></span></h2>
+<p>Aligns the start of selected tracks with the end of the current selection.
+</p>
+<div id="end_to_cursorselection_start"></div>
+<h2><span class="mw-headline" id="End_to_Cursor.2FSelection_Start_.C2.A0">End to Cursor/Selection Start &#160;<font size="-1"></font></span></h2>
+<p>Aligns the end of selected tracks with the current cursor position or with the start of the current selection.
+</p>
+<div id="end_to_selection_end"></div>
+<h2><span class="mw-headline" id="End_to_Selection_End_.C2.A0">End to Selection End &#160;<font size="-1"></font></span></h2>
+<p>Aligns the end of selected tracks with the end of the current selection.
+</p>
+<div id="move_selection_with_tracks_onoff"></div>
+<h2><span class="mw-headline" id="Move_Selection_with_Tracks_.28on.2Foff.29_.C2.A0">Move Selection with Tracks (on/off) &#160;<font size="-1"></font></span></h2>
+<p>When this option is <i>off</i> (not checked), the cursor or selection remains in its position relative to the <a href="timeline.html" title="Timeline">Timeline</a>. When it is <i>on</i>, the cursor or selection is moved to maintain its position relative to the tracks being moved. For example, <span class="menu">Tracks&#160;&gt;Align&#160;Tracks&#160;&gt;&#160;Start&#160;to&#160;Cursor/Selection&#160;Start</span> will align the selected tracks with the current cursor position or selection start, but then also move the cursor or selection along so that it remains at the same position relative to the new position of the aligned tracks.
+</p>
+<div class="note">This option has no effect on the <b>Align End to End</b> and the <b>Align Together</b> commands.
+</div>
+<dl><dd>Before doing <span class="menu">Tracks &gt; Align Tracks &gt; Start to Zero</span></dd>
+<dd><span title="Three tracks, before doing Align Start to Zero"><img alt="MoveSelectionWithTracks Before.png" src="../m/images/2/2b/moveselectionwithtracks_before.png" width="642" height="244" /></span></dd>
+<dd>After doing <span class="menu">Tracks &gt; Align Tracks &gt; Start to Zero</span>, with <b>Move Selection with Tracks</b> off.</dd>
+<dd><span title="Three tracks, after doing Align Start to Zero with Move Selection with Tracks off"><img alt="MoveSelectionWithTracksOff After.png" src="../m/images/a/ae/moveselectionwithtracksoff_after.png" width="642" height="244" /></span></dd>
+<dd>Note that the cursor remains at the same position relative to the Time Line.</dd></dl>
+<dl><dd>After doing <span class="menu">Tracks &gt; Align Tracks &gt; Start to Zero</span>, with <b>Move Selection with Tracks</b> on.</dd>
+<dd><span title="Three tracks, after doing Align Start to Zero with Move Selection with Tracks on"><img alt="MoveSelectionWithTracksOn After.png" src="../m/images/6/67/moveselectionwithtrackson_after.png" width="642" height="244" /></span></dd>
+<dd>Note that the cursor has moved to retain the same position relative to the audio.</dd></dl>
+<p><br />
+<a href="tracks_menu.html" title="Tracks Menu"><b>&lt;</b>&#160; Back to: Tracks Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020441
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.116 seconds
+Real time usage: 0.120 seconds
+Preprocessor visited node count: 265/1000000
+Preprocessor generated node count: 6688/1000000
+Post‐expand include size: 3311/2097152 bytes
+Template argument size: 1503/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   67.332      1 - -total
+ 76.60%   51.576      1 - Template:Menus
+ 71.26%   47.978      1 - Template:All-menus
+  5.41%    3.643      8 - Template:Shortcut
+  3.62%    2.437      8 - Template:Menu
+  2.44%    1.646      1 - Template:ClickTip
+  2.37%    1.597      1 - Template:Intro
+  1.92%    1.291      1 - Template:Ednote
+  1.91%    1.284      1 - Template:Advice
+  1.83%    1.232      1 - Template:Note
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:5644-0!*!0!!*!5!* and timestamp 20180215020441 and revision id 55757
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Tracks_Menu:_Align_Tracks">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

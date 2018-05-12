@@ -1,0 +1,50 @@
+﻿[Lastfm]
+3=An error occurs!
+4=Guest
+1=You are logged in as: %s
+5=You must log in!
+6=State of scrobbler queue: %d / %d
+2=Some functions will be unavailable after log out. Do you wish to continue?
+
+[Lastfm.Auth]
+btnAllowAccess=Allow Access
+btnOk=OK
+Caption=Authorization
+lbDetails=You must approve permissions request in your last.fm profile for correct plugin work:\n\n1. Click the "Allow Access" button to open your last.fm profile in the internet browser.\n\n2. Click the "Yes, Allow Access" button at the opened page in the internet browser.\n\n3. Click the "OK" button at this window after successful approving in your last.fm profile.
+
+[Lastfm.Settings]
+btnLogOff=Log Out
+C1=Last.fm
+btnLog=Show Log
+btnAuthorize=Log In
+lbAuthorizationWarning=* Authorization is required
+lbProfileLink=My Profile at Last.fm
+L1=Playable file
+L2=Scrobble file if played:
+G2=Authorization
+G1=Miscellaneous
+cbScrobbling=* Allow scrobbling
+cbTrayIcon=Show tray icon
+cbTrackInfo=Show information about the playable track on start playback
+cbTrayNotifyOnError=Notify about errors
+cbAlbumArtSearch=Download album arts from Last.fm service
+cbAutoLove=* Love track when 5 stars mark is set for the track
+cbAutoUnlove=* Unlove track when mark lower than 3 stars is set for the track
+
+[Lastfm.TrackInfo]
+Caption=Information about the playable file
+L1=Hello, %s!
+pnlScrobblingProgress.h=Scrobbler progress
+L4=Listeners: %d
+L3=Plays: %d
+Status=Searching the information...|Information about the track is not found|Nothing is played
+
+[Lastfm.TrayIcon]
+acProfile=My Profile
+acScrobbling=Enable Scrobbling
+acSettings=Options
+acShowTrackInfo=Information about the track
+acRecommendations=My Recommendations
+acErrorInfo=Error Details
+acLoveTrack=Love
+acUnloveTrack=Unlove

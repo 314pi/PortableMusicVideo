@@ -1,0 +1,17 @@
+[Main]
+Ext=mkv
+Container=4
+Encoder=1
+VCodec=4
+VBitrate=2000
+Width=720
+Height=576
+VideoSize=720×576
+FPS=25
+VAR=0
+ACodec=5
+ABitrate=192
+ASR=7
+AChan=1
+CustomVideo=
+CustomAudio=

@@ -1,0 +1,39 @@
+content  branding  jar:songbird.jar!/content/branding/
+content  songbird-os-specific  jar:songbird.jar!/content/songbird-os-specific/ platform
+content  songbird  jar:songbird.jar!/content/songbird/
+override chrome://global/content/license.html chrome://songbird/content/html/eula.html
+override chrome://global/content/about.xhtml chrome://songbird/content/html/aboutColon.xhtml
+override chrome://global/content/aboutAbout.html chrome://songbird/content/html/eula.html
+override chrome://browser/content/utilityOverlay.js chrome://songbird/content/scripts/browserUtilities.js
+# Help out FF extension developers by exposing browser utilities at the familiar URL
+overlay chrome://songbird/content/xul/layoutBaseOverlay.xul                chrome://songbird/content/xul/macMenuOverlay.xul OS=Darwin
+overlay chrome://mozapps/content/update/updates.xul                        chrome://songbird/content/xul/updateOverlay.xul
+overlay chrome://mozapps/content/extensions/extensions.xul?type=themes     chrome://songbird/content/xul/extensionManagerOverlay.xul
+override chrome://browser/content/browser.xul                                       chrome://songbird/content/xul/browserCompatibilityStub.xul
+overlay chrome://browser/content/preferences/connection.xul                chrome://songbird/content/xul/preferences/helpRemovalOverlay.xul
+overlay chrome://songbird/content/xul/layoutBaseOverlay.xul                chrome://songbird/content/xul/linuxMenuOverlay.xul OS=Linux
+overlay chrome://browser/content/preferences/sanitize.xul                  chrome://songbird/content/xul/preferences/sanitizeOverlay.xul
+overlay chrome://browser/content/preferences/preferences.xul               chrome://songbird/content/xul/preferences/mainOverlay.xul
+overlay chrome://mozapps/content/extensions/extensions.xul                 chrome://songbird/content/xul/extensionManagerOverlay.xul
+overlay chrome://mozapps/content/downloads/unknownContentType.xul          chrome://songbird/content/xul/unknownContentTypeOverlay.xul
+overlay chrome://browser/content/preferences/languages.xul                 chrome://songbird/content/xul/preferences/helpRemovalOverlay.xul
+overlay chrome://browser/content/preferences/permissions.xul               chrome://songbird/content/xul/preferences/permissionsOverlay.xul
+overlay chrome://browser/content/sanitize.xul                              chrome://songbird/content/xul/preferences/sanitizeOverlay.xul
+overlay chrome://songbird/content/xul/layoutWithBrowserOverlay.xul         chrome://songbird/content/xul/contentAreaContextOverlay.xul
+overlay chrome://browser/content/preferences/advanced.xul                  chrome://songbird/content/xul/preferences/advancedOverlay.xul
+overlay chrome://browser/content/preferences/fonts.xul                     chrome://songbird/content/xul/preferences/helpRemovalOverlay.xul
+overlay chrome://mozapps/content/profile/profileSelection.xul              chrome://songbird/content/xul/profileSelectionOverlay.xul
+overlay chrome://browser/content/preferences/colors.xul                    chrome://songbird/content/xul/preferences/helpRemovalOverlay.xul
+overlay chrome://browser/content/preferences/tabs.xul                      chrome://songbird/content/xul/preferences/tabsOverlay.xul
+overlay chrome://mozapps/content/extensions/extensions.xul?type=extensions chrome://songbird/content/xul/extensionManagerOverlay.xul
+skin  songbird-bindings classic/1.0  jar:songbird.jar!/skin/bindings/
+content songbird-branding nowhere contentaccessible=yes
+skin  songbird-branding classic/1.0  jar:songbird.jar!/skin/branding/
+style chrome://mozapps/content/extensions/extensions.xul chrome://songbird-dialogs/skin/addons.css
+skin  songbird-dialogs classic/1.0  jar:songbird.jar!/skin/dialogs/
+style chrome://browser/content/pageReportFirstTime.xul                     chrome://global/skin/pageReport.css
+overlay chrome://global/content/commonDialog.xul?useHTML                   chrome://global/skin/dialog/commonDialog.xul
+skin  songbird-global classic/1.0  jar:songbird.jar!/skin/global/
+override chrome://browser/skin/Info.png                                    chrome://songbird/skin/notification-bar/icon-web-api.png
+overlay chrome://global/content/commonDialog.xul                           chrome://global/skin/dialog/commonDialog.xul
+skin  songbird-mozapps classic/1.0  jar:songbird.jar!/skin/mozapps/

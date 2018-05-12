@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Extra Menu: Selection - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Extra_Menu_Selection rootpage-Extra_Menu_Selection skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Extra Menu: Selection</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Extra_Menu:_Selection#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<p><br />
+</p>
+<div class="intro">The <i><b>Extra &gt; Selection Menu</b></i> provides commands for changing the Snap-To settings, and for extending and contracting the selection. </div>
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_927523389"><area href="help_menu.html" shape="rect" coords="0,3,26,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="33,3,63,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="extra_menu_transport.html" shape="rect" coords="39,23,212,45" alt="Extra commands related to play and record" title="Extra commands related to play and record"/><area href="extra_menu_tools.html" shape="rect" coords="39,45,212,67" alt="Extra commands to select the tool, e" title="Extra commands to select the tool, e"/><area href="extra_menu_mixer.html" shape="rect" coords="39,67,212,89" alt="Extra commands related to volume" title="Extra commands related to volume"/><area href="extra_menu_edit.html" shape="rect" coords="39,89,212,111" alt="Extra commands related to editing" title="Extra commands related to editing"/><area href="extra_menu_transcription.html" shape="rect" coords="39,111,212,133" alt="Extra commands related to play at speed" title="Extra commands related to play at speed"/><area href="extra_menu_seek.html" shape="rect" coords="39,133,212,155" alt="Extra commands related to seeking" title="Extra commands related to seeking"/><area href="extra_menu_device.html" shape="rect" coords="39,155,212,177" alt="Extra commands related to selecting a device" title="Extra commands related to selecting a device"/><area href="#" shape="rect" coords="39,177,212,199" alt="Extra commands related to selecting" title="Extra commands related to selecting"/><area href="extra_menu_focus.html" shape="rect" coords="39,206,212,228" alt="Extra commands to set focus, usually focus on one track" title="Extra commands to set focus, usually focus on one track"/><area href="extra_menu_cursor.html" shape="rect" coords="39,228,212,250" alt="Extra commands to move the cursor" title="Extra commands to move the cursor"/><area href="extra_menu_track.html" shape="rect" coords="39,250,212,272" alt="Extra commands to operate on a track that has focus" title="Extra commands to operate on a track that has focus"/><area href="extra_menu.html#full_screen_onoff" shape="rect" coords="39,272,212,294" alt="Toggle full screen mode with no title bar" title="Toggle full screen mode with no title bar"/><area href="#snap_to_off" shape="rect" coords="224,52,523,74" alt="Equivalent to setting the Snap To control in Selection Toolbar to &quot;Off&quot;" title="Equivalent to setting the Snap To control in Selection Toolbar to &quot;Off&quot;"/><area href="#snap_to_nearest" shape="rect" coords="224,74,523,96" alt="Equivalent to setting the Snap To control in Selection Toolbar to &quot;Nearest&quot;" title="Equivalent to setting the Snap To control in Selection Toolbar to &quot;Nearest&quot;"/><area href="#snap_to_prior" shape="rect" coords="224,96,523,118" alt="Equivalent to setting the Snap To control in Selection Toolbar to &quot;Prior&quot;" title="Equivalent to setting the Snap To control in Selection Toolbar to &quot;Prior&quot;"/><area href="#selection_to_start" shape="rect" coords="224,118,523,140" alt="Select from cursor to start of track" title="Select from cursor to start of track"/><area href="#selection_to_end" shape="rect" coords="224,140,523,162" alt="Select from cursor to end of track" title="Select from cursor to end of track"/><area href="#selection_extend_left" shape="rect" coords="224,162,523,184" alt="Increases the size of the selection by extending it to the left" title="Increases the size of the selection by extending it to the left"/><area href="#selection_extend_right" shape="rect" coords="224,184,523,206" alt="Increases the size of the selection by extending it to the right" title="Increases the size of the selection by extending it to the right"/><area href="#set_or_extend_left_selection" shape="rect" coords="224,206,523,228" alt="Extend selection left a little (is this a duplicate?)" title="Extend selection left a little (is this a duplicate?)"/><area href="#set_or_extend_right_selection" shape="rect" coords="224,228,523,250" alt="Extend selection right a litlle (is this a duplicate?)" title="Extend selection right a litlle (is this a duplicate?)"/><area href="#selection_contract_left" shape="rect" coords="224,250,523,272" alt="Decreases the size of the selection by contracting it from the right" title="Decreases the size of the selection by contracting it from the right"/><area href="#selection_contract_right" shape="rect" coords="224,272,523,294" alt="Decreases the size of the selection by contracting it from the left" title="Decreases the size of the selection by contracting it from the left"/></map><img alt="Extra-SelectionMenu.png" src="../m/images/2/28/extra_selectionmenu.png" width="536" height="302" usemap="#ImageMap_1_927523389"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p>
+<div id="snap_to_off"></div>
+<h2><span class="mw-headline" id="Snap-To_Off_.C2.A0">Snap-To Off &#160;<font size="-1"></font></span></h2>
+<p>Equivalent to setting the <b><a href="selection_toolbar.html#snap" title="Selection Toolbar">Snap-To</a></b> control in Selection Toolbar to "Off".
+</p>
+<div id="snap_to_nearest"></div>
+<h2><span class="mw-headline" id="Snap-To_Nearest_.C2.A0">Snap-To Nearest &#160;<font size="-1"></font></span></h2>
+<p>Equivalent to setting the <b><a href="selection_toolbar.html#snap" title="Selection Toolbar">Snap-To</a></b> control in Selection Toolbar to "Nearest".
+</p>
+<div id="snap_to_prior"></div>
+<h2><span class="mw-headline" id="Snap-To_Prior_.C2.A0">Snap-To Prior &#160;<font size="-1"></font></span></h2>
+<p>Equivalent to setting the <b><a href="selection_toolbar.html#snap" title="Selection Toolbar">Snap-To</a></b> control in Selection Toolbar to "Prior".
+</p>
+<div id="selection_to_start"></div>
+<h2><span class="mw-headline" id="Selection_to_Start_.C2.A0Shift.2BHome">Selection to Start &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Shift+Home</span></font></span></h2>
+<p>Select from cursor to start of track
+</p>
+<div id="selection_to_end"></div>
+<h2><span class="mw-headline" id="Selection_to_End_.C2.A0Shift.2BEnd">Selection to End &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Shift+End</span></font></span></h2>
+<p>Select from cursor to end of track
+</p>
+<div id="selection_extend_left"></div>
+<h2><span class="mw-headline" id="Selection_Extend_Left_.C2.A0Shift.2BLeft">Selection Extend Left &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Shift+Left</span></font></span></h2>
+<p>Increases the size of the selection by extending it to the left. The amount of increase is dependent on the zoom level. If there is no selection one is created starting at the cursor position. 
+</p>
+<div id="selection_extend_right"></div>
+<h2><span class="mw-headline" id="Selection_Extend_Right_.C2.A0Shift.2BRight">Selection Extend Right &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Shift+Right</span></font></span></h2>
+<p>Increases the size of the selection by extending it to the right. The amount of increase is dependent on the zoom level. If there is no selection one is created starting at the cursor position. 
+</p>
+</li></ul></li></ul>
+<div id="set_or_extend_left_selection"></div>
+<h2><span class="mw-headline" id="Set_.28or_Extend.29_Left_Selection_.C2.A0">Set (or Extend) Left Selection &#160;<font size="-1"></font></span></h2>
+<p>When playing or recording, sets the left boundary of a potential selection by moving the cursor to the current position of the green playback cursor (or red recording cursor). The selection can then be drawn by using "Set (or Extend) Right Selection"(below).</p>
+<p>When stopped, increases the size of the selection by extending it to the left. The amount of increase is dependent on the zoom level. If there is no selection one is created starting at the cursor position. 
+</p>
+<div id="set_or_extend_right_selection"></div>
+<h2><span class="mw-headline" id="Set_.28or_Extend.29_Right_Selection_.C2.A0">Set (or Extend) Right Selection &#160;<font size="-1"></font></span></h2>
+<p>When playing or recording, sets the right boundary of the selection, thus drawing the selection from the cursor position to the current position of the green playback cursor (or red recording cursor). This is a quick way to mark a selection for future editing while playing or recording. Selections can be <a href="label_tracks.html" title="Label Tracks">labeled</a> while playing or recording using <span class="menu">Edit&#160;&gt;&#160;Labels&#160;&gt;&#160;<a href="edit_menu_labels.html#addlabelatselection" title="Edit Menu: Labels">Add&#160;Label&#160;at&#160;Selection</a></span> or shortcut <span class="kbrd" style="background-color: #e0e0f0">Ctrl + B</span>.</p>
+<p>When stopped, increases the size of the selection by extending it to the right. The amount of increase is dependent on the zoom level. If there is no selection one is created starting at the cursor position. 
+</p>
+<div id="selection_contract_left"></div>
+<h2><span class="mw-headline" id="Selection_Contract_Left_.C2.A0Ctrl.2BShift.2BRight">Selection Contract Left &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl+Shift+Right</span></font></span></h2>
+<p>Decreases the size of the selection by contracting it from the right. The amount of decrease is dependent on the zoom level. If there is no selection no action is taken.
+</p>
+<div id="selection_contract_right"></div>
+<h2><span class="mw-headline" id="Selection_Contract_Right_.C2.A0Ctrl.2BShift.2BLeft">Selection Contract Right &#160;<font size="-1"><span class="kbrd" style="background-color: #d0d0f8">Ctrl+Shift+Left</span></font></span></h2>
+<p>Decreases the size of the selection by contracting it from the left. The amount of decrease is dependent on the zoom level. If there is no selection no action is taken.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020605
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.095 seconds
+Real time usage: 0.099 seconds
+Preprocessor visited node count: 322/1000000
+Preprocessor generated node count: 6639/1000000
+Post‐expand include size: 3777/2097152 bytes
+Template argument size: 1620/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   67.181      1 - -total
+ 75.10%   50.455      1 - Template:Menus
+ 70.12%   47.110      1 - Template:All-menus
+ 10.24%    6.877     11 - Template:Shortcut
+  2.52%    1.692      1 - Template:Key
+  2.47%    1.661      2 - Template:Ednote
+  2.32%    1.559      1 - Template:ClickTip
+  2.11%    1.418      1 - Template:Intro
+  1.94%    1.300      1 - Template:Menu
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:5699-0!*!0!!*!5!* and timestamp 20180215020605 and revision id 59070
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Extra_Menu:_Selection">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

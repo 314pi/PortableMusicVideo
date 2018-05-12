@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "Mediapalvelin:">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "Palvelimen tila:">
+<!ENTITY sharing.iconpopup.status.on "KÄYTÖSSÄ">
+<!ENTITY sharing.iconpopup.status.off "EI KÄYTÖSSÄ">
+<!ENTITY sharing.iconpopup.settings.link "Asetukset">
+<!ENTITY sharing.prefpane.label "Mediapalvelin">
+<!ENTITY sharing.prefpane.network.name.header.label "Mediapalvelimen verkkonimi">
+<!ENTITY sharing.prefpane.network.name.content.label "Verkossa näkyvä nimi (muutokset edellyttävät uudelleenkäynnistystä):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "Kuvakansio">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "Suoratoista kuvia kohteesta:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "Valitse kansio">

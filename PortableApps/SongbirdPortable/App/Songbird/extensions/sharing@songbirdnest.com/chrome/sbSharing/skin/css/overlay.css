@@ -1,0 +1,38 @@
+.sharing-error-popup-label {
+  margin: 10px 10px 10px 10px;
+}
+
+#sharing-statusbar-container {
+  padding-left: 10px; 
+}
+
+.sharing-statusbar-separator {
+  margin-left: 9px;
+  margin-right: 11px;
+  width: 1px; 
+  max-height: 12px; 
+  background-color: rgb(80, 80, 84);
+}
+
+#sharing_statusIcon image {
+  margin-left: 10px;
+}
+
+#sharing-control-panel 
+{
+  padding: 10px;
+  height:200px;
+  width:300px;
+}
+
+#sharing-control-panel button
+{
+  margin: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sharing-control-panel-status-label
+{
+  margin-bottom: 10px;
+}

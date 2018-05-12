@@ -1,0 +1,13 @@
+<!ENTITY sharing.push.computer "Songbird">
+<!ENTITY sharing.push.refreshdevicelist "تحديث">
+<!ENTITY push.playqueue.instructions "اسحب المسارات أو قوائم التشغيل وأفلتها هنا لإنشاء قائمة انتظار للاستماع إلى الأغاني أثناء التنقل على هذا الجهاز بسرعة">
+<!ENTITY push.playqueue.save "Save as a playlist">
+<!ENTITY push.playqueue.clear "Clear all songs from device playqueue">
+<!ENTITY sharing.push.deviceState.offline "غير متصل">
+<!ENTITY sharing.push.deviceState.stopped "توقف">
+<!ENTITY sharing.push.deviceState.playing "تشغيل">
+<!ENTITY sharing.push.deviceState.transition "...">
+<!ENTITY sharing.push.deviceState.paused "توقف مؤقت">
+<!ENTITY sharing.push.deviceState.recording "تسجيل">
+<!ENTITY sharing.push.deviceState.nomedia "عدم وجود وسائط">
+

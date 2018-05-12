@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "Medienserver:">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "Status des Servers:">
+<!ENTITY sharing.iconpopup.status.on "EIN">
+<!ENTITY sharing.iconpopup.status.off "AUS">
+<!ENTITY sharing.iconpopup.settings.link "Einstellungen">
+<!ENTITY sharing.prefpane.label "Medienserver">
+<!ENTITY sharing.prefpane.network.name.header.label "Netzwerkname des Medienservers">
+<!ENTITY sharing.prefpane.network.name.content.label "Name, wie er im Netzwerk angezeigt wird (Änderungen erfordern einen Neustart):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "Ordner Bilder">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "Bilder übertragen von:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "Ordner auswählen">

@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "Mediálny server:">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "Stav servera:">
+<!ENTITY sharing.iconpopup.status.on "ZAP.">
+<!ENTITY sharing.iconpopup.status.off "VYP.">
+<!ENTITY sharing.iconpopup.settings.link "Nastavenie">
+<!ENTITY sharing.prefpane.label "Mediálny server">
+<!ENTITY sharing.prefpane.network.name.header.label "Sieťový názov mediálneho servera">
+<!ENTITY sharing.prefpane.network.name.content.label "Názov zobrazujúci sa v sieti (zmeny si vyžiadajú reštartovanie):">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "Priečinok obrázkov">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "Prenášať obrázky z:">
+<!ENTITY sharing.prefpane.images.choosefolder.label "Vybrať priečinok">

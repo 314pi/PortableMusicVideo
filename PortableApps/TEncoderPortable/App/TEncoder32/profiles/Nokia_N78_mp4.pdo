@@ -1,0 +1,17 @@
+[Main]
+Ext=mp4
+Container=2
+Encoder=1
+VCodec=3
+VBitrate=380
+Width=320
+Height=240
+VideoSize=320x240
+FPS=15
+VAR=0
+ACodec=2
+ABitrate=96
+ASR=7
+AChan=1
+CustomVideo=
+CustomAudio=

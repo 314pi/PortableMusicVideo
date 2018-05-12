@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Tracks Menu: Mix - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Tracks_Menu_Mix rootpage-Tracks_Menu_Mix skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Tracks Menu: Mix</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Tracks_Menu:_Mix#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+<div class="intro">These commands provide tools for mixing and rendering your selected tracks to a singlestereo or mono track. </div>
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_1660587840"><area href="transport_menu.html" shape="rect" coords="0,3,26,19" alt="Transport Menu" title="Transport Menu"/><area href="tracks_menu.html" shape="rect" coords="33,3,73,19" alt="Tracks Menu" title="Tracks Menu"/><area href="generate_menu.html" shape="rect" coords="80,3,134,19" alt="Generate Menu" title="Generate Menu"/><area href="effect_menu.html" shape="rect" coords="141,3,174,19" alt="Effect Menu" title="Effect Menu"/><area href="analyze_menu.html" shape="rect" coords="181,3,225,19" alt="Analyze Menu" title="Analyze Menu"/><area href="help_menu.html" shape="rect" coords="232,3,261,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="268,3,298,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="tracks_menu_add_new.html" shape="rect" coords="39,23,230,45" alt="Adds a new track" title="Adds a new track"/><area href="#" shape="rect" coords="39,52,230,74" alt="Mixes down selected tracks to mono or stereo tracks" title="Mixes down selected tracks to mono or stereo tracks"/><area href="tracks_menu.html#resample" shape="rect" coords="39,74,230,96" alt="Allows you to resample the selected track(s) to a new sample rate for use in the project" title="Allows you to resample the selected track(s) to a new sample rate for use in the project"/><area href="tracks_menu.html#remove_tracks" shape="rect" coords="39,103,230,125" alt="Removes the selected track(s) from the project" title="Removes the selected track(s) from the project"/><area href="tracks_menu_mute/unmute.html" shape="rect" coords="39,132,230,154" alt="Mutes or unmutes audio tracks in the project" title="Mutes or unmutes audio tracks in the project"/><area href="tracks_menu_pan.html" shape="rect" coords="39,154,230,176" alt="Pans left right or center audio tracks in the project" title="Pans left right or center audio tracks in the project"/><area href="tracks_menu_align_tracks.html" shape="rect" coords="39,183,230,205" alt="Commands that provide an automatic way of aligning selected tracks with the cursor, the selection, or with the start of the project" title="Commands that provide an automatic way of aligning selected tracks with the cursor, the selection, or with the start of the project"/><area href="tracks_menu_sort_tracks.html" shape="rect" coords="39,205,230,227" alt="Sorts all tracks in the project from top to bottom in the project window, by Start Time or by Name" title="Sorts all tracks in the project from top to bottom in the project window, by Start Time or by Name"/><area href="sync_locked_track_groups.html" shape="rect" coords="39,234,230,256" alt="Ensures that length changes occurring anywhere in a defined group of tracks also take place in all audio or label tracks in that group" title="Ensures that length changes occurring anywhere in a defined group of tracks also take place in all audio or label tracks in that group"/><area href="#mix_stereo_down_to_mono" shape="rect" coords="242,55,451,77" alt="Converts the selected stereo track(s) into the same number of mono tracks, combining left and right channels equally by averaging the volume of both channels" title="Converts the selected stereo track(s) into the same number of mono tracks, combining left and right channels equally by averaging the volume of both channels"/><area href="#mix_and_render" shape="rect" coords="242,77,451,99" alt="Mixes down all selected tracks to a single mono or stereo track, rendering to the waveform all real-time transformations that had been applied (such as track gain, panning, amplitude envelopes or a change in project rate)" title="Mixes down all selected tracks to a single mono or stereo track, rendering to the waveform all real-time transformations that had been applied (such as track gain, panning, amplitude envelopes or a change in project rate)"/><area href="#mix_and_render_to_new_track" shape="rect" coords="242,99,451,121" alt="Same as Tracks &gt; Mix and Render except that the original tracks are preserved rather than being replaced by the resulting &quot;Mix&quot; track" title="Same as Tracks &gt; Mix and Render except that the original tracks are preserved rather than being replaced by the resulting &quot;Mix&quot; track"/></map><img alt="Tracks-MixMenu.png" src="../m/images/3/33/tracks_mixmenu.png" width="464" height="264" usemap="#ImageMap_1_1660587840"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p>
+<div id="mix_stereo_down_to_mono"></div>
+<h2><span class="mw-headline" id="Mix_Stereo_down_to_Mono_.C2.A0">Mix Stereo down to Mono &#160;<font size="-1"></font></span></h2>
+<p>Converts the <a href="audacity_selection.html" title="Audacity Selection">selected</a> stereo track(s) into the same number of mono tracks, combining left and right channels equally by averaging the volume of both channels. An important reason to convert stereo to mono is that it produces higher quality for the same <i><b><a href="glossary.html#bit_rate" title="Glossary">bit rate</a></b></i> (and hence file size) in <i><b><a href="glossary.html#lossy" title="Glossary">lossy</a></b></i>, <i><b><a href="glossary.html#compressed_format" title="Glossary">compressed</a></b></i> audio files like <i><b><a href="glossary.html#mp3" title="Glossary">MP3</a></b></i> or <i><b><a href="glossary.html#aac" title="Glossary">AAC</a></b></i>. Stereo Track to Mono is not available with stereo tracks split into left and right channels, or where the start or end positions of the channels are different. 
+</p><p>If you have a split stereo track, you can use the <a href="audio_track_dropdown_menu.html#Splitting_and_Joining_Channels" title="Audio Track Dropdown Menu">Track Dropdown Menu</a> to join the channels into a single stereo track before converting to mono. This menu also lets you convert a stereo track to a mono track containing only <i>one</i> of the channels:
+</p>
+<ol><li> Choose "Split Stereo to Mono" from the Track Dropdown Menu if your stereo track is not already split into separate tracks</li>
+<li> Close the unwanted track using the <span class="button">X</span> button at the top left of the <a href="audio_tracks.html#Track_Control_Panel" title="Audio Tracks">Track Control Panel</a>.</li></ol>
+<div id="mix_and_render"></div>
+<h2><span class="mw-headline" id="Mix_and_Render_.C2.A0">Mix and Render &#160;<font size="-1"></font></span></h2>
+<p>Your audio tracks are implicitly mixed whenever you click the Play button on <a href="transport_toolbar.html" title="Transport Toolbar">Transport Toolbar</a> or <a href="export.html" title="Export">export audio</a>. Mix and Render explicitly mixes down all selected tracks to a single mono or stereo track, rendering to the waveform all real-time transformations that had been applied (such as track <i><b><a href="glossary.html#gain" title="Glossary">gain</a></b></i>, panning, <a href="envelope_tool.html" title="Envelope Tool">amplitude envelopes</a> or a change in <a href="selection_toolbar.html#rate" title="Selection Toolbar">project rate</a>). The resulting track (called "Mix") replaces the selected tracks and is placed underneath any tracks that were not mixed and rendered.
+</p><p>Like all tracks, the "Mix" track can be renamed using the <a href="audio_track_dropdown_menu.html" title="Audio Track Dropdown Menu">Audio Track Dropdown Menu</a>.    
+</p>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top">If you try to mix two very loud tracks together, you may get <i><b><a href="glossary.html#clipping" title="Glossary">clipping</a></b></i> (it will sound like pops, clicks and noise).  To avoid this, use the <a href="audio_tracks.html#gain" title="Audio Tracks">track gain controls</a> to reduce the <i><b><a href="glossary.html#amplitude" title="Glossary">amplitude</a></b></i> of all of your tracks before mixdown.
+</td></tr></table>
+</div>
+<p>See <a href="mixing.html" title="Mixing">Mixing Audio Tracks</a> for more details.
+</p>
+<div id="mix_and_render_to_new_track"></div>
+<h2><span class="mw-headline" id="Mix_and_Render_to_New_Track_.C2.A0Ctrl_.2B_Shift_.2B_M_.C2.A0_Extra">Mix and Render to New Track &#160;<font size="-1"><span class="kbrd" style="background-color: #eaeafa">Ctrl + Shift + M </span> &#160; <i><sup><a href="only_in_full_set.html" title="Only in full set">Extra</a></sup></i></font></span></h2>
+<p>This command performs the same actions as Mix and Render above, except that the original tracks are preserved rather than being replaced by the "Mix" track.
+</p><p><br />
+</p><p><br />
+<a href="tracks_menu.html" title="Tracks Menu"><b>&lt;</b>&#160; Back to: Tracks Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020255
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.084 seconds
+Real time usage: 0.088 seconds
+Preprocessor visited node count: 145/1000000
+Preprocessor generated node count: 6421/1000000
+Post‐expand include size: 2322/2097152 bytes
+Template argument size: 473/2097152 bytes
+Highest expansion depth: 5/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   55.126      1 - -total
+ 82.87%   45.684      1 - Template:Menus
+ 76.71%   42.287      1 - Template:All-menus
+  4.06%    2.240      1 - Template:Fullshortcut
+  3.03%    1.668      1 - Template:Intro
+  2.76%    1.524      2 - Template:Shortcut
+  2.69%    1.483      1 - Template:ClickTip
+  2.43%    1.339      1 - Template:Button
+  2.41%    1.327      1 - Template:Advice
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:5641-0!*!0!!*!5!* and timestamp 20180215020255 and revision id 56206
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Tracks_Menu:_Mix">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

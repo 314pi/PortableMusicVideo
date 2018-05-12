@@ -1,0 +1,12 @@
+<!ENTITY sharing.statusbar.label "媒体服务器：">
+<!ENTITY sharing.iconpopup.header "Songbird Media Server">
+<!ENTITY sharing.iconpopup.status.label "服务器状态：">
+<!ENTITY sharing.iconpopup.status.on "开">
+<!ENTITY sharing.iconpopup.status.off "关">
+<!ENTITY sharing.iconpopup.settings.link "设置">
+<!ENTITY sharing.prefpane.label "媒体服务器">
+<!ENTITY sharing.prefpane.network.name.header.label "媒体服务器网络名称">
+<!ENTITY sharing.prefpane.network.name.content.label "出现在网络上名称（更改需重启）：">
+<!ENTITY sharing.prefpane.images.folderlocation.header.label "图片文件夹">
+<!ENTITY sharing.prefpane.images.folderlocation.input.label "图片传输来源：">
+<!ENTITY sharing.prefpane.images.choosefolder.label "选择文件夹">

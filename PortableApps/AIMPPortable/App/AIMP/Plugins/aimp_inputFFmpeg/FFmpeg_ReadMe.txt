@@ -1,0 +1,7 @@
+FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. It supports the most obscure ancient formats up to the cutting edge. No matter if they were designed by some standards committee, the community or a corporation. It is also highly portable: FFmpeg compiles, runs, and passes our testing infrastructure FATE across Linux, Mac OS X, Microsoft Windows, the BSDs, Solaris, etc. under a wide variety of build environments, machine architectures, and configurations.
+
+It contains libavcodec, libavutil, libavformat, libavfilter, libavdevice, libswscale and libswresample which can be used by applications. As well as ffmpeg, ffserver, ffplay and ffprobe which can be used by end users for transcoding, streaming and playing.
+
+The FFmpeg project tries to provide the best technically possible solution for developers of applications and end users alike. To achieve this we combine the best free software options available. We slightly favor our own code to keep the dependencies on other libs low and to maximize code sharing between parts of FFmpeg. Wherever the question of "best" cannot be answered we support both options so the end user can choose.
+
+https://ffmpeg.org/

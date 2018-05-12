@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Transport Menu - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Transport_Menu rootpage-Transport_Menu skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Transport Menu</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Transport_Menu#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<p><br />
+</p>
+<div class="intro"><i><b>Transport Menu</b></i> commands let you play or stop, loop play, scrub play or record (including timed and sound activated recordings). Except for <a href="scrubbing_and_seeking.html" title="Scrubbing and Seeking">Scrub play</a>, these playback commands play at standard speed, or as speeded up or slowed down over time by adding a <a href="time_tracks.html" title="Time Tracks">Time Track</a> envelope. The easiest way to play at a fixed faster or slower speed is to use <a href="transcription_toolbar.html" title="Transcription Toolbar">Transcription Toolbar</a>.</div> 
+<dl><dd><i>Click, or hover, on any menu item in the image to read about that command.  &#160;<span style="font-size:0.8em"><a href="#skiptheimage">Skip the image</a></span></i></dd>
+<dd><div class="noresize"><map name="ImageMap_1_2025716726"><area href="view_menu.html" shape="rect" coords="0,3,26,19" alt="View Menu" title="View Menu"/><area href="#" shape="rect" coords="33,3,89,19" alt="Transport Menu" title="Transport Menu"/><area href="tracks_menu.html" shape="rect" coords="96,3,136,19" alt="Tracks Menu" title="Tracks Menu"/><area href="generate_menu.html" shape="rect" coords="143,3,197,19" alt="Generate Menu" title="Generate Menu"/><area href="effect_menu.html" shape="rect" coords="204,3,237,19" alt="Effect Menu" title="Effect Menu"/><area href="analyze_menu.html" shape="rect" coords="244,3,288,19" alt="Analyze Menu" title="Analyze Menu"/><area href="help_menu.html" shape="rect" coords="295,3,324,19" alt="Help Menu" title="Help Menu"/><area href="extra_menu.html" shape="rect" coords="331,3,361,19" alt="Extra Menu" title="Extra Menu"/><area href="menu_reference.html" shape="rect" coords="0,0,600,22" alt="Menu Bar" title="Menu Bar"/><area href="transport_menu_play.html" shape="rect" coords="39,23,208,45" alt="These commands control playback in Audacity" title="These commands control playback in Audacity"/><area href="transport_menu_record.html" shape="rect" coords="39,45,208,67" alt="These commands control recording in Audacity" title="These commands control recording in Audacity"/><area href="transport_menu_scrubbing.html" shape="rect" coords="39,67,208,89" alt="Scrubbing is the action of moving the mouse pointer right or left so as to adjust the position, speed or direction of playback, listening to the audio at the same time - a convenient way to quickly navigate the waveform to find a particular event of interest" title="Scrubbing is the action of moving the mouse pointer right or left so as to adjust the position, speed or direction of playback, listening to the audio at the same time - a convenient way to quickly navigate the waveform to find a particular event of interest"/><area href="transport_menu_cursor_to.html" shape="rect" coords="39,89,208,111" alt="These commands let you move the cursor to the start or end of the selection, track or any adjacent Clip that you may have" title="These commands let you move the cursor to the start or end of the selection, track or any adjacent Clip that you may have"/><area href="transport_menu_play_region.html" shape="rect" coords="39,118,208,140" alt="These commands enable you to lock a play region and unlock it" title="These commands enable you to lock a play region and unlock it"/><area href="#rescan_audio_devices" shape="rect" coords="39,147,208,169" alt="Rescan for audio devices connected to your computer, and update the playback and recording dropdown menus in Device Toolbar" title="Rescan for audio devices connected to your computer, and update the playback and recording dropdown menus in Device Toolbar"/><area href="transport_menu_transport_options.html" shape="rect" coords="39,169,208,191" alt="This submenu lets you manage and set various options for transport (playing and recording) in Audacity" title="This submenu lets you manage and set various options for transport (playing and recording) in Audacity"/></map><img alt="TransportMenu.png" src="../m/images/f/ff/transportmenu.png" width="221" height="199" usemap="#ImageMap_1_2025716726"/></div></dd></dl>
+<div id="skiptheimage"></div><div style="position:relative;">
+<div class="note" style="width:150px;position:absolute;left:100px;top:-30px;"><div class="floatleft"><a href="click_tip.html" title="Click for details"><img alt="Click for details" src="../m/images/6/63/bigpointercursor.png" width="20" height="33" /></a></div><b>Click on the image to learn more</b><br /></div>
+</div>
+<p><br />
+</p>
+<div id="play"></div>
+<h2><span class="mw-headline" id="Play_.C2.A0"><a href="transport_menu_play.html" title="Transport Menu: Play">Play</a> &#160;<font size="-1"></font></span></h2>
+<p>The <a href="transport_menu_play.html" title="Transport Menu: Play">Play</a> submenu commands control playback in Audacity. You can Start, Stop or Pause playback of the audio in your project.
+</p>
+<div id="record"></div>
+<h2><span class="mw-headline" id="Record_.C2.A0"><a href="transport_menu_record.html" title="Transport Menu: Record">Record</a> &#160;<font size="-1"></font></span></h2>
+<p>The <a href="transport_menu_record.html" title="Transport Menu: Record">Record</a> submenu commands control recording in Audacity. You can Start, Stop or Pause recording in your project. You can either start a recording on your existing track or an a new track.
+</p>
+<div id="scrubbing"></div>
+<h2><span class="mw-headline" id="Scrubbing_.C2.A0"><a href="transport_menu_scrubbing.html" title="Transport Menu: Scrubbing">Scrubbing</a> &#160;<font size="-1"></font></span></h2>
+<p>Opens a cascading submenu where you can start, stop or switch to <a href="scrubbing_and_seeking.html#scrubbing" title="Scrubbing and Seeking">Scrub</a> play or <a href="scrubbing_and_seeking.html#seeking" title="Scrubbing and Seeking">Seek</a> play, or toggle the Scrub Ruler on/off.
+</p><p>Find out more about the <a href="transport_menu_scrubbing.html" title="Transport Menu: Scrubbing">Scrubbing</a> submenu <a href="transport_menu_scrubbing.html" title="Transport Menu: Scrubbing">here</a>.
+</p>
+<div id="cursor_to"></div>
+<h2><span class="mw-headline" id="Cursor_to_.C2.A0"><a href="transport_menu_cursor_to.html" title="Transport Menu: Cursor to">Cursor to</a> &#160;<font size="-1"></font></span></h2>
+<p>The <a href="transport_menu_cursor_to.html" title="Transport Menu: Cursor to">Cursor to</a> submenu commands let you move the cursor to the start or end of the selection, track or any adjacent Clip that you may have.
+</p>
+<div id="play_region"></div>
+<h2><span class="mw-headline" id="Play_Region_.C2.A0"><a href="transport_menu_play_region.html" title="Transport Menu: Play Region">Play Region</a> &#160;<font size="-1"></font></span></h2>
+<p>The <a href="transport_menu_play_region.html" title="Transport Menu: Play Region">Play Region</a> submenu commands enable you to lock a play region and unlock it.
+</p>
+<div id="rescan_audio_devices"></div>
+<h2><span class="mw-headline" id="Rescan_Audio_Devices_.C2.A0">Rescan Audio Devices &#160;<font size="-1"></font></span></h2>
+<p>Rescan for audio devices connected to your computer, and update the playback and recording dropdown menus in <a href="device_toolbar.html" title="Device Toolbar">Device Toolbar</a>.
+</p>
+<div id="transport_options"></div>
+<h2><span class="mw-headline" id="Transport_Options_.C2.A0"><a href="transport_menu_transport_options.html" title="Transport Menu: Transport Options">Transport Options</a> &#160;<font size="-1"></font></span></h2>
+<p>The <a href="transport_menu_transport_options.html" title="Transport Menu: Transport Options">Transport Options</a> submenu lets you manage and set various options for transport (playing and recording) in Audacity.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020144
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.106 seconds
+Real time usage: 0.113 seconds
+Preprocessor visited node count: 345/1000000
+Preprocessor generated node count: 7231/1000000
+Post‐expand include size: 4378/2097152 bytes
+Template argument size: 1127/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   82.614      1 - -total
+ 57.91%   47.842      1 - Template:Menus
+ 53.66%   44.327      1 - Template:All-menus
+ 32.75%   27.059      1 - Template:I18n
+ 30.76%   25.414      1 - Template:I18n_box
+ 25.92%   21.414      1 - Template:I18n_list
+ 12.48%   10.307      4 - Template:I18n_link
+  7.37%    6.086      4 - Template:Autoglossonym
+  4.60%    3.798      7 - Template:Shortcut
+  2.07%    1.707      1 - Template:ClickTip
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:2597-0!*!0!!*!5!* and timestamp 20180215020143 and revision id 58247
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Transport_Menu">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Rhythm Track - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Rhythm_Track rootpage-Rhythm_Track skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Rhythm Track</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/Rhythm_Track#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><br />
+</p>
+
+
+<p><br />
+</p>
+<div class="intro"><i><b>Rhythm Track</b></i> generates a sequence of regular pulses at the selected tempo, beats per measure and either number of measures or track duration, using a selectable sound. It can thus be used like a metronome for setting a steady beat against which an <a href="faq_recording_how_to_s.html#overdub" title="FAQ:Recording - How To's">overdub</a> recording can be made. 
+</div>
+<dl><dd><b>Accessed by:</b> <span class="menu">Generate &gt; Rhythm Track...</span></dd>
+<dd><span title="Rhythm Track generator dialog"><a href="http://alphamanual.audacityteam.org/man/File:Rhythm_Track.png" class="image"><img alt="Rhythm Track.png" src="../m/images/9/91/rhythm_track.png" width="679" height="429" /></a></span></dd></dl>
+<h2><span class="mw-headline" id="Action_choice">Action choice</span></h2>
+<p>Choose <b>"Generate Track"</b> unless you want to select either of the two help screens.
+</p>
+<h2><span class="mw-headline" id="Tempo_.28beats_per_minute.29">Tempo (beats per minute)</span></h2>
+<p>The total number of beats (clicks) per minute, default is 120.
+</p>
+<h2><span class="mw-headline" id="Beats_per_measure_.28bar.29">Beats per measure (bar)</span></h2>
+<p>The first beat of each measure is always louder than the remaining beats in the measure. So for example, three beats per measure will sound like a waltz in 3/4 <i>time signature</i>, and four beats per measure (the default) will sound like the 4/4 of a march or like most pop songs. 
+</p>
+<h2><span class="mw-headline" id="Swing_amount">Swing amount</span></h2>
+<p>When set to zero, each beat has the exact length specified by the Tempo (beats per minute). When set to a non-zero amount, alternate beats are delayed or advanced to give a swing feel. At maximum / minimum settings the rhythm plays with triplet timing.
+</p>
+<h2><span class="mw-headline" id="Number_of_measures_.28bars.29">Number of measures (bars)</span></h2>
+<p>Beats per measure is repeated for the chosen number of measures. The default is 16 measures. The combination of tempo, beats per measure and number of measures determines the length of the generated track unless the rhythm track duration is specified (see the next control).   
+</p>
+<h2><span class="mw-headline" id="Optional_rhythm_track_duration_.28minutes_seconds.29">Optional rhythm track duration (minutes seconds)</span></h2>
+<p>If you enter a value into this field either [minutes seconds] separated by a space or simply [seconds], the generated rhythm track will be at or slightly longer than this duration.  The end of the track is extended into a whole measure if the entered duration does not produce a complete final measure.  Use whole numbers only.
+</p>
+<h2><span class="mw-headline" id="Start_time_offset_.28seconds.29">Start time offset (seconds)</span></h2>
+<p>Makes the rhythm track start at a later point on the <a href="timeline.html" title="Timeline">Timeline</a> than the very beginning (zero seconds). The maximum of 30 seconds and the default is zero.
+</p>
+<h2><span class="mw-headline" id="Beat_sound">Beat sound</span></h2>
+<p>Choose which sound to use for the beats. The default is "Metronome tick".
+</p>
+<h2><span class="mw-headline" id="MIDI_pitch_of_strong_beat">MIDI pitch of strong beat</span></h2>
+<p>The pitch of the first beat in each measure. The MIDI values indicate what pitch to use. Examples:
+</p>
+<ul><li> C-notes are 24, 36, 48, 60 (middle C), 72, 84, 96, 108 </li>
+<li> C# (C sharp) above middle C is 61</li>
+<li> The default is 92 (G#). </li></ul>
+<h2><span class="mw-headline" id="MIDI_pitch_of_weak_beat">MIDI pitch of weak beat</span></h2>
+<p>The pitch of the remaining beats in each measure. The default is 80 (G# an octave below the strong click). 
+</p>
+<div class="note"><b>Tips:</b>
+<ul><li> Once created, the track can be edited (for example, its volume changed) like any <a href="audio_tracks.html" title="Audio Tracks">audio track</a>.  </li>
+<li> When <a href="file_export_dialog.html" title="File Export Dialog">exporting</a> your finished work, use the <a href="audio_tracks.html#panel" title="Audio Tracks">Track Control Panel</a> to either close or mute the Rhythm Track, so that it's not audible in the exported file.</div></li></ul>
+<div id="buttons"></div>
+<h2><span class="mw-headline" id="Buttons">Buttons</span></h2>
+<p>Clicking on the command buttons give the following results:
+</p>
+<ul><li><span class="button">Manage</span> gives a dropdown menu enabling you to manage presets for the tool and to see some detail about the tool. For details see <a href="manage_presets.html" title="Manage presets">Manage presets</a>.</li>
+<li><span class="button">Preview</span> plays a short preview of what the audio would sound like if the effect is applied with the current settings, without making actual changes to the audio.  The length of preview is determined by your setting in <span class="menu">Edit &gt; Preferences &gt; <a href="playback_preferences.html" title="Playback Preferences">Playback</a></span>, the default setting is 6 seconds.</li>
+<li><span class="button">OK</span> applies the effect to the selected audio with the current effect settings.</li>
+<li><span class="button">Cancel</span> aborts the effect and leaves the audio unchanged.</li>
+<li><a href="help_button.html" title="Help Button"><img alt="Help Button" src="../m/images/d/d6/help_button.png" width="27" height="27" /></a> brings you to the appropriate page in the Manual, this page.</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<p><a href="index_of_effects_generators_and_analyzers.html#generators" title="Index of Effects, Generators and Analyzers"><b>|&lt;</b> Index of Effects, Generators and Analyzers</a>
+</p><p><a href="generate_menu.html" title="Generate Menu"><b>|&lt;</b> Generate Menu</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020344
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.104 seconds
+Real time usage: 0.113 seconds
+Preprocessor visited node count: 342/1000000
+Preprocessor generated node count: 1563/1000000
+Post‐expand include size: 11831/2097152 bytes
+Template argument size: 2339/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   54.883      1 - -total
+ 44.41%   24.372      1 - Template:I18n
+ 40.70%   22.336      1 - Template:I18n_box
+ 35.94%   19.724      1 - Template:I18n_list
+ 21.17%   11.620      1 - Template:Effectbuttons
+ 17.10%    9.386      1 - Template:No-rename
+ 15.62%    8.572      1 - Template:Buttonlist
+ 13.21%    7.250      1 - Template:Ednote
+ 12.77%    7.006      8 - Template:Button
+ 12.07%    6.624      2 - Template:I18n_link
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:4236-0!*!0!!*!5!* and timestamp 20180215020344 and revision id 57627
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/Rhythm_Track">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>On-Demand Loading - Audacity Development Manual</title>
+
+
+
+
+<!--[if IE 6]><link rel="stylesheet" href="../m/skins/monobook/ie60fixes.css/303.css" media="screen"/><![endif]--><!--[if IE 7]><link rel="stylesheet" href="../m/skins/monobook/ie70fixes.css/303.css" media="screen"/><![endif]-->
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+
+<meta name="generator" content="MediaWiki 1.28.2"/>
+<link rel="shortcut icon" href="../favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="http://alphamanual.audacityteam.org/m/opensearch_desc.php" title="Audacity Development Manual (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://alphamanual.audacityteam.org/m/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by/3.0/" />
+
+<link rel="stylesheet" href="../m/skins/monobook/main.css/303.css" media="screen" />
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-On-Demand_Loading rootpage-On-Demand_Loading skin-monobook action-view"><div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">On-Demand Loading</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From Audacity Development Manual</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="#column-one">navigation</a>, <a href="http://alphamanual.audacityteam.org/man/On-Demand_Loading#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="intro"><i><b>On-Demand Loading</b></i> is an optional faster method of <a href="importing_audio.html" title="Importing Audio">importing audio</a>. Instead of a progress bar appearing while Audacity waits to import the entire file, the <a href="audacity_waveform.html" title="Audacity Waveform">normal Audacity waveform</a> starts to display almost immediately. You can play or edit wherever the normal waveform is displayed while the remaining waveform is still being drawn as a process running in the background.<p>
+On-Demand Loading is available as an option when importing most <i><b><a href="glossary.html#uncompressed_format" title="Glossary">uncompressed</a></b></i> files like  <i><b><a href="glossary.html#wav" title="Glossary">WAV</a></b></i> and <i><b><a href="glossary.html#aiff" title="Glossary">AIFF</a></b></i> (and on Linux, <i><b><a href="glossary.html#flac" title="Glossary">FLAC</a></b></i>). </p></div> 
+<div id="import"></div>
+<h2><span class="mw-headline" id="Importing_different_file_types_using_On-Demand_Loading">Importing different file types using On-Demand Loading</span></h2>
+<h3><span class="mw-headline" id="Uncompressed_files">Uncompressed files</span></h3>
+<p>On-Demand Loading is used for most <i><b><a href="glossary.html#uncompressed_format" title="Glossary">uncompressed</a></b></i> files when choosing to read these files "directly from the original (faster)" instead of copying them in. The "read directly" option can be chosen when the warning appears for importing uncompressed audio files:
+</p>
+<dl><dd><span title="Warning for importing uncompressed audio files set to read directly"><img alt="Preferences Warnings Uncompressed set directly W10.png" src="../m/images/d/db/preferences_warnings_uncompressed_set_directly_w10.png" width="513" height="364" /></span></dd></dl>
+<p>and also in the <a href="import_export_preferences.html" title="Import - Export Preferences">Import / Export Preferences</a>:
+</p>
+<dl><dd><span title="Import / Export Preferences set to read directly"><img alt="EnableOD.png" src="../m/images/0/06/enableod.png" width="337" height="74" /></span></dd></dl>
+<p>The warning can be turned off in the <a href="warnings_preferences.html" title="Warnings Preferences">Warnings Preferences</a>, in which case the current import setting in Preferences will be used automatically. 
+</p><p>On-Demand Loading of uncompressed files is much faster than copying in the audio, even if you wait for the waveform drawing to complete before playing or editing.   
+</p><p>Uncompressed files shorter than 30 seconds long will always import using the normal progress bar even if you choose to "read directly". However on most machines the import will still seem to be immediate unless it is a slower machine or the processor is very busy with other tasks.  
+</p>
+<div style="margin-top:12px; margin-bottom:12px; margin-left:24px; margin-right:24px">
+<table style="background:#FEFFD0; color:black; border:1px solid #999999; padding-left:12px; padding-right:12px" width="100%" align="center">
+
+<tr>
+<td width="30px" valign="top" align="center"><a href="http://alphamanual.audacityteam.org/man/File:Warningicon.png" class="image" title="Warning icon"><img alt="Warning icon" src="../m/images/b/ba/warningicon.png" width="24" height="24" /></a>
+</td>
+<td align="left" valign="top"><b>If you choose "read directly" when importing WAV, AIFF or FLAC files, do not rename, move or delete those files</b>, otherwise your project will be missing audio. You can still copy in the audio to the project at any time at <span class="menu">Help &gt; Diagnostics &gt; <a href="dependencies_dialog.html" title="Dependencies Dialog">Check Dependencies...</a></span>. See <a href="audacity_projects.html" title="Audacity Projects">Audacity Projects</a> for more details.
+</td></tr></table>
+</div>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Using_On-Demand_Loading">Using On-Demand Loading</span></h2>
+<p>When you import an On-Demand file by any means ( <span class="menu">File &gt; <a href="file_menu.html#open" title="File Menu">Open...</a></span>, <span class="menu">File &gt; Import &gt; <a href="file_menu_import.html#audio" title="File Menu: Import">Audio...</a></span> or dragging in), a sequence of patterned blocks appears almost immediately, representing the uncomputed waveform. The blocks are then progressively replaced from left to right by the <a href="audacity_waveform.html" title="Audacity Waveform">normal Audacity waveform</a> as soon as it has been computed. You can <a href="play.html" title="Play">play</a> or <a href="edit.html" title="Edit">edit</a> the track at once wherever that normal waveform is displaying, without waiting for the remainder of the waveform to be drawn. 
+</p><p>You can also change the focal point from which the waveform is computed. To do this, either click in the track at the leftmost point from which you want the waveform drawn, or drag a selection in either direction. In the image below, we clicked to place the cursor in the waveform at a time of 1 hour 15 minutes, two thirds of the way along. The waveform then started being drawn rightwards from the cursor point:
+</p>
+<dl><dd><span title="On-Demand loading focal point moved to two thirds of the way along the track"><img alt="ODinprogress.png" src="../m/images/9/9f/odinprogress.png" width="696" height="227" /></span></dd></dl>
+<p>Using read-directly On-Demand, you can now edit or play from the new focal point. You can also start playback from a new position without changing the focal point of the waveform by clicking or dragging a region in the <a href="timeline.html" title="Timeline">Timeline</a>.
+</p><p>Once the computation point has reached the end of the track, any uncomputed waveform will be drawn from right to left, unless interrupted by clicking elsewhere at an uncomputed point.     
+</p>
+<div class="note">Multiple files may be imported simultaneously, and the waveform computation point moved from one to track to the other by clicking in the required track.</div>  
+<p>The percentage of the waveform that has been computed is displayed on the <a href="status_bar.html" title="Status Bar">Status Bar</a>, as shown at bottom left of the image above. When multiple files are being imported, the Status Bar will display the <i>overall</i> percentage of the multiple tracks that has been computed. To make the Status Bar display the percentage completion of a particular track, move the mouse over that track.     
+</p>
+<h3><span class="mw-headline" id="Slow_seeking_when_moving_the_focal_position">Slow seeking when moving the focal position</span></h3>
+<p>If the drive the file is being imported from is not able to seek rapidly through the file, the On-Demand imported track may be slow to respond when moving the focal position. This will be especially noticeable before the waveform has been fully computed. Slow seeking could occur on Mac computers when importing <a href="faq_opening_and_saving_files.html#fromcd" title="FAQ:Opening and Saving Files">CD tracks</a> from the Finder, or when using older external USB drives.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180215020221
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.084 seconds
+Real time usage: 0.090 seconds
+Preprocessor visited node count: 279/1000000
+Preprocessor generated node count: 1023/1000000
+Post‐expand include size: 4415/2097152 bytes
+Template argument size: 1589/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 11/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   30.002      1 - -total
+ 83.88%   25.166      1 - Template:I18n
+ 78.12%   23.437      1 - Template:I18n_box
+ 67.50%   20.251      1 - Template:I18n_list
+ 34.72%   10.418      5 - Template:I18n_link
+ 20.45%    6.136      5 - Template:Autoglossonym
+  8.38%    2.513      1 - Template:Advice
+  4.81%    1.443      3 - Template:Menu
+  3.76%    1.127      1 - Template:Note
+-->
+
+<!-- Saved in parser cache with key helpmediawiki:pcache:idhash:2587-0!*!0!!*!5!* and timestamp 20180215020221 and revision id 58155
+ -->
+</div>
+										<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			
+					
+				
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="../index.html" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+					
+		<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html" title="Main Page">Manual Home Page</a></li>
+<li> <a href="../index.html#using" title="Main Page">Using Audacity</a>
+<ul><li> <a href="audacity_tour_guide.html" title="Audacity Tour Guide">Tour Guide</a></li>
+<li> <a href="new_features_in_this_release.html" title="New features in this release">New Features</a></li>
+<li> <a href="../quick_help.html" title="Quick Help">Getting Started</a></li>
+<li> <a href="preferences.html" title="Preferences">Preferences</a></li>
+<li> <a href="menu_reference.html" title="Menu Reference">Menu Bar</a></li>
+<li> <a href="toolbars_overview.html" title="Toolbars Overview">Toolbars</a></li>
+<li> <a href="keyboard_shortcut_reference.html" title="Keyboard Shortcut Reference">Commands / Shortcuts</a></li>
+<li> <a href="index_of_effects_generators_and_analyzers.html" title="Index of Effects, Generators and Analyzers">Effects</a></li>
+<li> <a href="tutorials.html" title="Tutorials">Tutorials</a></li>
+<li> <a href="tips.html" title="Tips">Tips</a></li></ul></li></ul>
+		</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-Reference" role="navigation">
+		<h3>Reference</h3>
+		<div class='pBody'>
+			<ul><li> <a href="../index.html#reference" title="Main Page">Reference</a>
+<ul><li> <a href="digital_audio.html" title="Digital Audio">Digital Audio</a></li>
+<li> <a href="glossary.html" title="Glossary">Glossary</a></li>
+<li> <a href="subject_index.html" title="Subject Index">Index</a></li></ul></li>
+<li> <span title="Frequently Asked Questions"><a rel="nofollow" class="external text" href="faq.html">FAQ</a></span></li></ul>
+		</div>
+		</div>
+		
+		<div class="generated-sidebar portlet" id="p-Useful_Links" role="navigation">
+		<h3>Useful Links</h3>
+		<div class='pBody'>
+			<ul><li> <a rel="nofollow" class="external text" href="https://forum.audacityteam.org/index.php">Forum</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">Wiki</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.audacityteam.org/download/">Latest Release</a></li>
+<li> <a rel="nofollow" class="external text" href="https://wit.audacityteam.org//">WIT</a></li></ul>
+		</div>
+		</div>
+		
+			
+			</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<div id="f-copyrightico">
+									
+							</div>
+					<div id="f-poweredbyico">
+									<a href="http://www.mediawiki.org/"><img src="../m/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/m/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /m/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>
+							</div>
+					
+		<div align="center"><ul id="f_list"><li>Offline version created on 2018-02-14 - <a href="http://alphamanual.audacityteam.org/man/On-Demand_Loading">Check current version of this page (development Manual)</a></li></ul></div>
+</div>
+		</div>
+		</body></html>
